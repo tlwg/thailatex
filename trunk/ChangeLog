@@ -14,7 +14,8 @@
 	  Rewrite Makefile.am using abstract rules.
 	  Incorporate rules from dvips/Makefile.am.
 	* configure.in:
-	  Remove fonts/type1/Makefile and fonts/afm/Makefile generation.
+	  Remove fonts/type1/Makefile, fonts/afm/Makefile and dvips/Makefile
+	  generation.
 	  Add check for ps2afm program.
 	* Makefile.am:
 	  Remove dvips in SUBDIRS.
