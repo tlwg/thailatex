@@ -1,3 +1,8 @@
+0.3.4 (2004-12-05)
+=====
+- Fix missing glyphs in fonts. (reported by Poonlap Veerathanabutr)
+- 'pmono' font now renamed as 'ttype'.
+
 0.3.3 (2004-09-27)
 =====
 - Do not capitalize chapters & sections in book headers.
