@@ -1,3 +1,13 @@
+2003-06-02 Chanop Silpa-Anan <chanop@debian.org>
+	* fonts/*.{pfb,afm}:
+	  Update using new Type1 font from thaifonts-scalable project.
+
+	* babel/lth{norasi,garuda,dbtt}.fd:
+	  Fix .fd to reflect chages to use oblique naming.
+
+	* babel/thai.ldf:
+	  Use garuda as a default sans, dbtt is still slightly buggy.
+
 2003-04-21 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/lthenc.def:
