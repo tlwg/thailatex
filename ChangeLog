@@ -1,3 +1,9 @@
+2003-12-21 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* scripts/sync-thailatex.in, scripts/sync-babel.in,
+	  thailatex.spec.in:
+	  Use argumentless style of sync scripts for RPM.
+
 2003-12-05 Chanop Silpa-Anan <chanop@debian.org>
 
 	* fonts/lthuni.enc, fonts/norasi.{afm,pfb}, fonts/Makefile.am:

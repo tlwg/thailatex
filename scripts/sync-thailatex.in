@@ -6,21 +6,27 @@
 prefix=@prefix@
 UPDMAP_VER=@UPDMAP_VER@
 
-DVIPSFONTS_MAP=${prefix}/share/texmf/dvips/base/psfonts.map
-DVIPSCONFIG=${prefix}/share/texmf/dvips/config/config.ps
-PDFTEXCONFIG=${prefix}/share/texmf/pdftex/config/pdftex.cfg
+DVIPSFONTS_MAP=@texmfdir@/dvips/base/psfonts.map
+DVIPSCONFIG=@texmfdir@/dvips/config/config.ps
+PDFTEXCONFIG=@texmfdir@/pdftex/config/pdftex.cfg
+THAI_MAP=@texmfdir@/dvips/config/thai.map
 
-# remove remaing Thai font entries in dvips base psfonts.map if any
+# remove remaining Thai font entries in dvips base psfonts.map if any
 # (deprecated implementation)
 if test -f $DVIPSFONTS_MAP; then
   sed -e '/^dbtt/d;/^rnorasi/d' $DVIPSFONTS_MAP > /tmp/tmp.$$
   mv /tmp/tmp.$$ $DVIPSFONTS_MAP
 fi
 
-case "$1" in
-  install)
+if test -f $THAI_MAP; then
+
+    # thai.map exists -> do install
     if test "$UPDMAP_VER" = "2"; then
-      @UPDMAP@ --enable Map thai.map
+      if @UPDMAP@ --listmaps 2>/dev/null | grep thai.map >/dev/null; then
+        @UPDMAP@
+      else
+        @UPDMAP@ --enable Map thai.map
+      fi
     else
       # add thai.map as additional map to dvips local config
       mkdir -p `dirname $DVIPSCONFIG`
@@ -52,11 +58,16 @@ case "$1" in
     if test -f $EMACSLISPDIR/thai-latex-setup.el; then
       echo '(load-library "thai-latex-setup")' >> $EMACSLISPDIR/site-start.el
     fi
-  ;;
 
-  uninstall)
+else
+
+    # thai.map doesn't exist -> do uninstall
     if test "$UPDMAP_VER" = "2"; then
-      @UPDMAP@ --disable thai.map
+      if @UPDMAP@ --listmaps 2>/dev/null | grep thai.map >/dev/null; then
+        @UPDMAP@ --disable thai.map
+      else
+        @UPDMAP@
+      fi
     else
       # remove thai.map from dvips local config
       if test -f $DVIPSCONFIG; then
@@ -79,11 +90,6 @@ case "$1" in
       sed -e '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el > /tmp/tmp.$$
       mv /tmp/tmp.$$ $EMACSLISPDIR/site-start.el
     fi
-  ;;
 
-  *)
-    exit 0
-  ;;
-esac
-
+fi
 

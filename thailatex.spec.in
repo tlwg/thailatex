@@ -60,17 +60,17 @@ rm -f %{manifest}
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/sbin/sync-thailatex install
-/usr/sbin/sync-babel install
+/usr/sbin/sync-thailatex
+/usr/sbin/sync-babel
 
 %triggerin -- tetex
-/usr/sbin/sync-thailatex install
-/usr/sbin/sync-babel install
+/usr/sbin/sync-thailatex
+/usr/sbin/sync-babel
 
 %preun
 if [ "$1" = "0" ]; then # last uninstall only, do not run when upgraded
-  /usr/sbin/sync-thailatex uninstall
-  /usr/sbin/sync-babel uninstall
+  /usr/sbin/sync-thailatex
+  /usr/sbin/sync-babel
 fi
 
 %files -f %{manifest}
@@ -80,6 +80,9 @@ fi
 #%config
 
 %changelog
+* Sun Dec 21 2003 Theppitak Karoonboonyanan <thep@linux.thai.net>
+  - use argumentless sync scripts
+
 * Thu Mar 06 2003 Theppitak Karoonboonyanan <thep@linux.thai.net>
   - use the split sync-thailatex and sync-babel scripts separately
   - add preun script for unregistering thailatex at last uninstallation
