@@ -16,6 +16,7 @@ Vendor: Surapant Meknavin <surapan@nectec.or.th>, Theppitak Karoonboonyanan <the
 Packager: Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 Distribution: Linux TLE, Thai Linux Working Group
 Requires: tetex >= 0.9
+BuildRequires: tetex >= 0.9, tetex-afm >= 0.9
 
 %description
 
@@ -31,6 +32,7 @@ delimitor, such as "swath", is recommended to be used as a preprocessor.
 make
 
 %install
+rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
@@ -53,6 +55,9 @@ find . -type f \
 find . -type l \
         | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
 
+%clean
+rm -f %{manifest}
+rm -rf $RPM_BUILD_ROOT
 
 %post
 /usr/sbin/sync-thailatex
@@ -67,6 +72,11 @@ find . -type l \
 #%config
 
 %changelog
+* Mon Aug 05 2002 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - add BuildRequires
+  - add %clean script
+  - clear RPM build dir before installing
+
 * Tue Jan 08 2002 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
   - update %post and %postun scripts according to new installing method
   - fix upgrading bug by adding %triggerpostun script to do the %post

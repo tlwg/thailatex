@@ -1,3 +1,9 @@
+2002-08-05 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+
+	* thailatex.spec.in:
+	  Add BuildRequires. Add %clean script. Clear RPM build dir
+	  before installing.
+
 2002-07-23 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* fonts/afm/dbttb.afm, fonts/afm/dbtti.afm, fonts/dbttbi.afm:
 	  Fix glyph name for Yo Ying, which was taken as softhyphen
