@@ -3,6 +3,8 @@
 %% created by Surapant Meknavin: surapan@nectec.or.th
 %% 
 %% --------------------------------------------------
+%% 2004/03/04 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - use `pmono' as default Thai ttfamily
 %% 2004/02/28 Theppitak Karoonboonyanan <thep@linux.thai.net>
 %%            - always use Thai alphabets for appendix
 %%              (as suggested by K. chakkree01)
@@ -55,12 +57,15 @@
  }
 \def\thairmdefault{norasi}
 \def\thaisfdefault{dbtt}
+\def\thaittdefault{pmono}
 \def\englishrmdefault{cmr}
 \def\englishsfdefault{cmss}
+\def\englishttdefault{cmtt}
 \DeclareRobustCommand{\thaitext}{%
   \fontencoding{LTH}\fontfamily{\thairmdefault}\selectfont%
   \def\rmdefault{\thairmdefault}%
   \def\sfdefault{\thaisfdefault}%
+  \def\ttdefault{\thaittdefault}%
   \def\encodingdefault{LTH}}
 \DeclareRobustCommand{\textthai}[1]{{\thaitext #1}}
 \def\thai{\thaitext}
