@@ -8,6 +8,10 @@ pkgdocdir = $(docdir)/@PACKAGE@/examples
 pkgdoc_DATA = $(DOC_FILES)
 # pkgdoc_DATA = orchid.tex orchid.ps orchid.pdf
 
+TESTS = test-orchid.sh test-teststd.sh
+
+check_SCRIPTS = test-orchid.sh test-teststd.sh
+
 clean-local:
 	$(RM) *.log *.aux *.ttex *.dvi
 
