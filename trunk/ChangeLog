@@ -1,3 +1,8 @@
+2003-01-28 Theppitak Karoonboonyanan <thep@linux.thai.net>
+	* thailatex.spec.in:
+	  Apply Poonlap Veerathanabutr's patch which fixes problematic
+	  comment
+
 2003-10-27 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* emacs/Makefile.am:
 	  Use install-data-hook and uninstall-hook instead of
