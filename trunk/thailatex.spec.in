@@ -4,13 +4,13 @@
 %define manifest %{_builddir}/%{name}-%{version}-%{release}.manifest
 
 Summary: Thai extension for LaTeX
-Name: @PACKAGE@
-Version: @VERSION@
-Release: 1
+Name: %{name}
+Version: %{version}
+Release: %{release}
 Copyright: freely distributable
 Group: Applications/Publishing
 Source: %{name}-%{version}.tar.gz
-BuildRoot: /var/tmp/%{name}-%{version}-root
+BuildRoot: /var/tmp/%{name}-%{version}
 Vendor: Surapant Meknavin <surapan@nectec.or.th>, Theppitak Karoonboonyanan <thep@links.nectec.or.th>, NECTEC
 Packager: Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 Distribution: Linux TLE, Thai Linux Working Group
@@ -64,11 +64,14 @@ find . -type l \
 
 %changelog
 * Wed Dec 05 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
-  - use variables for package names and releases
   - use manifest
 
 * Wed Jan 03 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
   - thailatex.spec : use variables for sources, path names; use BuildRoot
+
+* Wed Aug 16 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - fix "norasi" "Bluevalues" parameter to fix Acrobat Distiller
+    rejection, by Anutara
 
 * Thu May 25 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
   - rearrange package and create Makefiles
@@ -77,10 +80,6 @@ find . -type l \
   - make "norasi" be Thai roman font, "dbttx" Thai sans serif
   - correct some Thai translations
   - release version 0.2
-
-* Wed Aug 16 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
-  - fix "norasi" "Bluevalues" parameter to fix Acrobat Distiller
-    rejection, by Anutara
 
 * Mon Jun 21 1999 Surapant Meknavin <surapan@nectec.or.th>
   - create the original Thai LaTeX extension based on babel package
