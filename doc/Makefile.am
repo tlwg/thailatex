@@ -5,15 +5,16 @@ docdir = @docdir@
 pkgdocdir = $(docdir)/@PACKAGE@
 
 #install-data-local: orchid.ps orchid.pdf
-#	$(INSTALL) -d $(DESTDIR)$(pkgdocdir)
-#	$(INSTALL_DATA) $(srcdir)/orchid.tex $(DESTDIR)$(pkgdocdir)
-#	$(INSTALL_DATA) orchid.ps $(DESTDIR)$(pkgdocdir)
-#	$(INSTALL_DATA) orchid.pdf $(DESTDIR)$(pkgdocdir)
+install-data-local:
+	$(INSTALL) -d $(DESTDIR)$(pkgdocdir)/examples
+	$(INSTALL_DATA) $(srcdir)/orchid.tex $(DESTDIR)$(pkgdocdir)/examples
+#	$(INSTALL_DATA) orchid.ps $(DESTDIR)$(pkgdocdir)/examples
+#	$(INSTALL_DATA) orchid.pdf $(DESTDIR)$(pkgdocdir)/examples
 
-#uninstall-local:
-#	$(RM) $(DESTDIR)$(pkgdocdir)/orchid.tex
-#	$(RM) $(DESTDIR)$(pkgdocdir)/orchid.ps
-#	$(RM) $(DESTDIR)$(pkgdocdir)/orchid.pdf
+uninstall-local:
+	$(RM) $(DESTDIR)$(pkgdocdir)/examples/orchid.tex
+#	$(RM) $(DESTDIR)$(pkgdocdir)/examples/orchid.ps
+#	$(RM) $(DESTDIR)$(pkgdocdir)/examples/orchid.pdf
 
 clean-local:
 	$(RM) *.log *.aux *.dvi
