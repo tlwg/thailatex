@@ -60,10 +60,18 @@ rm -f %{manifest}
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/sbin/sync-thailatex
+/usr/sbin/sync-thailatex install
+/usr/sbin/sync-babel install
 
 %triggerin -- tetex
-/usr/sbin/sync-thailatex
+/usr/sbin/sync-thailatex install
+/usr/sbin/sync-babel install
+
+%preun
+if [ "$1" = "0" ]; then # last uninstall only, do not run when upgraded
+  /usr/sbin/sync-thailatex uninstall
+  /usr/sbin/sync-babel uninstall
+fi
 
 %files -f %{manifest}
 %defattr(-,root,root)
@@ -72,6 +80,10 @@ rm -rf $RPM_BUILD_ROOT
 #%config
 
 %changelog
+* Thu Mar 06 2003 Theppitak Karoonboonyanan <thep@linux.thai.net>
+  - use the split sync-thailatex and sync-babel scripts separately
+  - add preun script for unregistering thailatex at last uninstallation
+
 * Tue Mar 04 2003 Theppitak Karoonboonyanan <thep@linux.thai.net>
   - add tetex-dvips to Requires: (as suggested by Vee Sattayamas)
 
