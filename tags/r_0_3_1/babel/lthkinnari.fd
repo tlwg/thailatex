@@ -1,0 +1,27 @@
+% lthkinnari.fd
+%
+% 2004/02/05 Poonlap Veerathanabutr <poonlap@linux.thai.net>
+%            - first release (based on lthgaruda.fd)
+
+\ProvidesFile{lthkinnari.fd}[2004/02/05 v1.0 Thai font definitions]
+
+% Primary declarations
+\DeclareFontFamily{LTH}{kinnari}{}
+\DeclareFontShape{LTH}{kinnari}{m}{n}{<->s * [1.3] kinnari}{}
+\DeclareFontShape{LTH}{kinnari}{m}{sl}{<->s * [1.3] kinnari_o}{}
+%%%%%%% bold series
+\DeclareFontShape{LTH}{kinnari}{b}{n}{<->s * [1.3] kinnari_b}{}
+\DeclareFontShape{LTH}{kinnari}{b}{sl}{<->s * [1.3] kinnari_bo}{}
+
+% Substitutions
+\DeclareFontShape{LTH}{kinnari}{m}{it}{<->ssub * kinnari/m/sl}{}
+\DeclareFontShape{LTH}{kinnari}{b}{it}{<->ssub * kinnari/b/sl}{}
+
+\DeclareFontShape{LTH}{kinnari}{bx}{n}{<->ssub * kinnari/b/n}{}
+\DeclareFontShape{LTH}{kinnari}{bx}{sl}{<->ssub * kinnari/b/sl}{}
+\DeclareFontShape{LTH}{kinnari}{bx}{it}{<->ssub * kinnari/b/sl}{}
+\endinput
+
+% 
+% EOF
+%

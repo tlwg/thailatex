@@ -1,0 +1,27 @@
+\relax
+\metrics
+\needsfontinstversion{1.800}
+
+\resetglyph{uni0E2C}
+  \glyph{uni0E2C}{1000}
+  \samesize{uni0E1F}
+\endsetglyph
+
+\setglyph{uni0E38left}
+  \glyph{uni0E38}{1000}
+\endsetglyph
+
+\setglyph{uni0E39left}
+  \glyph{uni0E39}{1000}
+\endsetglyph
+
+\setglyph{quoteleftthai}
+  \glyph{quoteleft}{1000}
+\endsetglyph
+
+\setglyph{quoterightthai}
+  \glyph{quoteright}{1000}
+\endsetglyph
+
+\endmetrics
+\end{document}
