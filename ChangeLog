@@ -4,6 +4,8 @@
 	  comment
 	* configure.in, fonts/Makefile.am:
 	  Check & use updmap script from appropriate location
+	* configure.in:
+	  Version 0.2.99.0
 
 2003-10-27 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* emacs/Makefile.am:
