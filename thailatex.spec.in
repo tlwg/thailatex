@@ -37,7 +37,7 @@ mkdir -p $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
 # __os_install_post is implicitly expanded after the
-# %install section... do it now, and then disable it,
+# install section... do it now, and then disable it,
 # so all work is done before building manifest.
 
 %{?__os_install_post}
@@ -72,6 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 #%config
 
 %changelog
+* Tue Jan 28 2003 Poonlap Veerathanabutr <poonlap@linux.thai.net>
+  - fix some comment in spec file which cause problems
+
 * Mon Aug 05 2002 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
   - add BuildRequires
   - add %clean script
