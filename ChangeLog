@@ -1,5 +1,12 @@
-2002-08-05 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+2003-01-09 Theppitak Karoonboonyanan <thep@linux.thai.net>
+	* Makefile.am:
+	  Use install-data-hook instead of install-data-local
+	  and uninstall-hook instead of uninstall-local for proper
+	  operation sequence.
+	* configure.in:
+	  Version 0.2.6.
 
+2002-08-05 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* thailatex.spec.in:
 	  Add BuildRequires. Add %clean script. Clear RPM build dir
 	  before installing.
