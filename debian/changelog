@@ -1,8 +1,18 @@
-thailatex (0.2.2.cvsXXXXXXXX) unstable; urgency=low
+thailatex (0.2.2.cvs20011205) unstable; urgency=low
+
+  * King Birthday Release.
+  * Ditch patch-babel.sty from the postinstall. (closes: #122016)
+  * Provide patched babel.sty instead, hence depends on version of
+    tetex-base.
+  * New thainumber and thaitoday as document option.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Tue,  4 Dec 2001 17:33:29 +1100
+
+thailatex (0.2.2.cvs20010403) unstable; urgency=low
 
   * Finally, debian dir is in upstream cvs
 
- -- Chanop Silpa-Anan <chanop@debian.org>  Tue,  3 Apr 2001 09:34:44 +1000
+ -- Chanop Silpa-Anan <chanop@debian.org>  Tue,  3 Apr 2001 09:46:19 +1000
 
 thailatex (0.2.2-pre4-1) unstable; urgency=low
 
@@ -22,8 +32,3 @@ thailatex (0.2.2-pre1-1) unstable; urgency=low
   * Initial Release
 
  -- Chanop Silpa-Anan <chanop@debian.org>  Wed, 29 Nov 2000 06:01:23 +1100
-
-Local variables:
-mode: debian-changelog
-add-log-mailing-address "chanop@debian.org"
-End:

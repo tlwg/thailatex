@@ -36,13 +36,6 @@ case "$1" in
       fi
       if [ -x /usr/bin/texhash ] ; then \
          /usr/bin/texhash ; \
-      fi                                                                                                                                    
-      read -n 1 -p "Do you want to run patch-babel to patch babel.sty? [Y/n]" RET
-      if [ "$RET" != "n" ] ; then
-        /usr/sbin/patch-babel
-      else
-        echo "You may want to run patch-babel in order to update babel package"
-        echo " "
       fi
     ;;
 

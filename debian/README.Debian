@@ -1,9 +1,10 @@
 thailatex for Debian
 ----------------------
 
-This is Thai latex package for Debian. You may want to run patch-babel
-located in /usr/sbin for a more complete babel Thai support.
-See README.
+This is Thai latex package for Debian.
+The package is very usable. You may want to convert to pdf before
+printing as I have experienced printing directly to postscript printer
+using the postscript output.
 
 
  -- Chanop Silpa-Anan <chanop@debian.org>, Sat, 10 Feb 2001 03:05:45 +1100

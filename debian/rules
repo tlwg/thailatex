@@ -32,7 +32,7 @@ clean:
 	rm -f build-stamp configure-stamp
 
 	# Add here commands to clean up after the build process.
-	-$(MAKE) clean
+	-$(MAKE) distclean
 
 	dh_clean
 
@@ -46,10 +46,9 @@ install: build
 	$(MAKE) install prefix=`pwd`/debian/thailatex/usr
 	rm -rf debian/thailatex/usr/share/doc
 	rm -f debian/thailatex/usr/share/emacs/site-lisp/site-start.el
-	mkdir -p debian/thailatex/usr/share/emacs/site-lisp/thailatex
 	mv debian/thailatex/usr/share/emacs/site-lisp/thai-latex-setup.el debian/thailatex/usr/share/emacs/site-lisp/thailatex
-	mkdir -p debian/thailatex/etc/texmf/dvips
 	mv debian/thailatex/usr/share/texmf/dvips/base/psfonts.map debian/thailatex/etc/texmf/dvips/thaifonts.map
+	cp debian/babel.sty debian/thailatex/usr/share/texmf/tex/generic/babel
 
 # Build architecture-independent files here.
 binary-indep: build install
@@ -60,16 +59,10 @@ binary-arch: build install
 #	dh_testversion
 	dh_testdir
 	dh_testroot
-#	dh_installdebconf	
 	dh_installdocs
 	dh_installexamples doc/orchid.tex doc/Makefile
 	dh_installmenu
 	dh_installemacsen
-#	dh_installpam
-#	dh_installinit
-#	dh_installcron
-#	dh_installmanpages
-#	dh_installinfo
 	dh_undocumented patch-babel.1 tlatex.1
 	dh_installchangelogs
 	cp ChangeLog debian/thailatex/usr/share/doc/thailatex
@@ -77,11 +70,7 @@ binary-arch: build install
 	dh_strip
 	dh_compress
 	dh_fixperms
-	# You may want to make some executables suid here.
-#	dh_suidregister
-#	dh_makeshlibs
 	dh_installdeb
-#	dh_perl
 	dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums
