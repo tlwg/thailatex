@@ -76,48 +76,56 @@ dbttx.enc:
 	$(RM) $@
 	$(LN_S) $(top_srcdir)/dvips/dbttx.enc $@ 
 
+dbtt.tfm: dbtt.afm dbttx.enc
 dbttx.vpl: dbtt.afm dbttx.enc
 	$(AFM2TFM) $(srcdir)/dbtt.afm -v dbttx.vpl -T dbttx.enc dbtt.tfm
 
 dbttx.tfm: dbttx.vpl
 	$(VPTOVF) dbttx
 
+dbttb.tfm: dbttb.afm dbttx.enc
 dbttxb.vpl: dbttb.afm dbttx.enc
 	$(AFM2TFM) $(srcdir)/dbttb.afm -v dbttxb.vpl -T dbttx.enc dbttb.tfm
 
 dbttxb.tfm: dbttxb.vpl
 	$(VPTOVF) dbttxb
 
+dbttbi.tfm: dbttbi.afm dbttx.enc
 dbttxbi.vpl: dbttbi.afm dbttx.enc
 	$(AFM2TFM) $(srcdir)/dbttbi.afm -v dbttxbi.vpl -T dbttx.enc dbttbi.tfm
 
 dbttxbi.tfm: dbttxbi.vpl
 	$(VPTOVF) dbttxbi
 
+dbtti.tfm: dbtti.afm dbttx.enc
 dbttxi.vpl: dbtti.afm dbttx.enc
 	$(AFM2TFM) $(srcdir)/dbtti.afm -v dbttxi.vpl -T dbttx.enc dbtti.tfm
 
 dbttxi.tfm: dbttxi.vpl
 	$(VPTOVF) dbttxi
 
+rnorasi_b.tfm: norasi_b.afm TeXTIS.enc
 norasi_b.vpl: norasi_b.afm TeXTIS.enc
 	$(AFM2TFM) $(srcdir)/norasi_b.afm -v norasi_b.vpl -T TeXTIS.enc rnorasi_b.tfm
 
 norasi_b.tfm: norasi_b.vpl
 	$(VPTOVF) norasi_b
 
+rnorasi_bi.tfm: norasi_bi.afm TeXTIS.enc
 norasi_bi.vpl: norasi_bi.afm TeXTIS.enc
 	$(AFM2TFM) $(srcdir)/norasi_bi.afm -v norasi_bi.vpl -T TeXTIS.enc rnorasi_bi.tfm
 
 norasi_bi.tfm: norasi_bi.vpl
 	$(VPTOVF) norasi_bi
 
+rnorasi_i.tfm: norasi_i.afm TeXTIS.enc
 norasi_i.vpl: norasi_i.afm TeXTIS.enc
 	$(AFM2TFM) $(srcdir)/norasi_i.afm -v norasi_i.vpl -T TeXTIS.enc rnorasi_i.tfm
 
 norasi_i.tfm: norasi_i.vpl
 	$(VPTOVF) norasi_i
 
+rnorasi_n.tfm: norasi_n.afm TeXTIS.enc
 norasi_n.vpl: norasi_n.afm TeXTIS.enc
 	$(AFM2TFM) $(srcdir)/norasi_n.afm -v norasi_n.vpl -T TeXTIS.enc rnorasi_n.tfm
 
