@@ -24,6 +24,8 @@
 	* babel/lthdbtt.fd, babel/lthnorasi.fd, +babel/lthgaruda.fd:
 	  Merge Poonlap's changes to the font descriptions.
 	  Add font description for Garuda.
+	* babel/Makefile.am:
+	  Update babel file list.
 
 2003-01-09 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* Makefile.am:
