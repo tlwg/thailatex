@@ -14,6 +14,15 @@ EXTRA_DIST = \
 	norasi_i.pfb \
 	norasi_bo.pfb \
 	norasi_bi.pfb \
+	kinnari.pfb \
+	kinnari_b.pfb \
+	kinnari_o.pfb \
+	kinnari_bo.pfb \
+	pmono.pfb \
+	pmono_b.pfb \
+	pmono_o.pfb \
+	pmono_bo.pfb \
+	purisa.pfb \
 	dbtt.afm \
 	dbtt_b.afm \
 	dbtt_o.afm \
@@ -27,7 +36,16 @@ EXTRA_DIST = \
 	norasi_o.afm \
 	norasi_i.afm \
 	norasi_bo.afm \
-	norasi_bi.afm
+	norasi_bi.afm \
+	kinnari.afm \
+	kinnari_b.afm \
+	kinnari_o.afm \
+	kinnari_bo.afm \
+	pmono.afm \
+	pmono_b.afm \
+	pmono_o.afm \
+	pmono_bo.afm \
+	purisa.afm
 
 DISTCLEANFILES = thai.map
 
@@ -61,7 +79,18 @@ type1_DATA = \
 	norasi_o.pfb \
 	norasi_i.pfb \
 	norasi_bo.pfb \
-	norasi_bi.pfb
+	norasi_bi.pfb \
+	kinnari.pfb \
+	kinnari_b.pfb \
+	kinnari_o.pfb \
+	kinnari_bo.pfb \
+	pmono.pfb \
+	pmono_b.pfb \
+	pmono_o.pfb \
+	pmono_bo.pfb \
+	purisa.pfb
+
+
 
 afm_DATA = \
 	dbtt.afm \
@@ -77,7 +106,18 @@ afm_DATA = \
 	norasi_o.afm \
 	norasi_i.afm \
 	norasi_bo.afm \
-	norasi_bi.afm
+	norasi_bi.afm \
+	kinnari.afm \
+	kinnari_b.afm \
+	kinnari_o.afm \
+	kinnari_bo.afm \
+	pmono.afm \
+	pmono_b.afm \
+	pmono_o.afm \
+	pmono_bo.afm \
+	purisa.afm
+
+
 
 tfm_DATA = \
 	dbtt.tfm \
@@ -94,6 +134,15 @@ tfm_DATA = \
 	norasi_i.tfm \
 	norasi_bo.tfm \
 	norasi_bi.tfm \
+	kinnari.tfm \
+	kinnari_b.tfm \
+	kinnari_o.tfm \
+	kinnari_bo.tfm \
+	pmono.tfm \
+	pmono_b.tfm \
+	pmono_o.tfm \
+	pmono_bo.tfm \
+	purisa.tfm \
 	rdbtt.tfm \
 	rdbtt_b.tfm \
 	rdbtt_o.tfm \
@@ -107,7 +156,18 @@ tfm_DATA = \
 	rnorasi_o.tfm \
 	rnorasi_i.tfm \
 	rnorasi_bo.tfm \
-	rnorasi_bi.tfm
+	rnorasi_bi.tfm \
+	rkinnari.tfm \
+	rkinnari_b.tfm \
+	rkinnari_o.tfm \
+	rkinnari_bo.tfm \
+	rpmono.tfm \
+	rpmono_b.tfm \
+	rpmono_o.tfm \
+	rpmono_bo.tfm \
+	rpurisa.tfm
+
+
 
 vf_DATA = \
 	dbtt.vf \
@@ -123,7 +183,18 @@ vf_DATA = \
 	norasi_o.vf \
 	norasi_i.vf \
 	norasi_bo.vf \
-	norasi_bi.vf
+	norasi_bi.vf \
+	kinnari.vf \
+	kinnari_b.vf \
+	kinnari_o.vf \
+	kinnari_bo.vf \
+	pmono.vf \
+	pmono_b.vf \
+	pmono_o.vf \
+	pmono_bo.vf \
+	purisa.vf
+
+
 
 # Local Rules
 
