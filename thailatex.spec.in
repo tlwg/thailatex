@@ -28,59 +28,41 @@ make
 mkdir -p $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
+# __os_install_post is implicitly expanded after the
+# %install section... do it now, and then disable it,
+# so all work is done before building manifest.
+
+%{?__os_install_post}
+%define __os_install_post %{nil}
+
+# build the file list automagically into %{manifest}
+
+cd $RPM_BUILD_ROOT
+rm -f %{manifest}
+find . -type d \
+        | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' >> %{manifest}
+find . -type f \
+        | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
+find . -type l \
+        | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
+
 
 %post
 
 %postun
 
-%files
-%doc LICENSE README doc/orchid.tex doc/orchid.ps
-/usr/share/texmf/tex/generic/babel/thai.ldf
-/usr/share/texmf/tex/generic/babel/thai.sty
-/usr/share/texmf/tex/generic/babel/thswitch.sty
-/usr/share/texmf/tex/generic/babel/lthenc.def
-/usr/share/texmf/tex/generic/babel/lthdbttx.fd
-/usr/share/texmf/tex/generic/babel/lthnorasi.fd
-/usr/share/texmf/fonts/tfm/public/thai/dbtt.tfm
-/usr/share/texmf/fonts/tfm/public/thai/dbttb.tfm
-/usr/share/texmf/fonts/tfm/public/thai/dbttbi.tfm
-/usr/share/texmf/fonts/tfm/public/thai/dbtti.tfm
-/usr/share/texmf/fonts/tfm/public/thai/dbttx.tfm
-/usr/share/texmf/fonts/tfm/public/thai/dbttxb.tfm
-/usr/share/texmf/fonts/tfm/public/thai/dbttxbi.tfm
-/usr/share/texmf/fonts/tfm/public/thai/dbttxi.tfm
-/usr/share/texmf/fonts/tfm/public/thai/rnorasi_b.tfm
-/usr/share/texmf/fonts/tfm/public/thai/rnorasi_bi.tfm
-/usr/share/texmf/fonts/tfm/public/thai/rnorasi_i.tfm
-/usr/share/texmf/fonts/tfm/public/thai/rnorasi_n.tfm
-/usr/share/texmf/fonts/tfm/public/thai/norasi_b.tfm
-/usr/share/texmf/fonts/tfm/public/thai/norasi_bi.tfm
-/usr/share/texmf/fonts/tfm/public/thai/norasi_i.tfm
-/usr/share/texmf/fonts/tfm/public/thai/norasi_n.tfm
-/usr/share/texmf/fonts/vf/public/thai/dbttx.vf
-/usr/share/texmf/fonts/vf/public/thai/dbttxb.vf
-/usr/share/texmf/fonts/vf/public/thai/dbttxbi.vf
-/usr/share/texmf/fonts/vf/public/thai/dbttxi.vf
-/usr/share/texmf/fonts/vf/public/thai/norasi_b.vf
-/usr/share/texmf/fonts/vf/public/thai/norasi_bi.vf
-/usr/share/texmf/fonts/vf/public/thai/norasi_i.vf
-/usr/share/texmf/fonts/vf/public/thai/norasi_n.vf
-/usr/share/texmf/fonts/type1/public/thai/dbtt.pfb
-/usr/share/texmf/fonts/type1/public/thai/dbttb.pfb
-/usr/share/texmf/fonts/type1/public/thai/dbttbi.pfb
-/usr/share/texmf/fonts/type1/public/thai/dbtti.pfb
-/usr/share/texmf/fonts/type1/public/thai/norasi_b.pfb
-/usr/share/texmf/fonts/type1/public/thai/norasi_bi.pfb
-/usr/share/texmf/fonts/type1/public/thai/norasi_i.pfb
-/usr/share/texmf/fonts/type1/public/thai/norasi_n.pfb
-/usr/share/texmf/dvips/base/TeXTIS.enc
-/usr/share/texmf/dvips/base/dbttx.enc
-
-/usr/local/share/emacs/site-lisp/thai-latex-setup.el
+%files -f %{manifest}
+%defattr(-,root,root)
+#%doc README
+#%docdir
+#%config
 
 %changelog
+* Wed Dec 05 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - use manifest
+
 * Wed Jan 03 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
-- thailatex.spec : use variables for sources, path names; use BuildRoot
+  - thailatex.spec : use variables for sources, path names; use BuildRoot
 
 * Thu May 25 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
   - rearrange package and create Makefiles
