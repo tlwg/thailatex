@@ -1,3 +1,9 @@
+2003-02-25 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in:
+	  Fix AC_PATH_PROG so $PATH is also tried when looking for updmap
+	  (as suggested by Vee Sattayamas)
+
 2003-02-12 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/lthgaruda.fd:

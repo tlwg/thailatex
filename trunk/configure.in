@@ -56,7 +56,7 @@ AC_MSG_CHECKING(--with-texmfdir)
 AC_MSG_RESULT("$texmfdir")                                                                                                           
 AC_SUBST(texmfdir)
 
-AC_PATH_PROG(UPDMAP,updmap,no,/usr/local/bin:/usr/bin:/bin:$texmfdir/dvips/config/updmap)
+AC_PATH_PROG(UPDMAP,updmap,no,$PATH:$texmfdir/dvips/config/updmap)
 if test "x$UPDMAP" = "xno" ; then
   AC_MSG_ERROR([You need updmap (from TeTeX distribution)])
 fi
