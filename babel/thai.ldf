@@ -3,6 +3,10 @@
 %% created by Surapant Meknavin: surapan@nectec.or.th
 %% 
 %% --------------------------------------------------
+%% 2004/03/18 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - move \frontmatter and \mainmatter redefinition back
+%%              under thainumber option (wrongly moved along with
+%%              previous appendix fix)
 %% 2004/03/06 Theppitak Karoonboonyanan <thep@linux.thai.net>
 %%            - use 'garuda' instead of 'dbtt' as default Thai sffamily
 %% 2004/03/04 Theppitak Karoonboonyanan <thep@linux.thai.net>
@@ -159,6 +163,16 @@
 \def\@thmcounter#1{\noexpand\thainum{#1}} 
 \def\datethai{%
   \def\today{\@thainum\day \space \th@month\space ¾.È.~\@thainum\th@year}}
+\@ifclassloaded{book}{%
+  % redefine page numbering for frontmatter and mainmatter
+  \def\ps@headnum{\let\@mkboth\@gobbletwo
+       \def\@oddhead{\reset@font\hfil\thepage\hfil}\let\@oddfoot\@empty
+       \let\@evenhead\@oddhead\let\@evenfoot\@empty}
+  \let\@ltxfrontmatter\frontmatter
+  \renewcommand\frontmatter{\@ltxfrontmatter\pagestyle{headnum}\pagenumbering{thaibracenum}}
+  \let\@ltxmainmatter\mainmatter
+  \renewcommand\mainmatter{\@ltxmainmatter\pagestyle{headings}\pagenumbering{thainum}}
+}{}
 % Finish Declaring
 \relax
 }
@@ -170,14 +184,6 @@
   \setcounter{section}{0}%
   \gdef\@chapapp{\appendixname}%
   \gdef\thechapter{\@thaialph\c@chapter}}
-% redefine page numbering for frontmatter and mainmatter
-\def\ps@headnum{\let\@mkboth\@gobbletwo
-     \def\@oddhead{\reset@font\hfil\thepage\hfil}\let\@oddfoot\@empty
-     \let\@evenhead\@oddhead\let\@evenfoot\@empty}
-\let\@ltxfrontmatter\frontmatter
-\renewcommand\frontmatter{\@ltxfrontmatter\pagestyle{headnum}\pagenumbering{thaibracenum}}
-\let\@ltxmainmatter\mainmatter
-\renewcommand\mainmatter{\@ltxmainmatter\pagestyle{headings}\pagenumbering{thainum}}
 }{}
 \@ifclassloaded{report}{%
 \renewcommand\appendix{\par

@@ -1,3 +1,10 @@
+2004-03-18 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.ldf:
+	  Move \frontmatter and \mainmatter redefinition back under
+	  thainumber option (wrongly moved along with previous appendix fix)
+	  (bug reported by P'Joy)
+
 2004-03-10 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* NEWS, configure.in:
