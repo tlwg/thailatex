@@ -1,3 +1,12 @@
+2004-02-06 Poonlap Veerathanabutr <poonlap@linux.thai.net>
+	
+	* doc/teststd.tex:
+	  Rewrite teststd.tex including new fonts.
+
+	* fonts/purisa.{pfb,afm}, fonts/pmono*.{pfb,afm},
+	  fonts/kinnari*.{pfb,afm}, fonts/Makefile.am:
+	  Add new fonts and modify Makefile.am.
+
 2004-02-03 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* README:
