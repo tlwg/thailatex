@@ -1,3 +1,8 @@
+2003-11-22 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/{garuda,dbtt}*.{afm,pfb}:
+	  Use updated fonts from thaifonts-scalable cvs snapshot.
+
 2003-10-25 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/Makefile.am:
