@@ -1,3 +1,8 @@
+2001-12-05 Chanop Silpa-Anan <chanop@debian.org>
+	* add support for using Thai numbering in page, section,
+	  date, and etc.
+	* Thank to K.ขอม
+
 2001-02-23 Chanop Silpa-Anan <chanop@debian.org>
 	* move patch-babel script from babel to scripts dir
 	* add tlatex scipt for compiling Thai document to scripts dir
