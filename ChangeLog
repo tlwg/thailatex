@@ -1,3 +1,10 @@
+2004-04-08 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.ldf:
+	  Borrow code from previous encoding fix to inhibit
+	  capitalizing chapters & sections in book headers.
+	  (proposed by P'Joy)
+
 2004-04-02 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* TODO:
