@@ -1,3 +1,9 @@
+2003-03-03 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Add DISTCLEANFILES to clear up generated files
+	  Remove old instructions in comments
+
 2003-03-02 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in:
