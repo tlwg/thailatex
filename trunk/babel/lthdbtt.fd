@@ -11,19 +11,19 @@
 
 % Primary declarations
 \DeclareFontFamily{LTH}{dbtt}{}
-\DeclareFontShape{LTH}{dbtt}{m}{n}{<->[1.4]dbtt}{}
-\DeclareFontShape{LTH}{dbtt}{m}{sl}{<->[1.4]dbtt_o}{}
+\DeclareFontShape{LTH}{dbtt}{m}{n}{<->s * [1.3] dbtt}{}
+\DeclareFontShape{LTH}{dbtt}{m}{sl}{<->s * [1.3] dbtt_o}{}
 %%%%%%% bold series
-\DeclareFontShape{LTH}{dbtt}{b}{n}{<->[1.4]dbtt_b}{}
-\DeclareFontShape{LTH}{dbtt}{b}{sl}{<->[1.4]dbtt_bo}{}
+\DeclareFontShape{LTH}{dbtt}{b}{n}{<->s * [1.3] dbtt_b}{}
+\DeclareFontShape{LTH}{dbtt}{b}{sl}{<->s * [1.3] dbtt_bo}{}
 
 % Substitutions
-\DeclareFontShape{LTH}{dbtt}{m}{it}{<->sub * dbtt/m/sl}{}
-\DeclareFontShape{LTH}{dbtt}{b}{it}{<->sub * dbtt/b/sl}{}
+\DeclareFontShape{LTH}{dbtt}{m}{it}{<->ssub * dbtt/m/sl}{}
+\DeclareFontShape{LTH}{dbtt}{b}{it}{<->ssub * dbtt/b/sl}{}
 
-\DeclareFontShape{LTH}{dbtt}{bx}{n}{<->sub * dbtt/b/n}{}
-\DeclareFontShape{LTH}{dbtt}{bx}{sl}{<->sub * dbtt/b/sl}{}
-\DeclareFontShape{LTH}{dbtt}{bx}{it}{<->sub * dbtt/b/sl}{}
+\DeclareFontShape{LTH}{dbtt}{bx}{n}{<->ssub * dbtt/b/n}{}
+\DeclareFontShape{LTH}{dbtt}{bx}{sl}{<->ssub * dbtt/b/sl}{}
+\DeclareFontShape{LTH}{dbtt}{bx}{it}{<->ssub * dbtt/b/sl}{}
 \endinput
 
 % 

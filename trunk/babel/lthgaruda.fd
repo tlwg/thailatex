@@ -14,11 +14,11 @@
 
 % Primary declarations
 \DeclareFontFamily{LTH}{garuda}{}
-\DeclareFontShape{LTH}{garuda}{m}{n}{<->[1.3]garuda}{}
-\DeclareFontShape{LTH}{garuda}{m}{sl}{<->[1.3]garuda_o}{}
+\DeclareFontShape{LTH}{garuda}{m}{n}{<->s * [1.3] garuda}{}
+\DeclareFontShape{LTH}{garuda}{m}{sl}{<->s * [1.3] garuda_o}{}
 %%%%%%% bold series
-\DeclareFontShape{LTH}{garuda}{b}{n}{<->[1.3]garuda_b}{}
-\DeclareFontShape{LTH}{garuda}{b}{sl}{<->[1.3]garuda_bo}{}
+\DeclareFontShape{LTH}{garuda}{b}{n}{<->s * [1.3] garuda_b}{}
+\DeclareFontShape{LTH}{garuda}{b}{sl}{<->s * [1.3] garuda_bo}{}
 
 % Substitutions
 \DeclareFontShape{LTH}{garuda}{m}{it}{<->ssub * garuda/m/sl}{}
@@ -26,7 +26,7 @@
 
 \DeclareFontShape{LTH}{garuda}{bx}{n}{<->ssub * garuda/b/n}{}
 \DeclareFontShape{LTH}{garuda}{bx}{sl}{<->ssub * garuda/b/sl}{}
-\DeclareFontShape{LTH}{garuda}{bx}{it}{<->ssub * garuda/b/it}{}
+\DeclareFontShape{LTH}{garuda}{bx}{it}{<->ssub * garuda/b/sl}{}
 \endinput
 
 % 
