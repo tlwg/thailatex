@@ -1,3 +1,9 @@
+2003-12-05 Chanop Silpa-Anan <chanop@debian.org>
+
+	* fonts/lthuni.enc, fonts/norasi.{afm,pfb}, fonts/Makefile.am:
+	  Update norasi to the latest CVS from thaifonts-scalable; also
+	  add the italic variant.
+
 2003-11-22 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/{garuda,dbtt}*.{afm,pfb}:
