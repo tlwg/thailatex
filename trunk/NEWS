@@ -1,3 +1,11 @@
+0.3.3 (2004-09-27)
+=====
+- Do not capitalize chapters & sections in book headers.
+  (proposed by P'Joy)
+- Guard against recursive assignments of \ltxTeX and \ltxLaTeX
+  (reported by donzakh)
+- Updated scaled fonts from thaifonts-scalable 0.4.2.
+
 0.3.2 (2004-03-25)
 =====
 - Fix page numbering bug in \frontmatter and \mainmatter redefinition
