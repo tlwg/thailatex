@@ -3,6 +3,10 @@
 %% created by Surapant Meknavin: surapan@nectec.or.th
 %% 
 %% --------------------------------------------------
+%% 2004/04/08 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - borrow code from previous encoding fix to inhibit
+%%              capitalizing chapters & sections in book headers.
+%%              (proposed by P'Joy)
 %% 2004/03/18 Theppitak Karoonboonyanan <thep@linux.thai.net>
 %%            - move \frontmatter and \mainmatter redefinition back
 %%              under thainumber option (wrongly moved along with
@@ -198,6 +202,11 @@
   \setcounter{subsection}{0}%
   \gdef\thesection{\@thaialph\c@section}}
 }{}
+% Do not capitalize chapters & sections in book headers
+\@ifclassloaded{book}{%
+  \renewcommand{\chaptermark}[1]{\markboth{\thaitext #1}{}}
+  \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+}{}
 % Initialize character codes for Thai
 \catcode`\^^a1=11 \lccode`\^^a1=`\^^a1 \uccode`\^^a1=`\^^a1
 \catcode`\^^a2=11 \lccode`\^^a2=`\^^a2 \uccode`\^^a2=`\^^a2
@@ -287,24 +296,6 @@
 \catcode`\^^fa=12 \lccode`\^^fa=`\^^fa \uccode`\^^fa=`\^^fa
 \catcode`\^^fb=12 \lccode`\^^fb=`\^^fb \uccode`\^^fb=`\^^fb
 % End Initialize character codes for Thai
-% Fix wrong encoding charset in headings in class book
-%\@ifclassloaded{book}{%
-%  \renewcommand{\chaptermark}[1]{\markboth{\thaitext #1}{}}
-%  \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-%\renewcommand\tableofcontents{%
-%    \if@twocolumn
-%      \@restonecoltrue\onecolumn
-%    \else
-%      \@restonecolfalse
-%    \fi
-%    \chapter*{\contentsname
-%        \@mkboth{%
-%           \contentsname}{\contentsname}}%
-%    \@starttoc{toc}%
-%    \if@restonecol\twocolumn\fi
-%    }
-%}{}
-% End Fix wrong encoding charset in headings in class book
 \def\th@month{%
   \ifcase\month\or
     มกราคม\or กุมภาพันธ์\or มีนาคม\or เมษายน
