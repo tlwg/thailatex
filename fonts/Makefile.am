@@ -103,6 +103,9 @@ vf_DATA = \
 
 r%.tfm: %.afm lthuni.enc
 %.vpl: %.afm lthuni.enc
+	if [ ! -f $*.afm ]; then \
+	  $(LN_S) $(srcdir)/$*.afm $*.afm; \
+	fi
 	if [ ! -f lthuni.enc ]; then \
 	  $(LN_S) $(srcdir)/lthuni.enc lthuni.enc; \
 	fi
