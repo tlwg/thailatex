@@ -1,3 +1,8 @@
+2004-02-02 Poonlap Veerathanabutr <poonlap@linux.thai.net>
+
+	* babel.thai.ldf:
+	  Fixed \lccode and \uccode.
+
 2003-12-21 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* scripts/sync-thailatex.in, scripts/sync-babel.in,
