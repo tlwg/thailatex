@@ -29,6 +29,10 @@
 \DeclareTextSymbol{\textbullet}{LTH}{149}
 \DeclareTextSymbol{\textendash}{LTH}{150}
 \DeclareTextSymbol{\textemdash}{LTH}{151}
+\DeclareTextSymbol{\textyamakkan}{LTH}{238}
+\DeclareTextSymbol{\textfongmun}{LTH}{239}
+\DeclareTextSymbol{\textangkhankhu}{LTH}{250}
+\DeclareTextSymbol{\textkhomut}{LTH}{251}
 \endinput
 %%
 %% End of file `LTHenc.def'.
