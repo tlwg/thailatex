@@ -42,7 +42,9 @@ EXTRA_DIST = \
 	kinnari.afm \
 	kinnari_b.afm \
 	kinnari_o.afm \
+	kinnari_i.afm \
 	kinnari_bo.afm \
+	kinnari_bi.afm \
 	ttype.afm \
 	ttype_b.afm \
 	ttype_o.afm \

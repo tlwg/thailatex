@@ -1,3 +1,9 @@
+2005-04-05  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Add missing entries (kinnari_{i,bi}.afm) in EXTRA_DIST.
+	  (bug noticed by "ball" in LTN forum).
+
 2005-03-29  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* fonts/Makefile.am:
