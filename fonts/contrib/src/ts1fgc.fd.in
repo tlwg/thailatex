@@ -1,0 +1,10 @@
+\ProvidesFile{ts1fgc.fd}[2003/06/06 Chanop Silpa-Anan]
+
+\DeclareFontFamily{TS1}{fgc}{}
+
+\DeclareFontShape{TS1}{fgc}{m}{n}{<->ssub * cmss/m/n}{}
+\DeclareFontShape{TS1}{fgc}{m}{sl}{<->ssub * cmss/m/sl}{}
+
+\DeclareFontShape{TS1}{fgc}{bx}{n}{<->ssub * cmss/bx/n}{}
+\DeclareFontShape{TS1}{fgc}{bx}{sl}{<->ssub * cmss/bx/sl}{}
+\endinput

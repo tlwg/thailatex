@@ -1,0 +1,11 @@
+\ProvidesFile{t1fgcj.fd}[2003/06/04 Chanop Silpa-Anan]
+
+\DeclareFontFamily{T1}{fgcj}{}
+
+\DeclareFontShape{T1}{fgcj}{m}{n}{<->ssub * cmsj/m/n}{}
+\DeclareFontShape{T1}{fgcj}{m}{sl}{<->ssub * cmsj/m/sl}{}
+
+\DeclareFontShape{T1}{fgcj}{bx}{n}{<->ssub * cmsj/bx/n}{}
+\DeclareFontShape{T1}{fgcj}{bx}{sl}{<->ssub * cmsj/bx/sl}{}
+
+\endinput

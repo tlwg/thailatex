@@ -1,0 +1,49 @@
+
+%From ajeffrey@cs.depaul.edu Thu Jun  4 19:29:25 1998
+%Date: Thu, 04 Jun 1998 09:47:17 -0500
+%From: Alan Jeffrey <ajeffrey@cs.depaul.edu>
+%To: Fontinst mailing list <fontinst@cogs.susx.ac.uk>
+%Cc: Sebastian Kirsch <skirsch@t-online.de>
+%Subject: Re: A question about spacing
+
+%Rebecca and Rowland wrote:
+%> The space parameter is the same in both cases, but the  stretch, shrink,
+%> and extraspace parameters are markedly different.
+%> 
+%> The minor differences in xheight and quad are most likely due to rounding
+%> errors.
+%> 
+%> Does anyone have any idea what's going on?
+
+%Er, OK this is my fault.  I can't remember the syntax of my own file
+%formats.  Try replacing dostretch.mtx by:
+
+\relax
+
+\metrics
+
+\ifisint{italicslant}\then\setint{fontdimen(1)}{\int{italicslant}}\fi
+\ifisint{interword}\then\setint{fontdimen(2)}{\int{interword}}\fi
+\ifisint{stretchword}\then\setint{fontdimen(3)}{\int{stretchword}}\fi
+\ifisint{shrinkword}\then\setint{fontdimen(4)}{\int{shrinkword}}\fi
+\ifisint{xheight}\then\setint{fontdimen(5)}{\int{xheight}}\fi
+\ifisint{quad}\then\setint{fontdimen(6)}{\int{quad}}\fi
+\ifisint{extraspace}\then\setint{fontdimen(7)}{\int{extraspace}}\fi
+
+\endmetrics
+
+%then it'll work:
+
+%(FONTDIMEN
+%   (PARAMETER D 1 R 0.0)
+%   (PARAMETER D 2 R 3.32996)
+%   (PARAMETER D 3 R 1.65991)
+%   (PARAMETER D 4 R 1.10999)
+%   (PARAMETER D 5 R 4.29993)
+%   (PARAMETER D 6 R 10.0)
+%   (PARAMETER D 7 R 1.10999)
+%   )        
+
+%Doh!  
+
+%Alan.
