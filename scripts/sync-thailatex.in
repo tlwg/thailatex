@@ -4,6 +4,7 @@
 # License: GPL
 
 prefix=@prefix@
+UPDMAP_VER=@UPDMAP_VER@
 
 DVIPSFONTS_MAP=${prefix}/share/texmf/dvips/base/psfonts.map
 DVIPSCONFIG=${prefix}/share/texmf/dvips/config/config.ps
@@ -18,31 +19,28 @@ fi
 
 case "$1" in
   install)
-    # For tetex > 1.0.7 only
-    # @UPDMAP@ --enable Map thai.map
-
-    # For tetex <= 1.0.7
-
-    # add thai.map as additional map to dvips local config
-    mkdir -p `dirname $DVIPSCONFIG`
-    if test -f $DVIPSCONFIG; then
-      sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
-      mv -f /tmp/tmp.$$ $DVIPSCONFIG
+    if test "$UPDMAP_VER" = "2"; then
+      @UPDMAP@ --enable Map thai.map
+    else
+      # add thai.map as additional map to dvips local config
+      mkdir -p `dirname $DVIPSCONFIG`
+      if test -f $DVIPSCONFIG; then
+        sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
+        mv -f /tmp/tmp.$$ $DVIPSCONFIG
+      fi
+      echo "% thailatex" >> $DVIPSCONFIG
+      echo "p +thai.map" >> $DVIPSCONFIG
+  
+      # add thai.map as additional map to pdftex local config
+      mkdir -p `dirname $PDFTEXCONFIG`
+      if test -f $PDFTEXCONFIG; then
+        sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
+        mv -f /tmp/tmp.$$ $PDFTEXCONFIG
+      fi
+      echo "% thailatex"   >> $PDFTEXCONFIG
+      echo "map +thai.map" >> $PDFTEXCONFIG
     fi
-    echo "% thailatex" >> $DVIPSCONFIG
-    echo "p +thai.map" >> $DVIPSCONFIG
 
-    # add thai.map as additional map to pdftex local config
-    mkdir -p `dirname $PDFTEXCONFIG`
-    if test -f $PDFTEXCONFIG; then
-      sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
-      mv -f /tmp/tmp.$$ $PDFTEXCONFIG
-    fi
-    echo "% thailatex"   >> $PDFTEXCONFIG
-    echo "map +thai.map" >> $PDFTEXCONFIG
-
-    # -- end For tetex <= 1.0.7
-    
     @TEXHASH@
 
     # add Emacs macro for activating Thai LaTeX filter
@@ -57,24 +55,21 @@ case "$1" in
   ;;
 
   uninstall)
-    # For tetex > 1.0.7 only
-    # @UPDMAP@ --disable thai.map
-
-    # For tetex <= 1.0.7
-
-    # remove thai.map from dvips local config
-    if test -f $DVIPSCONFIG; then
-      sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
-      mv -f /tmp/tmp.$$ $DVIPSCONFIG
+    if test "$UPDMAP_VER" = "2"; then
+      @UPDMAP@ --disable thai.map
+    else
+      # remove thai.map from dvips local config
+      if test -f $DVIPSCONFIG; then
+        sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
+        mv -f /tmp/tmp.$$ $DVIPSCONFIG
+      fi
+  
+      # remove thai.map from pdftex local config
+      if test -f $PDFTEXCONFIG; then
+        sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
+        mv -f /tmp/tmp.$$ $PDFTEXCONFIG
+      fi
     fi
-
-    # remove thai.map from pdftex local config
-    if test -f $PDFTEXCONFIG; then
-      sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
-      mv -f /tmp/tmp.$$ $PDFTEXCONFIG
-    fi
-
-    # -- end For tetex <= 1.0.7
 
     @TEXHASH@
 
