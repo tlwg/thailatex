@@ -1,2 +1,2 @@
-/etc/texmf/dvips/thaifonts.map
+/etc/texmf/dvips/thai.map
 /etc/emacs/site-start.d/50thailatex.el
