@@ -17,7 +17,9 @@ EXTRA_DIST = \
 	kinnari.pfb \
 	kinnari_b.pfb \
 	kinnari_o.pfb \
+	kinnari_i.pfb \
 	kinnari_bo.pfb \
+	kinnari_bi.pfb \
 	ttype.pfb \
 	ttype_b.pfb \
 	ttype_o.pfb \
@@ -83,7 +85,9 @@ type1_DATA = \
 	kinnari.pfb \
 	kinnari_b.pfb \
 	kinnari_o.pfb \
+	kinnari_i.pfb \
 	kinnari_bo.pfb \
+	kinnari_bi.pfb \
 	ttype.pfb \
 	ttype_b.pfb \
 	ttype_o.pfb \
@@ -110,7 +114,9 @@ afm_DATA = \
 	kinnari.afm \
 	kinnari_b.afm \
 	kinnari_o.afm \
+	kinnari_i.afm \
 	kinnari_bo.afm \
+	kinnari_bi.afm \
 	ttype.afm \
 	ttype_b.afm \
 	ttype_o.afm \
@@ -137,7 +143,9 @@ tfm_DATA = \
 	kinnari.tfm \
 	kinnari_b.tfm \
 	kinnari_o.tfm \
+	kinnari_i.tfm \
 	kinnari_bo.tfm \
+	kinnari_bi.tfm \
 	ttype.tfm \
 	ttype_b.tfm \
 	ttype_o.tfm \
@@ -160,7 +168,9 @@ tfm_DATA = \
 	rkinnari.tfm \
 	rkinnari_b.tfm \
 	rkinnari_o.tfm \
+	rkinnari_i.tfm \
 	rkinnari_bo.tfm \
+	rkinnari_bi.tfm \
 	rttype.tfm \
 	rttype_b.tfm \
 	rttype_o.tfm \
@@ -187,7 +197,9 @@ vf_DATA = \
 	kinnari.vf \
 	kinnari_b.vf \
 	kinnari_o.vf \
+	kinnari_i.vf \
 	kinnari_bo.vf \
+	kinnari_bi.vf \
 	ttype.vf \
 	ttype_b.vf \
 	ttype_o.vf \

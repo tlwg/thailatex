@@ -1,3 +1,10 @@
+2005-01-24 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/lthkinnari.fd, fonts/Makefile.am,
+	  +fonts/kinnari_{i,bi}.{afm,pfb}:
+	  Add italic shape for Kinnari medium and bold face series. Fonts
+	  taken from thaifonts-scalable CVS snapshot.
+
 2005-01-15 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/norasi*.{afm,pfa}:
