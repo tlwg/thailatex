@@ -1,3 +1,11 @@
+2003-04-21 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/lthenc.def:
+	  Add special shape declarations e.g. \textquoteleft.
+
+	* fonts/lthuni.dnc:
+	  Add default ligkern set normally built-in in afm2tfm.
+	
 2003-04-18 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in:

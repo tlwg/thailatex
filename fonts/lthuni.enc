@@ -155,6 +155,16 @@
 %LIGKERN uni0E24 uni0E32 |=:> uni0E45 ;
 %LIGKERN uni0E26 uni0E32 |=:> uni0E45 ;
 
+%default ligature and kern set normally built-in in afm2tfm
+%LIGKERN hyphen hyphen =: endash ; endash hyphen =: emdash ;
+%LIGKERN quoteleft quoteleft =: quotedblleft ;
+%LIGKERN quoteright quoteright =: quotedblright ;
+%LIGKERN quotesingle quotesingle =: quotedblright ;
+%LIGKERN space {} * ; * {} space ; 0 {} * ; * {} 0 ;
+%LIGKERN 1 {} * ; * {} 1 ; 2 {} * ; * {} 2 ; 3 {} * ; * {} 3 ;
+%LIGKERN 4 {} * ; * {} 4 ; 5 {} * ; * {} 5 ; 6 {} * ; * {} 6 ;
+%LIGKERN 7 {} * ; * {} 7 ; 8 {} * ; * {} 8 ; 9 {} * ; * {} 9 ;
+
 /LTHEncoding [
 % 0x00
 /.notdef /.notdef /.notdef /.notdef 

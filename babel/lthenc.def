@@ -1,4 +1,6 @@
 %% Created by Surapant Meknavin: surapan@nectec.or.th
+%% 2002/04/21 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - add special shape declarations e.g. \textquoteleft
 %% 2000/05/10 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 %%            - encoding changed from TIS to LTH, according to TeX convention
 
@@ -20,6 +22,13 @@
   \textsuperscript{\textlatin{TM}}}
 \ProvideTextCommand{\SS}{LTH}{%
   \textlatin{SS}}
+\DeclareTextSymbol{\textquoteleft}{LTH}{145}
+\DeclareTextSymbol{\textquoteright}{LTH}{146}
+\DeclareTextSymbol{\textquotedblleft}{LTH}{147}
+\DeclareTextSymbol{\textquotedblright}{LTH}{148}
+\DeclareTextSymbol{\textbullet}{LTH}{149}
+\DeclareTextSymbol{\textendash}{LTH}{150}
+\DeclareTextSymbol{\textemdash}{LTH}{151}
 \endinput
 %%
 %% End of file `LTHenc.def'.
