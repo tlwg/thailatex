@@ -1,3 +1,13 @@
+2003-08-10 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.ldf:
+	  Fix translation of \prefacename.
+	  Redefine \frontmatter and \mainmatter for book class
+	  so thainumber option applies to the page numbering styles.
+	  [Experimental] Add initialization of Thai character codes
+	  to fix the \MakeUppercase and \MakeLowercase problem.
+	  Also comment out the old workarounds.
+
 2003-06-08 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/Makefile.am:
@@ -12,7 +22,7 @@
 	* fonts/norasi*.{pfb,afm}:
 	  Update using new Type1 font from thaifonts-scalable project.
 
-	* fonts/lthuni.end:
+	* fonts/lthuni.enc:
 	  Fix sara aam ligatures, however, these ligatures are not probably
 	  going to be used in regular text.
 
@@ -34,7 +44,7 @@
 	* babel/lthenc.def:
 	  Add special shape declarations e.g. \textquoteleft.
 
-	* fonts/lthuni.dnc:
+	* fonts/lthuni.enc:
 	  Add default ligkern set normally built-in in afm2tfm.
 	
 2003-04-18 Theppitak Karoonboonyanan <thep@linux.thai.net>

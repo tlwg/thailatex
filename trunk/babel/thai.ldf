@@ -3,6 +3,13 @@
 %% created by Surapant Meknavin: surapan@nectec.or.th
 %% 
 %% --------------------------------------------------
+%% 2003/08/10 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - fix translation of \prefacename
+%%            - redefine \frontmatter and \mainmatter for book class
+%%              so thainumber option applies to the page numbering styles
+%%            - (experimental) add initialization of Thai character codes
+%%              to fix the \MakeUppercase and \MakeLowercase problem
+%%              also comment out the old workarounds
 %% 2003/06/02 Chanop Silpa-Anan <chanop@debian.org>
 %%            - use "garuda" for default Thai sans serif since
 %%              "dbtt" is still slightly buggy
@@ -56,7 +63,7 @@
 % \DeclareTextFontCommand{\textol}{\outlfamily}
 \def\thaihyphenmins{11}
 \addto\captionsthai{%
-  \def\prefacename{บทนำ}%
+  \def\prefacename{คำนำ}%
   \def\refname{หนังสืออ้างอิง}%
   \def\abstractname{บทคัดย่อ}%
   \def\bibname{บรรณานุกรม}%
@@ -147,6 +154,14 @@
   \setcounter{section}{0}%
   \gdef\@chapapp{\appendixname}%
   \gdef\thechapter{\@thaialph\c@chapter}}
+% redefine page numbering for frontmatter and mainmatter
+\def\ps@headnum{\let\@mkboth\@gobbletwo
+     \def\@oddhead{\reset@font\hfil\thepage\hfil}\let\@oddfoot\@empty
+     \let\@evenhead\@oddhead\let\@evenfoot\@empty}
+\let\@ltxfrontmatter\frontmatter
+\renewcommand\frontmatter{\@ltxfrontmatter\pagestyle{headnum}\pagenumbering{thaibracenum}}
+\let\@ltxmainmatter\mainmatter
+\renewcommand\mainmatter{\@ltxmainmatter\pagestyle{headings}\pagenumbering{thainum}}
 }{}
 \@ifclassloaded{report}{%
 \renewcommand\appendix{\par
@@ -165,23 +180,112 @@
 \relax
 }
 % End \DeclareOption{thainumber}
+% Initialize character codes for Thai
+\catcode`\^^a1=11 \lccode`\^^a1=0 \uccode`\^^a1=0
+\catcode`\^^a2=11 \lccode`\^^a2=0 \uccode`\^^a2=0
+\catcode`\^^a3=11 \lccode`\^^a3=0 \uccode`\^^a3=0
+\catcode`\^^a4=11 \lccode`\^^a4=0 \uccode`\^^a4=0
+\catcode`\^^a5=11 \lccode`\^^a5=0 \uccode`\^^a5=0
+\catcode`\^^a6=11 \lccode`\^^a6=0 \uccode`\^^a6=0
+\catcode`\^^a7=11 \lccode`\^^a7=0 \uccode`\^^a7=0
+\catcode`\^^a8=11 \lccode`\^^a8=0 \uccode`\^^a8=0
+\catcode`\^^a9=11 \lccode`\^^a9=0 \uccode`\^^a9=0
+\catcode`\^^aa=11 \lccode`\^^aa=0 \uccode`\^^aa=0
+\catcode`\^^ab=11 \lccode`\^^ab=0 \uccode`\^^ab=0
+\catcode`\^^ac=11 \lccode`\^^ac=0 \uccode`\^^ac=0
+\catcode`\^^ad=11 \lccode`\^^ad=0 \uccode`\^^ad=0
+\catcode`\^^ae=11 \lccode`\^^ae=0 \uccode`\^^ae=0
+\catcode`\^^af=11 \lccode`\^^af=0 \uccode`\^^af=0
+\catcode`\^^b0=11 \lccode`\^^b0=0 \uccode`\^^b0=0
+\catcode`\^^b1=11 \lccode`\^^b1=0 \uccode`\^^b1=0
+\catcode`\^^b2=11 \lccode`\^^b2=0 \uccode`\^^b2=0
+\catcode`\^^b3=11 \lccode`\^^b3=0 \uccode`\^^b3=0
+\catcode`\^^b4=11 \lccode`\^^b4=0 \uccode`\^^b4=0
+\catcode`\^^b5=11 \lccode`\^^b5=0 \uccode`\^^b5=0
+\catcode`\^^b6=11 \lccode`\^^b6=0 \uccode`\^^b6=0
+\catcode`\^^b7=11 \lccode`\^^b7=0 \uccode`\^^b7=0
+\catcode`\^^b8=11 \lccode`\^^b8=0 \uccode`\^^b8=0
+\catcode`\^^b9=11 \lccode`\^^b9=0 \uccode`\^^b9=0
+\catcode`\^^ba=11 \lccode`\^^ba=0 \uccode`\^^ba=0
+\catcode`\^^bb=11 \lccode`\^^bb=0 \uccode`\^^bb=0
+\catcode`\^^bc=11 \lccode`\^^bc=0 \uccode`\^^bc=0
+\catcode`\^^bd=11 \lccode`\^^bd=0 \uccode`\^^bd=0
+\catcode`\^^be=11 \lccode`\^^be=0 \uccode`\^^be=0
+\catcode`\^^bf=11 \lccode`\^^bf=0 \uccode`\^^bf=0
+\catcode`\^^c0=11 \lccode`\^^c0=0 \uccode`\^^c0=0
+\catcode`\^^c1=11 \lccode`\^^c1=0 \uccode`\^^c1=0
+\catcode`\^^c2=11 \lccode`\^^c2=0 \uccode`\^^c2=0
+\catcode`\^^c3=11 \lccode`\^^c3=0 \uccode`\^^c3=0
+\catcode`\^^c4=11 \lccode`\^^c4=0 \uccode`\^^c4=0
+\catcode`\^^c5=11 \lccode`\^^c5=0 \uccode`\^^c5=0
+\catcode`\^^c6=11 \lccode`\^^c6=0 \uccode`\^^c6=0
+\catcode`\^^c7=11 \lccode`\^^c7=0 \uccode`\^^c7=0
+\catcode`\^^c8=11 \lccode`\^^c8=0 \uccode`\^^c8=0
+\catcode`\^^c9=11 \lccode`\^^c9=0 \uccode`\^^c9=0
+\catcode`\^^ca=11 \lccode`\^^ca=0 \uccode`\^^ca=0
+\catcode`\^^cb=11 \lccode`\^^cb=0 \uccode`\^^cb=0
+\catcode`\^^cc=11 \lccode`\^^cc=0 \uccode`\^^cc=0
+\catcode`\^^cd=11 \lccode`\^^cd=0 \uccode`\^^cd=0
+\catcode`\^^ce=11 \lccode`\^^ce=0 \uccode`\^^ce=0
+\catcode`\^^cf=11 \lccode`\^^cf=0 \uccode`\^^cf=0
+\catcode`\^^d0=11 \lccode`\^^d0=0 \uccode`\^^d0=0
+\catcode`\^^d1=11 \lccode`\^^d1=0 \uccode`\^^d1=0
+\catcode`\^^d2=11 \lccode`\^^d2=0 \uccode`\^^d2=0
+\catcode`\^^d3=11 \lccode`\^^d3=0 \uccode`\^^d3=0
+\catcode`\^^d4=11 \lccode`\^^d4=0 \uccode`\^^d4=0
+\catcode`\^^d5=11 \lccode`\^^d5=0 \uccode`\^^d5=0
+\catcode`\^^d6=11 \lccode`\^^d6=0 \uccode`\^^d6=0
+\catcode`\^^d7=11 \lccode`\^^d7=0 \uccode`\^^d7=0
+\catcode`\^^d8=11 \lccode`\^^d8=0 \uccode`\^^d8=0
+\catcode`\^^d9=11 \lccode`\^^d9=0 \uccode`\^^d9=0
+\catcode`\^^da=11 \lccode`\^^da=0 \uccode`\^^da=0
+\catcode`\^^df=12 \lccode`\^^df=0 \uccode`\^^df=0
+\catcode`\^^e0=11 \lccode`\^^e0=0 \uccode`\^^e0=0
+\catcode`\^^e1=11 \lccode`\^^e1=0 \uccode`\^^e1=0
+\catcode`\^^e2=11 \lccode`\^^e2=0 \uccode`\^^e2=0
+\catcode`\^^e3=11 \lccode`\^^e3=0 \uccode`\^^e3=0
+\catcode`\^^e4=11 \lccode`\^^e4=0 \uccode`\^^e4=0
+\catcode`\^^e5=11 \lccode`\^^e5=0 \uccode`\^^e5=0
+\catcode`\^^e6=11 \lccode`\^^e6=0 \uccode`\^^e6=0
+\catcode`\^^e7=11 \lccode`\^^e7=0 \uccode`\^^e7=0
+\catcode`\^^e8=11 \lccode`\^^e8=0 \uccode`\^^e8=0
+\catcode`\^^e9=11 \lccode`\^^e9=0 \uccode`\^^e9=0
+\catcode`\^^ea=11 \lccode`\^^ea=0 \uccode`\^^ea=0
+\catcode`\^^eb=11 \lccode`\^^eb=0 \uccode`\^^eb=0
+\catcode`\^^ec=11 \lccode`\^^ec=0 \uccode`\^^ec=0
+\catcode`\^^ed=11 \lccode`\^^ed=0 \uccode`\^^ed=0
+\catcode`\^^ee=11 \lccode`\^^ee=0 \uccode`\^^ee=0
+\catcode`\^^ef=12 \lccode`\^^ef=0 \uccode`\^^ef=0
+\catcode`\^^f0=12 \lccode`\^^f0=0 \uccode`\^^f0=0
+\catcode`\^^f1=12 \lccode`\^^f1=0 \uccode`\^^f1=0
+\catcode`\^^f2=12 \lccode`\^^f2=0 \uccode`\^^f2=0
+\catcode`\^^f3=12 \lccode`\^^f3=0 \uccode`\^^f3=0
+\catcode`\^^f4=12 \lccode`\^^f4=0 \uccode`\^^f4=0
+\catcode`\^^f5=12 \lccode`\^^f5=0 \uccode`\^^f5=0
+\catcode`\^^f6=12 \lccode`\^^f6=0 \uccode`\^^f6=0
+\catcode`\^^f7=12 \lccode`\^^f7=0 \uccode`\^^f7=0
+\catcode`\^^f8=12 \lccode`\^^f8=0 \uccode`\^^f8=0
+\catcode`\^^f9=12 \lccode`\^^f9=0 \uccode`\^^f9=0
+\catcode`\^^fa=12 \lccode`\^^fa=0 \uccode`\^^fa=0
+\catcode`\^^fb=12 \lccode`\^^fb=0 \uccode`\^^fb=0
+% End Initialize character codes for Thai
 % Fix wrong encoding charset in headings in class book
-\@ifclassloaded{book}{%
-  \renewcommand{\chaptermark}[1]{\markboth{\thaitext #1}{}}
-  \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-\renewcommand\tableofcontents{%
-    \if@twocolumn
-      \@restonecoltrue\onecolumn
-    \else
-      \@restonecolfalse
-    \fi
-    \chapter*{\contentsname
-        \@mkboth{%
-           \contentsname}{\contentsname}}%
-    \@starttoc{toc}%
-    \if@restonecol\twocolumn\fi
-    }
-}{}
+%\@ifclassloaded{book}{%
+%  \renewcommand{\chaptermark}[1]{\markboth{\thaitext #1}{}}
+%  \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\renewcommand\tableofcontents{%
+%    \if@twocolumn
+%      \@restonecoltrue\onecolumn
+%    \else
+%      \@restonecolfalse
+%    \fi
+%    \chapter*{\contentsname
+%        \@mkboth{%
+%           \contentsname}{\contentsname}}%
+%    \@starttoc{toc}%
+%    \if@restonecol\twocolumn\fi
+%    }
+%}{}
 % End Fix wrong encoding charset in headings in class book
 \def\th@month{%
   \ifcase\month\or
