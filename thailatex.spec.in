@@ -55,115 +55,10 @@ find . -type l \
 
 
 %post
-# add thai.map as additional map to dvips local config
-DVIPSCONFIG=$RPM_BUILD_ROOT/usr/share/texmf/dvips/config/config.ps
-mkdir -p `dirname $DVIPSCONFIG`
-if test -f $DVIPSCONFIG; then
-  sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
-  mv -f /tmp/tmp.$$ $DVIPSCONFIG
-fi
-echo "% thailatex" >> $DVIPSCONFIG
-echo "p +thai.map" >> $DVIPSCONFIG
+/usr/sbin/sync-thailatex
 
-# add thai.map as additional map to pdftex local config
-PDFTEXCONFIG=$RPM_BUILD_ROOT/usr/share/texmf/pdftex/config/pdftex.cfg
-mkdir -p `dirname $PDFTEXCONFIG`
-if test -f $PDFTEXCONFIG; then
-  sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
-  mv -f /tmp/tmp.$$ $PDFTEXCONFIG
-fi
-echo "% thailatex"   >> $PDFTEXCONFIG
-echo "map +thai.map" >> $PDFTEXCONFIG
- 
-# patch babel
-BABELSTY=$RPM_BUILD_ROOT/usr/share/texmf/tex/generic/babel/babel.sty
-if ! grep thai $BABELSTY >/dev/null; then
-  sed '/turkish/i\
-\\DeclareOption{thai}{\\input{thai.ldf}}' $BABELSTY >/tmp/tmp.$$
-  mv -f /tmp/tmp.$$ $BABELSTY
-fi
-
-/usr/bin/texhash
-
-# add Emacs macro for activating Thai LaTeX filter
-EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
-if [ -f $EMACSLISPDIR/site-start.el ] ; then
-  sed -e '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el > /tmp/tmp.$$
-  mv /tmp/tmp.$$ $EMACSLISPDIR/site-start.el
-fi
-echo '(load-library "thai-latex-setup")' >> $EMACSLISPDIR/site-start.el
-
-
-%triggerpostun -- thailatex
-# add thai.map as additional map to dvips local config
-DVIPSCONFIG=$RPM_BUILD_ROOT/usr/share/texmf/dvips/config/config.ps
-mkdir -p `dirname $DVIPSCONFIG`
-if test -f $DVIPSCONFIG; then
-  sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
-  mv -f /tmp/tmp.$$ $DVIPSCONFIG
-fi
-echo "% thailatex" >> $DVIPSCONFIG
-echo "p +thai.map" >> $DVIPSCONFIG
-
-# add thai.map as additional map to pdftex local config
-PDFTEXCONFIG=$RPM_BUILD_ROOT/usr/share/texmf/pdftex/config/pdftex.cfg
-mkdir -p `dirname $PDFTEXCONFIG`
-if test -f $PDFTEXCONFIG; then
-  sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
-  mv -f /tmp/tmp.$$ $PDFTEXCONFIG
-fi
-echo "% thailatex"   >> $PDFTEXCONFIG
-echo "map +thai.map" >> $PDFTEXCONFIG
- 
-# patch babel
-BABELSTY=$RPM_BUILD_ROOT/usr/share/texmf/tex/generic/babel/babel.sty
-if ! grep thai $BABELSTY >/dev/null; then
-  sed '/turkish/i\
-\\DeclareOption{thai}{\\input{thai.ldf}}' $BABELSTY >/tmp/tmp.$$
-  mv -f /tmp/tmp.$$ $BABELSTY
-fi
-
-/usr/bin/texhash
-
-# add Emacs macro for activating Thai LaTeX filter
-EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
-if [ -f $EMACSLISPDIR/site-start.el ] ; then
-  sed -e '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el > /tmp/tmp.$$
-  mv /tmp/tmp.$$ $EMACSLISPDIR/site-start.el
-fi
-echo '(load-library "thai-latex-setup")' >> $EMACSLISPDIR/site-start.el
-
-
-%preun
-# remove thai.map from dvips local config
-DVIPSCONFIG=$RPM_BUILD_ROOT/usr/share/texmf/dvips/config/config.ps
-if test -f $DVIPSCONFIG; then
-  sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
-  mv -f /tmp/tmp.$$ $DVIPSCONFIG
-fi
-
-# remove thai.map from pdftex local config
-PDFTEXCONFIG=$RPM_BUILD_ROOT/usr/share/texmf/pdftex/config/pdftex.cfg
-if test -f $PDFTEXCONFIG; then
-  sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
-  mv -f /tmp/tmp.$$ $PDFTEXCONFIG
-fi
-
-# unpatch babel
-BABELSTY=$RPM_BUILD_ROOT/usr/share/texmf/tex/generic/babel/babel.sty
-if grep thai $BABELSTY >/dev/null; then
-  sed '/thai/d' $BABELSTY >/tmp/tmp.$$
-  mv -f /tmp/tmp.$$ $BABELSTY
-fi
-
-/usr/bin/texhash
-
-# remove Emacs macro for activating Thai LaTeX filter
-EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
-if [ -f $EMACSLISPDIR/site-start.el ] ; then
-  sed -e  '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el > /tmp/tmp.$$
-  mv /tmp/tmp.$$ $EMACSLISPDIR/site-start.el
-fi
+%triggerin -- tetex
+/usr/sbin/sync-thailatex
 
 %files -f %{manifest}
 %defattr(-,root,root)
@@ -180,6 +75,8 @@ fi
   - change %postun to %preun, to be safe about the order of %postun
     of the older package and %triggerpostun of the newer package.
   - incorporate babel.sty patching.
+  - split scriptlets into sync-thailatex script.
+  - add %triggerin to get synchronized with tetex.
 
 * Wed Dec 05 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
   - use manifest

@@ -1,14 +1,14 @@
 2002-01-08 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* Makefile.am, babel/Makefile.am doc/Makefile.am, dvips/Makefile.am,
 	  emacs/Makefile.am, fonts/Makefile.am:
-	  use automake DATA targets.
+	  Use automake DATA targets.
 	* -dvips/addpsfont.sh, -dvips/rmpsfont.sh, dvips/Makefile.am:
-	  use thai.map and patch dvips local config file instead of
+	  Use thai.map and patch dvips local config file instead of
 	  directly patching base psfonts.map.
 	* dvips/Makefile.am:
-	  add patch for pdftex.
+	  Add patch for pdftex.
 	* -emacs/addmacro.sh, -emacs/rmmacro.sh, emacs/Makefile.am:
-	  move the macro patching scripts into Makefile.
+	  Move the macro patching scripts into Makefile.
 	* thailatex.spec.in:
 	  Update %post and %postun according to new installing method.
 	* thailatex.spec.in:
@@ -19,6 +19,10 @@
 	  newer package's %triggerpostun in upgrading.
 	* thailatex.spec.in:
 	  Incorporate babel.sty patching.
+	* +scripts/sync-thailatex, scripts/Makefile.am, thailatex.spec.in:
+	  Split scriptlets into sync-thailatex separate script, to resolve
+	  old chaotic upgrading scheme.
+	  Add %triggerin to get synchronized with tetex.
 
 2001-12-06 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* babel/thai.ldf: add missing consonants in \thaialpha according
