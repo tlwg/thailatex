@@ -1,9 +1,11 @@
-EXTRA_DIST = orchid.tex
+DOC_FILES = orchid.tex teststd.tex
+
+EXTRA_DIST = $(DOC_FILES)
 
 docdir = @docdir@
 
 pkgdocdir = $(docdir)/@PACKAGE@/examples
-pkgdoc_DATA = orchid.tex
+pkgdoc_DATA = $(DOC_FILES)
 # pkgdoc_DATA = orchid.tex orchid.ps orchid.pdf
 
 clean-local:
