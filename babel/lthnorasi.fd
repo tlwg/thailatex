@@ -12,11 +12,11 @@
 
 % Primary declarations
 \DeclareFontFamily{LTH}{norasi}{}
-\DeclareFontShape{LTH}{norasi}{m}{n}{<->[1.3]norasi}{}
-\DeclareFontShape{LTH}{norasi}{m}{sl}{<->[1.3]norasi_o}{}
+\DeclareFontShape{LTH}{norasi}{m}{n}{<->s * [1.3] norasi}{}
+\DeclareFontShape{LTH}{norasi}{m}{sl}{<->s * [1.3] norasi_o}{}
 %%%%%%% bold series
-\DeclareFontShape{LTH}{norasi}{b}{n}{<->[1.3]norasi_b}{}
-\DeclareFontShape{LTH}{norasi}{b}{sl}{<->[1.3]norasi_bo}{}
+\DeclareFontShape{LTH}{norasi}{b}{n}{<->s * [1.3] norasi_b}{}
+\DeclareFontShape{LTH}{norasi}{b}{sl}{<->s * [1.3] norasi_bo}{}
 
 % Substitutions
 \DeclareFontShape{LTH}{norasi}{m}{it}{<->ssub * norasi/m/sl}{}
@@ -24,7 +24,7 @@
 
 \DeclareFontShape{LTH}{norasi}{bx}{n}{<->ssub * norasi/b/n}{}
 \DeclareFontShape{LTH}{norasi}{bx}{sl}{<->ssub * norasi/b/sl}{}
-\DeclareFontShape{LTH}{norasi}{bx}{it}{<->ssub * norasi/b/it}{}
+\DeclareFontShape{LTH}{norasi}{bx}{it}{<->ssub * norasi/b/sl}{}
 \endinput
 
 % 
