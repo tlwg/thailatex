@@ -3,6 +3,9 @@
 %% created by Surapant Meknavin: surapan@nectec.or.th
 %% 
 %% --------------------------------------------------
+%% 2003/06/02 Chanop Silpa-Anan <chanop@debian.org>
+%%            - use "garuda" for default Thai sans serif since
+%%              "dbtt" is still slightly buggy
 %% 2003/02/26 Theppitak Karoonboonyanan <thep@linux.thai.net>
 %%            - run Thai number in part, subsubsection, paragraph,
 %%              subparagraph also
