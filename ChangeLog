@@ -1,3 +1,8 @@
+2003-10-25 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Add missing *.afm to EXTRA_DIST, as reported by Vee Satayamas.
+
 2003-09-21 Chanop Silpa-Anan <chanop@debian.org>
 
 	* fonts/lthuni.enc:
