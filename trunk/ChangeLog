@@ -1,3 +1,9 @@
+2004-02-28 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.ldf:
+	  Always use Thai alphabets in appendix
+	  (As suggested by K. chakkree01)
+
 2004-02-18 Poonlap Veerathanabutr <poonlap@linux.thai.net>
 
 	* fonts/purisa.{pfb,afm}:

@@ -3,6 +3,9 @@
 %% created by Surapant Meknavin: surapan@nectec.or.th
 %% 
 %% --------------------------------------------------
+%% 2004/02/28 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - always use Thai alphabets for appendix
+%%              (as suggested by K. chakkree01)
 %% 2004/02/02 Poonlap Veerathanabutr <poonlap@linux.thai.net>
 %% 	      - fix \lccode and \uccode
 %% 2003/08/10 Theppitak Karoonboonyanan <thep@linux.thai.net>
@@ -149,6 +152,10 @@
 \def\@thmcounter#1{\noexpand\thainum{#1}} 
 \def\datethai{%
   \def\today{\@thainum\day \space \th@month\space ¾.È.~\@thainum\th@year}}
+% Finish Declaring
+\relax
+}
+% End \DeclareOption{thainumber}
 % Use thaialph as counter for appendix
 \@ifclassloaded{book}{%
 \renewcommand\appendix{\par
@@ -178,10 +185,6 @@
   \setcounter{subsection}{0}%
   \gdef\thesection{\@thaialph\c@section}}
 }{}
-% Finish Declaring
-\relax
-}
-% End \DeclareOption{thainumber}
 % Initialize character codes for Thai
 \catcode`\^^a1=11 \lccode`\^^a1=`\^^a1 \uccode`\^^a1=`\^^a1
 \catcode`\^^a2=11 \lccode`\^^a2=`\^^a2 \uccode`\^^a2=`\^^a2
