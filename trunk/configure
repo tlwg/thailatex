@@ -1165,7 +1165,45 @@ done
 test -n "$SWATH" || SWATH="no"
 
 if test "x$SWATH" = "xno" ; then
-  { echo "configure: error: You need swath (from swath distribution)" 1>&2; exit 1; }
+  echo "You may need swath (from swath distribution)"
+fi
+for ac_prog in cttex
+do
+# Extract the first word of "$ac_prog", so it can be a program name with args.
+set dummy $ac_prog; ac_word=$2
+echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+echo "configure:1176: checking for $ac_word" >&5
+if eval "test \"`echo '$''{'ac_cv_prog_CTTEX'+set}'`\" = set"; then
+  echo $ac_n "(cached) $ac_c" 1>&6
+else
+  if test -n "$CTTEX"; then
+  ac_cv_prog_CTTEX="$CTTEX" # Let the user override the test.
+else
+  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS=":"
+  ac_dummy="$PATH"
+  for ac_dir in $ac_dummy; do
+    test -z "$ac_dir" && ac_dir=.
+    if test -f $ac_dir/$ac_word; then
+      ac_cv_prog_CTTEX="$ac_prog"
+      break
+    fi
+  done
+  IFS="$ac_save_ifs"
+fi
+fi
+CTTEX="$ac_cv_prog_CTTEX"
+if test -n "$CTTEX"; then
+  echo "$ac_t""$CTTEX" 1>&6
+else
+  echo "$ac_t""no" 1>&6
+fi
+
+test -n "$CTTEX" && break
+done
+test -n "$CTTEX" || CTTEX="no"
+
+if test "x$CTTEX" = "xno" ; then
+  echo "You may need cttex (from cttex distribution)"
 fi
 
 # Check whether --with-docdir or --without-docdir was given.
@@ -1177,7 +1215,7 @@ else
 fi
 
 echo $ac_n "checking --with-docdir""... $ac_c" 1>&6
-echo "configure:1181: checking --with-docdir" >&5
+echo "configure:1219: checking --with-docdir" >&5
 echo "$ac_t"""$docdir"" 1>&6                                                                                                           
 
 
@@ -1190,7 +1228,7 @@ else
 fi
 
 echo $ac_n "checking --with-texmfdir""... $ac_c" 1>&6
-echo "configure:1194: checking --with-texmfdir" >&5
+echo "configure:1232: checking --with-texmfdir" >&5
 echo "$ac_t"""$texmfdir"" 1>&6                                                                                                           
 
 
@@ -1203,7 +1241,7 @@ else
 fi
 
 echo $ac_n "checking --with-emacsdir""... $ac_c" 1>&6
-echo "configure:1207: checking --with-emacsdir" >&5
+echo "configure:1245: checking --with-emacsdir" >&5
 echo "$ac_t"""$emacsdir"" 1>&6                                                                                                           
 
 
@@ -1329,6 +1367,7 @@ trap 'rm -fr `echo "Makefile
   fonts/type1/Makefile
   scripts/Makefile
   doc/Makefile
+  debian/Makefile
   thailatex.spec" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
 EOF
 cat >> $CONFIG_STATUS <<EOF
@@ -1381,6 +1420,7 @@ s%@AFM2TFM@%$AFM2TFM%g
 s%@VPTOVF@%$VPTOVF%g
 s%@PS2PDF@%$PS2PDF%g
 s%@SWATH@%$SWATH%g
+s%@CTTEX@%$CTTEX%g
 s%@docdir@%$docdir%g
 s%@texmfdir@%$texmfdir%g
 s%@emacsdir@%$emacsdir%g
@@ -1434,6 +1474,7 @@ CONFIG_FILES=\${CONFIG_FILES-"Makefile
   fonts/type1/Makefile
   scripts/Makefile
   doc/Makefile
+  debian/Makefile
   thailatex.spec"}
 EOF
 cat >> $CONFIG_STATUS <<\EOF
