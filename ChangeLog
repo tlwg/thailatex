@@ -1,3 +1,13 @@
+2003-09-21 Chanop Silpa-Anan <chanop@debian.org>
+
+	* fonts/lthuni.enc:
+	  Fix aposthophe problem.
+	  Use unicode variant name.
+	  Add f-ligatures and some puctuations at T1 locations.
+
+	* fonts/*.{afm,pfb}:
+	  Use updated fonts with new unicode variant name.
+
 2003-08-27 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/Makefile.am:
