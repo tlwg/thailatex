@@ -128,7 +128,7 @@ install-data-hook:
 	echo "% thailatex" >> $(UPDMAPCONFIG)
 	echo "Map thai.map" >> $(UPDMAPCONFIG)
 	mkdir -p `dirname $(UPDMAPCONFIG)`
-	updmap
+	$(UPDMAP)
 #	if test -f $(DVIPSCONFIG); then \
 #	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
 #	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
@@ -148,7 +148,7 @@ uninstall-hook:
 	  sed -e '/thailatex/d;/thai.map/d' $(UPDMAPCONFIG) > /tmp/tmp.$$$$ ; \
 	  mv -f /tmp/tmp.$$$$ $(UPDMAPCONFIG) ; \
 	fi
-	updmap
+	$(UPDMAP)
 #	if test -f $(DVIPSCONFIG); then \
 #	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
 #	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
