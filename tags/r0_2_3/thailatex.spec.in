@@ -1,0 +1,83 @@
+Summary: Thai extension for LaTeX
+Name: @PACKAGE@
+Version: @VERSION@
+Release: 1
+Copyright: freely distributable
+Group: Applications/Publishing
+Source: %{name}-%{version}.tar.gz
+BuildRoot: /var/tmp/%{name}-%{version}-root
+Vendor: Surapant Meknavin <surapan@nectec.or.th>, Theppitak Karoonboonyanan <thep@links.nectec.or.th>, NECTEC
+Packager: Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+Distribution: Linux TLE, Thai Linux Working Group
+Requires: tetex >= 0.9
+
+%description
+
+Thai fonts, style, etc. for publishing Thai documents with LaTeX.
+Thai word segmentation filter which inserts "\wbr " command as Thai word
+delimitor, such as "swath", is recommended to be used as a preprocessor.
+
+%prep
+%setup
+
+%build
+./configure --prefix=/usr
+make
+
+%install
+mkdir -p $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
+
+# __os_install_post is implicitly expanded after the
+# %install section... do it now, and then disable it,
+# so all work is done before building manifest.
+
+%{?__os_install_post}
+%define __os_install_post %{nil}
+
+# build the file list automagically into %{manifest}
+
+cd $RPM_BUILD_ROOT
+rm -f %{manifest}
+find . -type d \
+        | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' >> %{manifest}
+find . -type f \
+        | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
+find . -type l \
+        | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
+
+
+%post
+
+%postun
+
+%files -f %{manifest}
+%defattr(-,root,root)
+#%doc README
+#%docdir
+#%config
+
+%changelog
+* Wed Dec 05 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - use manifest
+
+* Wed Jan 03 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - thailatex.spec : use variables for sources, path names; use BuildRoot
+
+* Thu May 25 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - rearrange package and create Makefiles
+  - encoding changed from TIS to LTH, according to TeX convention
+  - add "norasi" bold and bold-italic font; correct TeXTIS.enc
+  - make "norasi" be Thai roman font, "dbttx" Thai sans serif
+  - correct some Thai translations
+  - release version 0.2
+
+* Wed Aug 16 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - fix "norasi" "Bluevalues" parameter to fix Acrobat Distiller
+    rejection, by Anutara
+
+* Mon Jun 21 1999 Surapant Meknavin <surapan@nectec.or.th>
+  - create the original Thai LaTeX extension based on babel package
+  - two fonts are available : dbtt (n,bx,i,bi) and nf3x (n,i)
+  - release version 0.1
+

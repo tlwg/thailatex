@@ -1,0 +1,55 @@
+2001-12-05 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* thailatex.spec.in: use manifest
+	* configure.in: Version 0.2.3
+
+2001-12-04 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* babel/thai.ldf: fix thai numbering for cases of styles other
+	  than book, where \thechapter is not defined.
+	* babel/thai.ldf: remove thaitoday option.
+	* doc/orchid.tex: use thainumber option to demo thai numbering.
+	* babel/thai.ldf: use \ifcase instead of nested \if in \thaitranslate.
+	* babel/thai.ldf: fix wrong encoding in heading for book
+	  style (as suggested by Chanop).
+
+2001-12-04 Chanop Silpa-Anan <chanop@debian.org>
+	* add support for using Thai numbering in page, section,
+	  date, and etc.
+	* Thank to K.ขอม
+
+2001-02-23 Chanop Silpa-Anan <chanop@debian.org>
+	* move patch-babel script from babel to scripts dir
+	* add tlatex scipt for compiling Thai document to scripts dir
+
+2001-02-10 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* make RPM spec use temporary build root instead of the real
+	  file system; make configure script generate auto-versioned RPM spec
+	* fix some Makefile.am for consistency with the helper shell scripts
+	  and make it be able to configure and build from a separate directory
+
+2001-02-10 Chanop Silpa-Anan <chanop@debian.org>
+	* add patch-babel script for patching babel.sty such that
+	  thai language document can be passed from 
+	  \documenticlass[thai]{class} to babel
+	  (exported latex from LyX has this behavior)
+
+2000-11-29 Chanop Silpa-Anan <chanop@debian.org>
+	* rewrite Makefiles using GNU autoconf/automake tools
+	  so that packaging for debian and other is easier :)
+
+2000-08-16 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* incorporate fixed "norasi" "Bluevalues" parameter to fix
+	  Acrobat Distiller rejection, by Anutara Tantraporn
+
+2000-05-25 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* rearrange package and create Makefiles
+	* encoding changed from TIS to LTH, according to TeX convention
+	* add "norasi" bold and bold-italic font; correct TeXTIS.enc
+	* make "norasi" be Thai roman font, "dbttx" Thai sans serif
+	* correct some Thai translations
+	* release version 0.2
+
+1999-06-21 Surapant Meknavin <surapan@nectec.or.th>
+	* create the original Thai LaTeX extension based on babel package
+	* two fonts are available : dbtt (n,bx,i,bi) and nf3x (n,i)
+	* release version 0.1
+

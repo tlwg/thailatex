@@ -1,0 +1,73 @@
+AC_INIT(LICENSE)
+AM_INIT_AUTOMAKE(thailatex, 0.2.3)
+
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_CHECK_PROGS(RMDIR,rmdir,no)
+
+AC_CHECK_PROGS(SED,sed,no)
+if test "x$SED" = "xno" ; then
+  AC_MSG_ERROR([You need sed (from sed distribution)])
+fi
+AC_CHECK_PROGS(LATEX,latex,no)
+if test "x$LATEX" = "xno" ; then
+  AC_MSG_ERROR([You need latex (from TeTeX distribution)])
+fi
+AC_CHECK_PROGS(DVIPS,dvips,no)
+if test "x$DVIPS" = "xno" ; then
+  AC_MSG_ERROR([You need dvips (from TeTeX distribution)])
+fi
+AC_CHECK_PROGS(AFM2TFM,afm2tfm,no)
+if test "x$AFM2TFM" = "xno" ; then
+  AC_MSG_ERROR([You need afm2tfm (from TeTeX distribution)])
+fi
+AC_CHECK_PROGS(VPTOVF,vptovf,no)
+if test "x$VPTOVF" = "xno" ; then
+  AC_MSG_ERROR([You need vptovf (from TeTeX distribution)])
+fi
+AC_CHECK_PROGS(PS2PDF,ps2pdf,no)
+if test "x$PS2PDF" = "xno" ; then
+  AC_MSG_ERROR([You need ps2pdf (from ghostscipt distribution)])
+fi
+AC_CHECK_PROGS(SWATH,swath,no)
+if test "x$SWATH" = "xno" ; then
+  echo "You may need swath (from swath distribution)"
+fi
+AC_CHECK_PROGS(CTTEX,cttex,no)
+if test "x$CTTEX" = "xno" ; then
+  echo "You may need cttex (from cttex distribution)"
+fi
+
+AC_ARG_WITH(docdir,
+  [  --with-docdir=DIR     package document directory in DIR [PREFIX/doc]],
+  [docdir="$withval"], [docdir=\$\{prefix\}/doc])
+AC_MSG_CHECKING(--with-docdir)
+AC_MSG_RESULT("$docdir")                                                                                                           
+AC_SUBST(docdir)
+
+AC_ARG_WITH(texmfdir,
+  [  --with-texmfdir=DIR     texmf directory in DIR [PREFIX/share/texmf]],
+  [texmfdir="$withval"], [texmfdir=${datadir}/texmf])
+AC_MSG_CHECKING(--with-texmfdir)
+AC_MSG_RESULT("$texmfdir")                                                                                                           
+AC_SUBST(texmfdir)
+
+AC_ARG_WITH(emacsdir,
+  [  --with-emacsdir=DIR     emacs directory in DIR [PREFIX/share/emacs]],
+  [emacsdir="$withval"], [emacsdir=${datadir}/emacs])
+AC_MSG_CHECKING(--with-emacsdir)
+AC_MSG_RESULT("$emacsdir")                                                                                                           
+AC_SUBST(emacsdir)
+
+AC_OUTPUT(Makefile
+  babel/Makefile
+  dvips/Makefile
+  emacs/Makefile
+  fonts/Makefile
+  fonts/afm/Makefile
+  fonts/type1/Makefile
+  scripts/Makefile
+  doc/Makefile
+  debian/Makefile
+  thailatex.spec)
+

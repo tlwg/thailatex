@@ -1,0 +1,1 @@
+SUBDIRS = afm type1
