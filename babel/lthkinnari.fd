@@ -7,11 +7,11 @@
 
 % Primary declarations
 \DeclareFontFamily{LTH}{kinnari}{}
-\DeclareFontShape{LTH}{kinnari}{m}{n}{<->s * [1.3] kinnari}{}
-\DeclareFontShape{LTH}{kinnari}{m}{sl}{<->s * [1.3] kinnari_o}{}
+\DeclareFontShape{LTH}{kinnari}{m}{n}{<->s * kinnari}{}
+\DeclareFontShape{LTH}{kinnari}{m}{sl}{<->s * kinnari_o}{}
 %%%%%%% bold series
-\DeclareFontShape{LTH}{kinnari}{b}{n}{<->s * [1.3] kinnari_b}{}
-\DeclareFontShape{LTH}{kinnari}{b}{sl}{<->s * [1.3] kinnari_bo}{}
+\DeclareFontShape{LTH}{kinnari}{b}{n}{<->s * kinnari_b}{}
+\DeclareFontShape{LTH}{kinnari}{b}{sl}{<->s * kinnari_bo}{}
 
 % Substitutions
 \DeclareFontShape{LTH}{kinnari}{m}{it}{<->ssub * kinnari/m/sl}{}

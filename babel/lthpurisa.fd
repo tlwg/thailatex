@@ -7,11 +7,11 @@
 
 % Primary declarations
 \DeclareFontFamily{LTH}{purisa}{}
-\DeclareFontShape{LTH}{purisa}{m}{n}{<->s * [1.3] purisa}{}
-\DeclareFontShape{LTH}{purisa}{m}{sl}{<->s * [1.3] purisa}{}
+\DeclareFontShape{LTH}{purisa}{m}{n}{<->s * purisa}{}
+\DeclareFontShape{LTH}{purisa}{m}{sl}{<->s * purisa}{}
 %%%%%%% bold series
-\DeclareFontShape{LTH}{purisa}{b}{n}{<->s * [1.3] purisa}{}
-\DeclareFontShape{LTH}{purisa}{b}{sl}{<->s * [1.3] purisa}{}
+\DeclareFontShape{LTH}{purisa}{b}{n}{<->s * purisa}{}
+\DeclareFontShape{LTH}{purisa}{b}{sl}{<->s * purisa}{}
 
 % Substitutions
 \DeclareFontShape{LTH}{purisa}{m}{it}{<->ssub * purisa/m/sl}{}
