@@ -1,3 +1,9 @@
+0.3.2 (2004-03-25)
+=====
+- Fix page numbering bug in \frontmatter and \mainmatter redefinition
+  due to wrong appendix fix in previous version. [thep]
+  (noticed by P'Joy)
+
 0.3.1 (2004-03-10)
 =====
 - New fonts: kinnari, pmono, purisa. [poonlap]
