@@ -3,7 +3,9 @@
 	  than book, where \thechapter is not defined.
 	* babel/thai.ldf: remove thaitoday option.
 	* doc/orchid.tex: use thainumber option to demo thai numbering.
-	* babel/thai.ldf: use \ifcase instead of nested \if
+	* babel/thai.ldf: use \ifcase instead of nested \if.
+	* babel/thai.ldf: fix wrong encoding in heading for book
+	  style (as suggested by Chanop).
 
 2001-12-04 Chanop Silpa-Anan <chanop@debian.org>
 	* add support for using Thai numbering in page, section,

@@ -105,6 +105,12 @@
 }
 % End \DeclareOption{thainumber}
 
+% Fix wrong encoding charset in headings
+\@ifclassloaded{book}{%
+  \renewcommand{\chaptermark}[1]{\markboth{\thaitext #1}{}}
+  \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+}{}
+
 \def\th@month{%
   \ifcase\month\or
     มกราคม\or กุมภาพันธ์\or มีนาคม\or เมษายน
