@@ -1,3 +1,16 @@
+2003-03-06 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* scripts/sync-thailatex.in:
+	  Rewrite to accept install/uninstall arg.
+
+	* +scripts/sync-babel.in, scripts/Makefile.am, configure.in,
+	  scripts/sync-thailatex.in:
+	  Split babel patching into separate script (for use in rpm only).
+
+	* thailatex.spec.in:
+	  Use the separate sync-* scripts instead.
+	  Add %preun script for unregistering thailatex at last uninstallation.
+	  
 2003-03-05 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in:
