@@ -1,5 +1,8 @@
-EXTRA_DIST = thai.ldf thai.sty thswitch.sty lthenc.def lthdbttx.fd lthnorasi.fd
+BABEL_FILES = thai.ldf thai.sty thswitch.sty lthenc.def \
+	lthdbtt.fd lthnorasi.fd lthgaruda.fd
+
+EXTRA_DIST = $(BABEL_FILES)
 
 babeldir = @texmfdir@/tex/generic/babel
-babel_DATA = thai.ldf thai.sty thswitch.sty lthenc.def lthdbttx.fd lthnorasi.fd
+babel_DATA = $(BABEL_FILES)
 
