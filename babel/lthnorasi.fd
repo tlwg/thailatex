@@ -17,14 +17,13 @@
 \DeclareFontShape{LTH}{norasi}{m}{sl}{<->s * norasi_o}{}
 %%%%%%% bold series
 \DeclareFontShape{LTH}{norasi}{b}{n}{<->s * norasi_b}{}
+\DeclareFontShape{LTH}{norasi}{b}{it}{<->s * norasi_bi}{}
 \DeclareFontShape{LTH}{norasi}{b}{sl}{<->s * norasi_bo}{}
 
 % Substitutions
-\DeclareFontShape{LTH}{norasi}{b}{it}{<->ssub * norasi/b/sl}{}
-
 \DeclareFontShape{LTH}{norasi}{bx}{n}{<->ssub * norasi/b/n}{}
 \DeclareFontShape{LTH}{norasi}{bx}{sl}{<->ssub * norasi/b/sl}{}
-\DeclareFontShape{LTH}{norasi}{bx}{it}{<->ssub * norasi/b/sl}{}
+\DeclareFontShape{LTH}{norasi}{bx}{it}{<->ssub * norasi/b/it}{}
 \endinput
 
 % 

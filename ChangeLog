@@ -1,5 +1,11 @@
 2005-01-24 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/lthnorasi.fd:
+	  Actually point bold-italic shape to italic font file instead of
+	  slant.
+
+2005-01-24 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* babel/lthkinnari.fd, fonts/Makefile.am,
 	  +fonts/kinnari_{i,bi}.{afm,pfb}:
 	  Add italic shape for Kinnari medium and bold face series. Fonts
