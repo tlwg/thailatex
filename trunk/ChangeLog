@@ -1,3 +1,9 @@
+2003-04-16 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, fonts/Makefile.am, scripts/sync-thailatex.in:
+	  Add updmap usage back again, with checking for updmap version
+	  before applying appropriate method.
+
 2003-04-15 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/Makefile.am, scripts/sync-thailatex.in, configure.in:

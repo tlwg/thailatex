@@ -130,21 +130,25 @@ thai.map: $(tfm_DATA)
 # 	$(UPDMAP) --disable thai.map
 
 install-data-hook:
-	@if test -z "$(DESTDIR)" ; then                                        \
-	  mkdir -p `dirname $(DVIPSCONFIG)` ;                                 \
-	  if test -f $(DVIPSCONFIG); then                                     \
-	    sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$; \
-	    mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ;                              \
+	@if test -z "$(DESTDIR)" ; then                                       \
+	  if test "$(UPDMAP_VER)" == "2"; then                                \
+	    $(UPDMAP) --enable Map thai.map ;                                 \
+	  else                                                                \
+	    mkdir -p `dirname $(DVIPSCONFIG)` ;                               \
+	    if test -f $(DVIPSCONFIG); then                                   \
+	      sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$; \
+	      mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ;                            \
+	    fi ;                                                              \
+	    echo "% thailatex" >> $(DVIPSCONFIG) ;                            \
+	    echo "p +thai.map" >> $(DVIPSCONFIG) ;                            \
+	    mkdir -p `dirname $(PDFTEXCONFIG)` ;                              \
+	    if test -f $(PDFTEXCONFIG); then                                  \
+	      sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$;\
+	      mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ;                           \
+	    fi ;                                                              \
+	    echo "% thailatex"   >> $(PDFTEXCONFIG) ;                         \
+	    echo "map +thai.map" >> $(PDFTEXCONFIG) ;                         \
 	  fi ;                                                                \
-	  echo "% thailatex" >> $(DVIPSCONFIG) ;                              \
-	  echo "p +thai.map" >> $(DVIPSCONFIG) ;                              \
-	  mkdir -p `dirname $(PDFTEXCONFIG)` ;                                \
-	  if test -f $(PDFTEXCONFIG); then                                    \
-	    sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$;\
-	    mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ;                             \
-	  fi ;                                                                \
-	  echo "% thailatex"   >> $(PDFTEXCONFIG) ;                           \
-	  echo "map +thai.map" >> $(PDFTEXCONFIG) ;                           \
 	else                                                                  \
 	  echo "***" ;                                                        \
 	  echo "*** Warning: tetex config files not patched" ;                \
@@ -155,13 +159,17 @@ install-data-hook:
 	fi
  
 uninstall-hook:
-	if test -f $(DVIPSCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
-	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
-	fi
-	if test -f $(PDFTEXCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
-	  mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ; \
+	if test "$(UPDMAP_VER)" == "2"; then                                  \
+	  $(UPDMAP) --disable thai.map ;                                      \
+	else                                                                  \
+	  if test -f $(DVIPSCONFIG); then                                     \
+	    sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
+	    mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ;                              \
+	  fi ;                                                                \
+	  if test -f $(PDFTEXCONFIG); then                                    \
+	    sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
+	    mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ;                             \
+	  fi ;                                                                \
 	fi
 
 clean-local:
