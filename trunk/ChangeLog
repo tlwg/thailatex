@@ -4,6 +4,9 @@
 	  Fix AC_PATH_PROG so $PATH is also tried when looking for updmap
 	  (as suggested by Vee Sattayamas)
 
+	* fonts/Makefile.am:
+	  Use updmap options instead of directly patching updmap.cfg
+
 2003-02-12 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/lthgaruda.fd:
