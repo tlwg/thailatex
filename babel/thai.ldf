@@ -66,10 +66,6 @@
   \def\alsoname{´Ùà¾ÔèÁàµÔÁ}
   \def\proofname{¾ÔÊÙ¨¹ì}%
   }
-
-\DeclareOption{thainumber}{
-% Using @  as a normal charactor
-\catcode`\@=11
 % Define thai number translation
 \def\thaitranslate#1{\ifx @#1%
      \else\ifcase#1
@@ -81,11 +77,29 @@
 \def\thainum#1{\expandafter\@thainum\csname c@#1\endcsname}
 \def\@thaibracenum#1{(\expandafter\thaitranslate\number#1@)}
 \def\thaibracenum#1{\expandafter\@thaibracenum\csname c@#1\endcsname}
+% Define thai charactor translation
+% thaiAlph is full alphabet set
+% thaialph is reduced alphabet set
+\def\thaialph#1{\expandafter\@thaialph\csname c@#1\endcsname}
+\def\thaiAlph#1{\expandafter\@thaiAlph\csname c@#1\endcsname}
+\def\@thaialph#1{%
+  \ifcase#1\or ¡\or ¢\or ¤\or §\or ¨\or ©\or ª\or «\or ¬\or ­\or ®\or
+   °\or ²\or ³\or ´\or µ\or ¶\or ·\or ¸\or ¹\or º\or »\or ¼\or ½\or ¾\or
+    ¿\or À\or Á\or Â\or Ã\or Å\or Ç\or È\or É\or Ê\or Ë\or Ì\or Í\or
+     Îelse\@ctrerr\fi}
+\def\@thaiAlph#1{%
+  \ifcase#1\or ¡\or ¢\or £\or ¤\or ¥\or ¦\or §\or ¨\or ©\or ª\or «\or
+   ¬\or ­\or ®\or ¯\or °\or ±\or ²\or ³\or ´\or µ\or ¶\or ·\or ¸\or ¹\or
+    º\or »\or ¼\or ½\or ¾\or ¿\or À\or Á\or Â\or Ã\or Ä\or Å\or Æ\or Ç\or
+     È\or É\or Ê\or Ë\or Ì\or Í\or Îelse\@ctrerr\fi}
+\DeclareOption{thainumber}{
+% Using @  as a normal charactor
+\catcode`\@=11
 % Default page numbering to thainum, thaibracenum is also valid
 \pagenumbering{thainum}
 % Page no, Chapter, Section, SubSection etc ... using Thai Number
 \renewcommand\theenumi{\@thainum\c@enumi}
-%\renewcommand\theenumii{\@alph\c@enumii}
+\renewcommand\theenumii{\@thaialph\c@enumii}
 %\renewcommand\theenumiii{\@roman\c@enumiii}
 %\renewcommand\theenumiv{\@Alph\c@enumiv}
 \@ifundefined{thechapter}%
@@ -108,6 +122,27 @@
 \def\@thmcounter#1{\noexpand\thainum{#1}} 
 \def\datethai{%
   \def\today{\@thainum\day \space \th@month\space ¾.È.~\@thainum\th@year}}
+% Use thaialph as counter for appendix
+\@ifclassloaded{book}{%
+\renewcommand\appendix{\par
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{\appendixname}%
+  \gdef\thechapter{\@thaialph\c@chapter}}
+}{}
+\@ifclassloaded{report}{%
+\renewcommand\appendix{\par
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{\appendixname}%
+  \gdef\thechapter{\@thaialph\c@chapter}}
+}{}
+\@ifclassloaded{article}{%
+\renewcommand\appendix{\par
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \gdef\thesection{\@thaialph\c@section}}
+}{}
 % Finish Declaring
 \relax
 }
