@@ -1,13 +1,13 @@
 \relax
 
-% T1c.etx -- install a T1-encoded faked small-caps font
+% lthc.etx -- install a T1-encoded faked small-caps font
 %
 % This is used exclusively to install faked small-caps fonts;
 % real small caps fonts are installed using the default T1.etx.
 
 \encoding
 
-% We define the parameters for T1.etx to produce a c&sc font.
+% We define the parameters for LTH.etx to produce a c&sc font.
 
 \setcommand\lc#1#2{#1small}
 \setcommand\uc#1#2{#1}
@@ -43,7 +43,7 @@
    \setint{letterspacing}{\int{capspacing}}
 \fi
 
-% Then we call T1.etx.
+% Then we call LTH.etx.
 
 \inputetx{LTH}
 

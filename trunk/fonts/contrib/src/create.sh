@@ -1,6 +1,7 @@
 #! /bin/sh
 
 # hand edited files
+cp dostretch.mtx.in dostretch.mtx
 cp thai.mtx.in thai.mtx
 cp resetscale.mtx.in resetscale.mtx
 cp t1fnt.fd.in t1fnt.fd
@@ -12,9 +13,15 @@ cp ts1fgh.fd.in ts1fgh.fd
 cp ../../norasi*.afm .
 cp ../../garuda*.afm .
 
-# for norasi-times family
+./getpl.sh
+
+# for norasi-times family and garuda-helvetica family
 tex drv-fnt
 tex drv-fgh
+
+# for norasi-computer modern family and garuda computer modern family
+tex drv-fnc
+tex drv-fgc
 
 for i in *.pl; do pltotf $i; done
 for i in *.vpl; do vptovf $i; done
@@ -37,10 +44,9 @@ cp *.def ../tex
 cp *.sty ../tex
 
 # copy to home
-#cp ../tex/* ~/texmf/tex
-#cp ../tfm/* ~/texmf/fonts/tfm
-#cp ../vf/* ~/texmf/fonts/vf
-
+cp ../tex/* ~/texmf/tex
+cp ../tfm/* ~/texmf/fonts/tfm
+cp ../vf/* ~/texmf/fonts/vf
 
 # clean up
 rm -f *.tfm *.vf *.fd *.vpl *.mtx *.pl *.log *.dvi
