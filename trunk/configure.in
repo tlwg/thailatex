@@ -17,6 +17,10 @@ AC_CHECK_PROGS(DVIPS,dvips,no)
 if test "x$DVIPS" = "xno" ; then
   AC_MSG_ERROR([You need dvips (from TeTeX distribution)])
 fi
+AC_CHECK_PROGS(PF2AFM,pf2afm,no)
+if test "x$PF2AFM" = "xno" ; then
+  AC_MSG_ERROR([You need pf2afm (from ghostscript distribution)])
+fi
 AC_CHECK_PROGS(AFM2TFM,afm2tfm,no)
 if test "x$AFM2TFM" = "xno" ; then
   AC_MSG_ERROR([You need afm2tfm (from TeTeX distribution)])
@@ -64,8 +68,6 @@ AC_OUTPUT(Makefile
   dvips/Makefile
   emacs/Makefile
   fonts/Makefile
-  fonts/afm/Makefile
-  fonts/type1/Makefile
   scripts/Makefile
   doc/Makefile
   debian/Makefile

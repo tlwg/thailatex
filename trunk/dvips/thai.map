@@ -1,9 +1,0 @@
-% thailatex
-dbtt   DBThaiText <dbtt.pfb "dbttEncoding ReEncodeFont" <dbttx.enc
-dbttb  DBThaiTextBold <dbttb.pfb "dbttEncoding ReEncodeFont" <dbttx.enc
-dbtti  DBThaiTextItalic <dbtti.pfb "dbttEncoding ReEncodeFont" <dbttx.enc
-dbttbi DBThaiTextBoldItalic <dbttbi.pfb "dbttEncoding ReEncodeFont" <dbttx.enc
-rnorasi_n  Norasi <norasi_n.pfb "TeXTISEncoding ReEncodeFont" <TeXTIS.enc
-rnorasi_b  Norasi-Bold <norasi_b.pfb "TeXTISEncoding ReEncodeFont" <TeXTIS.enc
-rnorasi_i  Norasi-Italic <norasi_i.pfb "TeXTISEncoding ReEncodeFont" <TeXTIS.enc
-rnorasi_bi Norasi-BoldItalic <norasi_bi.pfb "TeXTISEncoding ReEncodeFont" <TeXTIS.enc
