@@ -1,0 +1,6 @@
+- Karl Berry's font naming scheme
+- Werner Lemberg's ligatures
+- use fontinst
+- compose .dtx for style files
+- kerning
+
