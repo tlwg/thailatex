@@ -1,3 +1,9 @@
+2005-01-15 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/norasi*.{afm,pfa}:
+	  Update fixes in Copyright field from thaifonts-scalable CVS.
+	  (Bug reported by K.Boonlert in thai-latex-user-group mailint list).
+
 2004-12-05 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, NEWS:
