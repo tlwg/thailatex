@@ -1,5 +1,5 @@
 AC_INIT(LICENSE)
-AM_INIT_AUTOMAKE(thailatex, 0.2.99.0)
+AM_INIT_AUTOMAKE(thailatex, 0.2.7)
 
 AC_PROG_INSTALL
 AC_PROG_LN_S
@@ -17,10 +17,6 @@ AC_CHECK_PROGS(DVIPS,dvips,no)
 if test "x$DVIPS" = "xno" ; then
   AC_MSG_ERROR([You need dvips (from TeTeX distribution)])
 fi
-AC_CHECK_PROGS(PF2AFM,pf2afm,no)
-if test "x$PF2AFM" = "xno" ; then
-  AC_MSG_ERROR([You need pf2afm (from ghostscript distribution)])
-fi
 AC_CHECK_PROGS(AFM2TFM,afm2tfm,no)
 if test "x$AFM2TFM" = "xno" ; then
   AC_MSG_ERROR([You need afm2tfm (from TeTeX distribution)])
@@ -35,11 +31,11 @@ if test "x$PS2PDF" = "xno" ; then
 fi
 AC_CHECK_PROGS(SWATH,swath,no)
 if test "x$SWATH" = "xno" ; then
-  AC_MSG_WARN([You may need swath (from swath distribution)])
+  echo "You may need swath (from swath distribution)"
 fi
 AC_CHECK_PROGS(CTTEX,cttex,no)
 if test "x$CTTEX" = "xno" ; then
-  AC_MSG_WARN([You may need cttex (from cttex distribution)])
+  echo "You may need cttex (from cttex distribution)"
 fi
 
 AC_ARG_WITH(docdir,
@@ -56,11 +52,6 @@ AC_MSG_CHECKING(--with-texmfdir)
 AC_MSG_RESULT("$texmfdir")                                                                                                           
 AC_SUBST(texmfdir)
 
-AC_PATH_PROG(UPDMAP,updmap,no,/usr/local/bin:/usr/bin:/bin:$texmfdir/dvips/config/updmap)
-if test "x$UPDMAP" = "xno" ; then
-  AC_MSG_ERROR([You need updmap (from TeTeX distribution)])
-fi
-
 AC_ARG_WITH(emacsdir,
   [  --with-emacsdir=DIR     emacs directory in DIR [PREFIX/share/emacs]],
   [emacsdir="$withval"], [emacsdir=${datadir}/emacs])
@@ -70,8 +61,11 @@ AC_SUBST(emacsdir)
 
 AC_OUTPUT(Makefile
   babel/Makefile
+  dvips/Makefile
   emacs/Makefile
   fonts/Makefile
+  fonts/afm/Makefile
+  fonts/type1/Makefile
   scripts/Makefile
   doc/Makefile
   debian/Makefile

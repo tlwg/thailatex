@@ -10,7 +10,7 @@
 
 % Primary declarations
 \DeclareFontFamily{LTH}{norasi}{}
-\DeclareFontShape{LTH}{norasi}{m}{n}{<->[1.3]norasi}{}
+\DeclareFontShape{LTH}{norasi}{m}{n}{<->[1.3]norasi_n}{}
 \DeclareFontShape{LTH}{norasi}{m}{it}{<->[1.3]norasi_i}{}
 %%%%%%% bold series
 \DeclareFontShape{LTH}{norasi}{b}{n}{<->[1.3]norasi_b}{}
