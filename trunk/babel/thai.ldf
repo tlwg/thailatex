@@ -147,13 +147,24 @@
 \relax
 }
 % End \DeclareOption{thainumber}
-
-% Fix wrong encoding charset in headings
+% Fix wrong encoding charset in headings in class book
 \@ifclassloaded{book}{%
   \renewcommand{\chaptermark}[1]{\markboth{\thaitext #1}{}}
   \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand\tableofcontents{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\contentsname
+        \@mkboth{%
+           \contentsname}{\contentsname}}%
+    \@starttoc{toc}%
+    \if@restonecol\twocolumn\fi
+    }
 }{}
-
+% End Fix wrong encoding charset in headings in class book
 \def\th@month{%
   \ifcase\month\or
     มกราคม\or กุมภาพันธ์\or มีนาคม\or เมษายน
