@@ -1,3 +1,8 @@
+%define name thailatex
+%define version @VERSION@
+%define release 1
+%define manifest %{_builddir}/%{name}-%{version}-%{release}.manifest
+
 Summary: Thai extension for LaTeX
 Name: @PACKAGE@
 Version: @VERSION@
@@ -59,6 +64,7 @@ find . -type l \
 
 %changelog
 * Wed Dec 05 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - use variables for package names and releases
   - use manifest
 
 * Wed Jan 03 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
