@@ -48,15 +48,32 @@ rm -f %{manifest}
 find . -type d \
         | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' >> %{manifest}
 find . -type f \
-        | sed '/site-start.el/d' \
+        | sed '/psfonts.map/d;/site-start.el/d' \
         | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
 find . -type l \
         | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
 
 
 %post
-EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
+# add entries for dvips psfonts.map
+DVIPSDIR=/usr/share/texmf/dvips/base
+if [ -f $DVIPSDIR/psfonts.map ] ; then
+  sed -e '/^dbtt/d;/^rnorasi/d' < $DVIPSDIR/psfonts.map > /tmp/tmp.$$
+  mv /tmp/tmp.$$ $DVIPSDIR/psfonts.map
+fi
+sed -e 's/^X//' >> $DVIPSDIR/psfonts.map << END
+Xdbtt   DBThaiText <dbtt.pfb "dbttEncoding ReEncodeFont" <dbttx.enc
+Xdbttb  DBThaiTextBold <dbttb.pfb "dbttEncoding ReEncodeFont" <dbttx.enc
+Xdbtti  DBThaiTextItalic <dbtti.pfb "dbttEncoding ReEncodeFont" <dbttx.enc
+Xdbttbi DBThaiTextBoldItalic <dbttbi.pfb "dbttEncoding ReEncodeFont" <dbttx.enc
+Xrnorasi_n  Norasi <norasi_n.pfb "TeXTISEncoding ReEncodeFont" <TeXTIS.enc
+Xrnorasi_b  Norasi-Bold <norasi_b.pfb "TeXTISEncoding ReEncodeFont" <TeXTIS.enc
+Xrnorasi_i  Norasi-Italic <norasi_i.pfb "TeXTISEncoding ReEncodeFont" <TeXTIS.enc
+Xrnorasi_bi Norasi-BoldItalic <norasi_bi.pfb "TeXTISEncoding ReEncodeFont" <TeXTIS.enc
+END
+
 # add Emacs macro for activating Thai LaTeX filter
+EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
 if [ -f $EMACSLISPDIR/site-start.el ] ; then
   cd $EMACSLISPDIR
   sed -e '/thai-latex-setup/d' < site-start.el > /tmp/tmp.$$
@@ -66,8 +83,13 @@ echo '(load-library "thai-latex-setup")' \
   >> $EMACSLISPDIR/site-start.el
 
 %postun
-EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
+# remove entries for dvips psfonts.map
+DVIPSDIR=/usr/share/texmf/dvips/base
+sed -e '/^dbtt/d;/^rnorasi/d' < $DVIPSDIR/psfonts.map > /tmp/tmp.$$
+mv /tmp/tmp.$$ $DVIPSDIR/psfonts.map
+
 # remove Emacs macro for activating Thai LaTeX filter
+EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
 if [ -f $EMACSLISPDIR/site-start.el ] ; then
   cd $EMACSLISPDIR
   sed -e  '/thai-latex-setup/d' < site-start.el > /tmp/tmp.$$
