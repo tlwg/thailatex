@@ -1,3 +1,29 @@
+2003-01-11 Theppitak Karoonboonyanan <thep@linux.thai.net>
+	* -fonts/type1/*, -fonts/afm/*:
+	  Remove subdirs.
+	* +fonts/dbtt*.pfb, +fonts/garuda*.pfb, +fonts/norasi*.pfb:
+	  Add new fonts whose glyphs are renamed using uni<CODE> format by
+	  Poonlap Veerathanabutr. (place for .pfb moved from fonts/type1
+	  subdir to here)
+	* -dvips/*:
+	  Remove subdir.
+	* +fonts/lthuni.enc:
+	  Add uni<CODE>-based encoding. (place for .enc moved from dvips
+	  subdir to here)
+	* fonts/Makefile.am:
+	  Rewrite Makefile.am using abstract rules.
+	  Incorporate rules from dvips/Makefile.am.
+	* configure.in:
+	  Remove fonts/type1/Makefile and fonts/afm/Makefile generation.
+	  Add check for ps2afm program.
+	* Makefile.am:
+	  Remove dvips in SUBDIRS.
+	* babel/lthdbttx.fd -> babel/lthdbtt.fd, thai.ldf:
+	  Rename the font name (Poonlap Veerathanabutr)
+	* babel/lthdbtt.fd, babel/lthnorasi.fd, +babel/lthgaruda.fd:
+	  Merge Poonlap's changes to the font descriptions.
+	  Add font description for Garuda.
+
 2003-01-09 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* Makefile.am:
 	  Use install-data-hook instead of install-data-local
