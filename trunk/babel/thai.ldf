@@ -1,0 +1,78 @@
+%%
+%% This is file `thai.ldf',
+%% created by Surapant Meknavin: surapan@nectec.or.th
+%% 
+%% --------------------------------------------------
+%% 2000/05/09 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+%%            - encoding changed from TIS to LTH, according to TeX convention
+%%            - let "norasi" be Thai roman font, "dbttx" Thai sans serif
+%%            - correct some Thai translations
+\ProvidesLanguage{thai}
+        [1999/06/21 v1.0d Thai support for the babel system]
+\LdfInit\CurrentOption{captions\CurrentOption}
+\ifx\l@thai\@undefined
+  \@nopatterns{thai}
+  \adddialect\l@thai0\fi
+\InputIfFileExists{lthenc.def}{%
+  \message{Loading the definitions for the Thai font encoding}}{%
+  \errhelp{I can't find the lthenc.def file for the Thai fonts}%
+  \errmessage{Since I do not know what the LTH encoding means^^J
+    I can't typeset Thai.^^J
+    I stop here, while you get a suitable lthenc.def file}\@@end
+ }
+\def\thairmdefault{norasi}
+\def\thaisfdefault{dbttx}
+\def\englishrmdefault{cmr}
+\def\englishsfdefault{cmss}
+\DeclareRobustCommand{\thaitext}{%
+  \fontencoding{LTH}\fontfamily{\thairmdefault}\selectfont
+  \def\rmdefault{\thairmdefault}
+  \def\sfdefault{\thaisfdefault}
+  \def\encodingdefault{LTH}}
+\DeclareRobustCommand{\textthai}[1]{{\thaitext #1}}
+\def\thai{\thaitext}
+% \def\outlfamily{\usefont{LTH}{cmro}{m}{n}}
+% \DeclareTextFontCommand{\textol}{\outlfamily}
+\def\thaihyphenmins{11} %
+\addto\captionsthai{%
+  \def\prefacename{บทนำ}
+  \def\refname{หนังสืออ้างอิง}
+  \def\abstractname{บทคัดย่อ}
+  \def\bibname{บรรณานุกรม}
+  \def\chaptername{บทที่}
+  \def\appendixname{ภาคผนวก}
+  \def\contentsname{สารบัญ}
+  \def\listfigurename{สารบัญรูป}
+  \def\listtablename{สารบัญตาราง}
+  \def\indexname{ดรรชนี}
+  \def\figurename{รูปที่}
+  \def\tablename{ตารางที่}
+  \def\partname{ภาค}
+  \def\enclname{สิ่งที่แนบมาด้วย}
+  \def\ccname{สำเนาถึง}
+  \def\headtoname{เรียน}
+  \def\pagename{หน้า}
+  \def\seename{ดู}
+  \def\alsoname{ดูเพิ่มเติม}
+  \def\proofname{พิสูจน์}%
+  }
+\def\th@month{%
+  \ifcase\month\or
+    มกราคม\or กุมภาพันธ์\or มีนาคม\or เมษายน
+   \or พฤษภาคม\or มิถุนายน\or กรกฎาคม\or สิงหาคม
+   \or กันยายน \or ตุลาคม\or พฤศจิกายน\or ธันวาคม   \fi}
+\newcount\th@year
+\th@year=\year
+\advance\th@year by 543
+\def\datethai{%
+  \def\today{\number\day \space \th@month\space พ.ศ.~\number\th@year}}
+\addto\extrasthai{\thaitext}
+\addto\noextrasthai{\latintext}
+\def\wbr{\hskip0pt\relax}
+\renewcommand{\baselinestretch}{1.2}
+\def\fnum@figure{\figurename\nobreakspace\thefigure}
+\def\fnum@table{\tablename\nobreakspace\thetable}
+\ldf@finish{\CurrentOption}
+\endinput
+%%
+%% End of file `thai.ldf'.
