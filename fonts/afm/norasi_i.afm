@@ -1,0 +1,274 @@
+StartFontMetrics 2.0
+Comment Copyright This font was developed under National Font Project at NECTEC as to be a free licensed font for Thai users and developers.
+Comment Panose 2 0 5 6 0 0 0 2 0 4
+FullName Norasi Italic
+FontName Norasi-Italic
+FamilyName Norasi
+Weight Normal
+Notice Copyright © 1999, The National Font Project (v.beta ). Yannis Haralambous, Virach Sornlertlamvanich and Anutara Tantraporn. All rights reserved.
+Version 001.000
+IsFixedPitch false
+ItalicAngle -12.00
+FontBBox -306 -366 1101 830
+Ascender 800
+Descender -200
+XHeight 340
+CapHeight 461
+UnderlinePosition -100
+UnderlineThickness 50
+StdHW 22
+EncodingScheme FontSpecific
+StartCharMetrics 222
+C 166 ; WX 440 ; N ThaiCharacterKhoRakhang ; B 74 -3 452 385 ;
+C 167 ; WX 305 ; N ThaiCharacterNgoNgu ; B 54 0 311 385 ;
+C 168 ; WX 319 ; N ThaiCharacterChoChan ; B 60 0 316 385 ;
+C 169 ; WX 458 ; N ThaiCharacterChoChing ; B 62 -3 414 385 ;
+C 170 ; WX 355 ; N ThaiCharacterChoChang ; B 51 0 374 408 ;
+C 171 ; WX 392 ; N ThaiCharacterSoSo ; B 75 0 411 409 ;
+C 172 ; WX 542 ; N ThaiCharacterChoChoe ; B 59 -6 554 385 ;
+C 173 ; WX 543 ; N ThaiCharacterYoYing ; B 59 -195 555 385 ;
+C 174 ; WX 428 ; N ThaiCharacterDoChada ; B 26 -161 422 385 ;
+C 175 ; WX 428 ; N ThaiCharacterToPatak ; B 26 -162 422 385 ;
+C 176 ; WX 356 ; N ThaiCharacterThoThan ; B -17 -198 387 385 ;
+C 177 ; WX 458 ; N ThaiCharacterThoNangmontho ; B 62 0 464 385 ;
+C 178 ; WX 533 ; N ThaiCharacterThoPhuthao ; B 67 -5 545 385 ;
+C 179 ; WX 582 ; N ThaiCharacterNoNen ; B 59 -6 561 385 ;
+C 180 ; WX 387 ; N ThaiCharacterDoDek ; B 65 0 388 385 ;
+C 181 ; WX 395 ; N ThaiCharacterToTao ; B 69 0 397 385 ;
+C 182 ; WX 399 ; N ThaiCharacterThoThung ; B 60 -6 400 385 ;
+C 183 ; WX 428 ; N ThaiCharacterThoThahan ; B 78 0 434 385 ;
+C 184 ; WX 360 ; N ThaiCharacterThoThong ; B 38 0 396 385 ;
+C 185 ; WX 457 ; N ThaiCharacterNoNu ; B 83 -5 436 385 ;
+C 186 ; WX 413 ; N ThaiCharacterBoBaimai ; B 57 0 425 385 ;
+C 187 ; WX 413 ; N ThaiCharacterPoPla ; B 57 0 460 542 ;
+C 188 ; WX 406 ; N ThaiCharacterPhoPhung ; B 30 0 418 385 ;
+C 189 ; WX 406 ; N ThaiCharacterFoFa ; B 30 0 453 542 ;
+C 190 ; WX 446 ; N ThaiCharacterPhoPhan ; B 78 0 458 385 ;
+C 191 ; WX 446 ; N ThaiCharacterFoFan ; B 78 0 493 542 ;
+C 192 ; WX 426 ; N ThaiCharacterPhoSamphao ; B 17 -6 427 385 ;
+C 193 ; WX 410 ; N ThaiCharacterMoMa ; B 45 -5 422 385 ;
+C 194 ; WX 371 ; N ThaiCharacterYoYak ; B 53 -6 383 385 ;
+C 195 ; WX 315 ; N ThaiCharacterRoRua ; B 67 -10 366 385 ;
+C 196 ; WX 404 ; N ThaiCharacterRu ; B 64 -160 405 385 ;
+C 197 ; WX 380 ; N ThaiCharacterLoLing ; B 61 -4 382 385 ;
+C 198 ; WX 428 ; N ThaiCharacterLu ; B 19 -160 429 385 ;
+C 199 ; WX 328 ; N ThaiCharacterWoWaen ; B 58 -6 325 385 ;
+C 200 ; WX 411 ; N ThaiCharacterSoSala ; B 71 0 429 406 ;
+C 201 ; WX 490 ; N ThaiCharacterSoRusi ; B 56 0 484 385 ;
+C 202 ; WX 406 ; N ThaiCharacterSoSua ; B 61 -4 424 405 ;
+C 203 ; WX 434 ; N ThaiCharacterHoHip ; B 78 0 442 385 ;
+C 204 ; WX 468 ; N ThaiCharacterLoChula ; B 78 0 549 475 ;
+C 205 ; WX 385 ; N ThaiCharacterOAng ; B 60 -5 388 385 ;
+C 206 ; WX 390 ; N ThaiCharacterHoNokhuk ; B 59 -5 410 415 ;
+C 207 ; WX 367 ; N ThaiCharacterPaiyannoi ; B 111 0 374 385 ;
+C 208 ; WX 313 ; N ThaiCharacterSaraA ; B 22 5 326 380 ;
+C 209 ; WX 0 ; N ThaiCharacterMaiHanAkat ; B -162 423 144 580 ;
+C 210 ; WX 272 ; N ThaiCharacterSaraAa ; B 60 0 276 385 ;
+C 211 ; WX 279 ; N ThaiCharacterSaraAm ; B -54 0 282 579 ;
+C 213 ; WX 0 ; N ThaiCharacterSaraIi ; B -244 421 41 615 ;
+C 214 ; WX 0 ; N ThaiCharacterSaraUe ; B -249 422 50 620 ;
+C 215 ; WX 0 ; N ThaiCharacterSaraUee ; B -249 422 36 615 ;
+C 216 ; WX 0 ; N ThaiCharacterSaraU ; B -211 -200 -84 -35 ;
+C 217 ; WX 0 ; N ThaiCharacterSaraUu ; B -306 -200 -78 -35 ;
+C 218 ; WX 0 ; N ThaiCharacterPhinthu ; B -162 -116 -74 -36 ;
+C 223 ; WX 498 ; N ThaiCharacterBaht ; B 54 -35 510 495 ;
+C 224 ; WX 194 ; N ThaiCharacterSaraE ; B 52 -3 186 385 ;
+C 225 ; WX 377 ; N ThaiCharacterSaraAe ; B 52 -3 369 386 ;
+C 226 ; WX 218 ; N ThaiCharacterSaraO ; B 76 -3 391 707 ;
+C 227 ; WX 252 ; N ThaiCharacterSaraAiMaimuan ; B 95 -3 300 711 ;
+C 228 ; WX 255 ; N ThaiCharacterSaraAiMaimalai ; B 117 -3 307 714 ;
+C 229 ; WX 203 ; N ThaiCharacterLakkhangyao ; B -10 -168 206 385 ;
+C 230 ; WX 385 ; N ThaiCharacterMaiyamok ; B 54 -168 347 386 ;
+C 231 ; WX 0 ; N ThaiCharacterMaitaikhu ; B -200 424 40 610 ;
+C 232 ; WX 0 ; N ThaiCharacterMaiEk ; B 20 648 82 786 ;
+C 233 ; WX 0 ; N ThaiCharacterMaiTho ; B -83 650 128 793 ;
+C 234 ; WX 0 ; N ThaiCharacterMaiTri ; B -136 649 121 775 ;
+C 235 ; WX 0 ; N ThaiCharacterMaiChattawa ; B -39 650 122 794 ;
+C 236 ; WX 0 ; N ThaiCharacterThanthakhat ; B -89 638 111 830 ;
+C 237 ; WX 0 ; N ThaiCharacterNikhahit ; B -68 443 57 558 ;
+C 238 ; WX 0 ; N ThaiCharacterYamakkan ; B -132 453 118 642 ;
+C 239 ; WX 546 ; N ThaiCharacterFongman ; B 110 0 513 385 ;
+C 240 ; WX 470 ; N ThaiDigitZero ; B 100 -5 427 290 ;
+C 241 ; WX 470 ; N ThaiDigitOne ; B 98 -13 430 290 ;
+C 242 ; WX 470 ; N ThaiDigitTwo ; B 86 -3 473 451 ;
+C 243 ; WX 470 ; N ThaiDigitThree ; B 70 -6 455 290 ;
+C 244 ; WX 470 ; N ThaiDigitFour ; B 66 0 529 453 ;
+C 245 ; WX 470 ; N ThaiDigitFive ; B 66 0 530 453 ;
+C 246 ; WX 470 ; N ThaiDigitSix ; B 115 -5 437 451 ;
+C 247 ; WX 470 ; N ThaiDigitSeven ; B 61 -2 497 441 ;
+C 248 ; WX 470 ; N ThaiDigitEight ; B 71 -2 522 450 ;
+C 249 ; WX 470 ; N ThaiDigitNine ; B 70 -1 527 450 ;
+C 250 ; WX 487 ; N ThaiCharacterAngkhankhu ; B 85 0 472 385 ;
+C 251 ; WX 1099 ; N ThaiCharacterKhomut ; B 151 34 1101 354 ;
+C 128 ; WX 355 ; N ThaiCharacterThoThanDescless ; B 79 0 386 385 ;
+C 133 ; WX 531 ; N ellipsis ; B 70 -7 464 70 ;
+C 129 ; WX 0 ; N ThaiCharacterSaraILeft ; B -294 422 -38 580 ;
+C 130 ; WX 0 ; N ThaiCharacterSaraIiLeft ; B -294 422 -19 615 ;
+C 131 ; WX 0 ; N ThaiCharacterSaraUeLeft ; B -294 422 -11 615 ;
+C 132 ; WX 0 ; N ThaiCharacterSaraUeeLeft ; B -294 422 -19 615 ;
+C 145 ; WX 163 ; N quoteleft ; B 105 303 217 473 ;
+C 146 ; WX 163 ; N quoteright ; B 114 303 225 473 ;
+C 147 ; WX 331 ; N quotedblleft ; B 102 299 366 473 ;
+C 148 ; WX 331 ; N quotedblright ; B 114 303 378 477 ;
+C 149 ; WX 270 ; N bullet ; B 81 137 286 326 ;
+C 150 ; WX 551 ; N endash ; B 78 171 545 205 ;
+C 151 ; WX 1102 ; N emdash ; B 78 171 1046 205 ;
+C 134 ; WX 0 ; N ThaiCharacterMaiEkLowLeft ; B -105 445 -36 597 ;
+C 135 ; WX 0 ; N ThaiCharacterMaiThoLowLeft ; B -262 445 -17 603 ;
+C 136 ; WX 0 ; N ThaiCharacterMaiTriLowLeft ; B -300 443 -17 582 ;
+C 137 ; WX 0 ; N ThaiCharacterMaiChattawaLowLeft ; B -214 445 -38 603 ;
+C 138 ; WX 0 ; N ThaiCharacterThanthakhatLowLeft ; B -184 445 37 660 ;
+C 139 ; WX 0 ; N ThaiCharacterMaiEkLow ; B -25 445 44 597 ;
+C 140 ; WX 0 ; N ThaiCharacterMaiThoLow ; B -154 445 91 603 ;
+C 141 ; WX 0 ; N ThaiCharacterMaiTriLow ; B -188 443 95 582 ;
+C 142 ; WX 0 ; N ThaiCharacterMaiChattawaLow ; B -104 485 72 643 ;
+C 143 ; WX 0 ; N ThaiCharacterThanthakhatLow ; B -166 445 79 682 ;
+C 144 ; WX 545 ; N ThaiCharacterYoYingDescless ; B 59 -6 555 385 ;
+C 152 ; WX 0 ; N ThaiCharacterMaiHanAkatLeft ; B -167 413 149 570 ;
+C 153 ; WX 0 ; N ThaiCharacterNikhahitLeft ; B -159 440 -34 555 ;
+C 154 ; WX 0 ; N ThaiCharacterMaitaikhuLeft ; B -246 424 -7 610 ;
+C 155 ; WX 0 ; N ThaiCharacterMaiEkLeft ; B -35 647 27 785 ;
+C 156 ; WX 0 ; N ThaiCharacterMaiThoLeft ; B -94 640 116 783 ;
+C 157 ; WX 0 ; N ThaiCharacterMaiTriLeft ; B -134 639 123 765 ;
+C 158 ; WX 0 ; N ThaiCharacterMaiChattawaLeft ; B -99 640 62 784 ;
+C 159 ; WX 0 ; N ThaiCharacterThanthakhatLeft ; B -71 640 125 830 ;
+C 255 ; WX 620 ; N joker ; B 171 -13 600 567 ;
+C 252 ; WX 0 ; N ThaiCharacterSaraULow ; B -227 -364 -100 -194 ;
+C 253 ; WX 0 ; N ThaiCharacterSaraUuLow ; B -279 -366 -51 -196 ;
+C 254 ; WX 0 ; N ThaiCharacterPhinthuLow ; B -179 -284 -83 -196 ;
+C 163 ; WX 392 ; N ThaiCharacterKhoKhuat ; B 75 0 404 385 ;
+C 33 ; WX 255 ; N exclam ; B 91 -4 263 461 ;
+C 34 ; WX 315 ; N quotedbl ; B 151 290 340 461 ;
+C 35 ; WX 378 ; N numbersign ; B 46 0 418 452 ;
+C 36 ; WX 386 ; N dollar ; B 51 -59 400 509 ;
+C 37 ; WX 586 ; N percent ; B 100 -7 598 473 ;
+C 38 ; WX 572 ; N ampersand ; B 51 -7 561 461 ;
+C 39 ; WX 163 ; N quotesingle ; B 114 303 225 473 ;
+C 40 ; WX 257 ; N parenleft ; B 80 -122 333 473 ;
+C 41 ; WX 257 ; N parenright ; B 18 -122 276 473 ;
+C 42 ; WX 386 ; N asterisk ; B 123 185 413 473 ;
+C 43 ; WX 436 ; N plus ; B 77 0 437 354 ;
+C 44 ; WX 174 ; N comma ; B 36 -97 145 71 ;
+C 45 ; WX 270 ; N hyphen ; B 53 129 277 162 ;
+C 46 ; WX 193 ; N period ; B 64 -6 149 70 ;
+C 47 ; WX 232 ; N slash ; B -26 -121 334 473 ;
+C 48 ; WX 378 ; N zero ; B 72 -8 408 461 ;
+C 49 ; WX 381 ; N one ; B 105 0 326 461 ;
+C 50 ; WX 378 ; N two ; B 43 0 395 461 ;
+C 51 ; WX 379 ; N three ; B 54 -8 382 461 ;
+C 52 ; WX 371 ; N four ; B 54 0 370 452 ;
+C 53 ; WX 380 ; N five ; B 47 -8 427 472 ;
+C 54 ; WX 374 ; N six ; B 74 -8 416 461 ;
+C 55 ; WX 380 ; N seven ; B 111 -4 426 453 ;
+C 56 ; WX 373 ; N eight ; B 74 -8 387 461 ;
+C 57 ; WX 379 ; N nine ; B 60 -13 409 461 ;
+C 58 ; WX 215 ; N colon ; B 72 -6 209 321 ;
+C 59 ; WX 215 ; N semicolon ; B 63 -97 209 321 ;
+C 60 ; WX 436 ; N less ; B 75 -4 474 360 ;
+C 61 ; WX 436 ; N equal ; B 62 90 452 265 ;
+C 62 ; WX 436 ; N greater ; B 41 -4 439 360 ;
+C 63 ; WX 342 ; N question ; B 120 -6 377 473 ;
+C 64 ; WX 554 ; N at ; B 71 -8 591 461 ;
+C 65 ; WX 500 ; N A ; B 18 0 485 452 ;
+C 66 ; WX 436 ; N B ; B 24 -1 491 452 ;
+C 67 ; WX 475 ; N C ; B 58 -8 521 460 ;
+C 68 ; WX 504 ; N D ; B 23 0 553 453 ;
+C 69 ; WX 432 ; N E ; B 29 0 489 453 ;
+C 70 ; WX 400 ; N F ; B 20 0 479 452 ;
+C 71 ; WX 508 ; N G ; B 73 -8 541 454 ;
+C 72 ; WX 516 ; N H ; B 25 0 589 453 ;
+C 73 ; WX 248 ; N I ; B 25 0 323 452 ;
+C 74 ; WX 266 ; N J ; B 13 -8 353 453 ;
+C 75 ; WX 512 ; N K ; B 36 0 570 453 ;
+C 76 ; WX 433 ; N L ; B 29 0 456 453 ;
+C 77 ; WX 625 ; N M ; B 20 0 697 452 ;
+C 78 ; WX 510 ; N N ; B 20 -6 593 453 ;
+C 79 ; WX 526 ; N O ; B 63 -8 552 461 ;
+C 80 ; WX 401 ; N P ; B 23 0 468 453 ;
+C 81 ; WX 525 ; N Q ; B 68 -115 551 461 ;
+C 82 ; WX 474 ; N R ; B 26 0 486 453 ;
+C 83 ; WX 401 ; N S ; B 62 -8 418 461 ;
+C 84 ; WX 443 ; N T ; B 96 0 510 453 ;
+C 85 ; WX 527 ; N U ; B 90 -8 598 453 ;
+C 86 ; WX 483 ; N V ; B 103 -6 572 453 ;
+C 87 ; WX 662 ; N W ; B 109 -6 746 453 ;
+C 88 ; WX 513 ; N X ; B 19 0 585 453 ;
+C 89 ; WX 498 ; N Y ; B 111 0 580 453 ;
+C 90 ; WX 443 ; N Z ; B 18 0 503 453 ;
+C 91 ; WX 257 ; N bracketleft ; B 66 -87 334 483 ;
+C 92 ; WX 249 ; N backslash ; B 119 -121 227 473 ;
+C 93 ; WX 257 ; N bracketright ; B 28 -87 296 483 ;
+C 94 ; WX 361 ; N asciicircum ; B 83 208 378 463 ;
+C 95 ; WX 386 ; N underscore ; B 4 -85 361 -50 ;
+C 96 ; WX 180 ; N grave ; B 102 248 199 332 ;
+C 97 ; WX 340 ; N a ; B 33 -5 341 347 ;
+C 98 ; WX 392 ; N b ; B 69 -5 418 516 ;
+C 99 ; WX 337 ; N c ; B 48 -5 375 347 ;
+C 100 ; WX 380 ; N d ; B 43 -5 439 516 ;
+C 101 ; WX 338 ; N e ; B 52 -5 372 347 ;
+C 102 ; WX 250 ; N f ; B 25 0 405 517 ;
+C 103 ; WX 359 ; N g ; B 2 -140 408 347 ;
+C 104 ; WX 381 ; N h ; B 18 0 407 516 ;
+C 105 ; WX 197 ; N i ; B 16 0 247 518 ;
+C 106 ; WX 189 ; N j ; B -87 -163 255 518 ;
+C 107 ; WX 386 ; N k ; B 17 0 444 514 ;
+C 108 ; WX 198 ; N l ; B 16 0 247 517 ;
+C 109 ; WX 598 ; N m ; B 22 0 617 347 ;
+C 110 ; WX 379 ; N n ; B 24 0 402 346 ;
+C 111 ; WX 383 ; N o ; B 60 -5 407 347 ;
+C 112 ; WX 378 ; N p ; B -16 -151 410 347 ;
+C 113 ; WX 338 ; N q ; B 55 -160 402 347 ;
+C 114 ; WX 255 ; N r ; B 15 0 339 347 ;
+C 115 ; WX 289 ; N s ; B 36 -5 305 347 ;
+C 116 ; WX 208 ; N t ; B 59 -5 270 437 ;
+C 117 ; WX 386 ; N u ; B 73 -5 398 340 ;
+C 118 ; WX 362 ; N v ; B 77 -7 424 340 ;
+C 119 ; WX 524 ; N w ; B 77 -7 585 340 ;
+C 120 ; WX 376 ; N x ; B 14 0 400 340 ;
+C 121 ; WX 370 ; N y ; B -20 -169 431 340 ;
+C 122 ; WX 332 ; N z ; B 12 0 368 340 ;
+C 123 ; WX 240 ; N braceleft ; B 79 -125 318 476 ;
+C 124 ; WX 155 ; N bar ; B 36 -121 198 473 ;
+C 125 ; WX 240 ; N braceright ; B -1 -125 238 476 ;
+C 126 ; WX 418 ; N asciitilde ; B 85 128 414 226 ;
+C 161 ; WX 404 ; N ThaiCharacterKoKai ; B 58 0 404 385 ;
+C 162 ; WX 352 ; N ThaiCharacterKhoKhai ; B 48 0 364 385 ;
+C 165 ; WX 396 ; N ThaiCharacterKhoKhon ; B 75 0 399 385 ;
+C 164 ; WX 388 ; N ThaiCharacterKhoKhwai ; B 71 0 391 385 ;
+C 212 ; WX 0 ; N ThaiCharacterSaraI ; B -249 422 22 580 ;
+C 32 ; WX 250 ; N space ; B 0 0 0 0 ;
+C 127 ; WX 267 ; N DEL ; B 0 -2 359 590 ;
+C 220 ; WX 520 ; N ThaiWordbreak ; B 39 -119 485 39 ;
+C 0 ; WX 500 ; N .null ; B 0 0 0 0 ;
+C 160 ; WX 200 ; N nbspace ; B 0 0 0 0 ;
+EndCharMetrics
+StartKernData
+StartKernPairs 20
+KPX ThaiCharacterThoThan ThaiCharacterSaraI 30
+KPX ThaiCharacterThoThan ThaiCharacterSaraIi 30
+KPX ThaiCharacterThoThan ThaiCharacterSaraUe 30
+KPX ThaiCharacterThoThan ThaiCharacterSaraUee 30
+
+KPX ThaiCharacterNoNen ThaiCharacterSaraUee -30
+KPX ThaiCharacterNoNen ThaiCharacterSaraI -30
+KPX ThaiCharacterNoNen ThaiCharacterSaraIi -30
+KPX ThaiCharacterNoNen ThaiCharacterSaraUe -30
+
+KPX ThaiCharacterNoNu ThaiCharacterSaraI -30
+KPX ThaiCharacterNoNu ThaiCharacterSaraIi -30
+KPX ThaiCharacterNoNu ThaiCharacterSaraUe -30
+KPX ThaiCharacterNoNu ThaiCharacterSaraUee -30
+
+KPX ThaiCharacterRoRua ThaiCharacterSaraI 30
+KPX ThaiCharacterRoRua ThaiCharacterSaraIi 30
+KPX ThaiCharacterRoRua ThaiCharacterSaraUee 30
+KPX ThaiCharacterRoRua ThaiCharacterSaraUe 30
+
+KPX ThaiCharacterThoThanDescless ThaiCharacterSaraI 30
+KPX ThaiCharacterThoThanDescless ThaiCharacterSaraIi 30
+KPX ThaiCharacterThoThanDescless ThaiCharacterSaraUe 30
+KPX ThaiCharacterThoThanDescless ThaiCharacterSaraUee 30
+
+EndKernPairs
+EndKernData
+EndFontMetrics
