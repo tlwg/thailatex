@@ -56,11 +56,13 @@ AC_MSG_CHECKING(--with-texmfdir)
 AC_MSG_RESULT("$texmfdir")                                                                                                           
 AC_SUBST(texmfdir)
 
-updmappath=`eval echo $PATH:$texmfdir/dvips/config`
-AC_PATH_PROG(UPDMAP,updmap,no,$updmappath)
-if test "x$UPDMAP" = "xno" ; then
-  AC_MSG_ERROR([You need updmap (from teTeX distribution)])
-fi
+dnl For tetex > 1.0.7 only
+dnl
+dnl updmappath=`eval echo $PATH:$texmfdir/dvips/config`
+dnl AC_PATH_PROG(UPDMAP,updmap,no,$updmappath)
+dnl if test "x$UPDMAP" = "xno" ; then
+dnl   AC_MSG_ERROR([You need updmap (from teTeX distribution)])
+dnl fi
 
 AC_PATH_PROG(TEXHASH,texhash,no)
 if test "x$TEXHASH" = "xno" ; then
