@@ -23,7 +23,7 @@ dvipsconfigdir = @texmfdir@/dvips/config
 
 #DVIPSCONFIG=$(DESTDIR)/@texmfdir@/dvips/config/config.ps
 #PDFTEXCONFIG=$(DESTDIR)/@texmfdir@/pdftex/config/pdftex.cfg
-UPDMAPCONFIG=$(DESTDIR)/@texmfdir@/web2c/updmap.cfg
+#UPDMAPCONFIG=$(DESTDIR)/@texmfdir@/web2c/updmap.cfg
 
 dvipsbase_DATA = lthuni.enc
 
@@ -120,15 +120,16 @@ thai.map: $(tfm_DATA)
 	LC_COLLATE=C sort $@ | uniq > /tmp/tmp.$$$$; mv /tmp/tmp.$$$$ $@
 
 install-data-hook:
-	mkdir -p `dirname $(UPDMAPCONFIG)`
-	if test -f $(UPDMAPCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(UPDMAPCONFIG) > /tmp/tmp.$$$$ ; \
-	  mv -f /tmp/tmp.$$$$ $(UPDMAPCONFIG) ; \
-	fi
-	echo "% thailatex" >> $(UPDMAPCONFIG)
-	echo "Map thai.map" >> $(UPDMAPCONFIG)
-	mkdir -p `dirname $(UPDMAPCONFIG)`
-	$(UPDMAP)
+	$(UPDMAP) --enable Map thai.map
+#	mkdir -p `dirname $(UPDMAPCONFIG)`
+#	if test -f $(UPDMAPCONFIG); then \
+#	  sed -e '/thailatex/d;/thai.map/d' $(UPDMAPCONFIG) > /tmp/tmp.$$$$ ; \
+#	  mv -f /tmp/tmp.$$$$ $(UPDMAPCONFIG) ; \
+#	fi
+#	echo "% thailatex" >> $(UPDMAPCONFIG)
+#	echo "Map thai.map" >> $(UPDMAPCONFIG)
+#	mkdir -p `dirname $(UPDMAPCONFIG)`
+#	$(UPDMAP)
 #	if test -f $(DVIPSCONFIG); then \
 #	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
 #	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
@@ -144,11 +145,12 @@ install-data-hook:
 #	echo "map +thai.map" >> $(PDFTEXCONFIG)
  
 uninstall-hook:
-	if test -f $(UPDMAPCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(UPDMAPCONFIG) > /tmp/tmp.$$$$ ; \
-	  mv -f /tmp/tmp.$$$$ $(UPDMAPCONFIG) ; \
-	fi
-	$(UPDMAP)
+	$(UPDMAP) --disable thai.map
+#	if test -f $(UPDMAPCONFIG); then \
+#	  sed -e '/thailatex/d;/thai.map/d' $(UPDMAPCONFIG) > /tmp/tmp.$$$$ ; \
+#	  mv -f /tmp/tmp.$$$$ $(UPDMAPCONFIG) ; \
+#	fi
+#	$(UPDMAP)
 #	if test -f $(DVIPSCONFIG); then \
 #	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
 #	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
