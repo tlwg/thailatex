@@ -18,10 +18,10 @@ EXTRA_DIST = \
 	kinnari_b.pfb \
 	kinnari_o.pfb \
 	kinnari_bo.pfb \
-	pmono.pfb \
-	pmono_b.pfb \
-	pmono_o.pfb \
-	pmono_bo.pfb \
+	ttype.pfb \
+	ttype_b.pfb \
+	ttype_o.pfb \
+	ttype_bo.pfb \
 	purisa.pfb \
 	dbtt.afm \
 	dbtt_b.afm \
@@ -41,10 +41,10 @@ EXTRA_DIST = \
 	kinnari_b.afm \
 	kinnari_o.afm \
 	kinnari_bo.afm \
-	pmono.afm \
-	pmono_b.afm \
-	pmono_o.afm \
-	pmono_bo.afm \
+	ttype.afm \
+	ttype_b.afm \
+	ttype_o.afm \
+	ttype_bo.afm \
 	purisa.afm
 
 DISTCLEANFILES = thai.map
@@ -84,10 +84,10 @@ type1_DATA = \
 	kinnari_b.pfb \
 	kinnari_o.pfb \
 	kinnari_bo.pfb \
-	pmono.pfb \
-	pmono_b.pfb \
-	pmono_o.pfb \
-	pmono_bo.pfb \
+	ttype.pfb \
+	ttype_b.pfb \
+	ttype_o.pfb \
+	ttype_bo.pfb \
 	purisa.pfb
 
 
@@ -111,10 +111,10 @@ afm_DATA = \
 	kinnari_b.afm \
 	kinnari_o.afm \
 	kinnari_bo.afm \
-	pmono.afm \
-	pmono_b.afm \
-	pmono_o.afm \
-	pmono_bo.afm \
+	ttype.afm \
+	ttype_b.afm \
+	ttype_o.afm \
+	ttype_bo.afm \
 	purisa.afm
 
 
@@ -138,10 +138,10 @@ tfm_DATA = \
 	kinnari_b.tfm \
 	kinnari_o.tfm \
 	kinnari_bo.tfm \
-	pmono.tfm \
-	pmono_b.tfm \
-	pmono_o.tfm \
-	pmono_bo.tfm \
+	ttype.tfm \
+	ttype_b.tfm \
+	ttype_o.tfm \
+	ttype_bo.tfm \
 	purisa.tfm \
 	rdbtt.tfm \
 	rdbtt_b.tfm \
@@ -161,10 +161,10 @@ tfm_DATA = \
 	rkinnari_b.tfm \
 	rkinnari_o.tfm \
 	rkinnari_bo.tfm \
-	rpmono.tfm \
-	rpmono_b.tfm \
-	rpmono_o.tfm \
-	rpmono_bo.tfm \
+	rttype.tfm \
+	rttype_b.tfm \
+	rttype_o.tfm \
+	rttype_bo.tfm \
 	rpurisa.tfm
 
 
@@ -188,10 +188,10 @@ vf_DATA = \
 	kinnari_b.vf \
 	kinnari_o.vf \
 	kinnari_bo.vf \
-	pmono.vf \
-	pmono_b.vf \
-	pmono_o.vf \
-	pmono_bo.vf \
+	ttype.vf \
+	ttype_b.vf \
+	ttype_o.vf \
+	ttype_bo.vf \
 	purisa.vf
 
 
