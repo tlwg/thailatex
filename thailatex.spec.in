@@ -15,7 +15,7 @@ BuildRoot: /var/tmp/%{name}-%{version}
 Vendor: Surapant Meknavin <surapan@nectec.or.th>, Theppitak Karoonboonyanan <thep@links.nectec.or.th>, NECTEC
 Packager: Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 Distribution: Linux TLE, Thai Linux Working Group
-Requires: tetex >= 0.9
+Requires: tetex >= 0.9, tetex-dvips >= 0.9
 BuildRequires: tetex >= 0.9, tetex-afm >= 0.9
 
 %description
@@ -72,6 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 #%config
 
 %changelog
+* Tue Mar 04 2003 Theppitak Karoonboonyanan <thep@linux.thai.net>
+  - add tetex-dvips to Requires: (as suggested by Vee Sattayamas)
+
 * Tue Jan 28 2003 Poonlap Veerathanabutr <poonlap@linux.thai.net>
   - fix some comment in spec file which cause problems
 
