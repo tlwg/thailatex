@@ -10,6 +10,7 @@ Release: %{release}
 Copyright: freely distributable
 Group: Applications/Publishing
 Source: %{name}-%{version}.tar.gz
+BuildArch: noarch
 BuildRoot: /var/tmp/%{name}-%{version}
 Vendor: Surapant Meknavin <surapan@nectec.or.th>, Theppitak Karoonboonyanan <thep@links.nectec.or.th>, NECTEC
 Packager: Theppitak Karoonboonyanan <thep@links.nectec.or.th>
@@ -47,14 +48,31 @@ rm -f %{manifest}
 find . -type d \
         | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' >> %{manifest}
 find . -type f \
+        | sed '/site-start.el/d' \
         | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
 find . -type l \
         | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
 
 
 %post
+EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
+# add Emacs macro for activating Thai LaTeX filter
+if [ -f $EMACSLISPDIR/site-start.el ] ; then
+  cd $EMACSLISPDIR
+  sed -e '/thai-latex-setup/d' < site-start.el > /tmp/tmp.$$
+  mv /tmp/tmp.$$ site-start.el
+fi
+echo '(load-library "thai-latex-setup")' \
+  >> $EMACSLISPDIR/site-start.el
 
 %postun
+EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
+# remove Emacs macro for activating Thai LaTeX filter
+if [ -f $EMACSLISPDIR/site-start.el ] ; then
+  cd $EMACSLISPDIR
+  sed -e  '/thai-latex-setup/d' < site-start.el > /tmp/tmp.$$
+  mv /tmp/tmp.$$ site-start.el
+fi
 
 %files -f %{manifest}
 %defattr(-,root,root)
