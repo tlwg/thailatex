@@ -1,0 +1,101 @@
+Summary: Thai extension for LaTeX
+Name: @PACKAGE@
+Version: @VERSION@
+Release: 1
+Copyright: freely distributable
+Group: Applications/Publishing
+Source: %{name}-%{version}.tar.gz
+BuildRoot: /var/tmp/%{name}-%{version}-root
+Vendor: Surapant Meknavin <surapan@nectec.or.th>, Theppitak Karoonboonyanan <thep@links.nectec.or.th>, NECTEC
+Packager: Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+Distribution: Linux TLE, Thai Linux Working Group
+Requires: tetex >= 0.9
+
+%description
+
+Thai fonts, style, etc. for publishing Thai documents with LaTeX.
+Thai word segmentation filter which inserts "\wbr " command as Thai word
+delimitor, such as "swath", is recommended to be used as a preprocessor.
+
+%prep
+%setup
+
+%build
+./configure --prefix=/usr
+make
+
+%install
+mkdir -p $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
+
+
+%post
+
+%postun
+
+%files
+%doc LICENSE README doc/orchid.tex doc/orchid.ps
+/usr/share/texmf/tex/generic/babel/thai.ldf
+/usr/share/texmf/tex/generic/babel/thai.sty
+/usr/share/texmf/tex/generic/babel/thswitch.sty
+/usr/share/texmf/tex/generic/babel/lthenc.def
+/usr/share/texmf/tex/generic/babel/lthdbttx.fd
+/usr/share/texmf/tex/generic/babel/lthnorasi.fd
+/usr/share/texmf/fonts/tfm/public/thai/dbtt.tfm
+/usr/share/texmf/fonts/tfm/public/thai/dbttb.tfm
+/usr/share/texmf/fonts/tfm/public/thai/dbttbi.tfm
+/usr/share/texmf/fonts/tfm/public/thai/dbtti.tfm
+/usr/share/texmf/fonts/tfm/public/thai/dbttx.tfm
+/usr/share/texmf/fonts/tfm/public/thai/dbttxb.tfm
+/usr/share/texmf/fonts/tfm/public/thai/dbttxbi.tfm
+/usr/share/texmf/fonts/tfm/public/thai/dbttxi.tfm
+/usr/share/texmf/fonts/tfm/public/thai/rnorasi_b.tfm
+/usr/share/texmf/fonts/tfm/public/thai/rnorasi_bi.tfm
+/usr/share/texmf/fonts/tfm/public/thai/rnorasi_i.tfm
+/usr/share/texmf/fonts/tfm/public/thai/rnorasi_n.tfm
+/usr/share/texmf/fonts/tfm/public/thai/norasi_b.tfm
+/usr/share/texmf/fonts/tfm/public/thai/norasi_bi.tfm
+/usr/share/texmf/fonts/tfm/public/thai/norasi_i.tfm
+/usr/share/texmf/fonts/tfm/public/thai/norasi_n.tfm
+/usr/share/texmf/fonts/vf/public/thai/dbttx.vf
+/usr/share/texmf/fonts/vf/public/thai/dbttxb.vf
+/usr/share/texmf/fonts/vf/public/thai/dbttxbi.vf
+/usr/share/texmf/fonts/vf/public/thai/dbttxi.vf
+/usr/share/texmf/fonts/vf/public/thai/norasi_b.vf
+/usr/share/texmf/fonts/vf/public/thai/norasi_bi.vf
+/usr/share/texmf/fonts/vf/public/thai/norasi_i.vf
+/usr/share/texmf/fonts/vf/public/thai/norasi_n.vf
+/usr/share/texmf/fonts/type1/public/thai/dbtt.pfb
+/usr/share/texmf/fonts/type1/public/thai/dbttb.pfb
+/usr/share/texmf/fonts/type1/public/thai/dbttbi.pfb
+/usr/share/texmf/fonts/type1/public/thai/dbtti.pfb
+/usr/share/texmf/fonts/type1/public/thai/norasi_b.pfb
+/usr/share/texmf/fonts/type1/public/thai/norasi_bi.pfb
+/usr/share/texmf/fonts/type1/public/thai/norasi_i.pfb
+/usr/share/texmf/fonts/type1/public/thai/norasi_n.pfb
+/usr/share/texmf/dvips/base/TeXTIS.enc
+/usr/share/texmf/dvips/base/dbttx.enc
+
+/usr/local/share/emacs/site-lisp/thai-latex-setup.el
+
+%changelog
+* Wed Jan 03 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+- thailatex.spec : use variables for sources, path names; use BuildRoot
+
+* Thu May 25 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - rearrange package and create Makefiles
+  - encoding changed from TIS to LTH, according to TeX convention
+  - add "norasi" bold and bold-italic font; correct TeXTIS.enc
+  - make "norasi" be Thai roman font, "dbttx" Thai sans serif
+  - correct some Thai translations
+  - release version 0.2
+
+* Wed Aug 16 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - fix "norasi" "Bluevalues" parameter to fix Acrobat Distiller
+    rejection, by Anutara
+
+* Mon Jun 21 1999 Surapant Meknavin <surapan@nectec.or.th>
+  - create the original Thai LaTeX extension based on babel package
+  - two fonts are available : dbtt (n,bx,i,bi) and nf3x (n,i)
+  - release version 0.1
+
