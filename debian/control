@@ -15,4 +15,3 @@ Description: Thai Latex package
  .
  This package needs Thai words separator such as cttex and swath, in
  order for latex to be able to break sentences.
-Task: thai
