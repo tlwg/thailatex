@@ -131,4 +131,4 @@ clean-local:
 	$(RM) *.vpl
 
 distclean-local:
-	$(RM) *.vf *.tfm *.enc
+	$(RM) *.vf *.tfm
