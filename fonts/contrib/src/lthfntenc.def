@@ -1,4 +1,0 @@
-\ProvidesFile{LTHFNTenc.def}
-\DeclareFontSubstitution{LTH}{fnt}{m}{n}
-\DeclareErrorFont{LTH}{fnt}{m}{n}{10}
-\endinput
