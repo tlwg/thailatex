@@ -1,3 +1,9 @@
+2004-06-14 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/lthenc.def:
+	  Guard against recursive assignments of \ltxTeX and \ltxLaTeX
+	  (Reported by donzakh)
+
 2004-04-08 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/thai.ldf:
