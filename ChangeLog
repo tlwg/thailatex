@@ -1,3 +1,9 @@
+2005-01-26 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* doc/teststd.tex:
+	  Add slant shape samples for Norasi and Kinnari.  Fix the Thai name
+	  of National Font project.
+
 2005-01-24 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/lthnorasi.fd:
