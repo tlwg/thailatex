@@ -36,6 +36,7 @@ thai.map\' < $updmap > $TMP && \
           ( cd $texmf_dvips && sh ./updmap )
         fi
 	# clean up old font map :-)
+        TMP=`tempfile --mode=0755` && \
         sed -e '/thaifonts.map/d' < $updmap > $TMP && \
         mv -f $TMP $updmap 
       fi
