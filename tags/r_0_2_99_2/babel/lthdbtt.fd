@@ -1,0 +1,29 @@
+% lthdbtt.fd
+%
+% This file is part of the tlatex package ver 1.0 (21-Jun-1999)
+% Created by Surapant Meknavin: surapan@nectec.or.th
+% 2000/05/10 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+%            - encodeing changed from TIS to LTH, according to TeX convention
+
+\ProvidesFile{lthdbtt.fd}[1999/06/21 v2.0 Thai font definitions]
+
+% Primary declarations
+\DeclareFontFamily{LTH}{dbtt}{}
+\DeclareFontShape{LTH}{dbtt}{m}{n}{<->[1.4]dbtt}{}
+\DeclareFontShape{LTH}{dbtt}{m}{it}{<->[1.4]dbtt_i}{}
+%%%%%%% bold series
+\DeclareFontShape{LTH}{dbtt}{b}{n}{<->[1.4]dbtt_b}{}
+\DeclareFontShape{LTH}{dbtt}{b}{it}{<->[1.4]dbtt_bi}{}
+\DeclareFontShape{LTH}{dbtt}{bx}{n}{<->[1.4]dbtt_b}{}
+\DeclareFontShape{LTH}{dbtt}{bx}{it}{<->[1.4]dbtt_bi}{}
+
+% Substitutions
+\DeclareFontShape{LTH}{dbtt}{m}{sl}{<->sub * dbtt/m/it}{}
+\DeclareFontShape{LTH}{dbtt}{b}{sl}{<->sub * dbtt/b/it}{}
+\DeclareFontShape{LTH}{dbtt}{bx}{sl}{<->sub * dbtt/bx/it}{}
+
+\endinput
+
+% 
+% EOF
+%

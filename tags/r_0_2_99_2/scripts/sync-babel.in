@@ -1,0 +1,34 @@
+#!/bin/sh
+# Patch/unpatch thailatex babel.sty with that of tetex
+# Written by Theppitak Karoonboonyanan <thep@linux.thai.net>
+# License: GPL
+
+prefix=@prefix@
+
+case "$1" in
+  install)
+    # patch babel if thai.ldf exists
+    BABELSTY=@texmfdir@/tex/generic/babel/babel.sty
+    if ! grep thai.ldf $BABELSTY >/dev/null; then
+      if test -f @texmfdir@/tex/generic/babel/thai.ldf; then
+        sed '/turkish/i\
+\\DeclareOption{thai}{\\input{thai.ldf}}' $BABELSTY >/tmp/tmp.$$
+        mv -f /tmp/tmp.$$ $BABELSTY
+      fi
+    fi
+  ;;
+
+  uninstall)
+    # remove thai.ldf from babel if exists
+    BABELSTY=@texmfdir@/tex/generic/babel/babel.sty
+    if grep thai.ldf $BABELSTY >/dev/null; then
+      sed  -e '/thai.ldf/d' $BABELSTY >/tmp/tmp.$$
+      mv -f /tmp/tmp.$$ $BABELSTY
+    fi
+  ;;
+
+  *)
+    exit 0
+  ;;
+esac
+

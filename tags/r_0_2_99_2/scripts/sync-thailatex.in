@@ -1,0 +1,41 @@
+#!/bin/sh
+# Register/unregister thailatex
+# Written by Theppitak Karoonboonyanan <thep@linux.thai.net>
+# License: GPL
+
+prefix=@prefix@
+
+case "$1" in
+  install)
+    @UPDMAP@ --enable Map thai.map
+    @TEXHASH@
+
+    # add Emacs macro for activating Thai LaTeX filter
+    EMACSLISPDIR=@emacsdir@/site-lisp
+    if test -f $EMACSLISPDIR/site-start.el; then
+      sed -e '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el > /tmp/tmp.$$
+      mv /tmp/tmp.$$ $EMACSLISPDIR/site-start.el
+    fi
+    if test -f $EMACSLISPDIR/thai-latex-setup.el; then
+      echo '(load-library "thai-latex-setup")' >> $EMACSLISPDIR/site-start.el
+    fi
+  ;;
+
+  uninstall)
+    @UPDMAP@ --disable thai.map
+    @TEXHASH@
+
+    # remove Emacs macro for activating Thai LaTeX filter
+    EMACSLISPDIR=@emacsdir@/site-lisp
+    if test -f $EMACSLISPDIR/site-start.el; then
+      sed -e '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el > /tmp/tmp.$$
+      mv /tmp/tmp.$$ $EMACSLISPDIR/site-start.el
+    fi
+  ;;
+
+  *)
+    exit 0
+  ;;
+esac
+
+
