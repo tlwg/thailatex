@@ -1,4 +1,4 @@
 EXTRA_DIST = patch-babel tlatex
 
-sbin_SCRIPS = patch-babel
+sbin_SCRIPTS = patch-babel
 bin_SCRIPTS = tlatex
