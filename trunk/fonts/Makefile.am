@@ -100,14 +100,16 @@ vf_DATA = \
 # Local Rules
 
 %.afm: %.pfb
-	$(RM) $*.pfb
-	$(LN_S) $(srcdir)/$*.pfb $*.pfb
+	if [ ! -f $*.pfb ]; then \
+	  $(LN_S) $(srcdir)/$*.pfb $*.pfb; \
+	fi
 	$(PF2AFM) $*
 
 r%.tfm: %.afm lthuni.enc
 %.vpl: %.afm lthuni.enc
-	$(RM) lthuni.enc
-	$(LN_S) $(srcdir)/lthuni.enc lthuni.enc
+	if [ ! -f $*.pfb ]; then \
+	  $(LN_S) $(srcdir)/lthuni.enc lthuni.enc; \
+	fi
 	$(AFM2TFM) $*.afm -v $*.vpl -T lthuni.enc r$*.tfm \
 	| $(SED) "s/$$/ <$*.pfb/" >> thai.map
 
