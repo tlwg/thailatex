@@ -21,8 +21,9 @@ vfdir  = @texmfdir@/fonts/vf/public/thai
 dvipsbasedir = @texmfdir@/dvips/base
 dvipsconfigdir = @texmfdir@/dvips/config
 
-DVIPSCONFIG=$(DESTDIR)/@texmfdir@/dvips/config/config.ps
-PDFTEXCONFIG=$(DESTDIR)/@texmfdir@/pdftex/config/pdftex.cfg
+#DVIPSCONFIG=$(DESTDIR)/@texmfdir@/dvips/config/config.ps
+#PDFTEXCONFIG=$(DESTDIR)/@texmfdir@/pdftex/config/pdftex.cfg
+UPDMAPCONFIG=$(DESTDIR)/@texmfdir@/web2c/updmap.cfg
 
 dvipsbase_DATA = lthuni.enc
 
@@ -116,31 +117,45 @@ r%.tfm: %.afm lthuni.enc
 thai.map: $(tfm_DATA)
 	LC_COLLATE=C sort $@ | uniq > /tmp/tmp.$$$$; mv /tmp/tmp.$$$$ $@
 
-install-data-local:
-	mkdir -p `dirname $(DVIPSCONFIG)`
-	if test -f $(DVIPSCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
-	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
+install-data-hook:
+	mkdir -p `dirname $(UPDMAPCONFIG)`
+	if test -f $(UPDMAPCONFIG); then \
+	  sed -e '/thailatex/d;/thai.map/d' $(UPDMAPCONFIG) > /tmp/tmp.$$$$ ; \
+	  mv -f /tmp/tmp.$$$$ $(UPDMAPCONFIG) ; \
 	fi
-	echo "% thailatex" >> $(DVIPSCONFIG)
-	echo "p +thai.map" >> $(DVIPSCONFIG)
-	mkdir -p `dirname $(PDFTEXCONFIG)`
-	if test -f $(PDFTEXCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
-	  mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ; \
-	fi
-	echo "% thailatex"   >> $(PDFTEXCONFIG)
-	echo "map +thai.map" >> $(PDFTEXCONFIG)
+	echo "% thailatex" >> $(UPDMAPCONFIG)
+	echo "Map thai.map" >> $(UPDMAPCONFIG)
+	mkdir -p `dirname $(UPDMAPCONFIG)`
+	updmap
+#	if test -f $(DVIPSCONFIG); then \
+#	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
+#	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
+#	fi
+#	echo "% thailatex" >> $(DVIPSCONFIG)
+#	echo "p +thai.map" >> $(DVIPSCONFIG)
+#	mkdir -p `dirname $(PDFTEXCONFIG)`
+#	if test -f $(PDFTEXCONFIG); then \
+#	  sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
+#	  mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ; \
+#	fi
+#	echo "% thailatex"   >> $(PDFTEXCONFIG)
+#	echo "map +thai.map" >> $(PDFTEXCONFIG)
  
-uninstall-local:
-	if test -f $(DVIPSCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
-	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
+uninstall-hook:
+	if test -f $(UPDMAPCONFIG); then \
+	  sed -e '/thailatex/d;/thai.map/d' $(UPDMAPCONFIG) > /tmp/tmp.$$$$ ; \
+	  mv -f /tmp/tmp.$$$$ $(UPDMAPCONFIG) ; \
 	fi
-	if test -f $(PDFTEXCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
-	  mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ; \
-	fi
+	updmap
+#	if test -f $(DVIPSCONFIG); then \
+#	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
+#	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
+#	fi
+#	if test -f $(PDFTEXCONFIG); then \
+#	  sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
+#	  mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ; \
+#	fi
+
 clean-local:
 	$(RM) *.vpl
 
