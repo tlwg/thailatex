@@ -3,6 +3,9 @@
 %% created by Surapant Meknavin: surapan@nectec.or.th
 %% 
 %% --------------------------------------------------
+%% 2003/02/26 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - run Thai number in part, subsubsection, paragraph,
+%%              subparagraph also
 %% 2003/01/07 Poonlap Veerathanabutr <poonlap@linux.thai.net>
 %%	      - change "dbttx" tp "dbtt"
 %% 2000/05/09 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
@@ -116,7 +119,8 @@
    \renewcommand\theequation{\@thainum\c@equation}%
    \renewcommand\thetable{\@thainum\c@table}%
    \renewcommand\thefigure{\@thainum\c@figure}}%
-  {\renewcommand\thechapter{\@thainum\c@chapter}%
+  {\renewcommand\thepart{\@thainum\c@part}%
+   \renewcommand\thechapter{\@thainum\c@chapter}%
    \renewcommand\thesection{\thechapter.\@thainum\c@section}%
    \renewcommand\thesubsection{\thesection.\@thainum\c@subsection}%
    \renewcommand\thesubsubsection{\thesubsection.\@thainum\c@subsubsection}%

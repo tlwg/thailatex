@@ -12,7 +12,7 @@
 
 	* babel/thai.ldf:
 	  Add missing subsubsection renumbering for thainum option,
-	  as well as paragraph and subparagraph
+	  as well as paragraph, subparagraph and part
 	  (reported by Poonlap Veerathanabutr)
 
 2003-02-25 Theppitak Karoonboonyanan <thep@linux.thai.net>
