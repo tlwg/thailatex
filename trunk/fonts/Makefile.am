@@ -11,7 +11,9 @@ EXTRA_DIST = \
 	norasi.pfb \
 	norasi_b.pfb \
 	norasi_o.pfb \
+	norasi_i.pfb \
 	norasi_bo.pfb \
+	norasi_bi.pfb \
 	dbtt.afm \
 	dbtt_b.afm \
 	dbtt_o.afm \
@@ -23,7 +25,9 @@ EXTRA_DIST = \
 	norasi.afm \
 	norasi_b.afm \
 	norasi_o.afm \
-	norasi_bo.afm
+	norasi_i.afm \
+	norasi_bo.afm \
+	norasi_bi.afm
 
 DISTCLEANFILES = thai.map
 
@@ -55,7 +59,9 @@ type1_DATA = \
 	norasi.pfb \
 	norasi_b.pfb \
 	norasi_o.pfb \
-	norasi_bo.pfb
+	norasi_i.pfb \
+	norasi_bo.pfb \
+	norasi_bi.pfb
 
 afm_DATA = \
 	dbtt.afm \
@@ -69,7 +75,9 @@ afm_DATA = \
 	norasi.afm \
 	norasi_b.afm \
 	norasi_o.afm \
-	norasi_bo.afm
+	norasi_i.afm \
+	norasi_bo.afm \
+	norasi_bi.afm
 
 tfm_DATA = \
 	dbtt.tfm \
@@ -83,7 +91,9 @@ tfm_DATA = \
 	norasi.tfm \
 	norasi_b.tfm \
 	norasi_o.tfm \
+	norasi_i.tfm \
 	norasi_bo.tfm \
+	norasi_bi.tfm \
 	rdbtt.tfm \
 	rdbtt_b.tfm \
 	rdbtt_o.tfm \
@@ -95,7 +105,9 @@ tfm_DATA = \
 	rnorasi.tfm \
 	rnorasi_b.tfm \
 	rnorasi_o.tfm \
-	rnorasi_bo.tfm
+	rnorasi_i.tfm \
+	rnorasi_bo.tfm \
+	rnorasi_bi.tfm
 
 vf_DATA = \
 	dbtt.vf \
@@ -109,7 +121,9 @@ vf_DATA = \
 	norasi.vf \
 	norasi_b.vf \
 	norasi_o.vf \
-	norasi_bo.vf
+	norasi_i.vf \
+	norasi_bo.vf \
+	norasi_bi.vf
 
 # Local Rules
 
