@@ -12,7 +12,7 @@ configure: configure-stamp
 configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
-	./autogen.sh --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
+	./configure --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
 	--with-docdir=\$${prefix}/share/doc
 
 	touch configure-stamp
