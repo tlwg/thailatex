@@ -84,8 +84,8 @@
 \def\thaiAlph#1{\expandafter\@thaiAlph\csname c@#1\endcsname}
 \def\@thaialph#1{%
   \ifcase#1\or ¡\or ¢\or ¤\or §\or ¨\or ©\or ª\or «\or ¬\or ­\or ®\or
-   °\or ²\or ³\or ´\or µ\or ¶\or ·\or ¸\or ¹\or º\or »\or ¼\or ½\or ¾\or
-    ¿\or À\or Á\or Â\or Ã\or Å\or Ç\or È\or É\or Ê\or Ë\or Ì\or Í\or
+   ¯\or °\or ±\or ²\or ³\or ´\or µ\or ¶\or ·\or ¸\or ¹\or º\or »\or ¼\or 
+   ½\or ¾\or ¿\or À\or Á\or Â\or Ã\or Å\or Ç\or È\or É\or Ê\or Ë\or Ì\or Í\or
      Îelse\@ctrerr\fi}
 \def\@thaiAlph#1{%
   \ifcase#1\or ¡\or ¢\or £\or ¤\or ¥\or ¦\or §\or ¨\or ©\or ª\or «\or
