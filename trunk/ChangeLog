@@ -1,3 +1,14 @@
+2003-06-04 Chanop Silpa-Anan <chanop@debian.org>
+	* fonts/norasi*.{pfb,afm}:
+	  Update using new Type1 font from thaifonts-scalable project.
+
+	* fonts/lthuni.end:
+	  Fix sara aam ligatures, however, these ligatures are not probably
+	  going to be used in regular text.
+
+	* babel/lthenc.def:
+	  Add \text{fongman,yamakkan,angkhankhu,khomut}.
+
 2003-06-02 Chanop Silpa-Anan <chanop@debian.org>
 	* fonts/*.{pfb,afm}:
 	  Update using new Type1 font from thaifonts-scalable project.
