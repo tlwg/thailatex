@@ -1,3 +1,9 @@
+2003-01-28 Theppitak Karoonboonyanan <thep@linux.thai.net>
+	* emacs/Makefile.am:
+	  Use install-data-hook and uninstall-hook instead of
+	  install-data-local and uninstall-local, respectively, so that the
+	  $(emacslispdir) is created before doing anything with site-start.el
+
 2003-01-09 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* Makefile.am:
 	  Use install-data-hook instead of install-data-local
