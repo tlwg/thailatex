@@ -1,19 +1,23 @@
 EXTRA_DIST = thai-latex-setup.el addmacro.sh rmmacro.sh
 
-emacsdir = @emacsdir@
-emacslispdir = /site-lisp
-
-EMACS_TARGETS = thai-latex-setup.el
+emacslispdir = @emacsdir@/site-lisp
+emacslisp_DATA = thai-latex-setup.el
 
 install-data-local:
-	$(INSTALL) -d $(DESTDIR)$(emacsdir)$(emacslispdir)
-	for i in $(EMACS_TARGETS) ; do \
-	  $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(emacsdir)$(emacslispdir) ; \
-	done
-	EMACSLISPDIR=$(DESTDIR)$(emacsdir)$(emacslispdir) $(srcdir)/addmacro.sh
- 
+	# add Emacs macro for activating Thai LaTeX filter
+	if [ -f $(DESTDIR)$(emacslispdir)/site-start.el ] ; then \
+	  sed -e '/thai-latex-setup/d' $(DESTDIR)$(emacslispdir)/site-start.el \
+	    > /tmp/tmp.$$ ; \
+	  mv /tmp/tmp.$$ $(DESTDIR)$(emacslispdir)/site-start.el ; \
+	fi
+	echo '(load-library "thai-latex-setup")' \
+	  >> $(DESTDIR)$(emacslispdir)/site-start.el
+
 uninstall-local:
-	for i in $(EMACS_TARGETS) ; do \
-	  $(RM) $(DESTDIR)$(emacsdir)$(emacslispdir)/$$i ; \
-	done
-	EMACSLISPDIR=$(DESTDIR)$(emacsdir)$(emacslispdir) $(srcdir)/rmmacro.sh
+	# add Emacs macro for activating Thai LaTeX filter
+	if [ -f $(DESTDIR)$(emacslispdir)/site-start.el ] ; then \
+	  sed -e '/thai-latex-setup/d' $(DESTDIR)$(emacslispdir)/site-start.el \
+	    > /tmp/tmp.$$ ; \
+	  mv /tmp/tmp.$$ $(DESTDIR)$(emacslispdir)/site-start.el ; \
+	fi
+
