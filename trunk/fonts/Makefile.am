@@ -23,8 +23,8 @@ vfdir  = @texmfdir@/fonts/vf/public/thai
 dvipsbasedir = @texmfdir@/dvips/base
 dvipsconfigdir = @texmfdir@/dvips/config
 
-#DVIPSCONFIG=$(DESTDIR)/@texmfdir@/dvips/config/config.ps
-#PDFTEXCONFIG=$(DESTDIR)/@texmfdir@/pdftex/config/pdftex.cfg
+DVIPSCONFIG=$(DESTDIR)/@texmfdir@/dvips/config/config.ps
+PDFTEXCONFIG=$(DESTDIR)/@texmfdir@/pdftex/config/pdftex.cfg
 #UPDMAPCONFIG=$(DESTDIR)/@texmfdir@/web2c/updmap.cfg
 
 dvipsbase_DATA = lthuni.enc
@@ -121,14 +121,52 @@ r%.tfm: %.afm lthuni.enc
 thai.map: $(tfm_DATA)
 	LC_COLLATE=C sort $@ | uniq > /tmp/tmp.$$$$; mv /tmp/tmp.$$$$ $@
 
+# For tetex > 1.0.7 only
+# 
+# install-data-hook:
+# 	$(UPDMAP) --enable Map thai.map
+#  
+# uninstall-hook:
+# 	$(UPDMAP) --disable thai.map
+
 install-data-hook:
-	$(UPDMAP) --enable Map thai.map
+	@if test -z "$(DESTDIR)" ; then                                        \
+	  mkdir -p `dirname $(DVIPSCONFIG)` ;                                 \
+	  if test -f $(DVIPSCONFIG); then                                     \
+	    sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$; \
+	    mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ;                              \
+	  fi ;                                                                \
+	  echo "% thailatex" >> $(DVIPSCONFIG) ;                              \
+	  echo "p +thai.map" >> $(DVIPSCONFIG) ;                              \
+	  mkdir -p `dirname $(PDFTEXCONFIG)` ;                                \
+	  if test -f $(PDFTEXCONFIG); then                                    \
+	    sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$;\
+	    mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ;                             \
+	  fi ;                                                                \
+	  echo "% thailatex"   >> $(PDFTEXCONFIG) ;                           \
+	  echo "map +thai.map" >> $(PDFTEXCONFIG) ;                           \
+	else                                                                  \
+	  echo "***" ;                                                        \
+	  echo "*** Warning: tetex config files not patched" ;                \
+	  echo "***" ;                                                        \
+	  echo "*** update these files on the target system" ;                \
+	  echo "*** using sync-thailatex script" ;                            \
+	  echo "***" ;                                                        \
+	fi
  
 uninstall-hook:
-	$(UPDMAP) --disable thai.map
+	if test -f $(DVIPSCONFIG); then \
+	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
+	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
+	fi
+	if test -f $(PDFTEXCONFIG); then \
+	  sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
+	  mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ; \
+	fi
 
 clean-local:
 	$(RM) *.vpl
 
 distclean-local:
 	$(RM) *.vf *.tfm
+

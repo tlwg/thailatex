@@ -1,3 +1,10 @@
+2003-04-15 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am, scripts/sync-thailatex.in, configure.in:
+	  Undo updmap usage, to support tetex-1.
+	  Get back to patching dvips/config/config.ps and
+	  pdftex/config/pdftex.cfg instead.
+
 2003-04-02 Chanop Silpa-Anan <chanop@debian.org>
 
 	* debian/*:

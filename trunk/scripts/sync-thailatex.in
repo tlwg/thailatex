@@ -5,9 +5,44 @@
 
 prefix=@prefix@
 
+DVIPSFONTS_MAP=${prefix}/share/texmf/dvips/base/psfonts.map
+DVIPSCONFIG=${prefix}/share/texmf/dvips/config/config.ps
+PDFTEXCONFIG=${prefix}/share/texmf/pdftex/config/pdftex.cfg
+
+# remove remaing Thai font entries in dvips base psfonts.map if any
+# (deprecated implementation)
+if test -f $DVIPSFONTS_MAP; then
+  sed -e '/^dbtt/d;/^rnorasi/d' $DVIPSFONTS_MAP > /tmp/tmp.$$
+  mv /tmp/tmp.$$ $DVIPSFONTS_MAP
+fi
+
 case "$1" in
   install)
-    @UPDMAP@ --enable Map thai.map
+    # For tetex > 1.0.7 only
+    # @UPDMAP@ --enable Map thai.map
+
+    # For tetex <= 1.0.7
+
+    # add thai.map as additional map to dvips local config
+    mkdir -p `dirname $DVIPSCONFIG`
+    if test -f $DVIPSCONFIG; then
+      sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
+      mv -f /tmp/tmp.$$ $DVIPSCONFIG
+    fi
+    echo "% thailatex" >> $DVIPSCONFIG
+    echo "p +thai.map" >> $DVIPSCONFIG
+
+    # add thai.map as additional map to pdftex local config
+    mkdir -p `dirname $PDFTEXCONFIG`
+    if test -f $PDFTEXCONFIG; then
+      sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
+      mv -f /tmp/tmp.$$ $PDFTEXCONFIG
+    fi
+    echo "% thailatex"   >> $PDFTEXCONFIG
+    echo "map +thai.map" >> $PDFTEXCONFIG
+
+    # -- end For tetex <= 1.0.7
+    
     @TEXHASH@
 
     # add Emacs macro for activating Thai LaTeX filter
@@ -22,7 +57,25 @@ case "$1" in
   ;;
 
   uninstall)
-    @UPDMAP@ --disable thai.map
+    # For tetex > 1.0.7 only
+    # @UPDMAP@ --disable thai.map
+
+    # For tetex <= 1.0.7
+
+    # remove thai.map from dvips local config
+    if test -f $DVIPSCONFIG; then
+      sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
+      mv -f /tmp/tmp.$$ $DVIPSCONFIG
+    fi
+
+    # remove thai.map from pdftex local config
+    if test -f $PDFTEXCONFIG; then
+      sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
+      mv -f /tmp/tmp.$$ $PDFTEXCONFIG
+    fi
+
+    # -- end For tetex <= 1.0.7
+
     @TEXHASH@
 
     # remove Emacs macro for activating Thai LaTeX filter
