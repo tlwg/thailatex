@@ -1,6 +1,12 @@
 2005-01-26 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
-	* doc/Makefile:
+	* doc/Makefile.am, +doc/test-orchid.sh, +doc/test-teststd.sh:
+	  Add "make check" targets by testing building orchid and teststd
+	  docs.
+
+2005-01-26 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* doc/Makefile.am:
 	  Use abstract make rules so that all docs are covered at once.
 
 2005-01-26 Theppitak Karoonboonyanan <thep@linux.thai.net>
