@@ -48,7 +48,7 @@ rm -f %{manifest}
 find . -type d \
         | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' >> %{manifest}
 find . -type f \
-        | sed '/config.ps/d;/pdftex.cfg/d;/site-start.el/d' \
+        | sed '/babel.sty/d;/config.ps/d;/pdftex.cfg/d;/site-start.el/d' \
         | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
 find . -type l \
         | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
@@ -75,6 +75,14 @@ fi
 echo "% thailatex"   >> $PDFTEXCONFIG
 echo "map +thai.map" >> $PDFTEXCONFIG
  
+# patch babel
+BABELSTY=$RPM_BUILD_ROOT/usr/share/texmf/tex/generic/babel/babel.sty
+if ! grep thai $BABELSTY >/dev/null; then
+  sed '/turkish/i\
+\\DeclareOption{thai}{\\input{thai.ldf}}' $BABELSTY >/tmp/tmp.$$
+  mv -f /tmp/tmp.$$ $BABELSTY
+fi
+
 /usr/bin/texhash
 
 # add Emacs macro for activating Thai LaTeX filter
@@ -107,6 +115,14 @@ fi
 echo "% thailatex"   >> $PDFTEXCONFIG
 echo "map +thai.map" >> $PDFTEXCONFIG
  
+# patch babel
+BABELSTY=$RPM_BUILD_ROOT/usr/share/texmf/tex/generic/babel/babel.sty
+if ! grep thai $BABELSTY >/dev/null; then
+  sed '/turkish/i\
+\\DeclareOption{thai}{\\input{thai.ldf}}' $BABELSTY >/tmp/tmp.$$
+  mv -f /tmp/tmp.$$ $BABELSTY
+fi
+
 /usr/bin/texhash
 
 # add Emacs macro for activating Thai LaTeX filter
@@ -133,6 +149,13 @@ if test -f $PDFTEXCONFIG; then
   mv -f /tmp/tmp.$$ $PDFTEXCONFIG
 fi
 
+# unpatch babel
+BABELSTY=$RPM_BUILD_ROOT/usr/share/texmf/tex/generic/babel/babel.sty
+if grep thai $BABELSTY >/dev/null; then
+  sed '/thai/d' $BABELSTY >/tmp/tmp.$$
+  mv -f /tmp/tmp.$$ $BABELSTY
+fi
+
 /usr/bin/texhash
 
 # remove Emacs macro for activating Thai LaTeX filter
@@ -156,6 +179,7 @@ fi
     every patch. (%post is still needed for rpm -i case.. Hmm.. messy)
   - change %postun to %preun, to be safe about the order of %postun
     of the older package and %triggerpostun of the newer package.
+  - incorporate babel.sty patching.
 
 * Wed Dec 05 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
   - use manifest

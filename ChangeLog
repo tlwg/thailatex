@@ -17,6 +17,8 @@
 	  in case of installation from scratch, not upgrading.)
 	  Change %postun to %preun, to guarantee it's run before
 	  newer package's %triggerpostun in upgrading.
+	* thailatex.spec.in:
+	  Incorporate babel.sty patching.
 
 2001-12-06 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* babel/thai.ldf: add missing consonants in \thaialpha according
