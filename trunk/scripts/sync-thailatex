@@ -1,0 +1,62 @@
+#!/bin/sh
+# Synchronize thailatex with tetex files
+# Written by Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+# License: GPL
+
+# set $prefix to your appropriate value
+prefix=${prefix:-/usr}
+
+# remove remaing Thai font entries in dvips base psfonts.map if any
+# (deprecated implementation)
+DVIPSFONTS_MAP=${prefix}/share/texmf/dvips/base/psfonts.map
+if test -f $DVIPSFONTS_MAP; then
+  sed -e '/^dbtt/d;/^rnorasi/d' $DVIPSFONTS_MAP > /tmp/tmp.$$
+  mv /tmp/tmp.$$ $DVIPSFONTS_MAP
+fi
+
+# add thai.map (if exists) as additional map to dvips local config
+DVIPSCONFIG=${prefix}/share/texmf/dvips/config/config.ps
+mkdir -p `dirname $DVIPSCONFIG`
+if test -f $DVIPSCONFIG; then
+  sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
+  mv -f /tmp/tmp.$$ $DVIPSCONFIG
+fi
+if test -f ${prefix}/share/texmf/dvips/config/thai.map; then
+  echo "% thailatex" >> $DVIPSCONFIG
+  echo "p +thai.map" >> $DVIPSCONFIG
+fi
+
+# add thai.map (if exists) as additional map to pdftex local config
+PDFTEXCONFIG=${prefix}/share/texmf/pdftex/config/pdftex.cfg
+mkdir -p `dirname $PDFTEXCONFIG`
+if test -f $PDFTEXCONFIG; then
+  sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
+  mv -f /tmp/tmp.$$ $PDFTEXCONFIG
+fi
+if test -f ${prefix}/share/texmf/dvips/config/thai.map; then
+  echo "% thailatex"   >> $PDFTEXCONFIG
+  echo "map +thai.map" >> $PDFTEXCONFIG
+fi
+ 
+# patch babel if thai.ldf exists
+BABELSTY=${prefix}/share/texmf/tex/generic/babel/babel.sty
+if ! grep thai $BABELSTY >/dev/null; then
+  if test -f ${prefix}/share/texmf/tex/generic/babel/thai.ldf; then
+    sed '/turkish/i\
+\\DeclareOption{thai}{\\input{thai.ldf}}' $BABELSTY >/tmp/tmp.$$
+    mv -f /tmp/tmp.$$ $BABELSTY
+  fi
+fi
+
+/usr/bin/texhash
+
+# add Emacs macro for activating Thai LaTeX filter
+EMACSLISPDIR=${prefix}/share/emacs/site-lisp
+if test -f $EMACSLISPDIR/site-start.el; then
+  sed -e '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el > /tmp/tmp.$$
+  mv /tmp/tmp.$$ $EMACSLISPDIR/site-start.el
+fi
+if test -f $EMACSLISPDIR/thai-latex-setup.el; then
+  echo '(load-library "thai-latex-setup")' >> $EMACSLISPDIR/site-start.el
+fi
+
