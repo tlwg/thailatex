@@ -24,3 +24,7 @@ directory distributed with the source. You may use babel as follows:
 
 Note that option [thai] will be passed to babel after it is patched.
 You may have to repatch babel.sty again if you reinstall LaTeX.
+
+For more information, please visit:
+  http://linux.thai.net/plone/TLWG/thailatex
+

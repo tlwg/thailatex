@@ -1,3 +1,11 @@
+2004-02-03 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* README:
+	  Add link to project page. (Thanks to Vee Satayamas)
+
+	* AUTHORS:
+	  Fix my e-mail address. Add Chanop and Poonlap.
+
 2004-02-02 Poonlap Veerathanabutr <poonlap@linux.thai.net>
 
 	* babel.thai.ldf:
