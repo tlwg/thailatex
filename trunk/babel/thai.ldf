@@ -110,12 +110,18 @@
 \@ifundefined{thechapter}%
   {\renewcommand\thesection{\@thainum\c@section}%
    \renewcommand\thesubsection{\thesection.\@thainum\c@subsection}%
+   \renewcommand\thesubsubsection{\thesubsection.\@thainum\c@subsubsection}%
+   \renewcommand\theparagraph    {\thesubsubsection.\@thainum\c@paragraph}%
+   \renewcommand\thesubparagraph {\theparagraph.\@thainum\c@subparagraph}%
    \renewcommand\theequation{\@thainum\c@equation}%
    \renewcommand\thetable{\@thainum\c@table}%
    \renewcommand\thefigure{\@thainum\c@figure}}%
   {\renewcommand\thechapter{\@thainum\c@chapter}%
    \renewcommand\thesection{\thechapter.\@thainum\c@section}%
    \renewcommand\thesubsection{\thesection.\@thainum\c@subsection}%
+   \renewcommand\thesubsubsection{\thesubsection.\@thainum\c@subsubsection}%
+   \renewcommand\theparagraph    {\thesubsubsection.\@thainum\c@paragraph}%
+   \renewcommand\thesubparagraph {\theparagraph.\@thainum\c@subparagraph}%
    \renewcommand\theequation%
        {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@equation}%
    \renewcommand \thetable%

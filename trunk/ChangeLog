@@ -10,6 +10,11 @@
 	* configure.in, Makefile.am, scripts/sync-thailatex.in:
 	  Detect installed texhash and use it
 
+	* babel/thai.ldf:
+	  Add missing subsubsection renumbering for thainum option,
+	  as well as paragraph and subparagraph
+	  (reported by Poonlap Veerathanabutr)
+
 2003-02-25 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in:
