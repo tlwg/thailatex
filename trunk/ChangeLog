@@ -1,3 +1,12 @@
+2004-09-20 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/*.{afm,pfb}:
+	  Updated fonts from thaifonts-scalable 0.4.2.
+
+	* babel/*.fd:
+	  Remove the scaling factor from font descriptions, as glyphs are
+	  already scaled up in thaifonts-scalable.
+
 2004-06-14 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/lthenc.def:

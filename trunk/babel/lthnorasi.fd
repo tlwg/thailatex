@@ -12,12 +12,12 @@
 
 % Primary declarations
 \DeclareFontFamily{LTH}{norasi}{}
-\DeclareFontShape{LTH}{norasi}{m}{n}{<->s * [1.33] norasi}{}
-\DeclareFontShape{LTH}{norasi}{m}{it}{<->s * [1.33] norasi_i}{}
-\DeclareFontShape{LTH}{norasi}{m}{sl}{<->s * [1.33] norasi_o}{}
+\DeclareFontShape{LTH}{norasi}{m}{n}{<->s * norasi}{}
+\DeclareFontShape{LTH}{norasi}{m}{it}{<->s * norasi_i}{}
+\DeclareFontShape{LTH}{norasi}{m}{sl}{<->s * norasi_o}{}
 %%%%%%% bold series
-\DeclareFontShape{LTH}{norasi}{b}{n}{<->s * [1.33] norasi_b}{}
-\DeclareFontShape{LTH}{norasi}{b}{sl}{<->s * [1.33] norasi_bo}{}
+\DeclareFontShape{LTH}{norasi}{b}{n}{<->s * norasi_b}{}
+\DeclareFontShape{LTH}{norasi}{b}{sl}{<->s * norasi_bo}{}
 
 % Substitutions
 \DeclareFontShape{LTH}{norasi}{b}{it}{<->ssub * norasi/b/sl}{}
