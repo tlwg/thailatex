@@ -4,7 +4,7 @@ emacslispdir = @emacsdir@/site-lisp
 emacslisp_DATA = thai-latex-setup.el
 
 install-data-local:
-	# add Emacs macro for activating Thai LaTeX filter
+# add Emacs macro for activating Thai LaTeX filter
 	if [ -f $(DESTDIR)$(emacslispdir)/site-start.el ] ; then \
 	  sed -e '/thai-latex-setup/d' $(DESTDIR)$(emacslispdir)/site-start.el \
 	    > /tmp/tmp.$$ ; \
@@ -14,7 +14,7 @@ install-data-local:
 	  >> $(DESTDIR)$(emacslispdir)/site-start.el
 
 uninstall-local:
-	# add Emacs macro for activating Thai LaTeX filter
+# add Emacs macro for activating Thai LaTeX filter
 	if [ -f $(DESTDIR)$(emacslispdir)/site-start.el ] ; then \
 	  sed -e '/thai-latex-setup/d' $(DESTDIR)$(emacslispdir)/site-start.el \
 	    > /tmp/tmp.$$ ; \
