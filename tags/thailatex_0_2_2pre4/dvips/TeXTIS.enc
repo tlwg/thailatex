@@ -1,0 +1,410 @@
+%% This file is a part of tlatex version 1.0
+%% Created by Surapant Meknavin: surapan@nectec.or.th
+%% 21 June 1999
+%%
+/TeXTISEncoding [
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/.notdef 
+/space
+/exclam
+/quotedbl
+/numbersign
+/dollar
+/percent
+/ampersand
+/quotesingle
+/parenleft
+/parenright
+/asterisk
+/plus
+/comma
+/hyphen
+/period
+/slash
+/zero
+/one
+/two
+/three
+/four
+/five
+/six
+/seven
+/eight
+/nine
+/colon
+/semicolon
+/less
+/equal
+/greater
+/question
+/at
+/A
+/B
+/C
+/D
+/E
+/F
+/G
+/H
+/I
+/J
+/K
+/L
+/M
+/N
+/O
+/P
+/Q
+/R
+/S
+/T
+/U
+/V
+/W
+/X
+/Y
+/Z
+/bracketleft
+/backslash
+/bracketright
+/asciicircum
+/underscore
+/quoteleft
+/a
+/b
+/c
+/d
+/e
+/f
+/g
+/h
+/i
+/j
+/k
+/l
+/m
+/n
+/o
+/p
+/q
+/r
+/s
+/t
+/u
+/v
+/w
+/x
+/y
+/z
+/braceleft
+/bar
+/braceright
+/asciitilde
+/FL0127
+/ThaiCharacterThoThanDescless
+/ThaiCharacterSaraILeft
+/ThaiCharacterSaraIiLeft
+/ThaiCharacterSaraUeLeft
+/ThaiCharacterSaraUeeLeft
+/ellipsis
+/ThaiCharacterMaiEkLowLeft
+/ThaiCharacterMaiThoLowLeft
+/ThaiCharacterMaiTriLowLeft
+/ThaiCharacterMaiChattawaLowLeft
+/ThaiCharacterThanthakhatLowLeft
+/ThaiCharacterMaiEk
+/ThaiCharacterMaiTho
+/ThaiCharacterMaiTri
+/ThaiCharacterMaiChattawa
+/ThaiCharacterThanthakhat
+/ThaiCharacterYoYingDescless
+/quoteleft
+/quoteright
+/quotedblleft
+/quotedblright
+/bullet
+/endash
+/emdash
+/ThaiCharacterMaiHanAkatLeft
+/ThaiCharacterNikhahitLeft
+/ThaiCharacterMaitaikhuLeft
+/ThaiCharacterMaiEkLeft
+/ThaiCharacterMaiThoLeft
+/ThaiCharacterMaiTriLeft
+/ThaiCharacterMaiChattawaLeft
+/ThaiCharacterThanthakhatLeft
+/nonbreakingspace
+/ThaiCharacterKoKai
+/ThaiCharacterKhoKhai
+/ThaiCharacterKhoKhuat
+/ThaiCharacterKhoKhwai
+/ThaiCharacterKhoKhon
+/ThaiCharacterKhoRakhang
+/ThaiCharacterNgoNgu
+/ThaiCharacterChoChan
+/ThaiCharacterChoChing
+/ThaiCharacterChoChang
+/ThaiCharacterSoSo
+/ThaiCharacterChoChoe
+/ThaiCharacterYoYing
+/ThaiCharacterDoChada
+/ThaiCharacterToPatak
+/ThaiCharacterThoThan
+/ThaiCharacterThoNangmontho
+/ThaiCharacterThoPhuthao
+/ThaiCharacterNoNen
+/ThaiCharacterDoDek
+/ThaiCharacterToTao
+/ThaiCharacterThoThung
+/ThaiCharacterThoThahan
+/ThaiCharacterThoThong
+/ThaiCharacterNoNu
+/ThaiCharacterBoBaimai
+/ThaiCharacterPoPla
+/ThaiCharacterPhoPhung
+/ThaiCharacterFoFa
+/ThaiCharacterPhoPhan
+/ThaiCharacterFoFan
+/ThaiCharacterPhoSamphao
+/ThaiCharacterMoMa
+/ThaiCharacterYoYak
+/ThaiCharacterRoRua
+/ThaiCharacterRu
+/ThaiCharacterLoLing
+/ThaiCharacterLu
+/ThaiCharacterWoWaen
+/ThaiCharacterSoSala
+/ThaiCharacterSoRusi
+/ThaiCharacterSoSua
+/ThaiCharacterHoHip
+/ThaiCharacterLoChula
+/ThaiCharacterOAng
+/ThaiCharacterHoNokhuk
+/ThaiCharacterPaiyannoi
+/ThaiCharacterSaraA
+/ThaiCharacterMaiHanAkat
+/ThaiCharacterSaraAa
+/ThaiCharacterSaraAm
+/ThaiCharacterSaraI
+/ThaiCharacterSaraIi
+/ThaiCharacterSaraUe
+/ThaiCharacterSaraUee
+/ThaiCharacterSaraU
+/ThaiCharacterSaraUu
+/ThaiCharacterPhinthu
+/nbspace
+/ThaiWordBreak
+/ThaiCharacterTemp1
+/ThaiCharacterTemp2
+/ThaiCharacterBaht
+/ThaiCharacterSaraE
+/ThaiCharacterSaraAe
+/ThaiCharacterSaraO
+/ThaiCharacterSaraAiMaimuan
+/ThaiCharacterSaraAiMaimalai
+/ThaiCharacterLakkhangyao
+/ThaiCharacterMaiyamok
+/ThaiCharacterMaitaikhu
+/ThaiCharacterMaiEkLow
+/ThaiCharacterMaiThoLow
+/ThaiCharacterMaiTriLow
+/ThaiCharacterMaiChattawaLow
+/ThaiCharacterThanthakhatLow
+/ThaiCharacterNikhahit
+/ThaiCharacterYamakkan
+/ThaiCharacterFongman
+/ThaiDigitZero
+/ThaiDigitOne
+/ThaiDigitTwo
+/ThaiDigitThree
+/ThaiDigitFour
+/ThaiDigitFive
+/ThaiDigitSix
+/ThaiDigitSeven
+/ThaiDigitEight
+/ThaiDigitNine
+/ThaiCharacterAngkhankhu
+/ThaiCharacterKhomut
+/ThaiCharacterSaraULow
+/ThaiCharacterSaraUuLow
+/ThaiCharacterPhinthuLow
+/joker
+] def
+%ligature for making LEFT vowels, tone marks and Nikhahit
+%PoPla left vowel
+%LIGKERN ThaiCharacterPoPla ThaiCharacterMaiHanAkat |=:> ThaiCharacterMaiHanAkatLeft ;
+%LIGKERN ThaiCharacterPoPla ThaiCharacterSaraI |=:> ThaiCharacterSaraILeft ;
+%LIGKERN ThaiCharacterPoPla ThaiCharacterSaraIi |=:> ThaiCharacterSaraIiLeft ;
+%LIGKERN ThaiCharacterPoPla ThaiCharacterSaraUe |=:> ThaiCharacterSaraUeLeft ;
+%LIGKERN ThaiCharacterPoPla ThaiCharacterSaraUee |=:> ThaiCharacterSaraUeeLeft ;
+%LIGKERN ThaiCharacterPoPla ThaiCharacterMaitaikhu |=:> ThaiCharacterMaitaikhuLeft ;
+%Popla left tone marks
+%LIGKERN ThaiCharacterPoPla ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEkLowLeft ;
+%LIGKERN ThaiCharacterPoPla ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiThoLowLeft ;
+%LIGKERN ThaiCharacterPoPla ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTriLowLeft ;
+%LIGKERN ThaiCharacterPoPla ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawaLowLeft ;
+%LIGKERN ThaiCharacterPoPla ThaiCharacterSaraAm |=:|> ThaiCharacterNikhahitLeft ;
+%LIGKERN ThaiCharacterNikhahitLeft ThaiCharacterSaraAm |=:> ThaiCharacterSaraAa ;
+
+%FoFa left vowel
+%LIGKERN ThaiCharacterFoFa ThaiCharacterMaiHanAkat |=:> ThaiCharacterMaiHanAkatLeft ;
+%LIGKERN ThaiCharacterFoFa ThaiCharacterSaraI |=:> ThaiCharacterSaraILeft ;
+%LIGKERN ThaiCharacterFoFa ThaiCharacterSaraIi |=:> ThaiCharacterSaraIiLeft ;
+%LIGKERN ThaiCharacterFoFa ThaiCharacterSaraUe |=:> ThaiCharacterSaraUeLeft ;
+%LIGKERN ThaiCharacterFoFa ThaiCharacterSaraUee |=:> ThaiCharacterSaraUeeLeft ;
+%LIGKERN ThaiCharacterFoFa ThaiCharacterMaitaikhu |=:> ThaiCharacterMaitaikhuLeft ;
+%FoFa left tone marks
+%LIGKERN ThaiCharacterFoFa ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEkLowLeft ;
+%LIGKERN ThaiCharacterFoFa ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiThoLowLeft ;
+%LIGKERN ThaiCharacterFoFa ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTriLowLeft ;
+%LIGKERN ThaiCharacterFoFa ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawaLowLeft ;
+%LIGKERN ThaiCharacterFoFa ThaiCharacterSaraAm |=:|> ThaiCharacterNikhahitLeft ;
+%LIGKERN ThaiCharacterNikhahitLeft ThaiCharacterSaraAm |=:> ThaiCharacterSaraAa ;
+
+%FoFan left vowel
+%LIGKERN ThaiCharacterFoFan ThaiCharacterMaiHanAkat |=:> ThaiCharacterMaiHanAkatLeft ;
+%LIGKERN ThaiCharacterFoFan ThaiCharacterSaraI |=:> ThaiCharacterSaraILeft ;
+%LIGKERN ThaiCharacterFoFan ThaiCharacterSaraIi |=:> ThaiCharacterSaraIiLeft ;
+%LIGKERN ThaiCharacterFoFan ThaiCharacterSaraUe |=:> ThaiCharacterSaraUeLeft ;
+%LIGKERN ThaiCharacterFoFan ThaiCharacterSaraUee |=:> ThaiCharacterSaraUeeLeft ;
+%LIGKERN ThaiCharacterFoFan ThaiCharacterMaitaikhu |=:> ThaiCharacterMaitaikhuLeft ;
+%FoFan left tone marks
+%LIGKERN ThaiCharacterFoFan ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEkLowLeft ;
+%LIGKERN ThaiCharacterFoFan ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiThoLowLeft ;
+%LIGKERN ThaiCharacterFoFan ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTriLowLeft ;
+%LIGKERN ThaiCharacterFoFan ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawaLowLeft ;
+%LIGKERN ThaiCharacterFoFan ThaiCharacterSaraAm |=:|> ThaiCharacterNikhahitLeft ;
+%LIGKERN ThaiCharacterNikhahitLeft ThaiCharacterSaraAm |=:> ThaiCharacterSaraAa ;
+
+%LoChula left vowel
+%LIGKERN ThaiCharacterLoChula ThaiCharacterMaiHanAkat |=:> ThaiCharacterMaiHanAkatLeft ;
+%LIGKERN ThaiCharacterLoChula ThaiCharacterSaraI |=:> ThaiCharacterSaraILeft ;
+%LIGKERN ThaiCharacterLoChula ThaiCharacterSaraIi |=:> ThaiCharacterSaraIiLeft ;
+%LIGKERN ThaiCharacterLoChula ThaiCharacterSaraUe |=:> ThaiCharacterSaraUeLeft ;
+%LIGKERN ThaiCharacterLoChula ThaiCharacterSaraUee |=:> ThaiCharacterSaraUeeLeft ;
+%LIGKERN ThaiCharacterLoChula ThaiCharacterMaitaikhu |=:> ThaiCharacterMaitaikhuLeft ;
+%LoChula left tone marks
+%LIGKERN ThaiCharacterLoChula ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEkLowLeft ;
+%LIGKERN ThaiCharacterLoChula ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiThoLowLeft ;
+%LIGKERN ThaiCharacterLoChula ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTriLowLeft ;
+%LIGKERN ThaiCharacterLoChula ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawaLowLeft ;
+%LIGKERN ThaiCharacterLoChula ThaiCharacterSaraAm |=:|> ThaiCharacterNikhahitLeft ;
+%LIGKERN ThaiCharacterNikhahitLeft ThaiCharacterSaraAm |=:> ThaiCharacterSaraAa ;
+
+%ligature for making left SaraAm with HiLeft tone marks
+%LIGKERN ThaiCharacterMaiEkLowLeft ThaiCharacterSaraAm =:| ThaiCharacterMaiEkLeft ;
+%LIGKERN ThaiCharacterMaiEkLeft ThaiCharacterSaraAm |=:|> ThaiCharacterNikhahitLeft ;
+%LIGKERN ThaiCharacterMaiThoLowLeft ThaiCharacterSaraAm =:| ThaiCharacterMaiEkLeft ;
+%LIGKERN ThaiCharacterMaiThoLeft ThaiCharacterSaraAm |=:|> ThaiCharacterNikhahitLeft ;
+%LIGKERN ThaiCharacterMaiTriLowLeft ThaiCharacterSaraAm =:| ThaiCharacterMaiEkLeft ;
+%LIGKERN ThaiCharacterMaiTriLeft ThaiCharacterSaraAm |=:|> ThaiCharacterNikhahitLeft ;
+%LIGKERN ThaiCharacterMaiChattawaLowLeft ThaiCharacterSaraAm =:| ThaiCharacterMaiEkLeft ;
+%LIGKERN ThaiCharacterMaiChattawaLeft ThaiCharacterSaraAm |=:|> ThaiCharacterNikhahitLeft ;
+
+%LIGKERN ThaiCharacterMaiEkLow ThaiCharacterSaraAm =:| ThaiCharacterMaiEk ;
+%LIGKERN ThaiCharacterMaiThoLow ThaiCharacterSaraAm =:| ThaiCharacterMaiTho ;
+%LIGKERN ThaiCharacterMaiTriLow ThaiCharacterSaraAm =:| ThaiCharacterMaiTri ;
+%LIGKERN ThaiCharacterMaiChattawaLow ThaiCharacterSaraAm =:| ThaiCharacterMaiChattawa ;
+
+%ligature for making HI tone marks
+%LIGKERN ThaiCharacterMaiHanAkat ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEk ;
+%LIGKERN ThaiCharacterMaiHanAkat ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiTho ;
+%LIGKERN ThaiCharacterMaiHanAkat ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTri ;
+%LIGKERN ThaiCharacterMaiHanAkat ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawa ;
+%LIGKERN ThaiCharacterSaraI ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEk ;
+%LIGKERN ThaiCharacterSaraI ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiTho ;
+%LIGKERN ThaiCharacterSaraI ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTri ;
+%LIGKERN ThaiCharacterSaraI ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawa ;
+%LIGKERN ThaiCharacterSaraI ThaiCharacterThanthakhatLow |=:> ThaiCharacterThanthakhat ;
+%LIGKERN ThaiCharacterSaraIi ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEk ;
+%LIGKERN ThaiCharacterSaraIi ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiTho ;
+%LIGKERN ThaiCharacterSaraIi ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTri ;
+%LIGKERN ThaiCharacterSaraIi ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawa ;
+%LIGKERN ThaiCharacterSaraIi ThaiCharacterThanthakhatLow |=:> ThaiCharacterThanthakhat ;
+%LIGKERN ThaiCharacterSaraUe ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEk ;
+%LIGKERN ThaiCharacterSaraUe ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiTho ;
+%LIGKERN ThaiCharacterSaraUe ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTri ;
+%LIGKERN ThaiCharacterSaraUe ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawa ;
+%LIGKERN ThaiCharacterSaraUe ThaiCharacterThanthakhatLow |=:> ThaiCharacterThanthakhat ;
+%LIGKERN ThaiCharacterSaraUee ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEk ;
+%LIGKERN ThaiCharacterSaraUee ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiTho ;
+%LIGKERN ThaiCharacterSaraUee ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTri ;
+%LIGKERN ThaiCharacterSaraUee ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawa ;
+%LIGKERN ThaiCharacterSaraUee ThaiCharacterThanthakhatLow |=:> ThaiCharacterThanthakhat ;
+
+%ligature for making LEFT HI tone marks and thantakhad
+%LIGKERN ThaiCharacterMaiHanAkatLeft ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEkLeft ;
+%LIGKERN ThaiCharacterSaraILeft ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEkLeft ;
+%LIGKERN ThaiCharacterSaraIiLeft ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEkLeft ;
+%LIGKERN ThaiCharacterSaraUeLeft ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEkLeft ;
+%LIGKERN ThaiCharacterSaraUeeLeft ThaiCharacterMaiEkLow |=:> ThaiCharacterMaiEkLeft ;
+
+%LIGKERN ThaiCharacterMaiHanAkatLeft ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiThoLeft ;
+%LIGKERN ThaiCharacterSaraILeft ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiThoLeft ;
+%LIGKERN ThaiCharacterSaraIiLeft ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiThoLeft ;
+%LIGKERN ThaiCharacterSaraUeLeft ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiThoLeft ;
+%LIGKERN ThaiCharacterSaraUeeLeft ThaiCharacterMaiThoLow |=:> ThaiCharacterMaiThoLeft ;
+
+%LIGKERN ThaiCharacterMaiHanAkatLeft ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTriLeft ;
+%LIGKERN ThaiCharacterSaraILeft ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTriLeft ;
+%LIGKERN ThaiCharacterSaraIiLeft ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTriLeft ;
+%LIGKERN ThaiCharacterSaraUeLeft ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTriLeft ;
+%LIGKERN ThaiCharacterSaraUeeLeft ThaiCharacterMaiTriLow |=:> ThaiCharacterMaiTriLeft ;
+
+%LIGKERN ThaiCharacterMaiHanAkatLeft ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawaLeft ;
+%LIGKERN ThaiCharacterSaraILeft ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawaLeft ;
+%LIGKERN ThaiCharacterSaraIiLeft ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawaLeft ;
+%LIGKERN ThaiCharacterSaraUeLeft ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawaLeft ;
+%LIGKERN ThaiCharacterSaraUeeLeft ThaiCharacterMaiChattawaLow |=:> ThaiCharacterMaiChattawaLeft ;
+
+%LIGKERN ThaiCharacterSaraILeft ThaiCharacterThanthakhatLow |=:> ThaiCharacterThanthakhatLeft ;
+
+%ligature for making LOW SaraU SaraUu and Phinthu
+%LIGKERN ThaiCharacterDoChada ThaiCharacterSaraU |=:> ThaiCharacterSaraULow ;
+%LIGKERN ThaiCharacterDoChada ThaiCharacterSaraUu |=:> ThaiCharacterSaraUuLow ;
+%LIGKERN ThaiCharacterDoChada ThaiCharacterPhinthu |=:> ThaiCharacterPhinthuLow ;
+%LIGKERN ThaiCharacterToPatak ThaiCharacterSaraU |=:> ThaiCharacterSaraULow ;
+%LIGKERN ThaiCharacterToPatak ThaiCharacterSaraUu |=:> ThaiCharacterSaraUuLow ;
+%LIGKERN ThaiCharacterToPatak ThaiCharacterPhinthu |=:> ThaiCharacterPhinthuLow ;
+
+%ligature for making YoYingDescless and ThoThanDescless
+%LIGKERN ThaiCharacterYoYing ThaiCharacterSaraU =:|> ThaiCharacterYoYingDescless ;
+%LIGKERN ThaiCharacterYoYing ThaiCharacterSaraUu =:|> ThaiCharacterYoYingDescless ;
+%LIGKERN ThaiCharacterYoYing ThaiCharacterPhinthu =:|> ThaiCharacterYoYingDescless ;
+%LIGKERN ThaiCharacterThoThan ThaiCharacterSaraU =:|> ThaiCharacterThoThanDescless ;
+%LIGKERN ThaiCharacterThoThan ThaiCharacterSaraUu =:|> ThaiCharacterThoThanDescless ;
+%LIGKERN ThaiCharacterThoThan ThaiCharacterPhinthu =:|> ThaiCharacterThoThanDescless ;
+
+%ligature for making Lakkhangyao
+%LIGKERN ThaiCharacterRu ThaiCharacterSaraAa |=:> ThaiCharacterLakkhangyao ;
+%LIGKERN ThaiCharacterLu ThaiCharacterSaraAa |=:> ThaiCharacterLakkhangyao ;

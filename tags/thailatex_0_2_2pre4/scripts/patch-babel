@@ -1,0 +1,76 @@
+#! /bin/sh -e
+#
+# Written by Chanop Silpa-Anan <chanop@debian.org>
+#
+# You have every right to do anything with this file.
+# Use with care.
+#
+
+BABELSTY=babel.sty
+
+if [ $# -gt 1 ]; then
+  echo "Usage:"
+  echo "  $0 path/to/$BABELSTY"
+  exit 1
+fi
+
+LOCATION_TO_SEARCH=". /usr/share/texmf/tex/generic/babel /usr/local/share/texmf/tex/generic/babel"
+BABEL=
+
+if [ $# -eq 1 ] ; then
+  if [ -f $1/$BABELSTY ] ; then 
+    BABEL="$1/$BABELSTY"
+  fi
+else
+
+  # Trying to locate babel
+  for i in $LOCATION_TO_SEARCH ; do
+    if [ -f "$i/$BABELSTY" ] ; then
+      BABEL="$i/$BABELSTY"
+    fi
+  done
+
+  if [ "x$BABEL" = "x" ] ; then
+    echo "Cannot find $BABELSTY in $LOCATION_TO_SEARCH"
+    read -n 1 -p "Do you want me to find $BABELSTY? [Y/n]" RET
+    echo " "
+    if [ "$RET" != "n" ] ; then
+      echo "Searching for $BABELSTY ..."
+      if which locate > /dev/null ; then
+	echo "Using locate"
+        BABEL=`locate $BABELSTY`
+      elif which find > /dev/null ; then
+        echo "Using find"	
+        BABEL=`find / -name "$BABELSTY" -print`
+      fi
+    fi
+  fi
+fi
+
+if [ "x$BABEL" = "x" ] ; then
+  echo "Cannot locate $BABELSTY, exiting!"
+  exit 1;
+fi
+
+echo "$BABELSTY is located at $BABEL"
+read -n 1 -p "Do you want me to patch $BABELSTY? [Y/n]" RET
+echo " "
+
+if [ "$RET" != "n" ] ; then
+  echo "Looking for thai entry in $BABELSTY"
+  for i in $BABEL ; do
+    if [ -f $i ] ; then
+      if grep thai $i >/dev/null ; then
+        echo "$i has thai entry as"
+        grep thai $i
+        echo "I'm not going to do any thing with it"
+      else
+        echo "Patching $i with thai entry" 
+        sed '/turkish/i\
+\\DeclareOption{thai}{\\input{thai.ldf}}' $i >$i.tmp
+        mv $i.tmp $i
+      fi
+      echo " "
+    fi
+  done
+fi
