@@ -70,11 +70,11 @@
 %ligature for making left SaraAm with HiLeft tone marks
 %LIGKERN uniF705 uni0E33 =:| uniF713 ;
 %LIGKERN uniF713 uni0E33 |=:|> uniF711 ;
-%LIGKERN uniF706 uni0E33 =:| uniF713 ;
+%LIGKERN uniF706 uni0E33 =:| uniF714 ;
 %LIGKERN uniF714 uni0E33 |=:|> uniF711 ;
-%LIGKERN uniF707 uni0E33 =:| uniF713 ;
+%LIGKERN uniF707 uni0E33 =:| uniF715 ;
 %LIGKERN uniF715 uni0E33 |=:|> uniF711 ;
-%LIGKERN uniF708 uni0E33 =:| uniF713 ;
+%LIGKERN uniF708 uni0E33 =:| uniF716 ;
 %LIGKERN uniF716 uni0E33 |=:|> uniF711 ;
 
 %LIGKERN uniF70A uni0E33 =:| uni0E48 ;
