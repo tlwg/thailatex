@@ -9,26 +9,26 @@ pkgdoc_DATA = $(DOC_FILES)
 # pkgdoc_DATA = orchid.tex orchid.ps orchid.pdf
 
 clean-local:
-	$(RM) *.log *.aux *.dvi
+	$(RM) *.log *.aux *.ttex *.dvi
 
 distclean-local: clean
-	$(RM) *.ps *.pdf *.ttex
+	$(RM) *.ps *.pdf
 
-orchid.ps: orchid.dvi
-	$(DVIPS) orchid.dvi -o orchid.ps
+SUFFIXES = .tex .dvi .ps .pdf
 
-orchid.pdf: orchid.ps
-	$(PS2PDF) orchid.ps
+.dvi.ps:
+	$(DVIPS) $< -o $@
 
-orchid.dvi: orchid.ttex
-	$(LATEX) orchid.ttex
-	$(LATEX) orchid.ttex
-	$(LATEX) orchid.ttex
-	$(LATEX) orchid.ttex
+.ps.pdf:
+	$(PS2PDF) $<
 
-orchid.ttex: orchid.tex
+.tex.dvi:
 	if (which $(SWATH) > /dev/null) ; then \
-	  $(SWATH) -f latex < orchid.tex > orchid.ttex ; \
+	  $(SWATH) -f latex < $< > $@.ttex ; \
 	elif (which $(CTTEX) > /dev/null) ; then \
-	  $(CTTEX) -W < orchid.tex > orchid.ttex ; \
+	  $(CTTEX) -W < $< > $@.ttex ; \
 	fi
+	$(LATEX) $@.ttex
+	$(LATEX) $@.ttex
+	mv $@.dvi $@
+

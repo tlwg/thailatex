@@ -1,5 +1,10 @@
 2005-01-26 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* doc/Makefile:
+	  Use abstract make rules so that all docs are covered at once.
+
+2005-01-26 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* doc/teststd.tex:
 	  Add slant shape samples for Norasi and Kinnari.  Fix the Thai name
 	  of National Font project.
