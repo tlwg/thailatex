@@ -12,7 +12,7 @@ configure: configure-stamp
 configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
-	./configure --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
+	./autogen.sh --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
 	--with-docdir=\$${prefix}/share/doc
 
 	touch configure-stamp
@@ -47,7 +47,10 @@ install: build
 	rm -rf debian/thailatex/usr/share/doc
 	rm -f debian/thailatex/usr/share/emacs/site-lisp/site-start.el
 	mv debian/thailatex/usr/share/emacs/site-lisp/thai-latex-setup.el debian/thailatex/usr/share/emacs/site-lisp/thailatex
-	mv debian/thailatex/usr/share/texmf/dvips/base/psfonts.map debian/thailatex/etc/texmf/dvips/thaifonts.map
+	mv debian/thailatex/usr/share/texmf/dvips/config/thai.map debian/thailatex/etc/texmf/dvips
+	rm -rf debian/thailatex/usr/share/texmf/dvips/config
+	rm -rf debian/thailatex/usr/share/texmf/pdftex
+	rm -rf debian/thailatex/usr/sbin
 	cp debian/babel.sty debian/thailatex/usr/share/texmf/tex/generic/babel
 
 # Build architecture-independent files here.
@@ -63,7 +66,7 @@ binary-arch: build install
 	dh_installexamples doc/orchid.tex doc/Makefile
 	dh_installmenu
 	dh_installemacsen
-	dh_undocumented patch-babel.1 tlatex.1
+	dh_undocumented tlatex.1
 	dh_installchangelogs
 	cp ChangeLog debian/thailatex/usr/share/doc/thailatex
 	dh_link
