@@ -1,3 +1,8 @@
+2002-07-23 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* fonts/afm/dbttb.afm, fonts/afm/dbtti.afm, fonts/dbttbi.afm:
+	  Fix glyph name for Yo Ying, which was taken as softhyphen
+	  and thus had no width.
+
 2002-01-16 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* babel/thai.ldf:
 	  Fix extra spaces appearing in \seleclanguage{thai}, as
