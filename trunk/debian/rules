@@ -45,13 +45,18 @@ install: build
 	# Add here commands to install the package into debian/tmp.
 	$(MAKE) install prefix=`pwd`/debian/thailatex/usr
 	rm -rf debian/thailatex/usr/share/doc
+
 	rm -f debian/thailatex/usr/share/emacs/site-lisp/site-start.el
 	mv debian/thailatex/usr/share/emacs/site-lisp/thai-latex-setup.el debian/thailatex/usr/share/emacs/site-lisp/thailatex
+
 	mv debian/thailatex/usr/share/texmf/dvips/config/thai.map debian/thailatex/etc/texmf/dvips
 	rm -rf debian/thailatex/usr/share/texmf/dvips/config
-	rm -rf debian/thailatex/usr/share/texmf/pdftex
+
+	rm -rf debian/thailatex/usr/bin
 	rm -rf debian/thailatex/usr/sbin
+
 	cp debian/babel.sty debian/thailatex/usr/share/texmf/tex/generic/babel
+	cp debian/10thailatex.cfg debian/thailatex/etc/texmf/updmap.d/
 
 # Build architecture-independent files here.
 binary-indep: build install
@@ -63,12 +68,11 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installdocs
-	dh_installexamples doc/orchid.tex doc/Makefile
+	dh_installexamples doc/orchid.tex doc/teststd.tex doc/Makefile
 	dh_installmenu
 	dh_installemacsen
-	dh_undocumented tlatex.1
 	dh_installchangelogs
-	cp ChangeLog debian/thailatex/usr/share/doc/thailatex
+	gzip -9 debian/thailatex/usr/share/doc/thailatex/ChangeLog
 	dh_link
 	dh_strip
 	dh_compress

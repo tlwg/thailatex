@@ -22,26 +22,16 @@ set -e
 #     installation fails and the `postinst' is called with `abort-upgrade',
 #     `abort-remove' or `abort-deconfigure'.
 
-texmf_dvips=/etc/texmf/dvips
-updmap=${texmf_dvips}/updmap
-
 case "$1" in
     configure)
-      if [ -e $updmap ]; then
-        if ! grep -q "thai.map" $updmap; then
-          TMP=`tempfile --mode=0755` && \
-          sed -e '/^extra_modules/a\
-thai.map\' < $updmap > $TMP && \
-          mv -f $TMP $updmap && \
-          ( cd $texmf_dvips && sh ./updmap )
-        fi
-	# clean up old font map :-)
-        TMP=`tempfile --mode=0755` && \
-        sed -e '/thaifonts.map/d' < $updmap > $TMP && \
-        mv -f $TMP $updmap 
+      if [ -x /usr/sbin/update-updmap ] ; then \
+         /usr/sbin/update-updmap ; \
       fi
       if [ -x /usr/bin/texhash ] ; then \
          /usr/bin/texhash ; \
+      fi
+      if [ -x /usr/bin/updmap ] ; then \
+         /usr/bin/updmap ; \
       fi
     ;;
 
