@@ -1,3 +1,8 @@
+2004-12-05 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	  Version 0.3.4.
+
 2004-11-15 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/*.{afm,pfb}:
