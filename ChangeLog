@@ -3,6 +3,7 @@
 	* thailatex.spec.in: add post and postun scripts for patching
 	  dvips and emacs files.
 	* dvips/addpsfont.sh, dvips/rmpsfont.sh: reduce sed script.
+	* Makefile.am, thailatex.spec.in: add texhash after installation
 	* configure.in: Version 0.2.3
 
 2001-12-04 Theppitak Karoonboonyanan <thep@links.nectec.or.th>

@@ -72,6 +72,8 @@ Xrnorasi_i  Norasi-Italic <norasi_i.pfb "TeXTISEncoding ReEncodeFont" <TeXTIS.en
 Xrnorasi_bi Norasi-BoldItalic <norasi_bi.pfb "TeXTISEncoding ReEncodeFont" <TeXTIS.enc
 END
 
+/usr/bin/texhash
+
 # add Emacs macro for activating Thai LaTeX filter
 EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
 if [ -f $EMACSLISPDIR/site-start.el ] ; then
@@ -87,6 +89,8 @@ echo '(load-library "thai-latex-setup")' \
 DVIPSDIR=/usr/share/texmf/dvips/base
 sed -e '/^dbtt/d;/^rnorasi/d' < $DVIPSDIR/psfonts.map > /tmp/tmp.$$
 mv /tmp/tmp.$$ $DVIPSDIR/psfonts.map
+
+/usr/bin/texhash
 
 # remove Emacs macro for activating Thai LaTeX filter
 EMACSLISPDIR=$RPM_BUILD_ROOT/usr/share/emacs/site-lisp
