@@ -239,6 +239,7 @@ install-data-hook:
 	@TEXHASH@
 	@if test -z "$(DESTDIR)" ; then                                       \
 	  if test "$(UPDMAP_VER)" == "2"; then                                \
+	    $(UPDMAP) --disable thai.map --nohash --nomkmap ;                 \
 	    $(UPDMAP) --enable Map thai.map ;                                 \
 	  else                                                                \
 	    mkdir -p `dirname $(DVIPSCONFIG)` ;                               \
