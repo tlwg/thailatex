@@ -1,0 +1,10 @@
+%% Created by Surapant Meknavin: surapan@nectec.or.th
+%% 21 June 1999
+%% 2000/05/10 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+%%            - add \sfdefault
+\DeclareRobustCommand{\latintext}{%
+  \fontencoding{\latinencoding}\fontfamily{\englishrmdefault}\selectfont
+  \def\rmdefault{\englishrmdefault}%
+  \def\sfdefault{\englishsfdefault}%
+  \def\encodingdefault{\latinencoding}}
+
