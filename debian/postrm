@@ -29,7 +29,7 @@ case "$1" in
            /usr/bin/texhash ; \
          fi
          if [ -e $updmap ]; then
-           if ! grep -q "thai.map" $updmap; then
+           if grep -q "thai.map" $updmap; then
              TMP=`tempfile --mode=0755` && \
              sed -e '/thai.map/d' < $updmap > $TMP && \
              mv -f $TMP $updmap && \
