@@ -1,3 +1,8 @@
+2003-03-04 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* thailatex.spec.in:
+	  Add tetex-dvips to Requires: (as suggested by Vee Sattayamas)
+
 2003-03-03 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/Makefile.am:
