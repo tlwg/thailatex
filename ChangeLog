@@ -1,3 +1,8 @@
+2004-03-03 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/{kinnari,garuda,dbtt}.{pfb,afm}:
+	  Update fonts from thaifonts-scalable cvs.
+
 2004-02-28 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/thai.ldf:
