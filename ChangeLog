@@ -1,4 +1,8 @@
 2003-01-11 Theppitak Karoonboonyanan <thep@linux.thai.net>
+	* babel/lthnorasi.fd:
+	  Fix typo in norasi-normal name.
+
+2003-01-10 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* -fonts/type1/*, -fonts/afm/*:
 	  Remove subdirs.
 	* +fonts/dbtt*.pfb, +fonts/garuda*.pfb, +fonts/norasi*.pfb:
