@@ -1,3 +1,9 @@
+2003-06-08 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Fix lthuni.enc symlink creation. Its existence should be checked
+	  aginst itself, rather than the pfb file.
+
 2003-06-04 Chanop Silpa-Anan <chanop@debian.org>
 	* fonts/norasi*.{pfb,afm}:
 	  Update using new Type1 font from thaifonts-scalable project.
