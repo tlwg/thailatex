@@ -1,3 +1,7 @@
+2003-02-13 Theppitak Karoonboonyanan <thep@linux.thai.net>
+	* configure.in:
+	  Version 0.2.7.
+
 2003-01-28 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* emacs/Makefile.am:
 	  Use install-data-hook and uninstall-hook instead of
