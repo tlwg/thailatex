@@ -13,6 +13,7 @@ fi
 $MMV -v "Norasi*" "norasi#1"
 $MMV -v "Garuda*" "garuda#1"
 $MMV -v "DBThaiText*" "dbtt#1"
+$MMV -v "Kinnari*" "kinnari#1"
 
 #Oblique, Bold, BoldOblique, Italic, BoldItalic
 $MMV -v "*-BoldOblique*" "#1_bo#2"
