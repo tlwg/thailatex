@@ -17,6 +17,9 @@
 %%            - Use \ifcase instead of nested \if in \thaitranslate
 %%            - Fix wrong encoding in heading for book style
 %%              (as suggested by Chanop)
+%% 2002/01/16 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+%%            - Fix extra spaces appearing in \selectlanguage{thai}
+%%              (as suggested by C. Visavakul)
 \ProvidesLanguage{thai}
         [1999/06/21 v1.0d Thai support for the babel system]
 \LdfInit\CurrentOption{captions\CurrentOption}
@@ -35,35 +38,35 @@
 \def\englishrmdefault{cmr}
 \def\englishsfdefault{cmss}
 \DeclareRobustCommand{\thaitext}{%
-  \fontencoding{LTH}\fontfamily{\thairmdefault}\selectfont
-  \def\rmdefault{\thairmdefault}
-  \def\sfdefault{\thaisfdefault}
+  \fontencoding{LTH}\fontfamily{\thairmdefault}\selectfont%
+  \def\rmdefault{\thairmdefault}%
+  \def\sfdefault{\thaisfdefault}%
   \def\encodingdefault{LTH}}
 \DeclareRobustCommand{\textthai}[1]{{\thaitext #1}}
 \def\thai{\thaitext}
 % \def\outlfamily{\usefont{LTH}{cmro}{m}{n}}
 % \DeclareTextFontCommand{\textol}{\outlfamily}
-\def\thaihyphenmins{11} %
+\def\thaihyphenmins{11}
 \addto\captionsthai{%
-  \def\prefacename{บทนำ}
-  \def\refname{หนังสืออ้างอิง}
-  \def\abstractname{บทคัดย่อ}
-  \def\bibname{บรรณานุกรม}
-  \def\chaptername{บทที่}
-  \def\appendixname{ภาคผนวก}
-  \def\contentsname{สารบัญ}
-  \def\listfigurename{สารบัญรูป}
-  \def\listtablename{สารบัญตาราง}
-  \def\indexname{ดรรชนี}
-  \def\figurename{รูปที่}
-  \def\tablename{ตารางที่}
-  \def\partname{ภาค}
-  \def\enclname{สิ่งที่แนบมาด้วย}
-  \def\ccname{สำเนาถึง}
-  \def\headtoname{เรียน}
-  \def\pagename{หน้า}
-  \def\seename{ดู}
-  \def\alsoname{ดูเพิ่มเติม}
+  \def\prefacename{บทนำ}%
+  \def\refname{หนังสืออ้างอิง}%
+  \def\abstractname{บทคัดย่อ}%
+  \def\bibname{บรรณานุกรม}%
+  \def\chaptername{บทที่}%
+  \def\appendixname{ภาคผนวก}%
+  \def\contentsname{สารบัญ}%
+  \def\listfigurename{สารบัญรูป}%
+  \def\listtablename{สารบัญตาราง}%
+  \def\indexname{ดรรชนี}%
+  \def\figurename{รูปที่}%
+  \def\tablename{ตารางที่}%
+  \def\partname{ภาค}%
+  \def\enclname{สิ่งที่แนบมาด้วย}%
+  \def\ccname{สำเนาถึง}%
+  \def\headtoname{เรียน}%
+  \def\pagename{หน้า}%
+  \def\seename{ดู}%
+  \def\alsoname{ดูเพิ่มเติม}%
   \def\proofname{พิสูจน์}%
   }
 % Define thai number translation
@@ -177,7 +180,7 @@
   \def\today{\number\day \space \th@month\space พ.ศ.~\number\th@year}}
 \addto\extrasthai{\thaitext}
 \addto\noextrasthai{\latintext}
-\def\wbr{\hskip0pt\relax}
+\def\wbr{\hskip0pt plus0.6pt\relax}
 \renewcommand{\baselinestretch}{1.2}
 \def\fnum@figure{\figurename\nobreakspace\thefigure}
 \def\fnum@table{\tablename\nobreakspace\thetable}
