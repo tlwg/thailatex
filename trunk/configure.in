@@ -43,8 +43,8 @@ if test "x$CTTEX" = "xno" ; then
 fi
 
 AC_ARG_WITH(docdir,
-  [  --with-docdir=DIR     package document directory in DIR [PREFIX/doc]],
-  [docdir="$withval"], [docdir=\$\{prefix\}/doc])
+  [  --with-docdir=DIR     package document directory in DIR [PREFIX/share/doc]],
+  [docdir="$withval"], [docdir=\$\{datadir\}/doc])
 AC_MSG_CHECKING(--with-docdir)
 AC_MSG_RESULT("$docdir")                                                                                                           
 AC_SUBST(docdir)

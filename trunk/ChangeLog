@@ -5,6 +5,9 @@
 	  aginst itself, rather than the pfb file.
 	  Add creation of *.afm symlinks to the build tree.
 
+	* configure.in:
+	  Move default docdir to DATADIR/doc instead of PREFIX/doc.
+
 2003-06-04 Chanop Silpa-Anan <chanop@debian.org>
 	* fonts/norasi*.{pfb,afm}:
 	  Update using new Type1 font from thaifonts-scalable project.
