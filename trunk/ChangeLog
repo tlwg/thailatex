@@ -1,3 +1,7 @@
+2003-04-18 Chanop Silpa-Anan <chanop@debian.org>
+	* debian/changelog:
+	  Version 0.2.99.3
+
 2003-04-17 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* emacs/Makefile.am:
