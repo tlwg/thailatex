@@ -21,12 +21,12 @@
 \DeclareFontShape{LTH}{garuda}{b}{sl}{<->[1.3]garuda_bo}{}
 
 % Substitutions
-\DeclareFontShape{LTH}{garuda}{m}{it}{<->sub * garuda/m/sl}{}
-\DeclareFontShape{LTH}{garuda}{b}{it}{<->sub * garuda/b/sl}{}
+\DeclareFontShape{LTH}{garuda}{m}{it}{<->ssub * garuda/m/sl}{}
+\DeclareFontShape{LTH}{garuda}{b}{it}{<->ssub * garuda/b/sl}{}
 
-\DeclareFontShape{LTH}{garuda}{bx}{n}{<->sub * garuda/b/n}{}
-\DeclareFontShape{LTH}{garuda}{bx}{sl}{<->sub * garuda/b/sl}{}
-\DeclareFontShape{LTH}{garuda}{bx}{it}{<->sub * garuda/b/it}{}
+\DeclareFontShape{LTH}{garuda}{bx}{n}{<->ssub * garuda/b/n}{}
+\DeclareFontShape{LTH}{garuda}{bx}{sl}{<->ssub * garuda/b/sl}{}
+\DeclareFontShape{LTH}{garuda}{bx}{it}{<->ssub * garuda/b/it}{}
 \endinput
 
 % 

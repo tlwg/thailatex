@@ -19,12 +19,12 @@
 \DeclareFontShape{LTH}{norasi}{b}{sl}{<->[1.3]norasi_bo}{}
 
 % Substitutions
-\DeclareFontShape{LTH}{norasi}{m}{it}{<->sub * norasi/m/sl}{}
-\DeclareFontShape{LTH}{norasi}{b}{it}{<->sub * norasi/b/sl}{}
+\DeclareFontShape{LTH}{norasi}{m}{it}{<->ssub * norasi/m/sl}{}
+\DeclareFontShape{LTH}{norasi}{b}{it}{<->ssub * norasi/b/sl}{}
 
-\DeclareFontShape{LTH}{norasi}{bx}{n}{<->sub * norasi/b/n}{}
-\DeclareFontShape{LTH}{norasi}{bx}{sl}{<->sub * norasi/b/sl}{}
-\DeclareFontShape{LTH}{norasi}{bx}{it}{<->sub * norasi/b/it}{}
+\DeclareFontShape{LTH}{norasi}{bx}{n}{<->ssub * norasi/b/n}{}
+\DeclareFontShape{LTH}{norasi}{bx}{sl}{<->ssub * norasi/b/sl}{}
+\DeclareFontShape{LTH}{norasi}{bx}{it}{<->ssub * norasi/b/it}{}
 \endinput
 
 % 
