@@ -6,15 +6,11 @@ DISTCLEANFILES = thailatex.spec
 docdir = @docdir@
 
 pkgdocdir = $(docdir)/@PACKAGE@
+pkgdoc_DATA = LICENSE README
 
 install-data-local:
-	$(INSTALL) -d $(DESTDIR)$(pkgdocdir)
-	$(INSTALL_DATA) $(srcdir)/LICENSE $(DESTDIR)$(pkgdocdir)
-	$(INSTALL_DATA) $(srcdir)/README $(DESTDIR)$(pkgdocdir)
 	texhash
 
 uninstall-local:
-	$(RM) $(DESTDIR)$(pkgdocdir)/LICENSE
-	$(RM) $(DESTDIR)$(pkgdocdir)/README
-	$(RMDIR) $(DESTDIR)$(pkgdocdir)	
 	texhash
+

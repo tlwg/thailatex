@@ -1,3 +1,15 @@
+2002-01-08 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* Makefile.am, babel/Makefile.am doc/Makefile.am, dvips/Makefile.am,
+	  emacs/Makefile.am, fonts/Makefile.am:
+	  use automake DATA targets.
+	* -dvips/addpsfont.sh, -dvips/rmpsfont.sh, dvips/Makefile.am:
+	  use thai.map and patch dvips local config file instead of
+	  directly patching base psfonts.map.
+	* dvips/Makefile.am:
+	  add patch for pdftex.
+	* -emacs/addmacro.sh, -emacs/rmmacro.sh, emacs/Makefile.am:
+	  move the macro patching scripts into Makefile.
+
 2001-12-06 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* babel/thai.ldf: add missing consonants in \thaialpha according
 	  to Thai law convention.

@@ -2,19 +2,9 @@ EXTRA_DIST = orchid.tex
 
 docdir = @docdir@
 
-pkgdocdir = $(docdir)/@PACKAGE@
-
-#install-data-local: orchid.ps orchid.pdf
-install-data-local:
-	$(INSTALL) -d $(DESTDIR)$(pkgdocdir)/examples
-	$(INSTALL_DATA) $(srcdir)/orchid.tex $(DESTDIR)$(pkgdocdir)/examples
-#	$(INSTALL_DATA) orchid.ps $(DESTDIR)$(pkgdocdir)/examples
-#	$(INSTALL_DATA) orchid.pdf $(DESTDIR)$(pkgdocdir)/examples
-
-uninstall-local:
-	$(RM) $(DESTDIR)$(pkgdocdir)/examples/orchid.tex
-#	$(RM) $(DESTDIR)$(pkgdocdir)/examples/orchid.ps
-#	$(RM) $(DESTDIR)$(pkgdocdir)/examples/orchid.pdf
+pkgdocdir = $(docdir)/@PACKAGE@/examples
+pkgdoc_DATA = orchid.tex
+# pkgdoc_DATA = orchid.tex orchid.ps orchid.pdf
 
 clean-local:
 	$(RM) *.log *.aux *.dvi
