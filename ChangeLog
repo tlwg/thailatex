@@ -23,6 +23,8 @@
 	  Split scriptlets into sync-thailatex separate script, to resolve
 	  old chaotic upgrading scheme.
 	  Add %triggerin to get synchronized with tetex.
+	* configure.in:
+	  Version 0.2.4.
 
 2001-12-06 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* babel/thai.ldf: add missing consonants in \thaialpha according
