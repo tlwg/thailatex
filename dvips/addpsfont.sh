@@ -1,6 +1,5 @@
 if [ -f $DVIPSDIR/psfonts.map ] ; then
-  sed -e '/^dbtt/d' < $DVIPSDIR/psfonts.map \
-    | sed -e '/^rnorasi/d' > /tmp/tmp.$$
+  sed -e '/^dbtt/d;/^rnorasi/d' < $DVIPSDIR/psfonts.map > /tmp/tmp.$$
   mv /tmp/tmp.$$ $DVIPSDIR/psfonts.map
 fi
 sed -e 's/^X//' >> $DVIPSDIR/psfonts.map << END
