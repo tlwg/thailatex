@@ -1,5 +1,6 @@
 2001-12-05 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* thailatex.spec.in: use manifest
+	* configure.in: Version 0.2.3
 
 2001-12-04 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* babel/thai.ldf: fix thai numbering for cases of styles other
