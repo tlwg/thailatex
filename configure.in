@@ -65,7 +65,6 @@ AC_SUBST(emacsdir)
 
 AC_OUTPUT(Makefile
   babel/Makefile
-  dvips/Makefile
   emacs/Makefile
   fonts/Makefile
   scripts/Makefile
