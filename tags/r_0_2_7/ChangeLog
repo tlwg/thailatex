@@ -1,0 +1,137 @@
+2003-02-13 Theppitak Karoonboonyanan <thep@linux.thai.net>
+	* configure.in:
+	  Version 0.2.7.
+
+2003-01-28 Theppitak Karoonboonyanan <thep@linux.thai.net>
+	* emacs/Makefile.am:
+	  Use install-data-hook and uninstall-hook instead of
+	  install-data-local and uninstall-local, respectively, so that the
+	  $(emacslispdir) is created before doing anything with site-start.el
+	* thailatex.spec.in:
+	  Apply Poonlap Veerathanabutr's patch which fixes problematic
+	  comment
+
+2003-01-09 Theppitak Karoonboonyanan <thep@linux.thai.net>
+	* Makefile.am:
+	  Use install-data-hook instead of install-data-local
+	  and uninstall-hook instead of uninstall-local for proper
+	  operation sequence.
+	* configure.in:
+	  Version 0.2.6.
+
+2002-08-05 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* thailatex.spec.in:
+	  Add BuildRequires. Add %clean script. Clear RPM build dir
+	  before installing.
+
+2002-07-23 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* fonts/afm/dbttb.afm, fonts/afm/dbtti.afm, fonts/dbttbi.afm:
+	  Fix glyph name for Yo Ying, which was taken as softhyphen
+	  and thus had no width.
+
+2002-01-16 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* babel/thai.ldf:
+	  Fix extra spaces appearing in \seleclanguage{thai}, as
+	  suggested by C. Visavakul.
+	  Add extra space to \wbr in case of over-condensed text,
+	  as suggested by C. Visavakul.
+	* configure.in:
+	  Version 0.2.5.
+
+2002-01-08 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* Makefile.am, babel/Makefile.am doc/Makefile.am, dvips/Makefile.am,
+	  emacs/Makefile.am, fonts/Makefile.am:
+	  Use automake DATA targets.
+	* -dvips/addpsfont.sh, -dvips/rmpsfont.sh, dvips/Makefile.am:
+	  Use thai.map and patch dvips local config file instead of
+	  directly patching base psfonts.map.
+	* dvips/Makefile.am:
+	  Add patch for pdftex.
+	* -emacs/addmacro.sh, -emacs/rmmacro.sh, emacs/Makefile.am:
+	  Move the macro patching scripts into Makefile.
+	* thailatex.spec.in:
+	  Update %post and %postun according to new installing method.
+	* thailatex.spec.in:
+	  Fix upgrading bug using %triggerpostun to repeat %post after
+	  %postun of older package undid it. (%post is still needed
+	  in case of installation from scratch, not upgrading.)
+	  Change %postun to %preun, to guarantee it's run before
+	  newer package's %triggerpostun in upgrading.
+	* thailatex.spec.in:
+	  Incorporate babel.sty patching.
+	* +scripts/sync-thailatex, scripts/Makefile.am, thailatex.spec.in:
+	  Split scriptlets into sync-thailatex separate script, to resolve
+	  old chaotic upgrading scheme.
+	  Add %triggerin to get synchronized with tetex.
+	* configure.in:
+	  Version 0.2.4.
+
+2001-12-06 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* babel/thai.ldf: add missing consonants in \thaialpha according
+	  to Thai law convention.
+
+2001-12-06 Chanop Silpa-Anan <chanop@debian.org>
+	* babel/thai.ldf: fix table of contents rubbish header for
+	  class book.
+	* babel/thai.ldf: add thai alphabet counter. default appendix
+	  counter to thaialphabet when thainumer option is given.
+
+2001-12-05 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* thailatex.spec.in: use manifest
+	* thailatex.spec.in: add post and postun scripts for patching
+	  dvips and emacs files.
+	* dvips/addpsfont.sh, dvips/rmpsfont.sh: reduce sed script.
+	* Makefile.am, thailatex.spec.in: add texhash after installation
+	* configure.in: Version 0.2.3
+
+2001-12-04 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* babel/thai.ldf: fix thai numbering for cases of styles other
+	  than book, where \thechapter is not defined.
+	* babel/thai.ldf: remove thaitoday option.
+	* doc/orchid.tex: use thainumber option to demo thai numbering.
+	* babel/thai.ldf: use \ifcase instead of nested \if in \thaitranslate.
+	* babel/thai.ldf: fix wrong encoding in heading for book
+	  style (as suggested by Chanop).
+
+2001-12-04 Chanop Silpa-Anan <chanop@debian.org>
+	* add support for using Thai numbering in page, section,
+	  date, and etc.
+	* Thank to K.ขอม
+
+2001-02-23 Chanop Silpa-Anan <chanop@debian.org>
+	* move patch-babel script from babel to scripts dir
+	* add tlatex scipt for compiling Thai document to scripts dir
+
+2001-02-10 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* make RPM spec use temporary build root instead of the real
+	  file system; make configure script generate auto-versioned RPM spec
+	* fix some Makefile.am for consistency with the helper shell scripts
+	  and make it be able to configure and build from a separate directory
+
+2001-02-10 Chanop Silpa-Anan <chanop@debian.org>
+	* add patch-babel script for patching babel.sty such that
+	  thai language document can be passed from 
+	  \documenticlass[thai]{class} to babel
+	  (exported latex from LyX has this behavior)
+
+2000-11-29 Chanop Silpa-Anan <chanop@debian.org>
+	* rewrite Makefiles using GNU autoconf/automake tools
+	  so that packaging for debian and other is easier :)
+
+2000-08-16 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* incorporate fixed "norasi" "Bluevalues" parameter to fix
+	  Acrobat Distiller rejection, by Anutara Tantraporn
+
+2000-05-25 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* rearrange package and create Makefiles
+	* encoding changed from TIS to LTH, according to TeX convention
+	* add "norasi" bold and bold-italic font; correct TeXTIS.enc
+	* make "norasi" be Thai roman font, "dbttx" Thai sans serif
+	* correct some Thai translations
+	* release version 0.2
+
+1999-06-21 Surapant Meknavin <surapan@nectec.or.th>
+	* create the original Thai LaTeX extension based on babel package
+	* two fonts are available : dbtt (n,bx,i,bi) and nf3x (n,i)
+	* release version 0.1
+
