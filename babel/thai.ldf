@@ -3,6 +3,8 @@
 %% created by Surapant Meknavin: surapan@nectec.or.th
 %% 
 %% --------------------------------------------------
+%% 2004/03/06 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - use 'garuda' instead of 'dbtt' as default Thai sffamily
 %% 2004/03/04 Theppitak Karoonboonyanan <thep@linux.thai.net>
 %%            - use `pmono' as default Thai ttfamily
 %% 2004/02/28 Theppitak Karoonboonyanan <thep@linux.thai.net>
@@ -56,7 +58,7 @@
     I stop here, while you get a suitable lthenc.def file}\@@end
  }
 \def\thairmdefault{norasi}
-\def\thaisfdefault{dbtt}
+\def\thaisfdefault{garuda}
 \def\thaittdefault{pmono}
 \def\englishrmdefault{cmr}
 \def\englishsfdefault{cmss}
