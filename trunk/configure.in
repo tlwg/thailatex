@@ -35,11 +35,11 @@ if test "x$PS2PDF" = "xno" ; then
 fi
 AC_CHECK_PROGS(SWATH,swath,no)
 if test "x$SWATH" = "xno" ; then
-  echo "You may need swath (from swath distribution)"
+  AC_MSG_WARN([You may need swath (from swath distribution)])
 fi
 AC_CHECK_PROGS(CTTEX,cttex,no)
 if test "x$CTTEX" = "xno" ; then
-  echo "You may need cttex (from cttex distribution)"
+  AC_MSG_WARN([You may need cttex (from cttex distribution)])
 fi
 
 AC_ARG_WITH(docdir,
@@ -55,6 +55,11 @@ AC_ARG_WITH(texmfdir,
 AC_MSG_CHECKING(--with-texmfdir)
 AC_MSG_RESULT("$texmfdir")                                                                                                           
 AC_SUBST(texmfdir)
+
+AC_PATH_PROG(UPDMAP,updmap,no,/usr/local/bin:/usr/bin:/bin:$texmfdir/dvips/config/updmap)
+if test "x$UPDMAP" = "xno" ; then
+  AC_MSG_ERROR([You need updmap (from TeTeX distribution)])
+fi
 
 AC_ARG_WITH(emacsdir,
   [  --with-emacsdir=DIR     emacs directory in DIR [PREFIX/share/emacs]],

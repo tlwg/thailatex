@@ -2,6 +2,8 @@
 	* thailatex.spec.in:
 	  Apply Poonlap Veerathanabutr's patch which fixes problematic
 	  comment
+	* configure.in, fonts/Makefile.am:
+	  Check & use updmap script from appropriate location
 
 2003-10-27 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* emacs/Makefile.am:
