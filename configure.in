@@ -31,7 +31,11 @@ if test "x$PS2PDF" = "xno" ; then
 fi
 AC_CHECK_PROGS(SWATH,swath,no)
 if test "x$SWATH" = "xno" ; then
-  AC_MSG_ERROR([You need swath (from swath distribution)])
+  echo "You may need swath (from swath distribution)"
+fi
+AC_CHECK_PROGS(CTTEX,cttex,no)
+if test "x$CTTEX" = "xno" ; then
+  echo "You may need cttex (from cttex distribution)"
 fi
 
 AC_ARG_WITH(docdir,
@@ -64,5 +68,6 @@ AC_OUTPUT(Makefile
   fonts/type1/Makefile
   scripts/Makefile
   doc/Makefile
+  debian/Makefile
   thailatex.spec)
 
