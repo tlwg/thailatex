@@ -127,6 +127,7 @@ thai.map: $(tfm_DATA)
 # 	$(UPDMAP) --disable thai.map
 
 install-data-hook:
+	@TEXHASH@
 	@if test -z "$(DESTDIR)" ; then                                       \
 	  if test "$(UPDMAP_VER)" == "2"; then                                \
 	    $(UPDMAP) --enable Map thai.map ;                                 \

@@ -1,3 +1,22 @@
+2003-08-27 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Insert texhash calling before updmap, so thai.map is known by
+	  updmap in brand new installation.
+
+	* Makefile.am:
+	  Remove texhash calling after install/uninstall, as it's already
+	  called by updmap.
+
+2003-08-11 Chanop Silpa-Anan <chanop@debian.org>
+
+	* babel/lthdbtt.fd:
+	  Fix typo.
+
+	* babel/{lthdbtt,lthgaruda,lthnorasi}.fd:
+	  Use silent substitutions; there is no need to warn the users
+	  for the default Thai fonts.
+
 2003-08-10 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/thai.ldf:
