@@ -9,6 +9,14 @@
 %%            - correct some Thai translations
 %% 2001/12/04 Chanop Silpa-Anan <chanop@debian.org>
 %%            - Add thainumber and thaitoday option
+%% 2001/12/04 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+%%            - Add checks for \thechapter existence before redefining
+%%              digits as Thai
+%%            - Move thaitoday definitions into thainumber and remove
+%%              thainumber option
+%%            - Use \ifcase instead of nested \if in \thaitranslate
+%%            - Fix wrong encoding in heading for book style
+%%              (as suggested by Chanop)
 \ProvidesLanguage{thai}
         [1999/06/21 v1.0d Thai support for the babel system]
 \LdfInit\CurrentOption{captions\CurrentOption}
