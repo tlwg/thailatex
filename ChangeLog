@@ -1,3 +1,8 @@
+2004-02-18 Poonlap Veerathanabutr <poonlap@linux.thai.net>
+
+	* fonts/purisa.{pfb,afm}:
+	Replaced with fixed version. 
+
 2004-02-14 Poonlap Veerathanabutr <poonlap@linux.thai.net>
 
 	* doc/teststd.tex:
