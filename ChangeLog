@@ -1,3 +1,16 @@
+2004-11-15 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/*.{afm,pfb}:
+	  Updated fonts from thaifonts-scalable CVS snapshot, with glyph
+	  variants for marks back again.
+	  (Bug reported by Poonlap Veerathanabutr.)
+	
+	* fonts/pmono*.{afm,pfb} -> fonts/ttype*.{afm,pfb}, fonts/Makefile.am,
+	  babel/lthpmono.fd -> babel/lthttype.fd, babel/Makefile.am,
+	  babel/thai.ldf:
+	  Replace 'pmono' (PseudoMono) with 'ttype' (TlwgTypewriter),
+	  according to recent renaming in thaifonts-scalable.
+
 2004-09-27 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, NEWS:

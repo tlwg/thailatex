@@ -14,7 +14,7 @@ $MMV -v "Norasi*" "norasi#1"
 $MMV -v "Garuda*" "garuda#1"
 $MMV -v "DBThaiText*" "dbtt#1"
 $MMV -v "Kinnari*" "kinnari#1"
-$MMV -v "PseudoMono*" "pmono#1"
+$MMV -v "TlwgTypewriter*" "ttype#1"
 $MMV -v "Purisa*" "purisa#1"
 
 #Oblique, Bold, BoldOblique, Italic, BoldItalic
