@@ -7,6 +7,9 @@
 	  fonts/kinnari*.{pfb,afm}, fonts/Makefile.am:
 	  Add new fonts and modify Makefile.am.
 
+	* babel/lthpurisa.fd, babel/lthpmono.fd, babel/lthkinnari.fd:
+	  Add new font definition files.
+
 2004-02-03 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* README:
