@@ -58,15 +58,14 @@
   \def\alsoname{ดูเพิ่มเติม}
   \def\proofname{พิสูจน์}%
   }
+
 \DeclareOption{thainumber}{
 % Using @  as a normal charactor
 \catcode`\@=11
 % Define thai number translation
 \def\thaitranslate#1{\ifx @#1%
-     \else\if
-        0#1๐\else\if1#1๑\else\if2#1๒\else\if3#1๓\else\if4#1๔\else\if
-	5#1๕\else\if6#1๖\else\if7#1๗\else\if8#1๘\else\if9#1๙\else#1
-	\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+     \else\ifcase#1
+        ๐\or ๑\or ๒\or ๓\or ๔\or ๕\or ๖\or ๗\or ๘\or ๙\else\fi
 	\expandafter\thaitranslate
       \fi
 }
@@ -105,6 +104,7 @@
 \relax
 }
 % End \DeclareOption{thainumber}
+
 \def\th@month{%
   \ifcase\month\or
     มกราคม\or กุมภาพันธ์\or มีนาคม\or เมษายน
