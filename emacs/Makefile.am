@@ -1,4 +1,4 @@
-EXTRA_DIST = thai-latex-setup.el addmacro.sh rmmacro.sh
+EXTRA_DIST = thai-latex-setup.el
 
 emacslispdir = @emacsdir@/site-lisp
 emacslisp_DATA = thai-latex-setup.el
