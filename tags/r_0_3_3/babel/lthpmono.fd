@@ -1,0 +1,28 @@
+% lthpmono.fd
+%
+% 2004/02/05 Poonlap Veerathanabutr <poonlap@linux.thai.net>
+%            - first release (based on lthgaruda.fd)
+%	     - pmono is PseudoMono (TlwgMono) font
+
+\ProvidesFile{lthpmono.fd}[2004/02/05 v1.0 Thai font definitions]
+
+% Primary declarations
+\DeclareFontFamily{LTH}{pmono}{}
+\DeclareFontShape{LTH}{pmono}{m}{n}{<->s * pmono}{}
+\DeclareFontShape{LTH}{pmono}{m}{sl}{<->s * pmono_o}{}
+%%%%%%% bold series
+\DeclareFontShape{LTH}{pmono}{b}{n}{<->s * pmono_b}{}
+\DeclareFontShape{LTH}{pmono}{b}{sl}{<->s * pmono_bo}{}
+
+% Substitutions
+\DeclareFontShape{LTH}{pmono}{m}{it}{<->ssub * pmono/m/sl}{}
+\DeclareFontShape{LTH}{pmono}{b}{it}{<->ssub * pmono/b/sl}{}
+
+\DeclareFontShape{LTH}{pmono}{bx}{n}{<->ssub * pmono/b/n}{}
+\DeclareFontShape{LTH}{pmono}{bx}{sl}{<->ssub * pmono/b/sl}{}
+\DeclareFontShape{LTH}{pmono}{bx}{it}{<->ssub * pmono/b/sl}{}
+\endinput
+
+% 
+% EOF
+%
