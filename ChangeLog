@@ -6,6 +6,9 @@
 	  individual maps.
 	* +doc/teststd.tex, doc/Makefile.am:
 	  Add Garuda example doc (Poonlap Veerathanabutr).
+	* fonts/Makefile.am:
+	  Fix *.pfb and lthuni.enc symlinks creation bug in case of
+	  building directly in the source tree.
 
 2003-01-10 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* -fonts/type1/*, -fonts/afm/*:
