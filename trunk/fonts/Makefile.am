@@ -2,18 +2,18 @@ EXTRA_DIST = \
 	lthuni.enc \
 	dbtt.pfb \
 	dbtt_b.pfb \
-	dbtt_i.pfb \
-	dbtt_bi.pfb \
+	dbtt_o.pfb \
+	dbtt_bo.pfb \
 	garuda.pfb \
 	garuda_b.pfb \
-	garuda_i.pfb \
-	garuda_bi.pfb \
+	garuda_o.pfb \
+	garuda_bo.pfb \
 	norasi.pfb \
 	norasi_b.pfb \
-	norasi_i.pfb \
-	norasi_bi.pfb
+	norasi_o.pfb \
+	norasi_bo.pfb
 
-DISTCLEANFILES = *.afm thai.map
+DISTCLEANFILES = thai.map
 
 type1dir = @texmfdir@/fonts/type1/public/thai
 afmdir = @texmfdir@/fonts/afm/public/thai
@@ -34,78 +34,72 @@ dvipsconfig_DATA = thai.map
 type1_DATA = \
 	dbtt.pfb \
 	dbtt_b.pfb \
-	dbtt_i.pfb \
-	dbtt_bi.pfb \
+	dbtt_o.pfb \
+	dbtt_bo.pfb \
 	garuda.pfb \
 	garuda_b.pfb \
-	garuda_i.pfb \
-	garuda_bi.pfb \
+	garuda_o.pfb \
+	garuda_bo.pfb \
 	norasi.pfb \
 	norasi_b.pfb \
-	norasi_i.pfb \
-	norasi_bi.pfb
+	norasi_o.pfb \
+	norasi_bo.pfb
 
 afm_DATA = \
 	dbtt.afm \
 	dbtt_b.afm \
-	dbtt_i.afm \
-	dbtt_bi.afm \
+	dbtt_o.afm \
+	dbtt_bo.afm \
 	garuda.afm \
 	garuda_b.afm \
-	garuda_i.afm \
-	garuda_bi.afm \
+	garuda_o.afm \
+	garuda_bo.afm \
 	norasi.afm \
 	norasi_b.afm \
-	norasi_i.afm \
-	norasi_bi.afm
+	norasi_o.afm \
+	norasi_bo.afm
 
 tfm_DATA = \
 	dbtt.tfm \
 	dbtt_b.tfm \
-	dbtt_i.tfm \
-	dbtt_bi.tfm \
+	dbtt_o.tfm \
+	dbtt_bo.tfm \
 	garuda.tfm \
 	garuda_b.tfm \
-	garuda_i.tfm \
-	garuda_bi.tfm \
+	garuda_o.tfm \
+	garuda_bo.tfm \
 	norasi.tfm \
 	norasi_b.tfm \
-	norasi_i.tfm \
-	norasi_bi.tfm \
+	norasi_o.tfm \
+	norasi_bo.tfm \
 	rdbtt.tfm \
 	rdbtt_b.tfm \
-	rdbtt_i.tfm \
-	rdbtt_bi.tfm \
+	rdbtt_o.tfm \
+	rdbtt_bo.tfm \
 	rgaruda.tfm \
 	rgaruda_b.tfm \
-	rgaruda_i.tfm \
-	rgaruda_bi.tfm \
+	rgaruda_o.tfm \
+	rgaruda_bo.tfm \
 	rnorasi.tfm \
 	rnorasi_b.tfm \
-	rnorasi_i.tfm \
-	rnorasi_bi.tfm
+	rnorasi_o.tfm \
+	rnorasi_bo.tfm
 
 vf_DATA = \
 	dbtt.vf \
 	dbtt_b.vf \
-	dbtt_i.vf \
-	dbtt_bi.vf \
+	dbtt_o.vf \
+	dbtt_bo.vf \
 	garuda.vf \
 	garuda_b.vf \
-	garuda_i.vf \
-	garuda_bi.vf \
+	garuda_o.vf \
+	garuda_bo.vf \
 	norasi.vf \
 	norasi_b.vf \
-	norasi_i.vf \
-	norasi_bi.vf
+	norasi_o.vf \
+	norasi_bo.vf
 
 # Local Rules
-
-%.afm: %.pfb
-	if [ ! -f $*.pfb ]; then \
-	  $(LN_S) $(srcdir)/$*.pfb $*.pfb; \
-	fi
-	$(PF2AFM) $*
 
 r%.tfm: %.afm lthuni.enc
 %.vpl: %.afm lthuni.enc
