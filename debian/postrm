@@ -32,8 +32,11 @@ case "$1" in
          if [ -x /usr/sbin/update-updmap ] ; then \
             /usr/sbin/update-updmap ; \
          fi
-         if [ -x /usr/sbin/update-updmap ] ; then \
-            /usr/sbin/update-updmap ; \
+         if [ -x /usr/bin/texhash ] ; then \
+           /usr/bin/texhash ; \
+         fi
+         if [ -x /usr/bin/updmap ] ; then \
+            /usr/bin/updmap ; \
          fi
 
 	;;
