@@ -21,9 +21,9 @@
 \DeclareFontShape{LTH}{dbtt}{m}{it}{<->sub * dbtt/m/sl}{}
 \DeclareFontShape{LTH}{dbtt}{b}{it}{<->sub * dbtt/b/sl}{}
 
-\DeclareFontShape{LTH}{dbtt}{bx}{n}{<->sub * dbtt/bx/n}{}
-\DeclareFontShape{LTH}{dbtt}{bx}{sl}{<->sub * dbtt/bx/sl}{}
-\DeclareFontShape{LTH}{dbtt}{bx}{it}{<->sub * dbtt/bx/it}{}
+\DeclareFontShape{LTH}{dbtt}{bx}{n}{<->sub * dbtt/b/n}{}
+\DeclareFontShape{LTH}{dbtt}{bx}{sl}{<->sub * dbtt/b/sl}{}
+\DeclareFontShape{LTH}{dbtt}{bx}{it}{<->sub * dbtt/b/sl}{}
 \endinput
 
 % 
