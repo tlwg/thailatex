@@ -7,9 +7,10 @@ EXTRA_DIST = dbtt.afm \
 	norasi_i.afm \
 	norasi_n.afm
 
-afmdir = @texmfdir@/fonts/afm/public/thai
-tfmdir = @texmfdir@/fonts/tfm/public/thai
-vfdir  = @texmfdir@/fonts/vf/public/thai
+texmfdir = @texmfdir@
+afmdir = /fonts/afm/public/thai
+tfmdir = /fonts/tfm/public/thai
+vfdir  = /fonts/vf/public/thai
 
 TFMS = \
 	dbttx.tfm \
@@ -31,7 +32,7 @@ VFS= \
 	norasi_i.vf \
 	norasi_n.vf
 
-afm_DATA = dbtt.afm \
+AFM_TARGETS = dbtt.afm \
 	dbttb.afm \
 	dbttbi.afm \
 	dbtti.afm \
@@ -40,7 +41,7 @@ afm_DATA = dbtt.afm \
 	norasi_i.afm \
 	norasi_n.afm
 
-tfm_DATA = dbtt.tfm \
+TFM_TARGETS = dbtt.tfm \
 	dbttb.tfm \
 	dbttbi.tfm \
 	dbtti.tfm \
@@ -57,7 +58,7 @@ tfm_DATA = dbtt.tfm \
 	rnorasi_i.tfm \
 	rnorasi_n.tfm
 
-vf_DATA = dbttx.vf \
+VF_TARGETS = dbttx.vf \
 	dbttxb.vf \
 	dbttxbi.vf \
 	dbttxi.vf \
@@ -66,7 +67,7 @@ vf_DATA = dbttx.vf \
 	norasi_i.vf \
 	norasi_n.vf
 
-all-local: TeXTIS.enc dbttx.enc
+all-local: $(TFMS) $(VFS) TeXTIS.enc dbttx.enc
 
 TeXTIS.enc:
 	$(RM) $@
@@ -76,62 +77,81 @@ dbttx.enc:
 	$(RM) $@
 	$(LN_S) $(top_srcdir)/dvips/dbttx.enc $@ 
 
-dbtt.tfm: dbtt.afm dbttx.enc
 dbttx.vpl: dbtt.afm dbttx.enc
 	$(AFM2TFM) $(srcdir)/dbtt.afm -v dbttx.vpl -T dbttx.enc dbtt.tfm
 
 dbttx.tfm: dbttx.vpl
 	$(VPTOVF) dbttx
 
-dbttb.tfm: dbttb.afm dbttx.enc
 dbttxb.vpl: dbttb.afm dbttx.enc
 	$(AFM2TFM) $(srcdir)/dbttb.afm -v dbttxb.vpl -T dbttx.enc dbttb.tfm
 
 dbttxb.tfm: dbttxb.vpl
 	$(VPTOVF) dbttxb
 
-dbttbi.tfm: dbttbi.afm dbttx.enc
 dbttxbi.vpl: dbttbi.afm dbttx.enc
 	$(AFM2TFM) $(srcdir)/dbttbi.afm -v dbttxbi.vpl -T dbttx.enc dbttbi.tfm
 
 dbttxbi.tfm: dbttxbi.vpl
 	$(VPTOVF) dbttxbi
 
-dbtti.tfm: dbtti.afm dbttx.enc
 dbttxi.vpl: dbtti.afm dbttx.enc
 	$(AFM2TFM) $(srcdir)/dbtti.afm -v dbttxi.vpl -T dbttx.enc dbtti.tfm
 
 dbttxi.tfm: dbttxi.vpl
 	$(VPTOVF) dbttxi
 
-rnorasi_b.tfm: norasi_b.afm TeXTIS.enc
 norasi_b.vpl: norasi_b.afm TeXTIS.enc
 	$(AFM2TFM) $(srcdir)/norasi_b.afm -v norasi_b.vpl -T TeXTIS.enc rnorasi_b.tfm
 
 norasi_b.tfm: norasi_b.vpl
 	$(VPTOVF) norasi_b
 
-rnorasi_bi.tfm: norasi_bi.afm TeXTIS.enc
 norasi_bi.vpl: norasi_bi.afm TeXTIS.enc
 	$(AFM2TFM) $(srcdir)/norasi_bi.afm -v norasi_bi.vpl -T TeXTIS.enc rnorasi_bi.tfm
 
 norasi_bi.tfm: norasi_bi.vpl
 	$(VPTOVF) norasi_bi
 
-rnorasi_i.tfm: norasi_i.afm TeXTIS.enc
 norasi_i.vpl: norasi_i.afm TeXTIS.enc
 	$(AFM2TFM) $(srcdir)/norasi_i.afm -v norasi_i.vpl -T TeXTIS.enc rnorasi_i.tfm
 
 norasi_i.tfm: norasi_i.vpl
 	$(VPTOVF) norasi_i
 
-rnorasi_n.tfm: norasi_n.afm TeXTIS.enc
 norasi_n.vpl: norasi_n.afm TeXTIS.enc
 	$(AFM2TFM) $(srcdir)/norasi_n.afm -v norasi_n.vpl -T TeXTIS.enc rnorasi_n.tfm
 
 norasi_n.tfm: norasi_n.vpl
 	$(VPTOVF) norasi_n
 
+install-data-local:
+	$(INSTALL) -d $(DESTDIR)$(texmfdir)$(afmdir)
+	for i in $(AFM_TARGETS) ; do \
+	  $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(texmfdir)$(afmdir) ; \
+	done
+	$(INSTALL) -d $(DESTDIR)$(texmfdir)$(tfmdir)
+	for i in $(TFM_TARGETS) ; do \
+	  $(INSTALL_DATA) $$i $(DESTDIR)$(texmfdir)$(tfmdir) ; \
+	done
+	$(INSTALL) -d $(DESTDIR)$(texmfdir)$(vfdir)
+	for i in $(VF_TARGETS) ; do \
+	  $(INSTALL_DATA) $$i $(DESTDIR)$(texmfdir)$(vfdir) ; \
+	done
+ 
+uninstall-local:
+	for i in $(AFM_TARGETS) ; do \
+	  $(RM) $(DESTDIR)$(texmfdir)$(afmdir)/$$i ; \
+	done
+	$(RMDIR) $(DESTDIR)$(texmfdir)$(afmdir)
+	for i in $(TFM_TARGETS) ; do \
+	  $(RM) $(DESTDIR)$(texmfdir)$(tfmdir)/$$i ; \
+	done
+	$(RMDIR) $(DESTDIR)$(texmfdir)$(tfmdir)
+	for i in $(VF_TARGETS) ; do \
+	  $(RM) $(DESTDIR)$(texmfdir)$(vfdir)/$$i ; \
+	done
+	$(RMDIR) $(DESTDIR)$(texmfdir)$(vfdir)
 
 clean-local:
 	$(RM) *.vpl

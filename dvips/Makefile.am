@@ -1,38 +1,19 @@
-EXTRA_DIST = TeXTIS.enc dbttx.enc thai.map
+EXTRA_DIST = TeXTIS.enc dbttx.enc addpsfont.sh rmpsfont.sh
 
 texmfdir = @texmfdir@
+dvipsdir = /dvips/base
 
-dvipsbasedir = @texmfdir@/dvips/base
-dvipsbase_DATA = TeXTIS.enc dbttx.enc
-
-dvipsconfigdir = @texmfdir@/dvips/config
-dvipsconfig_DATA = thai.map
-
-DVIPSCONFIG=$(DESTDIR)/@texmfdir@/dvips/config/config.ps
-PDFTEXCONFIG=$(DESTDIR)/@texmfdir@/pdftex/config/pdftex.cfg
+DVIPS_TARGETS = TeXTIS.enc dbttx.enc
 
 install-data-local:
-	mkdir -p `dirname $(DVIPSCONFIG)`
-	if test -f $(DVIPSCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$ ; \
-	  mv -f /tmp/tmp.$$ $(DVIPSCONFIG) ; \
-	fi
-	echo "% thailatex" >> $(DVIPSCONFIG)
-	echo "p +thai.map" >> $(DVIPSCONFIG)
-	mkdir -p `dirname $(PDFTEXCONFIG)`
-	if test -f $(PDFTEXCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$ ; \
-	  mv -f /tmp/tmp.$$ $(PDFTEXCONFIG) ; \
-	fi
-	echo "% thailatex"   >> $(PDFTEXCONFIG)
-	echo "map +thai.map" >> $(PDFTEXCONFIG)
+	$(INSTALL) -d $(DESTDIR)$(texmfdir)$(dvipsdir)
+	for i in $(DVIPS_TARGETS) ; do \
+	  $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(texmfdir)$(dvipsdir) ; \
+	done
+	DVIPSDIR=$(DESTDIR)$(texmfdir)$(dvipsdir) $(srcdir)/addpsfont.sh
  
 uninstall-local:
-	if test -f $(DVIPSCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$ ; \
-	  mv -f /tmp/tmp.$$ $(DVIPSCONFIG) ; \
-	fi
-	if test -f $(PDFTEXCONFIG); then \
-	  sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$ ; \
-	  mv -f /tmp/tmp.$$ $(PDFTEXCONFIG) ; \
-	fi
+	for i in $(DVIPS_TARGETS) ; do \
+	  $(RM) $(DESTDIR)$(texmfdir)$(dvipsdir)/$$i ; \
+	done
+	DVIPSDIR=$(DESTDIR)$(texmfdir)$(dvipsdir) $(srcdir)/rmpsfont.sh

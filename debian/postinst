@@ -27,18 +27,12 @@ updmap=${texmf_dvips}/updmap
 
 case "$1" in
     configure)
-      if [ -e $updmap ]; then
-        if ! grep -q "thai.map" $updmap; then
-          TMP=`tempfile --mode=0755` && \
-          sed -e '/^extra_modules/a\
-thai.map\' < $updmap > $TMP && \
-          mv -f $TMP $updmap && \
-          ( cd $texmf_dvips && sh ./updmap )
-        fi
-	# clean up old font map :-)
-        TMP=`tempfile --mode=0755` && \
-        sed -e '/thaifonts.map/d' < $updmap > $TMP && \
-        mv -f $TMP $updmap 
+      if [ -x $updmap ]; then
+        TMP=`tempfile --mode=0755` ; \
+        perl -e 'while(<>){if (/^(extra_modules=\")(.*)$/){print "$1\nthaifonts.map\n$2"}else {print}}' \
+          < $updmap > $TMP ; \
+        mv $TMP $updmap ; \
+        ( cd $texmf_dvips ; ./updmap ); \
       fi
       if [ -x /usr/bin/texhash ] ; then \
          /usr/bin/texhash ; \

@@ -1,22 +1,15 @@
-%define name thailatex
-%define version @VERSION@
-%define release 1
-%define manifest %{_builddir}/%{name}-%{version}-%{release}.manifest
-
 Summary: Thai extension for LaTeX
-Name: %{name}
-Version: %{version}
-Release: %{release}
+Name: @PACKAGE@
+Version: @VERSION@
+Release: 1
 Copyright: freely distributable
 Group: Applications/Publishing
 Source: %{name}-%{version}.tar.gz
-BuildArch: noarch
-BuildRoot: /var/tmp/%{name}-%{version}
+BuildRoot: /var/tmp/%{name}-%{version}-root
 Vendor: Surapant Meknavin <surapan@nectec.or.th>, Theppitak Karoonboonyanan <thep@links.nectec.or.th>, NECTEC
 Packager: Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 Distribution: Linux TLE, Thai Linux Working Group
 Requires: tetex >= 0.9
-BuildRequires: tetex >= 0.9, tetex-afm >= 0.9
 
 %description
 
@@ -32,7 +25,6 @@ delimitor, such as "swath", is recommended to be used as a preprocessor.
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
@@ -50,20 +42,14 @@ rm -f %{manifest}
 find . -type d \
         | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' >> %{manifest}
 find . -type f \
-        | sed '/babel.sty/d;/config.ps/d;/pdftex.cfg/d;/site-start.el/d' \
         | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
 find . -type l \
         | sed 's,^\.,\%attr(-\,root\,root) ,' >> %{manifest}
 
-%clean
-rm -f %{manifest}
-rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/sbin/sync-thailatex
 
-%triggerin -- tetex
-/usr/sbin/sync-thailatex
+%postun
 
 %files -f %{manifest}
 %defattr(-,root,root)
@@ -72,31 +58,11 @@ rm -rf $RPM_BUILD_ROOT
 #%config
 
 %changelog
-* Mon Aug 05 2002 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
-  - add BuildRequires
-  - add %clean script
-  - clear RPM build dir before installing
-
-* Tue Jan 08 2002 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
-  - update %post and %postun scripts according to new installing method
-  - fix upgrading bug by adding %triggerpostun script to do the %post
-    job again, after the %postun script of the older version removed
-    every patch. (%post is still needed for rpm -i case.. Hmm.. messy)
-  - change %postun to %preun, to be safe about the order of %postun
-    of the older package and %triggerpostun of the newer package.
-  - incorporate babel.sty patching.
-  - split scriptlets into sync-thailatex script.
-  - add %triggerin to get synchronized with tetex.
-
 * Wed Dec 05 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
   - use manifest
 
 * Wed Jan 03 2001 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
   - thailatex.spec : use variables for sources, path names; use BuildRoot
-
-* Wed Aug 16 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
-  - fix "norasi" "Bluevalues" parameter to fix Acrobat Distiller
-    rejection, by Anutara
 
 * Thu May 25 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
   - rearrange package and create Makefiles
@@ -105,6 +71,10 @@ rm -rf $RPM_BUILD_ROOT
   - make "norasi" be Thai roman font, "dbttx" Thai sans serif
   - correct some Thai translations
   - release version 0.2
+
+* Wed Aug 16 2000 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  - fix "norasi" "Bluevalues" parameter to fix Acrobat Distiller
+    rejection, by Anutara
 
 * Mon Jun 21 1999 Surapant Meknavin <surapan@nectec.or.th>
   - create the original Thai LaTeX extension based on babel package

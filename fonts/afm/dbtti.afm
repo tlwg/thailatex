@@ -29,7 +29,7 @@ C 41 ; WX 200 ; N parenright ; B -68 -128 175 437 ;
 C 42 ; WX 233 ; N asterisk ; B 26 271 208 444 ;
 C 43 ; WX 350 ; N plus ; B 23 -6 327 284 ;
 C 44 ; WX 167 ; N comma ; B 15 -60 137 78 ;
-C 45 ; WX 200 ; N minus ; B 21 144 177 188 ;
+C 45 ; WX 200 ; N hyphen ; B 21 144 177 188 ;
 C 46 ; WX 167 ; N period ; B 30 3 120 89 ;
 C 47 ; WX 167 ; N slash ; B -76 -13 241 425 ;
 C 48 ; WX 284 ; N zero ; B 1 -12 278 361 ;
@@ -234,7 +234,7 @@ C 190 ; WX 434 ; N threequarters ; B 46 0 442 344 ;
 C 175 ; WX 404 ; N macron ; B -16 -173 408 346 ;
 Comment C -1 ; WX 370 ; N periodcentered.0 ; B 21 0 350 344 ;
 C 160 ; WX 0 ; N nbspace ; B 0 0 0 0 ;
-C 173 ; WX 475 ; N hyphen ; B 42 -170 505 346 ;
+C 173 ; WX 475 ; N softhyphen ; B 42 -170 505 346 ;
 C 144 ; WX 475 ; N u0090 ; B 42 -6 505 346 ;
 C 143 ; WX 0 ; N u008F ; B -273 382 -143 505 ;
 EndCharMetrics

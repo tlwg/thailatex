@@ -40,8 +40,8 @@ echo "Using: $WORDSEG for Thai word segmentation"
 $WORDSEG < $LATEXFILEORG > $LATEXFILENEW
 echo "Running LaTeX pass 1"
 latex $LATEXFILENEW
-#echo "Running BibTeX"
-#bibtex $LATEXFILENAME
+echo "Running BibTeX"
+bibtex $LATEXFILENAME
 echo "Running LaTeX pass 2"
 latex $LATEXFILENEW
 echo "Running LaTeX pass 3"
