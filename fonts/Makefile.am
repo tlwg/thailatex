@@ -98,10 +98,6 @@ vf_DATA = \
 
 # Local Rules
 
-%.enc:
-	$(RM) $@
-	$(LN_S) $(top_srcdir)/dvips/$*.enc $@
-
 %.afm: %.pfb
 	$(RM) $*.pfb
 	$(LN_S) $(srcdir)/$*.pfb $*.pfb
@@ -109,6 +105,8 @@ vf_DATA = \
 
 r%.tfm: %.afm lthuni.enc
 %.vpl: %.afm lthuni.enc
+	$(RM) lthuni.enc
+	$(LN_S) $(srcdir)/lthuni.enc lthuni.enc
 	$(AFM2TFM) $*.afm -v $*.vpl -T lthuni.enc r$*.tfm \
 	| $(SED) "s/$$/ <$*.pfb/" >> thai.map
 
