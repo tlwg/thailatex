@@ -3,6 +3,9 @@
 	* fonts/{kinnari,garuda,dbtt}.{pfb,afm}:
 	  Update fonts from thaifonts-scalable cvs.
 
+	* fonts/dbtt*.{pfb,afm}:
+	  Yet another update from thaifonts-scalable cvs (regarding hints).
+
 2004-02-28 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/thai.ldf:
