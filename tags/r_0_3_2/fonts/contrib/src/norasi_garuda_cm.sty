@@ -1,0 +1,12 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{norasi_garuda_cm}
+\RequirePackage[LTHFNT,T1]{fontenc}
+\IfFileExists{nfssext}{\RequirePackage{nfssext}}{}
+\RequirePackage{textcomp}
+\DeclareOption{oldstyle}{\renewcommand{\thairmdefault}{fncj}%
+                         \renewcommand{\thaisfdefault}{fgcj}}
+\DeclareOption{lining}{\renewcommand{\thairmdefault}{fnc}%
+                       \renewcommand{\thaisfdefault}{fgc}}
+\ExecuteOptions{oldstyle}
+\ProcessOptions
+\endinput

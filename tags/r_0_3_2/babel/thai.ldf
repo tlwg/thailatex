@@ -1,0 +1,327 @@
+%%
+%% This is file `thai.ldf',
+%% created by Surapant Meknavin: surapan@nectec.or.th
+%% 
+%% --------------------------------------------------
+%% 2004/03/18 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - move \frontmatter and \mainmatter redefinition back
+%%              under thainumber option (wrongly moved along with
+%%              previous appendix fix)
+%% 2004/03/06 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - use 'garuda' instead of 'dbtt' as default Thai sffamily
+%% 2004/03/04 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - use `pmono' as default Thai ttfamily
+%% 2004/02/28 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - always use Thai alphabets for appendix
+%%              (as suggested by K. chakkree01)
+%% 2004/02/02 Poonlap Veerathanabutr <poonlap@linux.thai.net>
+%% 	      - fix \lccode and \uccode
+%% 2003/08/10 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - fix translation of \prefacename
+%%            - redefine \frontmatter and \mainmatter for book class
+%%              so thainumber option applies to the page numbering styles
+%%            - (experimental) add initialization of Thai character codes
+%%              to fix the \MakeUppercase and \MakeLowercase problem
+%%              also comment out the old workarounds
+%% 2003/06/02 Chanop Silpa-Anan <chanop@debian.org>
+%%            - use "garuda" for default Thai sans serif since
+%%              "dbtt" is still slightly buggy
+%% 2003/02/26 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - run Thai number in part, subsubsection, paragraph,
+%%              subparagraph also
+%% 2003/01/07 Poonlap Veerathanabutr <poonlap@linux.thai.net>
+%%	      - change "dbttx" tp "dbtt"
+%% 2000/05/09 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+%%            - encoding changed from TIS to LTH, according to TeX convention
+%%            - let "norasi" be Thai roman font, "dbttx" Thai sans serif
+%%            - correct some Thai translations
+%% 2001/12/04 Chanop Silpa-Anan <chanop@debian.org>
+%%            - Add thainumber and thaitoday option
+%% 2001/12/04 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+%%            - Add checks for \thechapter existence before redefining
+%%              digits as Thai
+%%            - Move thaitoday definitions into thainumber and remove
+%%              thainumber option
+%%            - Use \ifcase instead of nested \if in \thaitranslate
+%%            - Fix wrong encoding in heading for book style
+%%              (as suggested by Chanop)
+%% 2002/01/16 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+%%            - Fix extra spaces appearing in \selectlanguage{thai}
+%%              (as suggested by C. Visavakul)
+\ProvidesLanguage{thai}
+        [1999/06/21 v1.0d Thai support for the babel system]
+\LdfInit\CurrentOption{captions\CurrentOption}
+\ifx\l@thai\@undefined
+  \@nopatterns{thai}
+  \adddialect\l@thai0\fi
+\InputIfFileExists{lthenc.def}{%
+  \message{Loading the definitions for the Thai font encoding}}{%
+  \errhelp{I can't find the lthenc.def file for the Thai fonts}%
+  \errmessage{Since I do not know what the LTH encoding means^^J
+    I can't typeset Thai.^^J
+    I stop here, while you get a suitable lthenc.def file}\@@end
+ }
+\def\thairmdefault{norasi}
+\def\thaisfdefault{garuda}
+\def\thaittdefault{pmono}
+\def\englishrmdefault{cmr}
+\def\englishsfdefault{cmss}
+\def\englishttdefault{cmtt}
+\DeclareRobustCommand{\thaitext}{%
+  \fontencoding{LTH}\fontfamily{\thairmdefault}\selectfont%
+  \def\rmdefault{\thairmdefault}%
+  \def\sfdefault{\thaisfdefault}%
+  \def\ttdefault{\thaittdefault}%
+  \def\encodingdefault{LTH}}
+\DeclareRobustCommand{\textthai}[1]{{\thaitext #1}}
+\def\thai{\thaitext}
+% \def\outlfamily{\usefont{LTH}{cmro}{m}{n}}
+% \DeclareTextFontCommand{\textol}{\outlfamily}
+\def\thaihyphenmins{11}
+\addto\captionsthai{%
+  \def\prefacename{คำนำ}%
+  \def\refname{หนังสืออ้างอิง}%
+  \def\abstractname{บทคัดย่อ}%
+  \def\bibname{บรรณานุกรม}%
+  \def\chaptername{บทที่}%
+  \def\appendixname{ภาคผนวก}%
+  \def\contentsname{สารบัญ}%
+  \def\listfigurename{สารบัญรูป}%
+  \def\listtablename{สารบัญตาราง}%
+  \def\indexname{ดรรชนี}%
+  \def\figurename{รูปที่}%
+  \def\tablename{ตารางที่}%
+  \def\partname{ภาค}%
+  \def\enclname{สิ่งที่แนบมาด้วย}%
+  \def\ccname{สำเนาถึง}%
+  \def\headtoname{เรียน}%
+  \def\pagename{หน้า}%
+  \def\seename{ดู}%
+  \def\alsoname{ดูเพิ่มเติม}%
+  \def\proofname{พิสูจน์}%
+  }
+% Define thai number translation
+\def\thaitranslate#1{\ifx @#1%
+     \else\ifcase#1
+        ๐\or ๑\or ๒\or ๓\or ๔\or ๕\or ๖\or ๗\or ๘\or ๙\else\fi
+	\expandafter\thaitranslate
+      \fi
+}
+\def\@thainum#1{\expandafter\thaitranslate\number#1@}
+\def\thainum#1{\expandafter\@thainum\csname c@#1\endcsname}
+\def\@thaibracenum#1{(\expandafter\thaitranslate\number#1@)}
+\def\thaibracenum#1{\expandafter\@thaibracenum\csname c@#1\endcsname}
+% Define thai charactor translation
+% thaiAlph is full alphabet set
+% thaialph is reduced alphabet set
+\def\thaialph#1{\expandafter\@thaialph\csname c@#1\endcsname}
+\def\thaiAlph#1{\expandafter\@thaiAlph\csname c@#1\endcsname}
+\def\@thaialph#1{%
+  \ifcase#1\or ก\or ข\or ค\or ง\or จ\or ฉ\or ช\or ซ\or ฌ\or ญ\or ฎ\or
+   ฏ\or ฐ\or ฑ\or ฒ\or ณ\or ด\or ต\or ถ\or ท\or ธ\or น\or บ\or ป\or ผ\or 
+   ฝ\or พ\or ฟ\or ภ\or ม\or ย\or ร\or ล\or ว\or ศ\or ษ\or ส\or ห\or ฬ\or อ\or
+     ฮelse\@ctrerr\fi}
+\def\@thaiAlph#1{%
+  \ifcase#1\or ก\or ข\or ฃ\or ค\or ฅ\or ฆ\or ง\or จ\or ฉ\or ช\or ซ\or
+   ฌ\or ญ\or ฎ\or ฏ\or ฐ\or ฑ\or ฒ\or ณ\or ด\or ต\or ถ\or ท\or ธ\or น\or
+    บ\or ป\or ผ\or ฝ\or พ\or ฟ\or ภ\or ม\or ย\or ร\or ฤ\or ล\or ฦ\or ว\or
+     ศ\or ษ\or ส\or ห\or ฬ\or อ\or ฮelse\@ctrerr\fi}
+\DeclareOption{thainumber}{
+% Using @  as a normal charactor
+\catcode`\@=11
+% Default page numbering to thainum, thaibracenum is also valid
+\pagenumbering{thainum}
+% Page no, Chapter, Section, SubSection etc ... using Thai Number
+\renewcommand\theenumi{\@thainum\c@enumi}
+\renewcommand\theenumii{\@thaialph\c@enumii}
+%\renewcommand\theenumiii{\@roman\c@enumiii}
+%\renewcommand\theenumiv{\@Alph\c@enumiv}
+\@ifundefined{thechapter}%
+  {\renewcommand\thesection{\@thainum\c@section}%
+   \renewcommand\thesubsection{\thesection.\@thainum\c@subsection}%
+   \renewcommand\thesubsubsection{\thesubsection.\@thainum\c@subsubsection}%
+   \renewcommand\theparagraph    {\thesubsubsection.\@thainum\c@paragraph}%
+   \renewcommand\thesubparagraph {\theparagraph.\@thainum\c@subparagraph}%
+   \renewcommand\theequation{\@thainum\c@equation}%
+   \renewcommand\thetable{\@thainum\c@table}%
+   \renewcommand\thefigure{\@thainum\c@figure}}%
+  {\renewcommand\thepart{\@thainum\c@part}%
+   \renewcommand\thechapter{\@thainum\c@chapter}%
+   \renewcommand\thesection{\thechapter.\@thainum\c@section}%
+   \renewcommand\thesubsection{\thesection.\@thainum\c@subsection}%
+   \renewcommand\thesubsubsection{\thesubsection.\@thainum\c@subsubsection}%
+   \renewcommand\theparagraph    {\thesubsubsection.\@thainum\c@paragraph}%
+   \renewcommand\thesubparagraph {\theparagraph.\@thainum\c@subparagraph}%
+   \renewcommand\theequation%
+       {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@equation}%
+   \renewcommand \thetable%
+       {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@table}%
+   \renewcommand \thefigure%
+       {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@figure}}
+\renewcommand\thefootnote{\@thainum\c@footnote}
+% Theorem Counter
+\def\@thmcounter#1{\noexpand\thainum{#1}} 
+\def\datethai{%
+  \def\today{\@thainum\day \space \th@month\space พ.ศ.~\@thainum\th@year}}
+\@ifclassloaded{book}{%
+  % redefine page numbering for frontmatter and mainmatter
+  \def\ps@headnum{\let\@mkboth\@gobbletwo
+       \def\@oddhead{\reset@font\hfil\thepage\hfil}\let\@oddfoot\@empty
+       \let\@evenhead\@oddhead\let\@evenfoot\@empty}
+  \let\@ltxfrontmatter\frontmatter
+  \renewcommand\frontmatter{\@ltxfrontmatter\pagestyle{headnum}\pagenumbering{thaibracenum}}
+  \let\@ltxmainmatter\mainmatter
+  \renewcommand\mainmatter{\@ltxmainmatter\pagestyle{headings}\pagenumbering{thainum}}
+}{}
+% Finish Declaring
+\relax
+}
+% End \DeclareOption{thainumber}
+% Use thaialph as counter for appendix
+\@ifclassloaded{book}{%
+\renewcommand\appendix{\par
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{\appendixname}%
+  \gdef\thechapter{\@thaialph\c@chapter}}
+}{}
+\@ifclassloaded{report}{%
+\renewcommand\appendix{\par
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \gdef\@chapapp{\appendixname}%
+  \gdef\thechapter{\@thaialph\c@chapter}}
+}{}
+\@ifclassloaded{article}{%
+\renewcommand\appendix{\par
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \gdef\thesection{\@thaialph\c@section}}
+}{}
+% Initialize character codes for Thai
+\catcode`\^^a1=11 \lccode`\^^a1=`\^^a1 \uccode`\^^a1=`\^^a1
+\catcode`\^^a2=11 \lccode`\^^a2=`\^^a2 \uccode`\^^a2=`\^^a2
+\catcode`\^^a3=11 \lccode`\^^a3=`\^^a3 \uccode`\^^a3=`\^^a3
+\catcode`\^^a4=11 \lccode`\^^a4=`\^^a4 \uccode`\^^a4=`\^^a4
+\catcode`\^^a5=11 \lccode`\^^a5=`\^^a5 \uccode`\^^a5=`\^^a5
+\catcode`\^^a6=11 \lccode`\^^a6=`\^^a6 \uccode`\^^a6=`\^^a6
+\catcode`\^^a7=11 \lccode`\^^a7=`\^^a7 \uccode`\^^a7=`\^^a7
+\catcode`\^^a8=11 \lccode`\^^a8=`\^^a8 \uccode`\^^a8=`\^^a8
+\catcode`\^^a9=11 \lccode`\^^a9=`\^^a9 \uccode`\^^a9=`\^^a9
+\catcode`\^^aa=11 \lccode`\^^aa=`\^^aa \uccode`\^^aa=`\^^aa
+\catcode`\^^ab=11 \lccode`\^^ab=`\^^ab \uccode`\^^ab=`\^^ab
+\catcode`\^^ac=11 \lccode`\^^ac=`\^^ac \uccode`\^^ac=`\^^ac
+\catcode`\^^ad=11 \lccode`\^^ad=`\^^ad \uccode`\^^ad=`\^^ad
+\catcode`\^^ae=11 \lccode`\^^ae=`\^^ae \uccode`\^^ae=`\^^ae
+\catcode`\^^af=11 \lccode`\^^af=`\^^af \uccode`\^^af=`\^^af
+\catcode`\^^b0=11 \lccode`\^^b0=`\^^b0 \uccode`\^^b0=`\^^b0
+\catcode`\^^b1=11 \lccode`\^^b1=`\^^b1 \uccode`\^^b1=`\^^b1
+\catcode`\^^b2=11 \lccode`\^^b2=`\^^b2 \uccode`\^^b2=`\^^b2
+\catcode`\^^b3=11 \lccode`\^^b3=`\^^b3 \uccode`\^^b3=`\^^b3
+\catcode`\^^b4=11 \lccode`\^^b4=`\^^b4 \uccode`\^^b4=`\^^b4
+\catcode`\^^b5=11 \lccode`\^^b5=`\^^b5 \uccode`\^^b5=`\^^b5
+\catcode`\^^b6=11 \lccode`\^^b6=`\^^b6 \uccode`\^^b6=`\^^b6
+\catcode`\^^b7=11 \lccode`\^^b7=`\^^b7 \uccode`\^^b7=`\^^b7
+\catcode`\^^b8=11 \lccode`\^^b8=`\^^b8 \uccode`\^^b8=`\^^b8
+\catcode`\^^b9=11 \lccode`\^^b9=`\^^b9 \uccode`\^^b9=`\^^b9
+\catcode`\^^ba=11 \lccode`\^^ba=`\^^ba \uccode`\^^ba=`\^^ba
+\catcode`\^^bb=11 \lccode`\^^bb=`\^^bb \uccode`\^^bb=`\^^bb
+\catcode`\^^bc=11 \lccode`\^^bc=`\^^bc \uccode`\^^bc=`\^^bc
+\catcode`\^^bd=11 \lccode`\^^bd=`\^^bd \uccode`\^^bd=`\^^bd
+\catcode`\^^be=11 \lccode`\^^be=`\^^be \uccode`\^^be=`\^^be
+\catcode`\^^bf=11 \lccode`\^^bf=`\^^bf \uccode`\^^bf=`\^^bf
+\catcode`\^^c0=11 \lccode`\^^c0=`\^^c0 \uccode`\^^c0=`\^^c0
+\catcode`\^^c1=11 \lccode`\^^c1=`\^^c1 \uccode`\^^c1=`\^^c1
+\catcode`\^^c2=11 \lccode`\^^c2=`\^^c2 \uccode`\^^c2=`\^^c2
+\catcode`\^^c3=11 \lccode`\^^c3=`\^^c3 \uccode`\^^c3=`\^^c3
+\catcode`\^^c4=11 \lccode`\^^c4=`\^^c4 \uccode`\^^c4=`\^^c4
+\catcode`\^^c5=11 \lccode`\^^c5=`\^^c5 \uccode`\^^c5=`\^^c5
+\catcode`\^^c6=11 \lccode`\^^c6=`\^^c6 \uccode`\^^c6=`\^^c6
+\catcode`\^^c7=11 \lccode`\^^c7=`\^^c7 \uccode`\^^c7=`\^^c7
+\catcode`\^^c8=11 \lccode`\^^c8=`\^^c8 \uccode`\^^c8=`\^^c8
+\catcode`\^^c9=11 \lccode`\^^c9=`\^^c9 \uccode`\^^c9=`\^^c9
+\catcode`\^^ca=11 \lccode`\^^ca=`\^^ca \uccode`\^^ca=`\^^ca
+\catcode`\^^cb=11 \lccode`\^^cb=`\^^cb \uccode`\^^cb=`\^^cb
+\catcode`\^^cc=11 \lccode`\^^cc=`\^^cc \uccode`\^^cc=`\^^cc
+\catcode`\^^cd=11 \lccode`\^^cd=`\^^cd \uccode`\^^cd=`\^^cd
+\catcode`\^^ce=11 \lccode`\^^ce=`\^^ce \uccode`\^^ce=`\^^ce
+\catcode`\^^cf=11 \lccode`\^^cf=`\^^cf \uccode`\^^cf=`\^^cf
+\catcode`\^^d0=11 \lccode`\^^d0=`\^^d0 \uccode`\^^d0=`\^^d0
+\catcode`\^^d1=11 \lccode`\^^d1=`\^^d1 \uccode`\^^d1=`\^^d1
+\catcode`\^^d2=11 \lccode`\^^d2=`\^^d2 \uccode`\^^d2=`\^^d2
+\catcode`\^^d3=11 \lccode`\^^d3=`\^^d3 \uccode`\^^d3=`\^^d3
+\catcode`\^^d4=11 \lccode`\^^d4=`\^^d4 \uccode`\^^d4=`\^^d4
+\catcode`\^^d5=11 \lccode`\^^d5=`\^^d5 \uccode`\^^d5=`\^^d5
+\catcode`\^^d6=11 \lccode`\^^d6=`\^^d6 \uccode`\^^d6=`\^^d6
+\catcode`\^^d7=11 \lccode`\^^d7=`\^^d7 \uccode`\^^d7=`\^^d7
+\catcode`\^^d8=11 \lccode`\^^d8=`\^^d8 \uccode`\^^d8=`\^^d8
+\catcode`\^^d9=11 \lccode`\^^d9=`\^^d9 \uccode`\^^d9=`\^^d9
+\catcode`\^^da=11 \lccode`\^^da=`\^^da \uccode`\^^da=`\^^da
+\catcode`\^^df=12 \lccode`\^^df=`\^^df \uccode`\^^df=`\^^df
+\catcode`\^^e0=11 \lccode`\^^e0=`\^^e0 \uccode`\^^e0=`\^^e0
+\catcode`\^^e1=11 \lccode`\^^e1=`\^^e1 \uccode`\^^e1=`\^^e1
+\catcode`\^^e2=11 \lccode`\^^e2=`\^^e2 \uccode`\^^e2=`\^^e2
+\catcode`\^^e3=11 \lccode`\^^e3=`\^^e3 \uccode`\^^e3=`\^^e3
+\catcode`\^^e4=11 \lccode`\^^e4=`\^^e4 \uccode`\^^e4=`\^^e4
+\catcode`\^^e5=11 \lccode`\^^e5=`\^^e5 \uccode`\^^e5=`\^^e5
+\catcode`\^^e6=11 \lccode`\^^e6=`\^^e6 \uccode`\^^e6=`\^^e6
+\catcode`\^^e7=11 \lccode`\^^e7=`\^^e7 \uccode`\^^e7=`\^^e7
+\catcode`\^^e8=11 \lccode`\^^e8=`\^^e8 \uccode`\^^e8=`\^^e8
+\catcode`\^^e9=11 \lccode`\^^e9=`\^^e9 \uccode`\^^e9=`\^^e9
+\catcode`\^^ea=11 \lccode`\^^ea=`\^^ea \uccode`\^^ea=`\^^ea
+\catcode`\^^eb=11 \lccode`\^^eb=`\^^eb \uccode`\^^eb=`\^^eb
+\catcode`\^^ec=11 \lccode`\^^ec=`\^^ec \uccode`\^^ec=`\^^ec
+\catcode`\^^ed=11 \lccode`\^^ed=`\^^ed \uccode`\^^ed=`\^^ed
+\catcode`\^^ee=11 \lccode`\^^ee=`\^^ee \uccode`\^^ee=`\^^ee
+\catcode`\^^ef=12 \lccode`\^^ef=`\^^ef \uccode`\^^ef=`\^^ef
+\catcode`\^^f0=12 \lccode`\^^f0=`\^^f0 \uccode`\^^f0=`\^^f0
+\catcode`\^^f1=12 \lccode`\^^f1=`\^^f1 \uccode`\^^f1=`\^^f1
+\catcode`\^^f2=12 \lccode`\^^f2=`\^^f2 \uccode`\^^f2=`\^^f2
+\catcode`\^^f3=12 \lccode`\^^f3=`\^^f3 \uccode`\^^f3=`\^^f3
+\catcode`\^^f4=12 \lccode`\^^f4=`\^^f4 \uccode`\^^f4=`\^^f4
+\catcode`\^^f5=12 \lccode`\^^f5=`\^^f5 \uccode`\^^f5=`\^^f5
+\catcode`\^^f6=12 \lccode`\^^f6=`\^^f6 \uccode`\^^f6=`\^^f6
+\catcode`\^^f7=12 \lccode`\^^f7=`\^^f7 \uccode`\^^f7=`\^^f7
+\catcode`\^^f8=12 \lccode`\^^f8=`\^^f8 \uccode`\^^f8=`\^^f8
+\catcode`\^^f9=12 \lccode`\^^f9=`\^^f9 \uccode`\^^f9=`\^^f9
+\catcode`\^^fa=12 \lccode`\^^fa=`\^^fa \uccode`\^^fa=`\^^fa
+\catcode`\^^fb=12 \lccode`\^^fb=`\^^fb \uccode`\^^fb=`\^^fb
+% End Initialize character codes for Thai
+% Fix wrong encoding charset in headings in class book
+%\@ifclassloaded{book}{%
+%  \renewcommand{\chaptermark}[1]{\markboth{\thaitext #1}{}}
+%  \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\renewcommand\tableofcontents{%
+%    \if@twocolumn
+%      \@restonecoltrue\onecolumn
+%    \else
+%      \@restonecolfalse
+%    \fi
+%    \chapter*{\contentsname
+%        \@mkboth{%
+%           \contentsname}{\contentsname}}%
+%    \@starttoc{toc}%
+%    \if@restonecol\twocolumn\fi
+%    }
+%}{}
+% End Fix wrong encoding charset in headings in class book
+\def\th@month{%
+  \ifcase\month\or
+    มกราคม\or กุมภาพันธ์\or มีนาคม\or เมษายน
+   \or พฤษภาคม\or มิถุนายน\or กรกฎาคม\or สิงหาคม
+   \or กันยายน \or ตุลาคม\or พฤศจิกายน\or ธันวาคม   \fi}
+\newcount\th@year
+\th@year=\year
+\advance\th@year by 543
+\def\datethai{%
+  \def\today{\number\day \space \th@month\space พ.ศ.~\number\th@year}}
+\addto\extrasthai{\thaitext}
+\addto\noextrasthai{\latintext}
+\def\wbr{\hskip0pt plus0.6pt\relax}
+\renewcommand{\baselinestretch}{1.2}
+\def\fnum@figure{\figurename\nobreakspace\thefigure}
+\def\fnum@table{\tablename\nobreakspace\thetable}
+\ldf@finish{\CurrentOption}
+\endinput
+%%
+%% End of file `thai.ldf'.
