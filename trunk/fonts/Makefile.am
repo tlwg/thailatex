@@ -11,7 +11,19 @@ EXTRA_DIST = \
 	norasi.pfb \
 	norasi_b.pfb \
 	norasi_o.pfb \
-	norasi_bo.pfb
+	norasi_bo.pfb \
+	dbtt.afm \
+	dbtt_b.afm \
+	dbtt_o.afm \
+	dbtt_bo.afm \
+	garuda.afm \
+	garuda_b.afm \
+	garuda_o.afm \
+	garuda_bo.afm \
+	norasi.afm \
+	norasi_b.afm \
+	norasi_o.afm \
+	norasi_bo.afm
 
 DISTCLEANFILES = thai.map
 
