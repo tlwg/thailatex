@@ -13,6 +13,8 @@ EXTRA_DIST = \
 	norasi_i.pfb \
 	norasi_bi.pfb
 
+DISTCLEANFILES = *.afm thai.map
+
 type1dir = @texmfdir@/fonts/type1/public/thai
 afmdir = @texmfdir@/fonts/afm/public/thai
 tfmdir = @texmfdir@/fonts/tfm/public/thai
@@ -121,44 +123,9 @@ thai.map: $(tfm_DATA)
 
 install-data-hook:
 	$(UPDMAP) --enable Map thai.map
-#	mkdir -p `dirname $(UPDMAPCONFIG)`
-#	if test -f $(UPDMAPCONFIG); then \
-#	  sed -e '/thailatex/d;/thai.map/d' $(UPDMAPCONFIG) > /tmp/tmp.$$$$ ; \
-#	  mv -f /tmp/tmp.$$$$ $(UPDMAPCONFIG) ; \
-#	fi
-#	echo "% thailatex" >> $(UPDMAPCONFIG)
-#	echo "Map thai.map" >> $(UPDMAPCONFIG)
-#	mkdir -p `dirname $(UPDMAPCONFIG)`
-#	$(UPDMAP)
-#	if test -f $(DVIPSCONFIG); then \
-#	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
-#	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
-#	fi
-#	echo "% thailatex" >> $(DVIPSCONFIG)
-#	echo "p +thai.map" >> $(DVIPSCONFIG)
-#	mkdir -p `dirname $(PDFTEXCONFIG)`
-#	if test -f $(PDFTEXCONFIG); then \
-#	  sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
-#	  mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ; \
-#	fi
-#	echo "% thailatex"   >> $(PDFTEXCONFIG)
-#	echo "map +thai.map" >> $(PDFTEXCONFIG)
  
 uninstall-hook:
 	$(UPDMAP) --disable thai.map
-#	if test -f $(UPDMAPCONFIG); then \
-#	  sed -e '/thailatex/d;/thai.map/d' $(UPDMAPCONFIG) > /tmp/tmp.$$$$ ; \
-#	  mv -f /tmp/tmp.$$$$ $(UPDMAPCONFIG) ; \
-#	fi
-#	$(UPDMAP)
-#	if test -f $(DVIPSCONFIG); then \
-#	  sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
-#	  mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ; \
-#	fi
-#	if test -f $(PDFTEXCONFIG); then \
-#	  sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
-#	  mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ; \
-#	fi
 
 clean-local:
 	$(RM) *.vpl
