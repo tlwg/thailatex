@@ -1,0 +1,212 @@
+% Norasi
+\input fontinst.sty
+
+\needsfontinstversion{1.926}
+
+% For the map file
+\recordtransforms{fn4-map.tex}
+
+% Subsitute standard bx for bold
+\substitutesilent{bx}{b}
+
+% Set scale for norasi, Times's x-height / Norasi's x-height
+\setint{scale}{1464}
+\setint{shifttoleft}{90}
+\setint{shifttobelow}{240}
+                                                                                
+% Transform
+% 8r - adobe standard encoding for OT1, T1, TS1
+% 8rcj - smallcaps and oldstyle figures variants
+\setcommand\transform{%
+  \transformfont{fn4r8r}{\reencodefont{8r}{\fromafm{norasi}}}%
+  \transformfont{fn4ri8r}{\reencodefont{8r}{\fromafm{norasi_i}}}%
+  \transformfont{fn4ro8r}{\reencodefont{8r}{\fromafm{norasi_o}}}%
+  \transformfont{fn4rcj8r}{\reencodefont{8rcj}{\fromafm{norasi}}}%
+  \transformfont{fn4ricj8r}{\reencodefont{8rcj}{\fromafm{norasi_i}}}%
+  \transformfont{fn4rocj8r}{\reencodefont{8rcj}{\fromafm{norasi_o}}}%
+%
+  \transformfont{fn4b8r}{\reencodefont{8r}{\fromafm{norasi_b}}}%
+  \transformfont{fn4bi8r}{\reencodefont{8r}{\fromafm{norasi_bi}}}%
+  \transformfont{fn4bo8r}{\reencodefont{8r}{\fromafm{norasi_bo}}}%
+  \transformfont{fn4bcj8r}{\reencodefont{8rcj}{\fromafm{norasi_b}}}%
+  \transformfont{fn4bicj8r}{\reencodefont{8rcj}{\fromafm{norasi_bi}}}%
+  \transformfont{fn4bocj8r}{\reencodefont{8rcj}{\fromafm{norasi_bo}}}%
+%
+%
+% 8hr - LTH we reencode so that the raw font does not have to be
+%       strictly tis620
+  \transformfont{fn4r8hr}{\reencodefont{lth}{\fromafm{norasi}}}%
+  \transformfont{fn4ri8hr}{\reencodefont{lth}{\fromafm{norasi_i}}}%
+  \transformfont{fn4ro8hr}{\reencodefont{lth}{\fromafm{norasi_o}}}%
+%
+  \transformfont{fn4b8hr}{\reencodefont{lth}{\fromafm{norasi_b}}}%
+  \transformfont{fn4bi8hr}{\reencodefont{lth}{\fromafm{norasi_bi}}}%
+  \transformfont{fn4bo8hr}{\reencodefont{lth}{\fromafm{norasi_bo}}}%
+  }
+
+
+% fontinstall macros
+\setcommand\familyfont#1#2#3#4#5#6#7{%
+  \installfont{#1#7} {#18r scaled \int{scale},%
+                      #1cj8r scaled \int{scale},%
+                      newlatin} {#2}{#3}{#4}{#5}{#6}{}%
+  }
+
+\setcommand\familycfont#1#2#3#4#5#6#7{%
+  \installfont{#1c#7} {#18r scaled \int{scale},%
+                       #1cj8r scaled \int{scale},%
+                       newlatin} {#2}{#3}{#4}{#5}{#6}{}%
+  }
+
+\setcommand\familyweight#1#2#3#4#5#6#7{%
+  \familyfont{#1#5}{#2}{#3}{#4}{#6}{n}{#7}%
+  \familyfont{#1#5i}{#2}{#3}{#4}{#6}{it}{#7}%
+  \familyfont{#1#5o}{#2}{#3}{#4}{#6}{sl}{#7}%
+  \familycfont{#1#5}{#2}{#3}{#4}{#6}{sc}{#7}%
+  } 
+
+\setcommand\familyjfont#1#2#3#4#5#6#7{%
+  \installfont{#1#7} {#18r scaled \int{scale},%
+                      #1cj8r scaled \int{scale},%
+                      newlatin} {#2}{#3}{#4}{#5}{#6}{}%
+  }
+
+\setcommand\familyjcfont#1#2#3#4#5#6#7{%
+  \installfont{#1c#7} {#18r scaled \int{scale},%
+                       #1cj8r scaled \int{scale},%
+                       newlatin} {#2}{#3}{#4}{#5}{#6}{}%
+  }
+
+
+\setcommand\familycompfont#1#2#3#4#5{%
+  \installfont{#1#5} {#18r scaled \int{scale},textcomp} {ts1}{TS1}{#2}{#3}{#4}{}
+  }
+
+\setcommand\familycompfontas#1#2#3#4#5{%
+  \installfontas{#1#5} {TS1}{#2}{#3}{#4}{}
+  }
+
+\setcommand\familycompweight#1#2#3#4#5{%
+  \familycompfont{#1#3}{#2}{#4}{n}{#5}%
+  \familycompfont{#1#3i}{#2}{#4}{it}{#5}%
+  \familycompfont{#1#3o}{#2}{#4}{sl}{#5}%
+  \familycompfontas{#1#3}{#2}{#4}{sc}{#5}%
+  } 
+
+\setcommand\familycompweightas#1#2#3#4#5{%
+  \familycompfontas{#1#3}{#2}{#4}{n}{#5}%
+  \familycompfontas{#1#3i}{#2}{#4}{it}{#5}%
+  \familycompfontas{#1#3o}{#2}{#4}{sl}{#5}%
+  \familycompfontas{#1#3}{#2}{#4}{sc}{#5}%
+  }
+
+\setcommand\familyjweight#1#2#3#4#5#6#7{%
+  \familyjfont{#1#5}{#2j}{#3}{#4}{#6}{n}{#7}%
+  \familyjfont{#1#5i}{#2j}{#3}{#4}{#6}{it}{#7}%
+  \familyjfont{#1#5o}{#2j}{#3}{#4}{#6}{sl}{#7}%
+  \familyjcfont{#1#5}{#2cj}{#3}{#4}{#6}{sc}{#7}%
+  } 
+
+\setcommand\familylthfont#1#2#3#4#5#6#7{%
+  \installfont{#1#7} {#18hr scaled \int{scale},%
+                      #18r scaled \int{scale},%
+                      #1cj8r scaled \int{scale},%
+                      newlatin,thai} {#2}{#3}{#4}{#5}{#6}{}%
+  }
+
+\setcommand\familylthcfont#1#2#3#4#5#6#7{%
+  \installfont{#1c#7} {#18hr scaled \int{scale},%
+                       #18r scaled \int{scale},%
+                       #1cj8r scaled \int{scale},%
+                       newlatin,thai} {#2}{#3}{#4}{#5}{#6}{}%
+  }
+
+\setcommand\familylthweight#1#2#3#4#5#6#7{%
+  \familylthfont{#1#5}{#2}{#3}{#4}{#6}{n}{#7}%
+  \familylthfont{#1#5i}{#2}{#3}{#4}{#6}{it}{#7}%
+  \familylthfont{#1#5o}{#2}{#3}{#4}{#6}{sl}{#7}%
+  \familylthcfont{#1#5}{#2}{#3}{#4}{#6}{sc}{#7}%
+  } 
+
+\setcommand\familylthjfont#1#2#3#4#5#6#7{%
+  \installfont{#1#7} {#18hr scaled \int{scale},%
+                      #18r scaled \int{scale},%
+                      #1cj8r scaled \int{scale},%
+                      newlatin,thai} {#2}{#3}{#4}{#5}{#6}{}%
+  }
+
+\setcommand\familylthjcfont#1#2#3#4#5#6#7{%
+  \installfont{#1c#7} {#18hr scaled \int{scale},%
+                       #18r scaled \int{scale},%
+                       #1cj8r scaled \int{scale},%
+                       newlatin,thai} {#2}{#3}{#4}{#5}{#6}{}%
+  }
+
+\setcommand\familylthjweight#1#2#3#4#5#6#7{%
+  \familylthjfont{#1#5}{#2j}{#3}{#4}{#6}{n}{#7}%
+  \familylthjfont{#1#5i}{#2j}{#3}{#4}{#6}{it}{#7}%
+  \familylthjfont{#1#5o}{#2j}{#3}{#4}{#6}{sl}{#7}%
+  \familylthjcfont{#1#5}{#2cj}{#3}{#4}{#6}{sc}{#7}%
+  } 
+
+
+% Real work begins
+
+\transform
+
+% LTH
+\installfonts
+\installfamily{LTH}{fn4}{}
+\installfamily{LTH}{fn4j}{}
+
+\familylthweight{fn4}{lth}{LTH}{fn4}{r}{m}{8h}
+\familylthweight{fn4}{lth}{LTH}{fn4}{b}{b}{8h}
+
+\familylthjweight{fn4}{lth}{LTH}{fn4j}{r}{m}{8i}
+\familylthjweight{fn4}{lth}{LTH}{fn4j}{b}{b}{8i}
+
+\endinstallfonts
+
+
+\installfonts
+\installfamily{T1}{fn4}{}
+\installfamily{TS1}{fn4}{}
+\installfamily{OT1}{fn4}{}
+
+% T1
+\familyweight{fn4}{t1}{T1}{fn4}{r}{m}{8t}
+\familyweight{fn4}{t1}{T1}{fn4}{b}{b}{8t}
+
+% TS1
+\familycompweight{fn4}{fn4}{r}{m}{8c}
+\familycompweight{fn4}{fn4}{b}{b}{8c}
+
+% OT1
+\familyweight{fn4}{ot1}{OT1}{fn4}{r}{m}{7t}
+\familyweight{fn4}{ot1}{OT1}{fn4}{b}{b}{7t}
+\endinstallfonts
+
+
+\installfonts
+\installfamily{T1}{fn4j}{}
+\installfamily{TS1}{fn4j}{}
+\installfamily{OT1}{fn4j}{}
+
+% T1
+\familyjweight{fn4}{t1}{T1}{fn4j}{r}{m}{9d}
+\familyjweight{fn4}{t1}{T1}{fn4j}{b}{b}{9d}
+
+% TS1
+\familycompweightas{fn4}{fn4j}{r}{m}{8c}
+\familycompweightas{fn4}{fn4j}{b}{b}{8c}
+
+% OT1
+\familyjweight{fn4}{ot1}{OT1}{fn4j}{r}{m}{9o}
+\familyjweight{fn4}{ot1}{OT1}{fn4j}{b}{b}{9o}
+\endinstallfonts
+
+
+% For the map file
+\endrecordtransforms
+
+\bye
