@@ -1,7 +1,8 @@
 2001-12-04 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
-	* thai.ldf: fix thai numbering for cases of styles other than book,
-	  where \thechapter is not defined.
-	* thai.ldf: remove thaitoday option.
+	* babel/thai.ldf: fix thai numbering for cases of styles other
+	  than book, where \thechapter is not defined.
+	* babel/thai.ldf: remove thaitoday option.
+	* doc/orchid.tex: use thainumber option to demo thai numbering.
 
 2001-12-04 Chanop Silpa-Anan <chanop@debian.org>
 	* add support for using Thai numbering in page, section,
