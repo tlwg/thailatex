@@ -3,6 +3,9 @@
 	  Use install-data-hook and uninstall-hook instead of
 	  install-data-local and uninstall-local, respectively, so that the
 	  $(emacslispdir) is created before doing anything with site-start.el
+	* thailatex.spec.in:
+	  Apply Poonlap Veerathanabutr's patch which fixes problematic
+	  comment
 
 2003-01-09 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* Makefile.am:
