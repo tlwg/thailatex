@@ -1,3 +1,8 @@
+2003-04-17 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* emacs/Makefile.am:
+	  Check $(DESTDIR) before patching emacs site-start.el.
+
 2003-04-16 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, fonts/Makefile.am, scripts/sync-thailatex.in:

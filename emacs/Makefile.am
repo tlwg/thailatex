@@ -3,21 +3,30 @@ EXTRA_DIST = thai-latex-setup.el
 emacslispdir = @emacsdir@/site-lisp
 emacslisp_DATA = thai-latex-setup.el
 
+EMACS_SITE_START=$(DESTDIR)$(emacslispdir)/site-start.el
+
 install-data-hook:
-# add Emacs macro for activating Thai LaTeX filter
-	if [ -f $(DESTDIR)$(emacslispdir)/site-start.el ] ; then \
-	  sed -e '/thai-latex-setup/d' $(DESTDIR)$(emacslispdir)/site-start.el \
-	    > /tmp/tmp.$$$$ ; \
-	  mv /tmp/tmp.$$$$ $(DESTDIR)$(emacslispdir)/site-start.el ; \
+	@if test -z "$(DESTDIR)" ; then                                       \
+	  if [ -f $(EMACS_SITE_START) ] ; then                                \
+	    sed -e '/thai-latex-setup/d' $(EMACS_SITE_START)                  \
+	      > /tmp/tmp.$$$$ ;                                               \
+	    mv /tmp/tmp.$$$$ $(EMACS_SITE_START) ;                            \
+	  fi ;                                                                \
+	  echo '(load-library "thai-latex-setup")' >> $(EMACS_SITE_START) ;   \
+	else                                                                  \
+	  echo "***" ;                                                        \
+	  echo "*** Warning: Emacs site-start.el not patched" ;               \
+	  echo "***" ;                                                        \
+	  echo "*** update the file on the target system" ;                   \
+	  echo "*** using 'sync-thailatex install'" ;                         \
+	  echo "***" ;                                                        \
 	fi
-	echo '(load-library "thai-latex-setup")' \
-	  >> $(DESTDIR)$(emacslispdir)/site-start.el
+
 
 uninstall-hook:
-# add Emacs macro for activating Thai LaTeX filter
-	if [ -f $(DESTDIR)$(emacslispdir)/site-start.el ] ; then \
-	  sed -e '/thai-latex-setup/d' $(DESTDIR)$(emacslispdir)/site-start.el \
+	if [ -f $(EMACS_SITE_START) ] ; then \
+	  sed -e '/thai-latex-setup/d' $(EMACS_SITE_START) \
 	    > /tmp/tmp.$$$$ ; \
-	  mv /tmp/tmp.$$$$ $(DESTDIR)$(emacslispdir)/site-start.el ; \
+	  mv /tmp/tmp.$$$$ $(EMACS_SITE_START) ; \
 	fi
 
