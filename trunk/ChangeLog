@@ -3,6 +3,7 @@
 	* fonts/Makefile.am:
 	  Fix lthuni.enc symlink creation. Its existence should be checked
 	  aginst itself, rather than the pfb file.
+	  Add creation of *.afm symlinks to the build tree.
 
 2003-06-04 Chanop Silpa-Anan <chanop@debian.org>
 	* fonts/norasi*.{pfb,afm}:
