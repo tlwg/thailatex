@@ -9,6 +9,14 @@
 	  add patch for pdftex.
 	* -emacs/addmacro.sh, -emacs/rmmacro.sh, emacs/Makefile.am:
 	  move the macro patching scripts into Makefile.
+	* thailatex.spec.in:
+	  Update %post and %postun according to new installing method.
+	* thailatex.spec.in:
+	  Fix upgrading bug using %triggerpostun to repeat %post after
+	  %postun of older package undid it. (%post is still needed
+	  in case of installation from scratch, not upgrading.)
+	  Change %postun to %preun, to guarantee it's run before
+	  newer package's %triggerpostun in upgrading.
 
 2001-12-06 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* babel/thai.ldf: add missing consonants in \thaialpha according
