@@ -1,3 +1,15 @@
+2003-02-26 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* scripts/sync-thailatex -> scripts/sync-thailatex.in,
+	  scripts/Makefile.am, configure.in:
+	  Use configured values for path names in the script
+
+	* scripts/sync-thailatex.in:
+	  Use updmap instead of patching individual config files
+
+	* configure.in, Makefile.am, scripts/sync-thailatex.in:
+	  Detect installed texhash and use it
+
 2003-02-25 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in:
@@ -29,6 +41,7 @@
 	  Use install-data-hook and uninstall-hook instead of
 	  install-data-local and uninstall-local, respectively, so that the
 	  $(emacslispdir) is created before doing anything with site-start.el
+	  (bug reported by Vee Sattayamas)
 
 2003-01-11 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* babel/lthnorasi.fd:

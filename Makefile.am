@@ -9,8 +9,8 @@ pkgdocdir = $(docdir)/@PACKAGE@
 pkgdoc_DATA = LICENSE README
 
 install-data-hook:
-	texhash
+	@TEXHASH@
 
 uninstall-hook:
-	texhash
+	@TEXHASH@
 

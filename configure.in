@@ -11,11 +11,11 @@ if test "x$SED" = "xno" ; then
 fi
 AC_CHECK_PROGS(LATEX,latex,no)
 if test "x$LATEX" = "xno" ; then
-  AC_MSG_ERROR([You need latex (from TeTeX distribution)])
+  AC_MSG_ERROR([You need latex (from teTeX distribution)])
 fi
 AC_CHECK_PROGS(DVIPS,dvips,no)
 if test "x$DVIPS" = "xno" ; then
-  AC_MSG_ERROR([You need dvips (from TeTeX distribution)])
+  AC_MSG_ERROR([You need dvips (from teTeX distribution)])
 fi
 AC_CHECK_PROGS(PF2AFM,pf2afm,no)
 if test "x$PF2AFM" = "xno" ; then
@@ -23,11 +23,11 @@ if test "x$PF2AFM" = "xno" ; then
 fi
 AC_CHECK_PROGS(AFM2TFM,afm2tfm,no)
 if test "x$AFM2TFM" = "xno" ; then
-  AC_MSG_ERROR([You need afm2tfm (from TeTeX distribution)])
+  AC_MSG_ERROR([You need afm2tfm (from teTeX distribution)])
 fi
 AC_CHECK_PROGS(VPTOVF,vptovf,no)
 if test "x$VPTOVF" = "xno" ; then
-  AC_MSG_ERROR([You need vptovf (from TeTeX distribution)])
+  AC_MSG_ERROR([You need vptovf (from teTeX distribution)])
 fi
 AC_CHECK_PROGS(PS2PDF,ps2pdf,no)
 if test "x$PS2PDF" = "xno" ; then
@@ -58,7 +58,12 @@ AC_SUBST(texmfdir)
 
 AC_PATH_PROG(UPDMAP,updmap,no,$PATH:$texmfdir/dvips/config/updmap)
 if test "x$UPDMAP" = "xno" ; then
-  AC_MSG_ERROR([You need updmap (from TeTeX distribution)])
+  AC_MSG_ERROR([You need updmap (from teTeX distribution)])
+fi
+
+AC_PATH_PROG(TEXHASH,texhash,no)
+if test "x$TEXHASH" = "xno" ; then
+  AC_MSG_ERROR([You need texhash (from teTeX distribution)])
 fi
 
 AC_ARG_WITH(emacsdir,
@@ -73,6 +78,7 @@ AC_OUTPUT(Makefile
   emacs/Makefile
   fonts/Makefile
   scripts/Makefile
+  scripts/sync-thailatex
   doc/Makefile
   debian/Makefile
   thailatex.spec)
