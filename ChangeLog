@@ -3,6 +3,9 @@
 	* babel/lthgaruda.fd:
 	  Fix garuda bx series name, which still appeared as norasi
 
+	* fonts/lthuni.enc:
+	  Fix wrong encoding (Poonlap Veerathanabutr)
+
 2003-01-28 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* thailatex.spec.in:
 	  Apply Poonlap Veerathanabutr's patch which fixes problematic
