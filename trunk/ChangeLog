@@ -3,6 +3,9 @@
 	* emacs/Makefile.am:
 	  Check $(DESTDIR) before patching emacs site-start.el.
 
+	* configure.in:
+	  Version 0.2.99.3
+
 2003-04-16 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, fonts/Makefile.am, scripts/sync-thailatex.in:
