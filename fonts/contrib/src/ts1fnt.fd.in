@@ -1,0 +1,20 @@
+\ProvidesFile{ts1fnt.fd}[2003/06/02 Chanop Silpa-Anan]
+
+\DeclareFontFamily{TS1}{fnt}{}
+
+\DeclareFontShape{TS1}{fnt}{m}{n}{<->ssub * ptm/m/n}{}
+\DeclareFontShape{TS1}{fnt}{m}{sc}{<->ssub * ptm/m/sc}{}
+\DeclareFontShape{TS1}{fnt}{m}{sl}{<->ssub * ptm/m/sl}{}
+\DeclareFontShape{TS1}{fnt}{m}{it}{<->ssub * ptm/m/it}{}
+
+\DeclareFontShape{TS1}{fnt}{b}{n}{<->ssub * ptm/b/n}{}
+\DeclareFontShape{TS1}{fnt}{b}{sc}{<->ssub * ptm/b/sc}{}
+\DeclareFontShape{TS1}{fnt}{b}{sl}{<->ssub * ptm/b/sl}{}
+\DeclareFontShape{TS1}{fnt}{b}{it}{<->ssub * ptm/b/it}{}
+
+\DeclareFontShape{TS1}{fnt}{bx}{n}{<->ssub * fnt/b/n}{}
+\DeclareFontShape{TS1}{fnt}{bx}{sc}{<->ssub * fnt/b/sc}{}
+\DeclareFontShape{TS1}{fnt}{bx}{sl}{<->ssub * fnt/b/sl}{}
+\DeclareFontShape{TS1}{fnt}{bx}{it}{<->ssub * fnt/b/it}{}
+
+\endinput

@@ -1,0 +1,35 @@
+This is a README file for font contribution
+===========================================
+
+An alfa release.
+
+A set of virtual font that mixes Times with Norasi and provides fnt font
+family that covers T1, TS1, and LTH encodings; also provide is a style
+file called norasi_times.sty.
+
+Another set of virtual font, a fgh family, is a mixed of Helvetica and
+Garuda; this set also covers T1, TS1, and LTH encoding; use the font
+easily with garuda_helvetica.sty.
+
+
+INTALLATION
+===========
+
+You will need recent tetex (or other, 2.0.2 in Debian Sid is the test
+platform).
+
+ 1. cd to src directory
+ 2. run ./create.sh
+ 3. copy files to TDS (/usr/share/texmf/* in Debiad Sid)
+     tex/* to tex/generic/babel/thai
+     vf/*  to fonts/vf/public/thai
+     tfm/* to fonts/vf/public/thai
+ 4. run texhash
+ 5. test latex with files in test directory; you would need to set up
+    belleek math font for thaiengmixed.tex though, however, replacing
+    mathptmx for mathtime should be fine.
+
+
+Tim
+
+4 June 2003
