@@ -1,3 +1,8 @@
+2004-03-06 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.ldf:
+	  Use `garuda' instead of `dbtt' as default sffamily for Thai.
+
 2004-03-04 Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/thai.ldf, babel/thswitch.sty:
