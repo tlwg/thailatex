@@ -71,7 +71,8 @@ binary-arch: build install
 #	dh_installmanpages
 #	dh_installinfo
 	dh_undocumented patch-babel.1 tlatex.1
-	dh_installchangelogs ChangeLog
+	dh_installchangelogs
+	cp ChangeLog debian/thailatex/usr/share/doc/thailatex
 	dh_link
 	dh_strip
 	dh_compress
