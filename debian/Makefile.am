@@ -9,4 +9,5 @@ EXTRA_DIST = README.Debian \
 	     emacsen-startup \
 	     postinst \
 	     postrm \
-	     rules
+	     rules \
+	     10thailatex.cfg
