@@ -1,3 +1,12 @@
+2002-01-16 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* babel/thai.ldf:
+	  Fix extra spaces appearing in \seleclanguage{thai}, as
+	  suggested by C. Visavakul.
+	  Add extra space to \wbr in case of over-condensed text,
+	  as suggested by C. Visavakul.
+	* configure.in:
+	  Version 0.2.5.
+
 2002-01-08 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 	* Makefile.am, babel/Makefile.am doc/Makefile.am, dvips/Makefile.am,
 	  emacs/Makefile.am, fonts/Makefile.am:
