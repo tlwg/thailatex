@@ -1,3 +1,8 @@
+2003-02-12 Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/lthgaruda.fd:
+	  Fix garuda bx series name, which still appeared as norasi
+
 2003-01-28 Theppitak Karoonboonyanan <thep@linux.thai.net>
 	* thailatex.spec.in:
 	  Apply Poonlap Veerathanabutr's patch which fixes problematic

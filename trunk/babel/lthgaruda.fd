@@ -17,8 +17,8 @@
 %%%%%%% bold series
 \DeclareFontShape{LTH}{garuda}{b}{n}{<->[1.3]garuda_b}{}
 \DeclareFontShape{LTH}{garuda}{b}{it}{<->[1.3]garuda_bi}{}
-\DeclareFontShape{LTH}{norasi}{bx}{n}{<->[1.3]garuda_b}{}
-\DeclareFontShape{LTH}{norasi}{bx}{it}{<->[1.3]garuda_bi}{}
+\DeclareFontShape{LTH}{garuda}{bx}{n}{<->[1.3]garuda_b}{}
+\DeclareFontShape{LTH}{garuda}{bx}{it}{<->[1.3]garuda_bi}{}
 
 % Substitutions
 \DeclareFontShape{LTH}{garuda}{m}{sl}{<->sub * garuda/m/it}{}
