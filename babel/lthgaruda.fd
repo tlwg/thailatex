@@ -24,9 +24,9 @@
 \DeclareFontShape{LTH}{garuda}{m}{it}{<->sub * garuda/m/sl}{}
 \DeclareFontShape{LTH}{garuda}{b}{it}{<->sub * garuda/b/sl}{}
 
-\DeclareFontShape{LTH}{garuda}{bx}{n}{<->sub * garuda/bx/n}{}
-\DeclareFontShape{LTH}{garuda}{bx}{sl}{<->sub * garuda/bx/sl}{}
-\DeclareFontShape{LTH}{garuda}{bx}{it}{<->sub * garuda/bx/it}{}
+\DeclareFontShape{LTH}{garuda}{bx}{n}{<->sub * garuda/b/n}{}
+\DeclareFontShape{LTH}{garuda}{bx}{sl}{<->sub * garuda/b/sl}{}
+\DeclareFontShape{LTH}{garuda}{bx}{it}{<->sub * garuda/b/it}{}
 \endinput
 
 % 
