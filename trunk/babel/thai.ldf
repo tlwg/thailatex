@@ -81,18 +81,26 @@
 %\renewcommand\theenumii{\@alph\c@enumii}
 %\renewcommand\theenumiii{\@roman\c@enumiii}
 %\renewcommand\theenumiv{\@Alph\c@enumiv}
-\renewcommand\thechapter{\@thainum\c@chapter}
-\renewcommand\thesection{\thechapter.\@thainum\c@section}
-\renewcommand\thesubsection{\thesection.\@thainum\c@subsection}
-\renewcommand\theequation
-    {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@equation}
-\renewcommand \thetable
-    {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@table}
-\renewcommand \thefigure
-    {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@figure}
+\@ifundefined{thechapter}%
+  {\renewcommand\thesection{\@thainum\c@section}%
+   \renewcommand\thesubsection{\thesection.\@thainum\c@subsection}%
+   \renewcommand\theequation{\@thainum\c@equation}%
+   \renewcommand\thetable{\@thainum\c@table}%
+   \renewcommand\thefigure{\@thainum\c@figure}}%
+  {\renewcommand\thechapter{\@thainum\c@chapter}%
+   \renewcommand\thesection{\thechapter.\@thainum\c@section}%
+   \renewcommand\thesubsection{\thesection.\@thainum\c@subsection}%
+   \renewcommand\theequation%
+       {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@equation}%
+   \renewcommand \thetable%
+       {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@table}%
+   \renewcommand \thefigure%
+       {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@figure}}
 \renewcommand\thefootnote{\@thainum\c@footnote}
 % Theorem Counter
 \def\@thmcounter#1{\noexpand\thainum{#1}} 
+\def\datethai{%
+  \def\today{\@thainum\day \space \th@month\space ¾.È.~\@thainum\th@year}}
 % Finish Declaring
 \relax
 }
@@ -107,11 +115,6 @@
 \advance\th@year by 543
 \def\datethai{%
   \def\today{\number\day \space \th@month\space ¾.È.~\number\th@year}}
-% \today using thai number
-\DeclareOption{thaitoday}{
-\def\datethai{%
-  \def\today{\@thainum\day \space \th@month\space ¾.È.~\@thainum\th@year}}
-}
 \addto\extrasthai{\thaitext}
 \addto\noextrasthai{\latintext}
 \def\wbr{\hskip0pt\relax}

@@ -1,4 +1,9 @@
-2001-12-05 Chanop Silpa-Anan <chanop@debian.org>
+2001-12-04 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	* thai.ldf: fix thai numbering for cases of styles other than book,
+	  where \thechapter is not defined.
+	* thai.ldf: remove thaitoday option.
+
+2001-12-04 Chanop Silpa-Anan <chanop@debian.org>
 	* add support for using Thai numbering in page, section,
 	  date, and etc.
 	* Thank to K.ขอม
