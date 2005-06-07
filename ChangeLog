@@ -1,3 +1,8 @@
+2005-06-07  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/*.{afm,pfb}:
+	  Update fonts from thaifonts-scalable CVS.
+
 2005-04-05  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* fonts/Makefile.am:
