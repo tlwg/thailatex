@@ -1,9 +1,5 @@
 EXTRA_DIST = \
 	lthuni.enc \
-	dbtt.pfb \
-	dbtt_b.pfb \
-	dbtt_o.pfb \
-	dbtt_bo.pfb \
 	garuda.pfb \
 	garuda_b.pfb \
 	garuda_o.pfb \
@@ -14,21 +10,11 @@ EXTRA_DIST = \
 	norasi_i.pfb \
 	norasi_bo.pfb \
 	norasi_bi.pfb \
-	kinnari.pfb \
-	kinnari_b.pfb \
-	kinnari_o.pfb \
-	kinnari_i.pfb \
-	kinnari_bo.pfb \
-	kinnari_bi.pfb \
 	ttype.pfb \
 	ttype_b.pfb \
 	ttype_o.pfb \
 	ttype_bo.pfb \
 	purisa.pfb \
-	dbtt.afm \
-	dbtt_b.afm \
-	dbtt_o.afm \
-	dbtt_bo.afm \
 	garuda.afm \
 	garuda_b.afm \
 	garuda_o.afm \
@@ -39,12 +25,6 @@ EXTRA_DIST = \
 	norasi_i.afm \
 	norasi_bo.afm \
 	norasi_bi.afm \
-	kinnari.afm \
-	kinnari_b.afm \
-	kinnari_o.afm \
-	kinnari_i.afm \
-	kinnari_bo.afm \
-	kinnari_bi.afm \
 	ttype.afm \
 	ttype_b.afm \
 	ttype_o.afm \
@@ -70,10 +50,6 @@ dvipsbase_DATA = lthuni.enc
 dvipsconfig_DATA = thai.map
 
 type1_DATA = \
-	dbtt.pfb \
-	dbtt_b.pfb \
-	dbtt_o.pfb \
-	dbtt_bo.pfb \
 	garuda.pfb \
 	garuda_b.pfb \
 	garuda_o.pfb \
@@ -84,12 +60,6 @@ type1_DATA = \
 	norasi_i.pfb \
 	norasi_bo.pfb \
 	norasi_bi.pfb \
-	kinnari.pfb \
-	kinnari_b.pfb \
-	kinnari_o.pfb \
-	kinnari_i.pfb \
-	kinnari_bo.pfb \
-	kinnari_bi.pfb \
 	ttype.pfb \
 	ttype_b.pfb \
 	ttype_o.pfb \
@@ -99,10 +69,6 @@ type1_DATA = \
 
 
 afm_DATA = \
-	dbtt.afm \
-	dbtt_b.afm \
-	dbtt_o.afm \
-	dbtt_bo.afm \
 	garuda.afm \
 	garuda_b.afm \
 	garuda_o.afm \
@@ -113,12 +79,6 @@ afm_DATA = \
 	norasi_i.afm \
 	norasi_bo.afm \
 	norasi_bi.afm \
-	kinnari.afm \
-	kinnari_b.afm \
-	kinnari_o.afm \
-	kinnari_i.afm \
-	kinnari_bo.afm \
-	kinnari_bi.afm \
 	ttype.afm \
 	ttype_b.afm \
 	ttype_o.afm \
@@ -128,10 +88,6 @@ afm_DATA = \
 
 
 tfm_DATA = \
-	dbtt.tfm \
-	dbtt_b.tfm \
-	dbtt_o.tfm \
-	dbtt_bo.tfm \
 	garuda.tfm \
 	garuda_b.tfm \
 	garuda_o.tfm \
@@ -142,21 +98,11 @@ tfm_DATA = \
 	norasi_i.tfm \
 	norasi_bo.tfm \
 	norasi_bi.tfm \
-	kinnari.tfm \
-	kinnari_b.tfm \
-	kinnari_o.tfm \
-	kinnari_i.tfm \
-	kinnari_bo.tfm \
-	kinnari_bi.tfm \
 	ttype.tfm \
 	ttype_b.tfm \
 	ttype_o.tfm \
 	ttype_bo.tfm \
 	purisa.tfm \
-	rdbtt.tfm \
-	rdbtt_b.tfm \
-	rdbtt_o.tfm \
-	rdbtt_bo.tfm \
 	rgaruda.tfm \
 	rgaruda_b.tfm \
 	rgaruda_o.tfm \
@@ -167,12 +113,6 @@ tfm_DATA = \
 	rnorasi_i.tfm \
 	rnorasi_bo.tfm \
 	rnorasi_bi.tfm \
-	rkinnari.tfm \
-	rkinnari_b.tfm \
-	rkinnari_o.tfm \
-	rkinnari_i.tfm \
-	rkinnari_bo.tfm \
-	rkinnari_bi.tfm \
 	rttype.tfm \
 	rttype_b.tfm \
 	rttype_o.tfm \
@@ -182,10 +122,6 @@ tfm_DATA = \
 
 
 vf_DATA = \
-	dbtt.vf \
-	dbtt_b.vf \
-	dbtt_o.vf \
-	dbtt_bo.vf \
 	garuda.vf \
 	garuda_b.vf \
 	garuda_o.vf \
@@ -196,12 +132,6 @@ vf_DATA = \
 	norasi_i.vf \
 	norasi_bo.vf \
 	norasi_bi.vf \
-	kinnari.vf \
-	kinnari_b.vf \
-	kinnari_o.vf \
-	kinnari_i.vf \
-	kinnari_bo.vf \
-	kinnari_bi.vf \
 	ttype.vf \
 	ttype_b.vf \
 	ttype_o.vf \

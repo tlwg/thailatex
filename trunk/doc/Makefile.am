@@ -1,7 +1,5 @@
 DOC_FILES = orchid.tex teststd.tex
 
-EXTRA_DIST = $(DOC_FILES)
-
 docdir = @docdir@
 
 pkgdocdir = $(docdir)/@PACKAGE@/examples
@@ -11,6 +9,8 @@ pkgdoc_DATA = $(DOC_FILES)
 TESTS = test-orchid.sh test-teststd.sh
 
 check_SCRIPTS = test-orchid.sh test-teststd.sh
+
+EXTRA_DIST = $(DOC_FILES) $(check_SCRIPTS)
 
 clean-local:
 	$(RM) *.log *.aux *.ttex *.dvi
