@@ -1,3 +1,18 @@
+2005-06-10  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/Makefile.am, babel/Makefile.am:
+	  Drop dbtt and kinnari fonts, as they have been dropped in the new
+	  thaifonts-scalable release due to the unclear licenses.
+
+	* doc/teststd.tex:
+	  Remove test samples for dbtt and kinnari as well.
+
+	* doc/Makefile.am:
+	  Include check scripts in the EXTRA_DIST as well.
+
+	* configure.in, NEWS:
+	  Version 0.3.5.
+
 2005-06-07  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* fonts/*.{afm,pfb}:

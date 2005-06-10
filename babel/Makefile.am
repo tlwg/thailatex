@@ -1,5 +1,5 @@
 BABEL_FILES = thai.ldf thai.sty thswitch.sty lthenc.def \
-	lthdbtt.fd lthnorasi.fd lthgaruda.fd lthkinnari.fd \
+	lthnorasi.fd lthgaruda.fd \
 	lthttype.fd lthpurisa.fd
 
 EXTRA_DIST = $(BABEL_FILES)
