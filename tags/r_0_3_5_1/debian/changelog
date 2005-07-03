@@ -1,0 +1,68 @@
+thailatex (0.3.1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Mon,  2 Jun 2003 07:12:20 +1000
+
+thailatex (0.2.99.3) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Fri, 18 Apr 2003 14:09:27 +1000
+
+thailatex (0.2.99.2.cvs20030329) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Sat, 29 Mar 2003 23:32:00 +1100
+
+thailatex (0.2.5.cvs20020221) unstable; urgency=low
+
+  * New upsteam release.
+  * Fix Build-Depends-Indep. (closes: #134860)
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Thu, 21 Feb 2002 17:31:41 +1100
+
+thailatex (0.2.3.cvs20011206) unstable; urgency=low
+
+  * Fix some bugs when using book class.
+  * New thaialph and thaiAlph counter.
+  * thaitoday option was removed.
+  * Remove running bibtex from tlatex script.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Thu,  6 Dec 2001 16:51:20 +1100
+
+thailatex (0.2.2.cvs20011205) unstable; urgency=low
+
+  * King Birthday Release.
+  * Ditch patch-babel.sty from the postinstall. (closes: #122016)
+  * Provide patched babel.sty instead, hence depends on version of
+    tetex-base.
+  * New thainumber and thaitoday as document option.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Tue,  4 Dec 2001 17:33:29 +1100
+
+thailatex (0.2.2.cvs20010403) unstable; urgency=low
+
+  * Finally, debian dir is in upstream cvs
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Tue,  3 Apr 2001 09:46:19 +1000
+
+thailatex (0.2.2-pre4-1) unstable; urgency=low
+
+  * New upstream Release
+  * Bump Standards-Version to 3.5.2 
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Thu,  1 Mar 2001 00:27:14 +1100
+
+thailatex (0.2.2-pre2-1) unstable; urgency=low
+
+  * New Upstream Release 
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Sat, 10 Feb 2001 02:57:15 +1100
+
+thailatex (0.2.2-pre1-1) unstable; urgency=low
+
+  * Initial Release
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Wed, 29 Nov 2000 06:01:23 +1100

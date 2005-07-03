@@ -1,0 +1,48 @@
+0.3.5.1 (2005-07-03)
+=======
+- Update fonts from thaifonts-scalable 0.4.3.1, which actually updates
+  version info in Type1 fonts.
+
+0.3.5 (2005-06-10)
+=====
+- Dropped dbtt and kinnari in accordance with the new thaifonts-scalable
+  release, due to the unclear license.
+- Updated scalable fonts from thaifonts-scalable 0.4.3.
+- Fixed bug in malformed Postscript fonts which makes latex files fail to
+  compile.
+
+0.3.4 (2004-12-05)
+=====
+- Fix missing glyphs in fonts. (reported by Poonlap Veerathanabutr)
+- 'pmono' font now renamed as 'ttype'.
+
+0.3.3 (2004-09-27)
+=====
+- Do not capitalize chapters & sections in book headers.
+  (proposed by P'Joy)
+- Guard against recursive assignments of \ltxTeX and \ltxLaTeX
+  (reported by donzakh)
+- Updated scaled fonts from thaifonts-scalable 0.4.2.
+
+0.3.2 (2004-03-25)
+=====
+- Fix page numbering bug in \frontmatter and \mainmatter redefinition
+  due to wrong appendix fix in previous version. [thep]
+  (noticed by P'Joy)
+
+0.3.1 (2004-03-10)
+=====
+- New fonts: kinnari, pmono, purisa. [poonlap]
+- Updated fonts from thaifonts-scalable project. [chanop,thep]
+- Thai sfdefault is now garuda. Thai ttdefault is now pmono.
+- Introduce Thai TeX character codes, so some problems caused by Latin
+  case conversion, e.g. appendix title, are fixed. [thep,poonlap]
+- Proper Thai page number styles in different parts of book class. [thep]
+- Appendixes are now always run with Thai alphabets, with or without
+  `thainumber' option. [suggested by K. Chakkree]
+- Better RPM build script. [thep, by report from Suppachoke Santiwichaya]
+- Other bug fixes and improvements. [everybody]
+ 
+
+*** Please see ChangeLog for versions before 0.3.1 ***
+
