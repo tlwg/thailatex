@@ -43,14 +43,16 @@ if test "x$CTTEX" = "xno" ; then
 fi
 
 AC_ARG_WITH(docdir,
-  [  --with-docdir=DIR     package document directory in DIR [PREFIX/share/doc]],
+  [AC_HELP_STRING([--with-docdir=DIR],
+                  [package document directory in DIR [PREFIX/share/doc]])],
   [docdir="$withval"], [docdir=\$\{datadir\}/doc])
 AC_MSG_CHECKING(--with-docdir)
 AC_MSG_RESULT("$docdir")                                                                                                           
 AC_SUBST(docdir)
 
 AC_ARG_WITH(texmfdir,
-  [  --with-texmfdir=DIR     texmf directory in DIR [PREFIX/share/texmf]],
+  [AC_HELP_STRING([--with-texmfdir=DIR],
+                  [texmf directory in DIR [PREFIX/share/texmf]])],
   [texmfdir="$withval"], [texmfdir=${datadir}/texmf])
 AC_MSG_CHECKING(--with-texmfdir)
 AC_MSG_RESULT("$texmfdir")                                                                                                           
@@ -76,7 +78,8 @@ if test "x$TEXHASH" = "xno" ; then
 fi
 
 AC_ARG_WITH(emacsdir,
-  [  --with-emacsdir=DIR     emacs directory in DIR [PREFIX/share/emacs]],
+  [AC_HELP_STRING([--with-emacsdir=DIR],
+                  [emacs directory in DIR [PREFIX/share/emacs]])],
   [emacsdir="$withval"], [emacsdir=${datadir}/emacs])
 AC_MSG_CHECKING(--with-emacsdir)
 AC_MSG_RESULT("$emacsdir")                                                                                                           
