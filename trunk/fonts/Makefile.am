@@ -38,16 +38,21 @@ afmdir = @texmfdir@/fonts/afm/public/thai
 tfmdir = @texmfdir@/fonts/tfm/public/thai
 vfdir  = @texmfdir@/fonts/vf/public/thai
 
-dvipsbasedir = @texmfdir@/dvips/base
-dvipsconfigdir = @texmfdir@/dvips/config
+if NEW_TDS
+encdir = @texmfdir@/fonts/enc/dvips/thai
+mapdir = @texmfdir@/fonts/map/dvips/thai
+else
+encdir = @texmfdir@/dvips/base
+mapdir = @texmfdir@/dvips/config
+endif
 
 DVIPSCONFIG=$(DESTDIR)/@texmfdir@/dvips/config/config.ps
 PDFTEXCONFIG=$(DESTDIR)/@texmfdir@/pdftex/config/pdftex.cfg
 #UPDMAPCONFIG=$(DESTDIR)/@texmfdir@/web2c/updmap.cfg
 
-dvipsbase_DATA = lthuni.enc
+enc_DATA = lthuni.enc
 
-dvipsconfig_DATA = thai.map
+map_DATA = thai.map
 
 type1_DATA = \
 	garuda.pfb \
