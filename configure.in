@@ -63,7 +63,7 @@ dnl AC_PATH_PROG(UPDMAP,updmap,no,$updmappath)
 dnl if test "x$UPDMAP" = "xno" ; then
 dnl   AC_MSG_ERROR([You need updmap (from teTeX distribution)])
 dnl fi
-AC_PATH_PROG(UPDMAP,updmap,no)
+AC_PATH_PROGS(UPDMAP,[updmap-sys updmap],no)
 if test "x$UPDMAP" = "xno" ; then
   AC_MSG_WARN([Not a new updmap from teTeX 2, falling back to patching local maps])
   UPDMAP_VER=1
