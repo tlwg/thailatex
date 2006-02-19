@@ -1,3 +1,8 @@
+2006-02-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Preferred updmap-sys to updmap if present.
+	Change inspired by Debian NMU patch.
+
 2005-10-09  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in:
