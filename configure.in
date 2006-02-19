@@ -72,6 +72,14 @@ else
 fi
 AC_SUBST(UPDMAP_VER)
 
+AC_MSG_CHECKING(for new TeX Directory Structure)
+AM_CONDITIONAL(NEW_TDS,test -d `eval echo $texmfdir/fonts/map`)
+if test "x$NEW_TDS_TRUE" = "x" ; then
+  AC_MSG_RESULT(yes)
+else
+  AC_MSG_RESULT(no)
+fi
+
 AC_PATH_PROG(TEXHASH,texhash,no)
 if test "x$TEXHASH" = "xno" ; then
   AC_MSG_ERROR([You need texhash (from teTeX distribution)])

@@ -1,5 +1,11 @@
 2006-02-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* configure.in, fonts/Makefile.am: Checked for new TeX Directory
+	Structure (http://tug.org/tds/) and install files in new locations 
+	if possible.
+
+2006-02-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in: Preferred updmap-sys to updmap if present.
 	Change inspired by Debian NMU patch.
 
