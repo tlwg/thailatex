@@ -1,3 +1,7 @@
+2006-03-25  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/*.{afm,pfb}: Updated fonts from thaifonts-scalable 0.4.4.
+
 2006-02-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, fonts/Makefile.am: Checked for new TeX Directory
