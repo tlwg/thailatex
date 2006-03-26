@@ -15,6 +15,10 @@ EXTRA_DIST = \
 	ttype_o.pfb \
 	ttype_bo.pfb \
 	purisa.pfb \
+	loma.pfb \
+	loma_b.pfb \
+	loma_o.pfb \
+	loma_bo.pfb \
 	garuda.afm \
 	garuda_b.afm \
 	garuda_o.afm \
@@ -29,7 +33,11 @@ EXTRA_DIST = \
 	ttype_b.afm \
 	ttype_o.afm \
 	ttype_bo.afm \
-	purisa.afm
+	purisa.afm \
+	loma.afm \
+	loma_b.afm \
+	loma_o.afm \
+	loma_bo.afm
 
 DISTCLEANFILES = thai.map
 
@@ -69,9 +77,11 @@ type1_DATA = \
 	ttype_b.pfb \
 	ttype_o.pfb \
 	ttype_bo.pfb \
-	purisa.pfb
-
-
+	purisa.pfb \
+	loma.pfb \
+	loma_b.pfb \
+	loma_o.pfb \
+	loma_bo.pfb
 
 afm_DATA = \
 	garuda.afm \
@@ -88,9 +98,11 @@ afm_DATA = \
 	ttype_b.afm \
 	ttype_o.afm \
 	ttype_bo.afm \
-	purisa.afm
-
-
+	purisa.afm \
+	loma.afm \
+	loma_b.afm \
+	loma_o.afm \
+	loma_bo.afm
 
 tfm_DATA = \
 	garuda.tfm \
@@ -108,6 +120,10 @@ tfm_DATA = \
 	ttype_o.tfm \
 	ttype_bo.tfm \
 	purisa.tfm \
+	loma.tfm \
+	loma_b.tfm \
+	loma_o.tfm \
+	loma_bo.tfm
 	rgaruda.tfm \
 	rgaruda_b.tfm \
 	rgaruda_o.tfm \
@@ -122,9 +138,11 @@ tfm_DATA = \
 	rttype_b.tfm \
 	rttype_o.tfm \
 	rttype_bo.tfm \
-	rpurisa.tfm
-
-
+	rpurisa.tfm \
+	rloma.tfm \
+	rloma_b.tfm \
+	rloma_o.tfm \
+	rloma_bo.tfm
 
 vf_DATA = \
 	garuda.vf \
@@ -141,9 +159,11 @@ vf_DATA = \
 	ttype_b.vf \
 	ttype_o.vf \
 	ttype_bo.vf \
-	purisa.vf
-
-
+	purisa.vf \
+	loma.vf \
+	loma_b.vf \
+	loma_o.vf \
+	loma_bo.vf
 
 # Local Rules
 

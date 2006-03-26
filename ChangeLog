@@ -1,3 +1,14 @@
+2006-03-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Added Loma font.
+
+	* fonts/Makefile.am, +fonts/loma*.{afm,pfb}: Added Loma font and
+	metrics.
+
+	* babel/Makefile.am, +babel/lthloma.fd: Added Loma font description.
+
+	* doc/teststd.tex: Added test message for Loma.
+
 2006-03-25  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/*.{afm,pfb}: Updated fonts from thaifonts-scalable 0.4.4.
