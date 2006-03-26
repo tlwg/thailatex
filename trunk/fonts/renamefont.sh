@@ -16,6 +16,7 @@ $MMV -v "DBThaiText*" "dbtt#1"
 $MMV -v "Kinnari*" "kinnari#1"
 $MMV -v "TlwgTypewriter*" "ttype#1"
 $MMV -v "Purisa*" "purisa#1"
+$MMV -v "Loma*" "loma#1"
 
 #Oblique, Bold, BoldOblique, Italic, BoldItalic
 $MMV -v "*-BoldOblique*" "#1_bo#2"
