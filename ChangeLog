@@ -1,5 +1,10 @@
 2006-03-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/{purisa,ttype*}.{afm,pfb}: Updated fonts from 
+	thaifonts-scalable CVS which fixed error with dvips.
+
+2006-03-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/Makefile.am: Fixed typo in tfm_DATA which caused raw TFM's to
 	be missed from installation.
 
