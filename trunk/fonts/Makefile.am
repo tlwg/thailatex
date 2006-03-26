@@ -123,7 +123,7 @@ tfm_DATA = \
 	loma.tfm \
 	loma_b.tfm \
 	loma_o.tfm \
-	loma_bo.tfm
+	loma_bo.tfm \
 	rgaruda.tfm \
 	rgaruda_b.tfm \
 	rgaruda_o.tfm \

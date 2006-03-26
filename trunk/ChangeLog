@@ -1,5 +1,13 @@
 2006-03-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/Makefile.am: Fixed typo in tfm_DATA which caused raw TFM's to
+	be missed from installation.
+
+	* doc/teststd.tex: Replaced the references to old 'pmono' font with
+	'ttype'.
+
+2006-03-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Added Loma font.
 
 	* fonts/Makefile.am, +fonts/loma*.{afm,pfb}: Added Loma font and
