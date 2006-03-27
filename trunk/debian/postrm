@@ -18,9 +18,6 @@ set -e
 
 case "$1" in
     remove)
-         dpkg-divert --package thailatex  --remove --rename \
-             --divert /usr/share/texmf/tex/generic/babel/babel.sty.real \
-	     /usr/share/texmf/tex/generic/babel/babel.sty
 
          if [ -x /usr/bin/texhash ] ; then \
            /usr/bin/texhash ; \
@@ -35,8 +32,14 @@ case "$1" in
          if [ -x /usr/bin/texhash ] ; then \
            /usr/bin/texhash ; \
          fi
-         if [ -x /usr/bin/updmap ] ; then \
-            /usr/bin/updmap ; \
+	 UPDMAP=""
+	 if [ -f "`which updmap-sys`" ] ; then
+	   UPDMAP=updmap-sys
+	 elif [ -f "`which updmap`" ] ; then
+	   UPDMAP=updmap
+	 fi
+         if [ -n "$UPDMAP" ] ; then 
+            $UPDMAP
          fi
 
 	;;

@@ -30,9 +30,11 @@ case "$1" in
       if [ -x /usr/bin/texhash ] ; then \
          /usr/bin/texhash ; \
       fi
-      if [ -x /usr/bin/updmap ] ; then \
-         /usr/bin/updmap ; \
+      UPDMAP=updmap
+      if [ -x /usr/bin/updmap-sys ]; then
+	UPDMAP=updmap-sys
       fi
+      $UPDMAP
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
