@@ -193,9 +193,9 @@ thai.map: $(tfm_DATA)
 # 	$(UPDMAP) --disable thai.map
 
 install-data-hook:
-	@TEXHASH@
 	@if test -z "$(DESTDIR)" ; then                                       \
-	  if test "$(UPDMAP_VER)" == "2"; then                                \
+	  @TEXHASH@ ;                                                          \
+	  if test "$(UPDMAP_VER)" = "2"; then                                 \
 	    $(UPDMAP) --disable thai.map --nohash --nomkmap ;                 \
 	    $(UPDMAP) --enable Map thai.map ;                                 \
 	  else                                                                \
@@ -224,7 +224,7 @@ install-data-hook:
 	fi
  
 uninstall-hook:
-	if test "$(UPDMAP_VER)" == "2"; then                                  \
+	if test "$(UPDMAP_VER)" = "2"; then                                   \
 	  $(UPDMAP) --disable thai.map ;                                      \
 	else                                                                  \
 	  if test -f $(DVIPSCONFIG); then                                     \

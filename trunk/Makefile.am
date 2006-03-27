@@ -1,5 +1,5 @@
-EXTRA_DIST = LICENSE thailatex.spec.in autogen.sh
-SUBDIRS = babel emacs fonts scripts debian doc
+EXTRA_DIST = LICENSE thailatex.spec.in
+SUBDIRS = babel emacs fonts scripts doc
 
 DISTCLEANFILES = thailatex.spec
 
