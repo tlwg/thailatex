@@ -1,5 +1,18 @@
 2006-03-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Fixed many package building issues.
+
+	* configure.in, Makefile.am, -debian/Makefile.am:  Removed debian 
+	directory from source distribution, as well as the autogen.sh extra 
+	file.
+
+	* configure.in:  Tried to fall back to updmap as well, even if
+	updmap-sys is available, to pass "make distcheck" as non-root user.
+
+	* fonts/Makefile.am:  Called @TEXHASH@ only if $(DESTDIR) is null.
+
+2006-03-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in, NEWS:
 	=== Version 0.3.6 ===
 
