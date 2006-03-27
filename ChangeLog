@@ -1,5 +1,10 @@
 2006-03-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* configure.in, NEWS:
+	=== Version 0.3.7 ===
+
+2006-03-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Fixed many package building issues.
 
 	* configure.in, Makefile.am, -debian/Makefile.am:  Removed debian 
