@@ -1,0 +1,17 @@
+Source: thailatex
+Section: tex
+Priority: optional
+Maintainer: Chanop Silpa-Anan <chanop@debian.org>
+Build-Depends-Indep: debhelper (>=4.0.0), tetex-bin (>=2.0.2), gs, gs-common
+Standards-Version: 3.5.8
+
+Package: thailatex
+Architecture: all 
+Recommends: cttex|swath
+Depends: tetex-bin (>=2.0.2), tetex-base (>=2.0.2)
+Description: Thai Latex package
+ This package provides Thai language add-on for Latex. It is based on 
+ babel package which comes with tetex distribution.
+ .
+ This package needs Thai words separator such as cttex and swath, in
+ order for latex to be able to break sentences.
