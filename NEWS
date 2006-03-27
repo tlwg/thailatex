@@ -1,3 +1,11 @@
+0.3.6 (2006-03-27)
+=====
+- Merge fix from Debian NMU, to prefer updmap-sys to updmap if present.
+- Support new TeX Directory Structure (http://tug.org/tds/).
+- Update fonts from thaifonts-scalable 0.4.4, plus some fixes in 2006-03-26 
+  CVS snapshot for error with dvips.
+- Add Loma font.
+
 0.3.5.1 (2005-07-03)
 =======
 - Update fonts from thaifonts-scalable 0.4.3.1, which actually updates
