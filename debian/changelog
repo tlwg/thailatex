@@ -1,3 +1,52 @@
+thailatex (0.3.7-1) unstable; urgency=low
+
+  * New maintainer (Closes:357871)
+  * New upstream release (Closes: #344554, #351501)
+    - updated fonts
+    - new Loma font
+    - addressed some fixes in 0.3.2-0.1 NMU
+  * Acknowledged NMU, with some fixes addressed upstream
+    (Closes: #318384, #338619)
+  * debian/control:
+    - put myself as the maintainer
+    - changed standards version to 3.6.2.2
+  * debian/changelog:
+    - converted to UTF-8
+  * debian/rules:
+    - used $DESTDIR instead of $prefix when "make install". This is the way
+      upstream has prepared for package building.
+    - updated thai.map location changed upstream
+    - removed upstream ChangLog zipping
+    - changed DH_COMPAT to 4
+  * debian/conffiles:
+    - removed, as we moved to debhelper compat level 4
+  * debian/docs:
+    - removed upstream ChangeLog installation
+    - added upstream NEWS
+  * debian/postrm:
+    - fixed shell script syntax error introduced in NMU
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Mon, 27 Mar 2006 15:08:37 +0700
+
+thailatex (0.3.2-0.1) unstable; urgency=low
+
+  * NMU to fix RC bug: closes: #318384
+  * Fix upstream Makefile to not call install-data-hook
+  * Invoke updmap-sys instead of updmap, but fall back to updmap if
+    updmap-sys is not found (only needed for sarge backports).
+  * Update debian/babel.sty so that all new languages provided by
+    teTeX-3.0 are still available when thailatex is installed.
+    dpkg-diverting the file is no longer necessary, since teTeX's file is
+    at a different place (closes: #338619).
+
+ -- Frank Küster <frank@debian.org>  Fri, 23 Dec 2005 20:07:32 +0100
+
+thailatex (0.3.2) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Thu, 25 Mar 2004 18:00:30 +1100
+
 thailatex (0.3.1) unstable; urgency=low
 
   * New upstream release.
