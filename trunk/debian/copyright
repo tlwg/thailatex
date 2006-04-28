@@ -1,12 +1,11 @@
 This package was debianized by Chanop Silpa-Anan <chanop@debian.org> on
 Wed, 29 Nov 2000 06:01:23 +1100.
 
-It was checked out from cvs :pserver:anonymous@thailinux.gits.net.th:/home/cvs,
-module thailatex.
+It was downloaded from http://linux.thai.net/plone/TLWG/thailatex/
 
 Upstream Authors: 
 	Surapant Meknavin <surapan@nectec.or.th>
-	Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+	Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 Copyright:
 
@@ -43,3 +42,84 @@ SOFTWARE.
 Surapant Meknavin,
 National Electronics and Computer Technology Center (NECTEC), Thailand.
 surapan@nectec.or.th
+
+
+babel.sty:
+
+babel.sty is taken from tetex-base package, with additional changes.
+
+The Thai-specific changes in babel.sty are under Copyright by:
+
+  Copyright (C) 2001-2004  Chanop Silpa-Anan <chanop@debian.org>.
+
+
+Debian adaptations for tetex-base Package are under Copyright by:
+
+    Christoph Martin christoph.martin@uni-mainz.de (1998-2002)
+    Adrian Bunk <bunk@fs.tum.de> (2000-2002)
+    C.M. Connelly <cmc@debian.org> (2002)
+    Atsuhito KOHDA <kohda@debian.org> (2002-)
+    Hilmar Preusse <hille42@web.de> (2003-)
+    Stefan Ulrich <stefan-ulrich.nntp@zen.co.uk> (2003-)
+    Frank Küster <frank@kuesterei.ch> (2003-)
+    Florent Rougon <f.rougon@free.fr> (2004)
+    Norbert Preining <preining@logic.at> (2005)
+
+This list has first been compiled in July 2004, therefore it is
+probably incomplete (missing names and too short date
+ranges). Contributors of translations and other small patches are
+mentioned in changelog.Debian.
+
+The package was downloaded from CTAN:/systems/unix/teTeX
+
+On Debian GNU/Linux systems, the complete text of tetex-base licensing
+may be found in /usr/share/doc/tetex-base/copyright.
+
+
+The teTeX distribution, i.e. the tetex-base, tetex-extra and tetex-doc
+packages, together with the tetex-bin and tetex-src packages, is
+Copyright by Thomas Esser (1994-2005).
+
+The teTeX distribution is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.
+
+On Debian GNU/Linux systems, the complete text of the GNU General Public
+License may be found in /usr/share/common-licenses/GPL.
+
+
+The original babel.sty is generated with docstrip from babel.dtx, which is
+under Copyright by:
+
+%% 
+%% Copyright 1989-2004 Johannes L. Braams and any individual authors
+%% listed elsewhere in this file.  All rights reserved.
+%% 
+%% This file was generated from file(s) of the Babel system.
+%% ---------------------------------------------------------
+%% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status "maintained".
+%% 
+%% The Current Maintainer of this work is Johannes Braams.
+%% 
+%% This file may only be distributed together with a copy of the Babel
+%% system. You may however distribute the Babel system without
+%% such generated files.
+%% 
+%% The list of all files belonging to the Babel distribution is
+%% given in the file `manifest.bbl'. See also `legal.bbl for additional
+%% information.
+%% 
+%% The list of derived (unpacked) files belonging to the distribution
+%% and covered by LPPL is defined by the unpacking scripts (with
+%% extension .ins) which are part of the distribution.
+%%

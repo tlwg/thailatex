@@ -1,32 +1,65 @@
 thailatex (0.3.7-1) unstable; urgency=low
 
   * New maintainer (Closes:357871)
-  * New upstream release (Closes: #344554, #351501)
+    Thanks to Frank Küster for intensive sponsoring
+  * New upstream release
     - updated fonts
     - new Loma font
+    - new TDS conformance
     - addressed some fixes in 0.3.2-0.1 NMU
   * Acknowledged NMU, with some fixes addressed upstream
     (Closes: #318384, #338619)
-  * debian/control:
-    - put myself as the maintainer
-    - changed standards version to 3.6.2.2
-  * debian/changelog:
-    - converted to UTF-8
-  * debian/rules:
-    - used $DESTDIR instead of $prefix when "make install". This is the way
-      upstream has prepared for package building.
-    - updated thai.map location changed upstream
-    - removed upstream ChangLog zipping
-    - changed DH_COMPAT to 4
-  * debian/conffiles:
-    - removed, as we moved to debhelper compat level 4
-  * debian/docs:
-    - removed upstream ChangeLog installation
-    - added upstream NEWS
-  * debian/postrm:
-    - fixed shell script syntax error introduced in NMU
+  * Repackaged as non-native. (Closes: #344554)
+  * Bumped standards version to 3.6.2.2, with following changes:
+    - converted changelog to UTF-8
+  * General changes
+    + debian/control:
+      - put myself as the maintainer
+      - Build-Depends, rather than Build-Depends-Indep, on debhelper
+      - added optional dependencies on texlive-base-bin and texlive-latex-base,
+        thanks to Norbert Preining's suggestion
+    + debian/rules:
+      - used $DESTDIR instead of $prefix when "make install". This is the way
+        upstream has prepared for package building.
+      - removed unneeded dh_strip
+      - changed DH_COMPAT to 4
+    + debian/conffiles:
+      - removed, as we moved to debhelper compat level 4
+  * Used dh_installtex to install fonts
+    + debian/control:
+      - build-depends on tex-common >= 0.19 for a working dh_installtex
+      - added ${misc:Depends} and depended on tetex >= 3.0
+    + debian/rules:
+      - installed map config file with dh_installtex
+    + debian/10thailatex.cfg:
+      - renamed to "maps", and let dh_installtex handle it
+    + debian/dirs:
+      - removed /etc/texmf/updmap.d, as it's now handled by dh_installtex
+    + debian/postinst, debian/postrm:
+      - removed, as they are now replaced by dh_installtex auto-generated
+        scripts (Thanks to Norbert Preining for pointing out)
+  * Do not install thai.map under TEXMFSYSCONFIG
+    + debian/rules:
+      - removed thai.map installation, left it where upstream installed it
+    + debian/dirs:
+      - removed /etc/texmf/dvips, as we wouldn't install thai.map there any more
+    + debian/preinst:
+      - removed /etc/texmf/dvips/thai.map if unchanged from previous version
+  * Docs management
+    + debian/rules, debian/docs:
+      - replaced manual upstream ChangeLog installation with
+        dh_installchangelogs
+    + debian/docs:
+      - added upstream NEWS
+    + debian/README.Debian:
+      - rewritten
+    + debian/links:
+      - added, to register upstream README with texdoc
+    + debian/copyright:
+      - updated the download location and my e-mail address
+      - added copyright info for babel.sty
 
- -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Mon, 27 Mar 2006 15:08:37 +0700
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Fri, 28 Apr 2006 18:13:47 +0700
 
 thailatex (0.3.2-0.1) unstable; urgency=low
 
