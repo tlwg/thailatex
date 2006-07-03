@@ -1,3 +1,10 @@
+thailatex (0.3.7-2) UNRELEASED; urgency=low
+
+  * Bumped standard version to 3.7.2, no changes needed.
+  * debian/watch: Added.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Mon,  3 Jul 2006 16:13:20 +0700
+
 thailatex (0.3.7-1) unstable; urgency=low
 
   * New maintainer (Closes:357871)
