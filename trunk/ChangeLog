@@ -1,3 +1,13 @@
+2006-07-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Created `thai.dtx' for documenting and generating `thai.ldf'.
+
+	* configure.in, babel/Makefile.am, +babel/thai.{dtx,ins}.in,
+	-babel/thai.ldf:  Replaced `thai.ldf' with `thai.dtx'. Added
+	`thai.ins' and rules for docstripping `thai.dtx' into `thai.ldf'.
+	Also added rules for generating `thai.pdf' documentation from
+	`thai.dtx'.
+
 2006-03-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, NEWS:
