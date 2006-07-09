@@ -128,7 +128,10 @@
 % \changes{thai-1.0d}{2004/11/15}{Theppitak Karoonboonyanan:
 %    `pmono' is now `ttype'}
 % \changes{thai-1.1}{2006/07/05}{Theppitak Karoonboonyanan:
-%    Create `thai.dtx' for documenting and generating `thai.ldf'}
+%    Create `thai.dtx' for documenting and generating `thai.ldf'}.
+%    Remove unnecessary workarounds for inhibition of capitalization
+%    of headers, as the catcodes already do the job.
+%    Also remove the mysterious redefinitions of figure and table counters.
 %
 % \section{The Thai language}
 %
@@ -581,24 +584,6 @@
 %    \end{macrocode}
 %
 %    \subsection{Miscelleneous}
-%
-%    Odds and ends and workarounds.
-%
-%    Do not capitalize chapters \& sections in book headers
-%
-%    \begin{macrocode}
-\@ifclassloaded{book}{%
-  \renewcommand{\chaptermark}[1]{\markboth{\thaitext #1}{}}
-  \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-}{}
-%    \end{macrocode}
-%
-%    What is this for???
-%
-%    \begin{macrocode}
-\def\fnum@figure{\figurename\nobreakspace\thefigure}
-\def\fnum@table{\tablename\nobreakspace\thetable}
-%    \end{macrocode}
 %
 %    Initialize character codes for Thai
 %
