@@ -1,3 +1,9 @@
+2006-07-09  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx.in: Removed unnecessary workarounds for inhibition 
+	of capitalization of headers, as the catcodes already do the job.
+	Also removed the mysterious redefinitions of figure and table counters.
+
 2006-07-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Created `thai.dtx' for documenting and generating `thai.ldf'.
