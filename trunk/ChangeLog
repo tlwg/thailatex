@@ -1,3 +1,10 @@
+2006-10-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, babel/Makefile.am,
+	babel/thai.{dtx,ins}.in -> babel/thai.{dtx,ins}: Replace weird hack
+	for non-source-dir build by creating symlinks to source dir instead
+	of using AC_OUTPUT trick.
+
 2006-07-09  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/thai.dtx.in: Removed unnecessary workarounds for inhibition 
