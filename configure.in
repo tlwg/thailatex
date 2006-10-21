@@ -102,8 +102,6 @@ AC_SUBST(emacsdir)
 
 AC_OUTPUT(Makefile
   babel/Makefile
-  babel/thai.ins
-  babel/thai.dtx
   emacs/Makefile
   fonts/Makefile
   scripts/Makefile
