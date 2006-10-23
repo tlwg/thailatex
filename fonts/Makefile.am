@@ -1,46 +1,3 @@
-EXTRA_DIST = \
-	lthuni.enc \
-	garuda.pfb \
-	garuda_b.pfb \
-	garuda_o.pfb \
-	garuda_bo.pfb \
-	norasi.pfb \
-	norasi_b.pfb \
-	norasi_o.pfb \
-	norasi_i.pfb \
-	norasi_bo.pfb \
-	norasi_bi.pfb \
-	ttype.pfb \
-	ttype_b.pfb \
-	ttype_o.pfb \
-	ttype_bo.pfb \
-	purisa.pfb \
-	loma.pfb \
-	loma_b.pfb \
-	loma_o.pfb \
-	loma_bo.pfb \
-	garuda.afm \
-	garuda_b.afm \
-	garuda_o.afm \
-	garuda_bo.afm \
-	norasi.afm \
-	norasi_b.afm \
-	norasi_o.afm \
-	norasi_i.afm \
-	norasi_bo.afm \
-	norasi_bi.afm \
-	ttype.afm \
-	ttype_b.afm \
-	ttype_o.afm \
-	ttype_bo.afm \
-	purisa.afm \
-	loma.afm \
-	loma_b.afm \
-	loma_o.afm \
-	loma_bo.afm
-
-DISTCLEANFILES = thai.map
-
 type1dir = @texmfdir@/fonts/type1/public/thai
 afmdir = @texmfdir@/fonts/afm/public/thai
 tfmdir = @texmfdir@/fonts/tfm/public/thai
@@ -77,6 +34,10 @@ type1_DATA = \
 	ttype_b.pfb \
 	ttype_o.pfb \
 	ttype_bo.pfb \
+	ttypist.pfb \
+	ttypist_b.pfb \
+	ttypist_o.pfb \
+	ttypist_bo.pfb \
 	purisa.pfb \
 	loma.pfb \
 	loma_b.pfb \
@@ -98,6 +59,10 @@ afm_DATA = \
 	ttype_b.afm \
 	ttype_o.afm \
 	ttype_bo.afm \
+	ttypist.afm \
+	ttypist_b.afm \
+	ttypist_o.afm \
+	ttypist_bo.afm \
 	purisa.afm \
 	loma.afm \
 	loma_b.afm \
@@ -119,6 +84,10 @@ tfm_DATA = \
 	ttype_b.tfm \
 	ttype_o.tfm \
 	ttype_bo.tfm \
+	ttypist.tfm \
+	ttypist_b.tfm \
+	ttypist_o.tfm \
+	ttypist_bo.tfm \
 	purisa.tfm \
 	loma.tfm \
 	loma_b.tfm \
@@ -138,6 +107,10 @@ tfm_DATA = \
 	rttype_b.tfm \
 	rttype_o.tfm \
 	rttype_bo.tfm \
+	rttypist.tfm \
+	rttypist_b.tfm \
+	rttypist_o.tfm \
+	rttypist_bo.tfm \
 	rpurisa.tfm \
 	rloma.tfm \
 	rloma_b.tfm \
@@ -159,11 +132,20 @@ vf_DATA = \
 	ttype_b.vf \
 	ttype_o.vf \
 	ttype_bo.vf \
+	ttypist.vf \
+	ttypist_b.vf \
+	ttypist_o.vf \
+	ttypist_bo.vf \
 	purisa.vf \
 	loma.vf \
 	loma_b.vf \
 	loma_o.vf \
 	loma_bo.vf
+
+EXTRA_DIST = \
+	lthuni.enc \
+	$(type1_DATA) \
+	$(afm_DATA)
 
 # Local Rules
 
@@ -194,7 +176,6 @@ thai.map: $(tfm_DATA)
 
 install-data-hook:
 	@if test -z "$(DESTDIR)" ; then                                       \
-	  @TEXHASH@ ;                                                          \
 	  if test "$(UPDMAP_VER)" = "2"; then                                 \
 	    $(UPDMAP) --disable thai.map --nohash --nomkmap ;                 \
 	    $(UPDMAP) --enable Map thai.map ;                                 \
@@ -214,6 +195,7 @@ install-data-hook:
 	    echo "% thailatex"   >> $(PDFTEXCONFIG) ;                         \
 	    echo "map +thai.map" >> $(PDFTEXCONFIG) ;                         \
 	  fi ;                                                                \
+	  @TEXHASH@ ;                                                         \
 	else                                                                  \
 	  echo "***" ;                                                        \
 	  echo "*** Warning: tetex config files not patched" ;                \
@@ -235,11 +217,8 @@ uninstall-hook:
 	    sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
 	    mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ;                             \
 	  fi ;                                                                \
-	fi
+	fi ;                                                                  \
+	@TEXHASH@
 
-clean-local:
-	$(RM) *.vpl
-
-distclean-local:
-	$(RM) *.vf *.tfm
+CLEANFILES = *.vpl *.vf *.tfm thai.map
 
