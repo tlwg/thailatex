@@ -12,11 +12,7 @@ check_SCRIPTS = test-orchid.sh test-teststd.sh
 
 EXTRA_DIST = $(DOC_FILES) $(check_SCRIPTS)
 
-clean-local:
-	$(RM) *.log *.aux *.ttex *.dvi
-
-distclean-local: clean
-	$(RM) *.ps *.pdf
+CLEANFILES = *.log *.aux *.ttex *.dvi *.ps *.pdf
 
 SUFFIXES = .tex .dvi .ps .pdf
 

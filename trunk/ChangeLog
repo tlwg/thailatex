@@ -1,3 +1,21 @@
+2006-10-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/*.{afm,pfb}: Update fonts from thaifonts-scalable 0.4.5.
+
+	* fonts/Makefile.am, +fonts/ttypist*.{afm,pfb}:
+	* babel/Makefile.am, +babel/lthttypist.fd:
+	Add ttypist (Tlwg Typist) font from thaifonts-scalable 0.4.5.
+
+	* doc/teststd.tex: Add ttypist sample text.
+
+	* {fonts,doc}/Makefile.am: Use CLEANFILES instead of *clean-local
+	target. Also correctly clean files previously cleaned with distclean.
+
+	* fonts/Makefile.am: Call texhash after updmap.
+
+	* configure.in: When checking for new TDS, check for non-existence of
+	old TDS instead of existence of the new.
+
 2006-10-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, babel/Makefile.am,

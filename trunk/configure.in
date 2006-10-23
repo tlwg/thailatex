@@ -80,7 +80,7 @@ fi
 AC_SUBST(UPDMAP_VER)
 
 AC_MSG_CHECKING(for new TeX Directory Structure)
-AM_CONDITIONAL(NEW_TDS,test -d `eval echo $texmfdir/fonts/map`)
+AM_CONDITIONAL(NEW_TDS,test ! -d `eval echo $texmfdir/dvips/config`)
 if test "x$NEW_TDS_TRUE" = "x" ; then
   AC_MSG_RESULT(yes)
 else

@@ -15,6 +15,7 @@ $MMV -v "Garuda*" "garuda#1"
 $MMV -v "DBThaiText*" "dbtt#1"
 $MMV -v "Kinnari*" "kinnari#1"
 $MMV -v "TlwgTypewriter*" "ttype#1"
+$MMV -v "TlwgTypist*" "ttypist#1"
 $MMV -v "Purisa*" "purisa#1"
 $MMV -v "Loma*" "loma#1"
 
