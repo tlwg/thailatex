@@ -1,9 +1,21 @@
-thailatex (0.3.7-2) UNRELEASED; urgency=low
+thailatex (0.3.7-2) unstable; urgency=high
 
-  * Bumped standard version to 3.7.2, no changes needed.
+  * Urgency high due to RC bug fix.
+  * Fix upgrading from sarge:
+      - Remove diversion at postinst instead of preinst.  Also move away the
+        babel.sty before removing, and move it back afterward, to make
+        dpkg-divert work.
+    Thanks to Bill Allombert for discovering the bug and to Steve Langasek
+    for the solution.  (Closes: #393519)
+  * Add subversion to babel.sty to distinguish it from babel original.
+    Thanks to Frank Küster for suggesting.
+  * Bumped standard version to 3.7.2.2, no changes needed.
   * debian/watch: Added.
+  * debian/copyright:
+      - Clarify original authors and current maintainers info.
+      - Remove irrelevant tetex-base license terms. 
 
- -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Mon,  3 Jul 2006 16:13:20 +0700
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Thu, 19 Oct 2006 10:52:33 +0700
 
 thailatex (0.3.7-1) unstable; urgency=low
 

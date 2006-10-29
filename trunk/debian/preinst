@@ -15,14 +15,6 @@ set -e
 
 case "$1" in
     install|upgrade)
-#         dpkg-divert --package thailatex --add --rename \
-#              --divert /usr/share/texmf/tex/generic/babel/babel.sty.real \
-# 	     /usr/share/texmf/tex/generic/babel/babel.sty
-        # remove old diversion
-        dpkg-divert --package thailatex  --remove --rename \
-            --divert /usr/share/texmf/tex/generic/babel/babel.sty.real \
-	    /usr/share/texmf/tex/generic/babel/babel.sty
-
         # remove old thai.map in TEXMFSYSCONFIG
         old_md5sum=78e5add055dd03616e5bbfbe54db6947
         current_md5sum=`grep thai.map /var/lib/dpkg/status | cut -f 3 -d ' ' 2>/dev/null || true`
