@@ -8,6 +8,7 @@ BABEL_INS = thai.ldf $(BABEL_COMMON)
 BABEL_DOCS = thai.pdf
 
 EXTRA_DIST = $(BABEL_SRC)
+CLEANFILES = thai.log thai.aux thai.ldf thai.pdf
 
 babeldir = @texmfdir@/tex/generic/babel
 babel_DATA = $(BABEL_INS)

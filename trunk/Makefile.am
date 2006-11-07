@@ -1,4 +1,4 @@
-EXTRA_DIST = LICENSE thailatex.spec.in
+EXTRA_DIST = HISTORY COPYING.fonts thailatex.spec.in
 SUBDIRS = babel emacs fonts scripts doc
 
 DISTCLEANFILES = thailatex.spec
@@ -6,7 +6,7 @@ DISTCLEANFILES = thailatex.spec
 docdir = @docdir@
 
 pkgdocdir = $(docdir)/@PACKAGE@
-pkgdoc_DATA = LICENSE README
+pkgdoc_DATA = README
 
 #install-data-hook:
 #	@TEXHASH@

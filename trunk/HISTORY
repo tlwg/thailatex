@@ -1,0 +1,122 @@
+MAINTAINERSHIP
+
+thailatex was originally created by Surapan Meknavin in 1999, as a project
+under the National Electronics and Computer Technology Center (NECTEC).
+Granted by its license terms, it has been later imported to a public CVS and 
+maintained by Thai Linux Working Group (TLWG) community since version 0.2
+in 2000.
+
+RELICENSING
+
+Before version 0.3.8, thailatex was released under non-commercial license:
+
+---8<---
+  This package, "Thai Extension for LaTeX", is copyright (C) 1999  National
+  Electronics and Computer Technology Center (NECTEC), Thailand.  All rights
+  reserved.
+  
+  Redistribution and use in source and binary forms, with or without
+  modification are permitted provided that the following conditions
+  are met:
+  
+  1. Redistributions of the program must retain the above copyright notice,
+     this list of conditions and the following disclaimer.
+  
+  2. No charge more than random data distribution cost is associated with
+     the redistributions.
+  
+  3. The origin of this software must not be misinterpreted; you must not
+     claim that you wrote the original software.  If you use this software
+     in a product, an acknowledgement in the product documentation would be
+     appreciated but is not required.
+  
+  4. The name of the author may not be used to endorse or promote products
+     derived from this software without specific prior written permission.
+  
+  THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESSED
+  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OF THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+  
+  Surapant Meknavin,
+  National Electronics and Computer Technology Center (NECTEC), Thailand.
+  surapan@nectec.or.th
+---8<---
+
+The particular term has been found to break Debian Free Software Guidelines
+(DFSG), as well as Open Source Definitions, by limiting the users' rights
+to use the software in commercial cases:
+ 
+  2. No charge more than random data distribution cost is associated with
+     the redistributions.
+
+Therefore, a proposed idea is to relicense it to The LaTeX Project Public
+License (LPPL), to conform to DFSG and OSD, as well as to be compatible to
+other parts of Babel package, the target of the project.
+
+Although most of its maintainership over 6 years is done by TLWG members,
+that is done under the license terms granted by NECTEC, the copyright holder.
+
+Hence, the original author and copyright holder have been contacted for a
+grant to relicense it to The LaTeX Project Public License (LPPL).
+
+The original author's response is positive:
+
+---8<---
+  From: "Surapan Meknavin" <surapan@siamguru.com>
+  To: "Theppitak Karoonboonyanan" <thep@linux.thai.net>
+  Cc: "Kamthorn Krairaksa" <kamthorn.krairaksa@nectec.or.th>
+  Subject: Re: thailatex license
+  Date: Fri, 20 Oct 2006 14:32:49 +0700
+  
+  Dear Thep,
+  
+  Assuming that LPPL does not conflict with DFSG, I agree that the thailatex
+  package should be licensed under LPPL. I don't think there should be any
+  problem to remove the term you mentioned to make it free, as no one involved
+  in the package wants to make any money out of this since the beginning and
+  the term may be just there because we didn't aware of it. However, because
+  NECTEC is the entity who is taking care of thailatex package K. Kamthorn may
+  be the right person to help realize this.
+  
+  Best,
+  Surapan
+---8<---
+
+And the response from NECTEC is:
+
+---8<---
+
+  From: "pansak siriruchatapong" <srpansak@truemail.co.th>
+  To: <Thep@linux.thai.net>
+  Cc: "'Kamthorn Krairaksa'" <kamthorn.krairaksa@nectec.or.th>,
+  	"pansak siriruchatapong" <pansak.siriruchatapong@nnet.nectec.or.th>
+  Subject: relicense thailatex
+  Date: Tue, 7 Nov 2006 21:18:52 +0700
+
+  Dear Theppitak
+
+  Subject: Thai LaTeX Relicensing
+
+  The thailatex package owned by NECTEC is currently distributed under
+  non-commercial license, which is found to break open source definitions.
+  To make it true open source according to NECTEC's original intention,
+  and to be compatible with upstream source into which it is aimed to
+  merge, NECTEC agrees to change the license terms to the LaTeX Project
+  Public License (LPPL), and hereby assigns Mr. Theppitak Karoonboonyanan
+  from Thai Linux Working Group (TLWG) to proceed the relicensing, and to
+  maintain the project as the Current Maintainer, as specified in the
+  license.
+
+  Dr.Pansak Siriruchatapong
+
+  Director of National Electronics and Computer Technology Center (NECTEC)
+
+---8<---
+
+Therefore, thailatex is licensed under the LaTeX Project Public License
+(LPPL) since version 0.3.8.
+
