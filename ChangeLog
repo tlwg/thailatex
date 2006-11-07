@@ -1,3 +1,22 @@
+2006-11-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Relicensing to LPPL.
+
+	* AUTHORS: Clarify original author and current maintainers.
+	* COPYING, -LICENSE: Replace with LPPL Version 1.3c.
+	* +COPYING.fonts: Clarify fonts copyright and license info, as declared
+	in thaifonts-scalable package.
+	* +HISTORY: Add relicensing history.
+	* Makefile.am: Include new files in EXTRA_DIST. Remove removed file.
+	* configure.in: Update AC_INIT, as the referred file is now removed.
+	* babel/lth{garuda,norasi,loma,ttype,ttypist,purisa}.fd,
+	* babel/lthenc.def: Clarify files as part of thailatex package.
+	* babel/thai.dtx, babel/thswitch.sty: Update copyright info.
+
+	Minor clean-up.
+
+	* babel/Makefile.am: Clean latex-generated files.
+
 2006-10-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/*.{afm,pfb}: Update fonts from thaifonts-scalable 0.4.5.
