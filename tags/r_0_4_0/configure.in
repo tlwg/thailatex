@@ -1,0 +1,112 @@
+AC_INIT(babel/thai.dtx)
+AM_INIT_AUTOMAKE(thailatex, 0.4.0)
+
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_CHECK_PROGS(RMDIR,rmdir,no)
+
+AC_CHECK_PROGS(SED,sed,no)
+if test "x$SED" = "xno" ; then
+  AC_MSG_ERROR([You need sed (from sed distribution)])
+fi
+AC_CHECK_PROGS(LATEX,latex,no)
+if test "x$LATEX" = "xno" ; then
+  AC_MSG_ERROR([You need latex (from teTeX distribution)])
+fi
+AC_CHECK_PROGS(DVIPS,dvips,no)
+if test "x$DVIPS" = "xno" ; then
+  AC_MSG_ERROR([You need dvips (from teTeX distribution)])
+fi
+AC_CHECK_PROGS(PF2AFM,pf2afm,no)
+if test "x$PF2AFM" = "xno" ; then
+  AC_MSG_ERROR([You need pf2afm (from ghostscript distribution)])
+fi
+AC_CHECK_PROGS(AFM2TFM,afm2tfm,no)
+if test "x$AFM2TFM" = "xno" ; then
+  AC_MSG_ERROR([You need afm2tfm (from teTeX distribution)])
+fi
+AC_CHECK_PROGS(VPTOVF,vptovf,no)
+if test "x$VPTOVF" = "xno" ; then
+  AC_MSG_ERROR([You need vptovf (from teTeX distribution)])
+fi
+AC_CHECK_PROGS(PS2PDF,ps2pdf,no)
+if test "x$PS2PDF" = "xno" ; then
+  AC_MSG_ERROR([You need ps2pdf (from ghostscipt distribution)])
+fi
+AC_CHECK_PROGS(SWATH,swath,no)
+if test "x$SWATH" = "xno" ; then
+  AC_MSG_WARN([You may need swath (from swath distribution)])
+fi
+AC_CHECK_PROGS(CTTEX,cttex,no)
+if test "x$CTTEX" = "xno" ; then
+  AC_MSG_WARN([You may need cttex (from cttex distribution)])
+fi
+
+AC_ARG_WITH(docdir,
+  [AC_HELP_STRING([--with-docdir=DIR],
+                  [package document directory in DIR [PREFIX/share/doc]])],
+  [docdir="$withval"], [docdir=\$\{datadir\}/doc])
+AC_MSG_CHECKING(--with-docdir)
+AC_MSG_RESULT("$docdir")                                                                                                           
+AC_SUBST(docdir)
+
+AC_ARG_WITH(texmfdir,
+  [AC_HELP_STRING([--with-texmfdir=DIR],
+                  [texmf directory in DIR [PREFIX/share/texmf]])],
+  [texmfdir="$withval"], [texmfdir=${datadir}/texmf])
+AC_MSG_CHECKING(--with-texmfdir)
+AC_MSG_RESULT("$texmfdir")                                                                                                           
+AC_SUBST(texmfdir)
+
+dnl updmappath=`eval echo $PATH:$texmfdir/dvips/config`
+dnl AC_PATH_PROG(UPDMAP,updmap,no,$updmappath)
+dnl if test "x$UPDMAP" = "xno" ; then
+dnl   AC_MSG_ERROR([You need updmap (from teTeX distribution)])
+dnl fi
+AC_PATH_PROGS(UPDMAP,[updmap-sys updmap],no)
+if test "x$UPDMAP" = "xno" ; then
+  AC_MSG_WARN([Not a new updmap from teTeX 2, falling back to patching local maps])
+  UPDMAP_VER=1
+else
+  UPDMAP_VER=2
+  if echo "$UPDMAP" | grep updmap-sys > /dev/null 2>&1; then
+    # also fall back to updmap for non-root builds
+    AC_CHECK_PROGS(UPDMAP_FB,updmap,no)
+    if test "x$UPDMAP_FB" != "xno"; then
+      UPDMAP="$UPDMAP || $UPDMAP_FB"
+    fi
+  fi
+fi
+AC_SUBST(UPDMAP_VER)
+
+AC_MSG_CHECKING(for new TeX Directory Structure)
+AM_CONDITIONAL(NEW_TDS,test ! -d `eval echo $texmfdir/dvips/config`)
+if test "x$NEW_TDS_TRUE" = "x" ; then
+  AC_MSG_RESULT(yes)
+else
+  AC_MSG_RESULT(no)
+fi
+
+AC_PATH_PROG(TEXHASH,texhash,no)
+if test "x$TEXHASH" = "xno" ; then
+  AC_MSG_ERROR([You need texhash (from teTeX distribution)])
+fi
+
+AC_ARG_WITH(emacsdir,
+  [AC_HELP_STRING([--with-emacsdir=DIR],
+                  [emacs directory in DIR [PREFIX/share/emacs]])],
+  [emacsdir="$withval"], [emacsdir=${datadir}/emacs])
+AC_MSG_CHECKING(--with-emacsdir)
+AC_MSG_RESULT("$emacsdir")                                                                                                           
+AC_SUBST(emacsdir)
+
+AC_OUTPUT(Makefile
+  babel/Makefile
+  emacs/Makefile
+  fonts/Makefile
+  scripts/Makefile
+  scripts/sync-thailatex
+  scripts/sync-babel
+  doc/Makefile
+  thailatex.spec)
+
