@@ -1,3 +1,11 @@
+0.4.0 (2006-11-08)
+=====
+- Relicensed to LPPL, with permission from NECTEC, the copyright holder.
+- Create `thai.dtx' for documenting and generating `thai.ldf'.
+- Clean up some unneeded macros.
+- Update fonts from thaifonts-scalable 0.4.5.
+- Add ttypist (TLWG Typist) font.
+
 0.3.7 (2006-03-27)
 =====
 - Fix many package buidling issues.

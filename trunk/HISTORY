@@ -8,7 +8,7 @@ in 2000.
 
 RELICENSING
 
-Before version 0.3.8, thailatex was released under non-commercial license:
+Before version 0.4.0, thailatex was released under non-commercial license:
 
 ---8<---
   This package, "Thai Extension for LaTeX", is copyright (C) 1999  National
@@ -118,5 +118,5 @@ And the response from NECTEC is:
 ---8<---
 
 Therefore, thailatex is licensed under the LaTeX Project Public License
-(LPPL) since version 0.3.8.
+(LPPL) since version 0.4.0.
 
