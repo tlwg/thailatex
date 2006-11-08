@@ -43,41 +43,30 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/tmp.
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/thailatex
-	rm -rf debian/thailatex/usr/share/doc
-
-	rm -f debian/thailatex/usr/share/emacs/site-lisp/site-start.el
-	mv debian/thailatex/usr/share/emacs/site-lisp/thai-latex-setup.el debian/thailatex/usr/share/emacs/site-lisp/thailatex
-
-	rm -rf debian/thailatex/usr/bin
-	rm -rf debian/thailatex/usr/sbin
-
-	cp debian/babel.sty debian/thailatex/usr/share/texmf/tex/generic/babel
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 
 	dh_installtex
 
 # Build architecture-independent files here.
 binary-indep: build install
-# We have nothing to do by default.
-
-# Build architecture-dependent files here.
-binary-arch: build install
-#	dh_testversion
 	dh_testdir
 	dh_testroot
 	dh_installdocs
 	dh_installexamples doc/orchid.tex doc/teststd.tex doc/Makefile
-	dh_installmenu
 	dh_installemacsen
 	dh_installchangelogs ChangeLog
+	dh_install
 	dh_link
 	dh_compress
 	dh_fixperms
 	dh_installdeb
-	dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
+
+# Build architecture-dependent files here.
+binary-arch: build install
+# We have nothing to do.
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install configure

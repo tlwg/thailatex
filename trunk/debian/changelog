@@ -1,3 +1,27 @@
+thailatex (0.4.0-1) unstable; urgency=medium
+
+  * Urgency medium due to RC bug fix.
+  * New upstream release
+    - Relicensed to LPPL, with permission from NECTEC, the copyright holder.
+      (Closes: #394283)
+    - Create `thai.dtx' for documenting and generating `thai.ldf'.
+    - Clean up some unneeded macros.
+    - Update fonts from thaifonts-scalable 0.4.5.
+    - Add ttypist (TLWG Typist) font.
+  * debian/copyright:
+    - Update copyright info.
+    - Add fonts copyright.
+  * debian/docs:
+    - Ship upstream HISTORY file that describes the license change.
+  * debian/rules, debian/install:
+    - Move build rules from build-arch to build-indep.
+    - Remove unused dh_installmenu, dh_shlibdeps.
+    - Install files using dh_install instead of hard-coded shell scripts.
+  * debian/links, debian/doc-base:
+    - Install the generated `thai.pdf' to doc-base and texdoc.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Wed,  8 Nov 2006 14:56:37 +0700
+
 thailatex (0.3.7-2) unstable; urgency=high
 
   * Urgency high due to RC bug fix.
