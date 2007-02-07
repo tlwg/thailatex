@@ -1,3 +1,10 @@
+2007-02-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/garuda*.{afm,pfb}: Get new Garuda fonts from
+	thaifonts-scalable CVS snapshot, where duplicated encodings are
+	removed. This fixes ligkern bug for endash, emdash, as reported by
+	Pasu Boonvisut <bpasu@intania85.org>.
+
 2006-11-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, NEWS, HISTORY:
