@@ -20,7 +20,7 @@ set -e
 case "$1" in
     configure)
         TEXDIR=/usr/share/texmf/tex/generic/babel
-        if [ -e $TEXDIR/babel.sty -a ! -e $TEXDIR/babel.sty.undivert ]; then
+        if [ -e $TEXDIR/babel.sty ] && [ ! -e $TEXDIR/babel.sty.undivert ]; then
             mv $TEXDIR/babel.sty $TEXDIR/babel.sty.undivert
         fi
         dpkg-divert --package thailatex  --remove --rename \

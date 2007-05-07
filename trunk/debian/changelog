@@ -1,3 +1,18 @@
+thailatex (0.4.0-2) unstable; urgency=medium
+
+  * Urgency medium due to RC bug fix.
+  * Replace tetex-bin build-dep with texlive-font-utils and texlive-latex-base,
+    fixing FTBFS in lenny/sid. (Closes: #422472)
+  * Drop unneeded gs build-dep, just gs-common is enough.
+  * Drop obsolete tetex-bin, tetex-base deps.
+  * debian/postinst: Use shell condition instead of non-POSIX -a option of
+    test.
+  * debian/rules: Remove DH_COMPAT setting. Use debian/compat instead. Bump
+    debhelper compatibility to version 5.
+  * debian/doc-base: Remove last empty line, to quiet lintian.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sun, 06 May 2007 18:48:51 +0700
+
 thailatex (0.4.0-1) unstable; urgency=medium
 
   * Urgency medium due to RC bug fix.
