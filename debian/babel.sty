@@ -7,7 +7,7 @@
 %% babel.dtx  (with options: `package')
 %% This is a generated file.
 %% 
-%% Copyright 1989-2004 Johannes L. Braams and any individual authors
+%% Copyright 1989-2005 Johannes L. Braams and any individual authors
 %% listed elsewhere in this file.  All rights reserved.
 %% 
 %% This file was generated from file(s) of the Babel system.
@@ -39,23 +39,30 @@
 %%
 \NeedsTeXFormat{LaTeX2e}[1998/06/01]
 %% File 'babel.dtx'
-%%\ProvidesFile{babel.dtx}[2004/11/20 v3.8d The Babel package]
+%%\ProvidesFile{babel.dtx}[2005/11/23 v3.8h The Babel package]
 %% Babel package for LaTeX2e.
-%% Copyright (C) 1989 -- 2004 by Johannes Braams,
+%% Copyright (C) 1989 -- 2005 by Johannes Braams,
 %%                            TeXniek
 %%                            all rights reserved.
 %% Please report errors to: J.L. Braams
 %%                          babel at braams.cistron.nl
 \ProvidesPackage{babel}
-                [2006/10/18 v3.8d.thai1 %
+                [2005/11/23 v3.8h.thai1 %
      The Babel package]
 \ifx\LdfInit\@undefined\input babel.def\relax\fi
 \DeclareOption{acadian}{\input{frenchb.ldf}}
+\DeclareOption{albanian}{\input{albanian.ldf}}
 \DeclareOption{afrikaans}{\input{dutch.ldf}}
 \DeclareOption{american}{\input{english.ldf}}
 \DeclareOption{australian}{\input{english.ldf}}
 \DeclareOption{austrian}{\input{germanb.ldf}}
-\DeclareOption{bahasa}{\input{bahasa.ldf}}
+\DeclareOption{bahasa}{\input{bahasai.ldf}}
+\DeclareOption{indonesian}{\input{bahasai.ldf}}
+\DeclareOption{indon}{\input{bahasai.ldf}}
+\DeclareOption{bahasai}{\input{bahasai.ldf}}
+\DeclareOption{malay}{\input{bahasam.ldf}}
+\DeclareOption{meyalu}{\input{bahasam.ldf}}
+\DeclareOption{bahasam}{\input{bahasam.ldf}}
 \DeclareOption{basque}{\input{basque.ldf}}
 \DeclareOption{brazil}{\input{portuges.ldf}}
 \DeclareOption{brazilian}{\input{portuges.ldf}}
@@ -188,6 +195,8 @@
       \@safe@activestrue
       \org@vrefpagenum{#1}{#2}%
       \@safe@activesfalse}%
+    \expandafter\def\csname Ref \endcsname#1{%
+      \protected@edef\@tempa{\org@ref{#1}}\expandafter\MakeUppercase\@tempa}
     }{}%
   }
 \AtBeginDocument{%

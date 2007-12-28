@@ -4,7 +4,10 @@ Priority: optional
 Maintainer: Theppitak Karoonboonyanan <thep@linux.thai.net>
 Build-Depends: debhelper (>=4.0.0)
 Build-Depends-Indep: texlive-font-utils, texlive-latex-base, tex-common (>=0.19), gs-common
-Standards-Version: 3.7.2.2
+Vcs-Cvs: pserver:anonymous@linux.thai.net:/home/cvs software/thailatex
+Vcs-Browser: http://linux.thai.net/viewvc/viewvc.cgi/software/thailatex/
+Homepage: http://linux.thai.net/projects/thailatex
+Standards-Version: 3.7.3.0
 
 Package: thailatex
 Architecture: all 
