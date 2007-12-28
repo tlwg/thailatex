@@ -17,25 +17,31 @@ Preprocessing
 As Thai has no word delimitor, you need some processing to make TeX wrap
 lines at proper positions.  Currently, preprocessing with programs like 
 `swath' or `cttex' (both available in Debian) is recommended.  These
-programs analyze Thai texts in your document with dictionary look up
+programs analyze Thai text in your document with dictionary look up
 and insert word break commands {\wbr} at word boundaries, so that TeX
 knows where to break lines.
 
 With swath, a quick command to do so is:
+
   $ swath -f latex < yourdoc.tex > yourdoc.ttex
+
 or if you prefer cttex:
+
   $ cttex -W < yourdoc.tex > yourdoc.ttex
+
 
 Please consult the document of the corresponding packages for the full
 options of each program.
 
 After this preprocessing, you can compile your document with usual LaTeX 
 programs, for example:
+
   $ latex yourdoc.ttex
   $ dvips yourdoc.dvi
+
 or with pdflatex:
+
   $ pdflatex yourdoc.ttex
+
 and so on.
 
-
- -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Tue, 25 Apr 2006 09:06:28 +0700

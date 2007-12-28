@@ -1,3 +1,12 @@
+thailatex (0.4.0-4) UNRELEASED; urgency=low
+
+  * debian/control: Adjust package description. (Thanks Paul Wise.)
+  * debian/README.Debian: Fix typo and add blank lines for readability.
+    (Thanks Paul Wise.)
+  * Bump debhelper build-dep version to >=5.0.0. (Thanks Paul Wise.)
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Fri, 28 Dec 2007 13:17:12 +0700
+
 thailatex (0.4.0-3) unstable; urgency=low
 
   * debian/babel.sty: Update to v3.8h, and apply usual changes.
