@@ -13,14 +13,31 @@ set -e
 #
 # For details see /usr/share/doc/packaging-manual/
 
+# Remove a no-longer used conffile
+rm_conffile() {
+    PKGNAME="$1"
+    CONFFILE="$2"
+
+    if [ -e "$CONFFILE" ]; then
+        md5sum="`md5sum \"$CONFFILE\" | sed -e \"s/ .*//\"`"
+        old_md5sum="`dpkg-query -W -f='${Conffiles}' $PKGNAME \
+                    | sed -n -e \"\\\\' $CONFFILE'{s/ obsolete$//;s/.* //p}\"`"
+        if [ "$md5sum" != "$old_md5sum" ]; then
+            echo "Obsolete conffile $CONFFILE has been modified by you."
+            echo "Saving as $CONFFILE.dpkg-bak ..."
+            mv -f "$CONFFILE" "$CONFFILE".dpkg-bak
+        else
+            echo "Removing obsolete conffile $CONFFILE ..."
+            rm -f "$CONFFILE"
+        fi
+    fi
+}
+
 case "$1" in
     install|upgrade)
-        # remove old thai.map in TEXMFSYSCONFIG
-        old_md5sum=78e5add055dd03616e5bbfbe54db6947
-        current_md5sum=`grep thai.map /var/lib/dpkg/status | cut -f 3 -d ' ' 2>/dev/null || true`
-        if [ $old_md5sum = "$current_md5sum" ]; then
-            rm -f /etc/texmf/dvips/thai.map 2>/dev/null
-        fi
+        if dpkg --compare-versions "$2" le "0.4.0-2"; then
+	    rm_conffile thailatex "/etc/texmf/updmap.d/10thailatex.cfg"
+	fi
     ;;
 
     abort-upgrade)

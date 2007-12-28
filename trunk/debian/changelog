@@ -1,3 +1,22 @@
+thailatex (0.4.0-3) unstable; urgency=low
+
+  * debian/babel.sty: Update to v3.8h, and apply usual changes.
+  * debian/copyright: Rewrite in machine-interpretable format.
+  * debian/postinst: Remove. Its only purpose was to remove diversion, which
+    has gone since etch release.
+  * debian/dirs: Remove, unnecessary.
+  * debian/preinst:
+    - Remove old config file /etc/texmf/updmap.d/10thailatex.cfg which was
+      left from old versions. (Closes: #455459)
+    - No more handle /etc/texmf/dvips/thai.map removal. It has long gone
+      before etch release.
+  * debian/rules: Do not ignore 'make distclean' errors.
+  * debian/doc-base: Fix typo. Thanks lintian.
+  * debian/control: Add Vcs-Cvs, Vcs-Browser and Homepage info.
+  * Bump standards version to 3.7.3.0, no changes needed.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Tue, 18 Dec 2007 18:52:56 +0700
+
 thailatex (0.4.0-2) unstable; urgency=medium
 
   * Urgency medium due to RC bug fix.
