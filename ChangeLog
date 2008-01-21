@@ -1,3 +1,20 @@
+2008-01-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/garuda*.{afm,pfb}, fonts/norasi*.{afm,pfb},
+	fonts/loma*.{afm,pfb}: Update fonts from thaifonts-scalable 0.4.9.
+
+	* fonts/Makefile.am, fonts/kinnari*.{afm,pfb},
+	+fonts/waree*.{afm,pfb}, +fonts/umpush*.{afm,pfb},
+	+fonts/sawasdee*.{afm,pfb}: Add Kinnari back to the distribution.
+	Add new fonts: Waree, Umpush and Sawasdee from t-s 0.4.9.
+
+	* fonts/Makefile.am: Rewrite variables using sed substitution instead
+	of exhaustive lists.
+
+	* babel/Makefile.am, +babel/lthwaree.fd, +babel/lthumpush.fd,
+	+babel/lthsawasdee.fd: Add Kinnari back to the distribution.
+	Add font descriptors for new fonts: Waree, Umpush and Sawasdee.
+
 2007-02-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/garuda*.{afm,pfb}: Get new Garuda fonts from
