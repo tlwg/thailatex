@@ -19,133 +19,67 @@ enc_DATA = lthuni.enc
 
 map_DATA = thai.map
 
-type1_DATA = \
-	garuda.pfb \
-	garuda_b.pfb \
-	garuda_o.pfb \
-	garuda_bo.pfb \
-	norasi.pfb \
-	norasi_b.pfb \
-	norasi_o.pfb \
-	norasi_i.pfb \
-	norasi_bo.pfb \
-	norasi_bi.pfb \
-	ttype.pfb \
-	ttype_b.pfb \
-	ttype_o.pfb \
-	ttype_bo.pfb \
-	ttypist.pfb \
-	ttypist_b.pfb \
-	ttypist_o.pfb \
-	ttypist_bo.pfb \
-	purisa.pfb \
-	loma.pfb \
-	loma_b.pfb \
-	loma_o.pfb \
-	loma_bo.pfb
+FONTS = \
+	kinnari \
+	kinnari_b \
+	kinnari_o \
+	kinnari_i \
+	kinnari_bo \
+	kinnari_bi \
+	garuda \
+	garuda_b \
+	garuda_o \
+	garuda_bo \
+	norasi \
+	norasi_b \
+	norasi_o \
+	norasi_i \
+	norasi_bo \
+	norasi_bi \
+	ttype \
+	ttype_b \
+	ttype_o \
+	ttype_bo \
+	ttypist \
+	ttypist_b \
+	ttypist_o \
+	ttypist_bo \
+	purisa \
+	loma \
+	loma_b \
+	loma_o \
+	loma_bo \
+	waree \
+	waree_b \
+	waree_o \
+	waree_bo \
+	umpush \
+	umpush_b \
+	umpush_o \
+	umpush_bo \
+	sawasdee \
+	sawasdee_b \
+	sawasdee_o \
+	sawasdee_bo
 
-afm_DATA = \
-	garuda.afm \
-	garuda_b.afm \
-	garuda_o.afm \
-	garuda_bo.afm \
-	norasi.afm \
-	norasi_b.afm \
-	norasi_o.afm \
-	norasi_i.afm \
-	norasi_bo.afm \
-	norasi_bi.afm \
-	ttype.afm \
-	ttype_b.afm \
-	ttype_o.afm \
-	ttype_bo.afm \
-	ttypist.afm \
-	ttypist_b.afm \
-	ttypist_o.afm \
-	ttypist_bo.afm \
-	purisa.afm \
-	loma.afm \
-	loma_b.afm \
-	loma_o.afm \
-	loma_bo.afm
+PFBFILES = $(shell echo $(FONTS) | sed 's/[^ ]*/&.pfb/g')
+AFMFILES = $(shell echo $(FONTS) | sed 's/[^ ]*/&.afm/g')
+TFMFILES = $(shell echo $(FONTS) | sed 's/[^ ]*/&.tfm/g')
+RTFMFILES = $(shell echo $(FONTS) | sed 's/[^ ]*/r&.tfm/g')
+VFFILES = $(shell echo $(FONTS) | sed 's/[^ ]*/&.vf/g')
 
-tfm_DATA = \
-	garuda.tfm \
-	garuda_b.tfm \
-	garuda_o.tfm \
-	garuda_bo.tfm \
-	norasi.tfm \
-	norasi_b.tfm \
-	norasi_o.tfm \
-	norasi_i.tfm \
-	norasi_bo.tfm \
-	norasi_bi.tfm \
-	ttype.tfm \
-	ttype_b.tfm \
-	ttype_o.tfm \
-	ttype_bo.tfm \
-	ttypist.tfm \
-	ttypist_b.tfm \
-	ttypist_o.tfm \
-	ttypist_bo.tfm \
-	purisa.tfm \
-	loma.tfm \
-	loma_b.tfm \
-	loma_o.tfm \
-	loma_bo.tfm \
-	rgaruda.tfm \
-	rgaruda_b.tfm \
-	rgaruda_o.tfm \
-	rgaruda_bo.tfm \
-	rnorasi.tfm \
-	rnorasi_b.tfm \
-	rnorasi_o.tfm \
-	rnorasi_i.tfm \
-	rnorasi_bo.tfm \
-	rnorasi_bi.tfm \
-	rttype.tfm \
-	rttype_b.tfm \
-	rttype_o.tfm \
-	rttype_bo.tfm \
-	rttypist.tfm \
-	rttypist_b.tfm \
-	rttypist_o.tfm \
-	rttypist_bo.tfm \
-	rpurisa.tfm \
-	rloma.tfm \
-	rloma_b.tfm \
-	rloma_o.tfm \
-	rloma_bo.tfm
+type1_DATA = $(PFBFILES)
 
-vf_DATA = \
-	garuda.vf \
-	garuda_b.vf \
-	garuda_o.vf \
-	garuda_bo.vf \
-	norasi.vf \
-	norasi_b.vf \
-	norasi_o.vf \
-	norasi_i.vf \
-	norasi_bo.vf \
-	norasi_bi.vf \
-	ttype.vf \
-	ttype_b.vf \
-	ttype_o.vf \
-	ttype_bo.vf \
-	ttypist.vf \
-	ttypist_b.vf \
-	ttypist_o.vf \
-	ttypist_bo.vf \
-	purisa.vf \
-	loma.vf \
-	loma_b.vf \
-	loma_o.vf \
-	loma_bo.vf
+afm_DATA = $(AFMFILES)
+
+tfm_DATA = $(TFMFILES) $(RTFMFILES)
+
+vf_DATA = $(VFFILES)
 
 EXTRA_DIST = \
 	lthuni.enc \
-	$(type1_DATA) \
-	$(afm_DATA)
+	$(PFBFILES) \
+	$(AFMFILES)
 
 # Local Rules
 

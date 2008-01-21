@@ -1,7 +1,9 @@
 BABEL_COMMON = thai.sty thswitch.sty lthenc.def \
-	lthnorasi.fd lthgaruda.fd \
+	lthkinnari.fd lthgaruda.fd lthnorasi.fd \
 	lthttype.fd lthttypist.fd \
-	lthpurisa.fd lthloma.fd
+	lthpurisa.fd lthloma.fd \
+	lthwaree.fd lthumpush.fd
+	lthsawasdee.fd
 
 BABEL_SRC = thai.dtx thai.ins $(BABEL_COMMON)
 BABEL_INS = thai.ldf $(BABEL_COMMON)
