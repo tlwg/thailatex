@@ -1,5 +1,10 @@
 2008-01-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/Makefile.am: Add a missing backspace at end of line in
+	previous commit. lthsawasdee.fd was not included due to this error.
+
+2008-01-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/garuda*.{afm,pfb}, fonts/norasi*.{afm,pfb},
 	fonts/loma*.{afm,pfb}: Update fonts from thaifonts-scalable 0.4.9.
 
