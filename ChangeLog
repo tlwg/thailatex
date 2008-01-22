@@ -1,3 +1,12 @@
+2008-01-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/kinnari.{afm,pfb}, fonts/kinnari_o.{afm,pfb}: Get new version
+	from thaifonts-scalable CVS snapshot, correcting SARA AM width.
+
+	* fonts/kinnari_i.{afm,pfb}: Get new version from thaifonts-scalable
+	CVS snapshot, with improved hinting for SARA AA and references usage
+	for SARA AM.
+
 2008-01-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/ttypist_b.{afm,pfb}: Get new version from thaifonts-scalable
