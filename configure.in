@@ -3,12 +3,10 @@ AM_INIT_AUTOMAKE(thailatex, 0.4.0)
 
 AC_PROG_INSTALL
 AC_PROG_LN_S
+AC_PROG_AWK
+AC_PROG_SED
 AC_CHECK_PROGS(RMDIR,rmdir,no)
 
-AC_CHECK_PROGS(SED,sed,no)
-if test "x$SED" = "xno" ; then
-  AC_MSG_ERROR([You need sed (from sed distribution)])
-fi
 AC_CHECK_PROGS(LATEX,latex,no)
 if test "x$LATEX" = "xno" ; then
   AC_MSG_ERROR([You need latex (from teTeX distribution)])
