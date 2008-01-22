@@ -1,5 +1,44 @@
 2008-01-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* configure.in: Check for sed with AC_PROG_SED instead of manual
+	AC_CHECK_PROGS. Also check for awk, as required by the added code.
+
+	* fonts/Makefile.am, fonts/lthuni.enc, +fonts/thailigs.enc,
+	+fonts/thai-dummy.afm: Support the case of "PO PLA + SARA UU + MAI EK",
+	with the afm2tfm trick proposed by Werner Lemberg in "Thai fonts",
+	TUGboat Volume 21 (2000), No. 2:
+	  - Split lthuni.enc into lthuni.enc + thailigs.enc, with LIGKERN
+	    rules moved to thailigs.enc
+	  - Add .left variants for below-base signs at character 0x01, 0x02,
+	    0x03, with *.left names in thailigs.enc, and with real glyph names
+	    without .left extensions in lthuni.enc.
+	  - Add separate LIGKERN rules for below-base signs when placed under
+	    base characters with long-shooting ascender.
+	  - Do the trick by generating thailigs.vpl from thailigs.enc +
+	    thai-dummy.afm and merge the resulting LIGTABLE into ligature-less
+	    VPL's generated from fonts' AFM + lthuni.enc.
+	  - The LIGTABLE in thailigs.vpl will process the below-base marks
+	    under those long-descender chars by placing glyphs 0x01, 0x02,
+	    0x03, as referred to by *.left names in LIGKERN rules, for them.
+	    But the character map part in fonts' VPL will map these glyphs to
+	    usual names for the marks, due to what described in lthuni.enc.
+	  - As a result, the below-base marks have two variants for LIGKERN,
+	    which both referring to the same glyphs.
+	  - See the TUGboat article for more details.
+	    http://www.tug.org/TUGboat/Articles/tb21-2/tb67lemb.pdf
+
+	* fonts/lthuni.enc, fonts/thailigs.enc: Adjust the LTHEncoding:
+	  - Remove compwordmark (0x17).
+	  - Rename perthousandzero to perthousand (0x18).
+	  - Rename visualspace to space (0x20).
+	  - Remove duplicated hyphen at 0x7f.
+	  - Remove duplicated nonbreakingspace at 0xdb.
+	  - Rename ThaiWordBreak to zerowidthspace at 0xdc.
+
+	* doc/teststd.tex: Add test samples for "PO PLA + SARA UU + MAI EK".
+
+2008-01-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/kinnari.{afm,pfb}, fonts/kinnari_o.{afm,pfb}: Get new version
 	from thaifonts-scalable CVS snapshot, correcting SARA AM width.
 

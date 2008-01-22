@@ -78,13 +78,24 @@ vf_DATA = $(VFFILES)
 
 EXTRA_DIST = \
 	lthuni.enc \
+	thailigs.enc \
+	thai-dummy.afm \
 	$(PFBFILES) \
 	$(AFMFILES)
 
 # Local Rules
 
+thailigs.vpl: thailigs.enc thai-dummy.afm
+	if [ ! -f thai-dummy.afm ]; then \
+	  $(LN_S) $(srcdir)/thai-dummy.afm thai-dummy.afm; \
+	fi
+	if [ ! -f thailigs.enc ]; then \
+	  $(LN_S) $(srcdir)/thailigs.enc thailigs.enc; \
+	fi
+	$(AFM2TFM) thai-dummy.afm -v $@ -T thailigs.enc thailigs.tfm
+
 r%.tfm: %.afm lthuni.enc
-%.vpl: %.afm lthuni.enc
+%.vpl: %.afm lthuni.enc thailigs.vpl
 	if [ ! -f $*.afm ]; then \
 	  $(LN_S) $(srcdir)/$*.afm $*.afm; \
 	fi
@@ -93,6 +104,11 @@ r%.tfm: %.afm lthuni.enc
 	fi
 	$(AFM2TFM) $*.afm -v $*.vpl -T lthuni.enc r$*.tfm \
 	| $(SED) "s/$$/ <$*.pfb/" >> thai.map
+	TMPFILE=`mktemp /tmp/tltx.XXXXXXXXX` && \
+	$(AWK) "BEGIN {show=1} /LIGTABLE/ {show=0} {if(show) print}" $*.vpl > $$TMPFILE && \
+	$(AWK) "BEGIN {show=0} /LIGTABLE/ {show=1} /CHARACTER/ {show=0} {if(show) print}" thailigs.vpl >> $$TMPFILE && \
+	$(AWK) "BEGIN {show=0} /CHARACTER/ {show=1} {if(show) print}" $*.vpl >> $$TMPFILE && \
+	mv $$TMPFILE $*.vpl
 
 %.tfm: %.vpl
 	$(VPTOVF) $*
