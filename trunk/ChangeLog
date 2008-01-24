@@ -1,3 +1,10 @@
+2008-01-24  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* COPYING.fonts: Update copyright info from thaifonts-scalable 0.4.9,
+	plus minor changes from its CVS snapshot. Update URL for
+	thaifonts-scalable project page.
+	* +GPL: Added, as referred to from COPYING.fonts.
+
 2008-01-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in: Check for sed with AC_PROG_SED instead of manual
