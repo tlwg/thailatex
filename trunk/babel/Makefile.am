@@ -12,7 +12,7 @@ BABEL_DOCS = thai.pdf
 EXTRA_DIST = $(BABEL_SRC)
 CLEANFILES = thai.log thai.aux thai.ldf thai.pdf
 
-babeldir = @texmfdir@/tex/generic/babel
+babeldir = $(texmfdir)/tex/generic/babel
 babel_DATA = $(BABEL_INS)
 
 doc_DATA = $(BABEL_DOCS)

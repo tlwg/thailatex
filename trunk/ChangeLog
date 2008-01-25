@@ -1,5 +1,11 @@
 2008-01-25  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/Makefile.am, fonts/Makefile.am, emacs/Makefile.am:
+	Refer to texmfdir and emacsdir with Makefile variables, rather than
+	autoconf substitutions.
+
+2008-01-25  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in: Use ${datarootdir} instead of ${datadir} for default
 	texmfdir and emacsdir, eliminating undefined referals to ${datarootdir}
 	in the generated script/sync-thailatex.
