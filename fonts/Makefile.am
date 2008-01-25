@@ -1,19 +1,19 @@
-type1dir = @texmfdir@/fonts/type1/public/thai
-afmdir = @texmfdir@/fonts/afm/public/thai
-tfmdir = @texmfdir@/fonts/tfm/public/thai
-vfdir  = @texmfdir@/fonts/vf/public/thai
+type1dir = $(texmfdir)/fonts/type1/public/thai
+afmdir = $(texmfdir)/fonts/afm/public/thai
+tfmdir = $(texmfdir)/fonts/tfm/public/thai
+vfdir  = $(texmfdir)/fonts/vf/public/thai
 
 if NEW_TDS
-encdir = @texmfdir@/fonts/enc/dvips/thai
-mapdir = @texmfdir@/fonts/map/dvips/thai
+encdir = $(texmfdir)/fonts/enc/dvips/thai
+mapdir = $(texmfdir)/fonts/map/dvips/thai
 else
-encdir = @texmfdir@/dvips/base
-mapdir = @texmfdir@/dvips/config
+encdir = $(texmfdir)/dvips/base
+mapdir = $(texmfdir)/dvips/config
 endif
 
-DVIPSCONFIG=$(DESTDIR)/@texmfdir@/dvips/config/config.ps
-PDFTEXCONFIG=$(DESTDIR)/@texmfdir@/pdftex/config/pdftex.cfg
-#UPDMAPCONFIG=$(DESTDIR)/@texmfdir@/web2c/updmap.cfg
+DVIPSCONFIG=$(DESTDIR)/$(texmfdir)/dvips/config/config.ps
+PDFTEXCONFIG=$(DESTDIR)/$(texmfdir)/pdftex/config/pdftex.cfg
+#UPDMAPCONFIG=$(DESTDIR)/$(texmfdir)/web2c/updmap.cfg
 
 enc_DATA = lthuni.enc
 

@@ -1,6 +1,6 @@
 EXTRA_DIST = thai-latex-setup.el
 
-emacslispdir = @emacsdir@/site-lisp
+emacslispdir = $(emacsdir)/site-lisp
 emacslisp_DATA = thai-latex-setup.el
 
 EMACS_SITE_START=$(DESTDIR)$(emacslispdir)/site-start.el
