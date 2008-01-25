@@ -3,10 +3,7 @@ SUBDIRS = babel emacs fonts scripts doc
 
 DISTCLEANFILES = thailatex.spec
 
-docdir = @docdir@
-
-pkgdocdir = $(docdir)/@PACKAGE@
-pkgdoc_DATA = README
+doc_DATA = README
 
 #install-data-hook:
 #	@TEXHASH@
