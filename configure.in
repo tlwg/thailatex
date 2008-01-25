@@ -40,18 +40,10 @@ if test "x$CTTEX" = "xno" ; then
   AC_MSG_WARN([You may need cttex (from cttex distribution)])
 fi
 
-AC_ARG_WITH(docdir,
-  [AC_HELP_STRING([--with-docdir=DIR],
-                  [package document directory in DIR [PREFIX/share/doc]])],
-  [docdir="$withval"], [docdir=\$\{datadir\}/doc])
-AC_MSG_CHECKING(--with-docdir)
-AC_MSG_RESULT("$docdir")                                                                                                           
-AC_SUBST(docdir)
-
 AC_ARG_WITH(texmfdir,
   [AC_HELP_STRING([--with-texmfdir=DIR],
                   [texmf directory in DIR [PREFIX/share/texmf]])],
-  [texmfdir="$withval"], [texmfdir=${datadir}/texmf])
+  [texmfdir="$withval"], [texmfdir=${datarootdir}/texmf])
 AC_MSG_CHECKING(--with-texmfdir)
 AC_MSG_RESULT("$texmfdir")                                                                                                           
 AC_SUBST(texmfdir)
@@ -93,7 +85,7 @@ fi
 AC_ARG_WITH(emacsdir,
   [AC_HELP_STRING([--with-emacsdir=DIR],
                   [emacs directory in DIR [PREFIX/share/emacs]])],
-  [emacsdir="$withval"], [emacsdir=${datadir}/emacs])
+  [emacsdir="$withval"], [emacsdir=${datarootdir}/emacs])
 AC_MSG_CHECKING(--with-emacsdir)
 AC_MSG_RESULT("$emacsdir")                                                                                                           
 AC_SUBST(emacsdir)

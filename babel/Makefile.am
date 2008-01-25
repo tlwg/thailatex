@@ -15,8 +15,7 @@ CLEANFILES = thai.log thai.aux thai.ldf thai.pdf
 babeldir = @texmfdir@/tex/generic/babel
 babel_DATA = $(BABEL_INS)
 
-pkgdocdir = $(docdir)/@PACKAGE@
-pkgdoc_DATA = $(BABEL_DOCS)
+doc_DATA = $(BABEL_DOCS)
 
 thai.ldf: thai.ins thai.dtx
 	if [ ! -f thai.ins ]; then \

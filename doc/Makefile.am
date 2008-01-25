@@ -1,10 +1,7 @@
 DOC_FILES = orchid.tex teststd.tex
 
-docdir = @docdir@
-
-pkgdocdir = $(docdir)/@PACKAGE@/examples
-pkgdoc_DATA = $(DOC_FILES)
-# pkgdoc_DATA = orchid.tex orchid.ps orchid.pdf
+examplesdir = $(docdir)/examples
+examples_DATA = $(DOC_FILES)
 
 TESTS = test-orchid.sh test-teststd.sh
 
