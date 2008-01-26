@@ -1,3 +1,9 @@
+2008-01-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Mention texlive instead of tetex.
+	* TODO: Remove finished issues: .dtx and Werner Lemberg's ligatures.
+	* README: Update URL of the project page.
+
 2008-01-25  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/Makefile.am, fonts/Makefile.am, emacs/Makefile.am:
