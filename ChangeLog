@@ -1,5 +1,25 @@
 2008-01-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Werner's afm2tfm trick solves the "PO PLA + SARA UU + MAI EK" case
+	well. But the separation of LIGTABLE construction results in a single
+	full set of ligatures, including ff, fi, fl, ffi and ffl, which was
+	available only in some fonts. One solution to this is to selectively
+	merge LIGTABLE. Another is to add those ligatures in all fonts.
+	And I choose the latter.
+
+	* fonts/garuda*.{afm,pfb}:
+	* fonts/loma*.{afm,pfb}:
+	* fonts/purisa.{afm,pfb}:
+	* fonts/sawasdee*.{afm,pfb}:
+	* fonts/ttype*.{afm,pfb}:
+	* fonts/ttypist*.{afm,pfb}:
+	* fonts/umpush*.{afm,pfb}:
+	* fonts/waree*.{afm,pfb}:  Update fonts from thaifonts-scalable CVS
+	snapshot, with f* ligatures either added or renamed from uniXXX forms
+	to Adobe Glyph Names.
+
+2008-01-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in: Mention texlive instead of tetex.
 	* TODO: Remove finished issues: .dtx and Werner Lemberg's ligatures.
 	* README: Update URL of the project page.
