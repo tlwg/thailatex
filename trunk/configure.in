@@ -32,12 +32,9 @@ if test "x$PS2PDF" = "xno" ; then
   AC_MSG_ERROR([You need ps2pdf (from ghostscipt distribution)])
 fi
 AC_CHECK_PROGS(SWATH,swath,no)
-if test "x$SWATH" = "xno" ; then
-  AC_MSG_WARN([You may need swath (from swath distribution)])
-fi
 AC_CHECK_PROGS(CTTEX,cttex,no)
-if test "x$CTTEX" = "xno" ; then
-  AC_MSG_WARN([You may need cttex (from cttex distribution)])
+if test "x$SWATH" = "xno" && test "x$CTTEX" = "xno" ; then
+  AC_MSG_WARN([You may need either swath or cttex (from corresponding package)])
 fi
 
 AC_ARG_WITH(texmfdir,
