@@ -1,5 +1,10 @@
 2008-01-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/thai.dtx: Correct bracing in changelog entry, eliminating
+	junks in generated documentation.
+
+2008-01-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in, NEWS:
 	=== Version 0.4.1 ===
 
