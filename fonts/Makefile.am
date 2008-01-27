@@ -62,11 +62,11 @@ FONTS = \
 	sawasdee_o \
 	sawasdee_bo
 
-PFBFILES = $(shell echo $(FONTS) | sed 's/[^ ]*/&.pfb/g')
-AFMFILES = $(shell echo $(FONTS) | sed 's/[^ ]*/&.afm/g')
-TFMFILES = $(shell echo $(FONTS) | sed 's/[^ ]*/&.tfm/g')
-RTFMFILES = $(shell echo $(FONTS) | sed 's/[^ ]*/r&.tfm/g')
-VFFILES = $(shell echo $(FONTS) | sed 's/[^ ]*/&.vf/g')
+PFBFILES = $(shell echo $(FONTS) | sed 's,[^ ]*,&.pfb,g')
+AFMFILES = $(shell echo $(FONTS) | sed 's,[^ ]*,&.afm,g')
+TFMFILES = $(shell echo $(FONTS) | sed 's,[^ ]*,&.tfm,g')
+RTFMFILES = $(shell echo $(FONTS) | sed 's,[^ ]*,r&.tfm,g')
+VFFILES = $(shell echo $(FONTS) | sed 's,[^ ]*,&.vf,g')
 
 type1_DATA = $(PFBFILES)
 
