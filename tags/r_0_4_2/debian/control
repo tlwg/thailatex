@@ -1,0 +1,21 @@
+Source: thailatex
+Section: tex
+Priority: optional
+Maintainer: Theppitak Karoonboonyanan <thep@linux.thai.net>
+Build-Depends: debhelper (>=5.0.0)
+Build-Depends-Indep: texlive-font-utils, texlive-latex-base, tex-common (>=0.19), gs-common
+Vcs-Cvs: pserver:anonymous@linux.thai.net:/home/cvs software/thailatex
+Vcs-Browser: http://linux.thai.net/viewvc/viewvc.cgi/software/thailatex/
+Homepage: http://linux.thai.net/projects/thailatex
+Standards-Version: 3.7.3.0
+
+Package: thailatex
+Architecture: all 
+Recommends: swath|cttex
+Depends: texlive-base-bin, texlive-latex-base, ${misc:Depends}
+Description: Thai support for Latex
+ This package provides a Thai language add-on for Latex. It is based on 
+ babel package which comes with the texlive distribution.
+ .
+ This package needs a Thai words separator such as cttex and swath, in
+ order for latex to be able to break sentences.
