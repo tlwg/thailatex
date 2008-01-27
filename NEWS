@@ -1,3 +1,7 @@
+0.4.2 (2008-01-27)
+=====
+- Correct changelog entry in thai.dtx, removing junks in generated document.
+
 0.4.1 (2008-01-27)
 =====
 - Update fonts from thaifonts-scalable 0.4.9, plus some changes from CVS.
