@@ -1,3 +1,12 @@
+0.4.1 (2008-01-27)
+=====
+- Update fonts from thaifonts-scalable 0.4.9, plus some changes from CVS.
+- Reintroduced font: kinnari, with resolved licensing issue.
+- New fonts: sawasdee, umpush, waree.
+- Handle the case of tone marks over long-ascender base characters with
+  below-base vowel combined, e.g. "PO PLA + SARA UU + MAI EK", using
+  Werner Lemberg's method as published in TUGboat Volume 21 (2000), No. 2.
+
 0.4.0 (2006-11-08)
 =====
 - Relicensed to LPPL, with permission from NECTEC, the copyright holder.
