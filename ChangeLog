@@ -1,3 +1,7 @@
+2008-01-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Warn about swath or cttex only when both are missing.
+
 2008-01-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Werner's afm2tfm trick solves the "PO PLA + SARA UU + MAI EK" case
