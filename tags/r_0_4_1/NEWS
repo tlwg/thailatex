@@ -1,0 +1,77 @@
+0.4.1 (2008-01-27)
+=====
+- Update fonts from thaifonts-scalable 0.4.9, plus some changes from CVS.
+- Reintroduced font: kinnari, with resolved licensing issue.
+- New fonts: sawasdee, umpush, waree.
+- Handle the case of tone marks over long-ascender base characters with
+  below-base vowel combined, e.g. "PO PLA + SARA UU + MAI EK", using
+  Werner Lemberg's method as published in TUGboat Volume 21 (2000), No. 2.
+
+0.4.0 (2006-11-08)
+=====
+- Relicensed to LPPL, with permission from NECTEC, the copyright holder.
+- Create `thai.dtx' for documenting and generating `thai.ldf'.
+- Clean up some unneeded macros.
+- Update fonts from thaifonts-scalable 0.4.5.
+- Add ttypist (TLWG Typist) font.
+
+0.3.7 (2006-03-27)
+=====
+- Fix many package buidling issues.
+
+0.3.6 (2006-03-27)
+=====
+- Merge fix from Debian NMU, to prefer updmap-sys to updmap if present.
+- Support new TeX Directory Structure (http://tug.org/tds/).
+- Update fonts from thaifonts-scalable 0.4.4, plus some fixes in 2006-03-26 
+  CVS snapshot for error with dvips.
+- Add Loma font.
+
+0.3.5.1 (2005-07-03)
+=======
+- Update fonts from thaifonts-scalable 0.4.3.1, which actually updates
+  version info in Type1 fonts.
+
+0.3.5 (2005-06-10)
+=====
+- Dropped dbtt and kinnari in accordance with the new thaifonts-scalable
+  release, due to the unclear license.
+- Updated scalable fonts from thaifonts-scalable 0.4.3.
+- Fixed bug in malformed Postscript fonts which makes latex files fail to
+  compile.
+
+0.3.4 (2004-12-05)
+=====
+- Fix missing glyphs in fonts. (reported by Poonlap Veerathanabutr)
+- 'pmono' font now renamed as 'ttype'.
+
+0.3.3 (2004-09-27)
+=====
+- Do not capitalize chapters & sections in book headers.
+  (proposed by P'Joy)
+- Guard against recursive assignments of \ltxTeX and \ltxLaTeX
+  (reported by donzakh)
+- Updated scaled fonts from thaifonts-scalable 0.4.2.
+
+0.3.2 (2004-03-25)
+=====
+- Fix page numbering bug in \frontmatter and \mainmatter redefinition
+  due to wrong appendix fix in previous version. [thep]
+  (noticed by P'Joy)
+
+0.3.1 (2004-03-10)
+=====
+- New fonts: kinnari, pmono, purisa. [poonlap]
+- Updated fonts from thaifonts-scalable project. [chanop,thep]
+- Thai sfdefault is now garuda. Thai ttdefault is now pmono.
+- Introduce Thai TeX character codes, so some problems caused by Latin
+  case conversion, e.g. appendix title, are fixed. [thep,poonlap]
+- Proper Thai page number styles in different parts of book class. [thep]
+- Appendixes are now always run with Thai alphabets, with or without
+  `thainumber' option. [suggested by K. Chakkree]
+- Better RPM build script. [thep, by report from Suppachoke Santiwichaya]
+- Other bug fixes and improvements. [everybody]
+ 
+
+*** Please see ChangeLog for versions before 0.3.1 ***
+

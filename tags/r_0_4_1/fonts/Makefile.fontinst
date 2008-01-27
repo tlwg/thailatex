@@ -1,0 +1,31 @@
+all: fontinstall vf map
+	echo "Making all"
+
+fontinstall:
+	tex drv-fn4.tex
+	touch fontinstall
+
+vf:
+	for i in {norasi,fn4}*.pl; do pltotf $$i; done
+	for i in fn4*.vpl; do vptovf $$i; done
+	touch vf
+
+map:
+	tex drv-fn4-map.tex
+	touch map
+
+clean:
+	rm -f fontinstall vf map
+	rm -f *.log
+	rm -f {norasi,fn4}*.{tfm,vf,pl,vpl,fd,mtx,map}
+
+install:
+
+install-local:
+	mkdir -p ~/texmf/fonts/type1 ~/texmf/fonts/tfm ~/texmf/fonts/vf ~/texmf/tex/latex/cc
+	ln -f norasi*.pfb ~/texmf/fonts/type1
+	ln -f {norasi,fn4}*.tfm ~/texmf/fonts/tfm
+	ln -f fn4*.vf ~/texmf/fonts/vf
+	ln -f 8rcj.enc lth.enc ~/texmf/tex/latex/
+	ln -f *fn4*.fd ~/texmf/tex/latex/
+	texhash
