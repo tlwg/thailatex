@@ -1,5 +1,10 @@
 2008-01-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* configure.in, NEWS:
+	=== Version 0.4.1 ===
+
+2008-01-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/Makefile.am: Use ',' as delimiter instead of '/' in sed
 	scripts for generating file lists, as '/' confused automake when used
 	in EXTRA_DIST and thus broke 'make dist'.
