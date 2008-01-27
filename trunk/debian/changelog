@@ -1,11 +1,21 @@
-thailatex (0.4.0-4) UNRELEASED; urgency=low
+thailatex (0.4.2-1) unstable; urgency=low
 
   * debian/control: Adjust package description. (Thanks Paul Wise.)
   * debian/README.Debian: Fix typo and add blank lines for readability.
     (Thanks Paul Wise.)
   * Bump debhelper build-dep version to >=5.0.0. (Thanks Paul Wise.)
+  * Use three-digit version for Standards-Version. (Thanks Paul Wise.)
+  * New upstream release
+    - Update fonts from thaifonts-scalable 0.4.9, plus some changes from CVS.
+    - Reintroduced font: kinnari, with resolved licensing issue.
+    - New fonts: sawasdee, umpush, waree.
+    - Handle the case of tone marks over long-ascender base characters with
+      below-base vowel combined, e.g. "PO PLA + SARA UU + MAI EK", using
+      Werner Lemberg's method as published in TUGboat Volume 21 (2000), No. 2.
+    - Correct changelog entry in thai.dtx, removing junks in generated
+      document.
 
- -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Fri, 28 Dec 2007 13:17:12 +0700
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sun, 27 Jan 2008 13:10:54 +0700
 
 thailatex (0.4.0-3) unstable; urgency=low
 
