@@ -16,10 +16,13 @@ Preprocessing
 -------------
 As Thai has no word delimitor, you need some processing to make TeX wrap
 lines at proper positions.  Currently, preprocessing with programs like 
-`swath' or `cttex' (both available in Debian) is recommended.  These
+`swath' (available in Debian) or `cttex' (currently removed from Debian,
+but is still accessible from its upstream CVS [1]) is recommended.  These
 programs analyze Thai text in your document with dictionary look up
 and insert word break commands {\wbr} at word boundaries, so that TeX
 knows where to break lines.
+
+  [1] cvs -d :pserver:anonymous@linux.thai.net:/home/cvs co software/cttex
 
 With swath, a quick command to do so is:
 
@@ -28,7 +31,6 @@ With swath, a quick command to do so is:
 or if you prefer cttex:
 
   $ cttex -W < yourdoc.tex > yourdoc.ttex
-
 
 Please consult the document of the corresponding packages for the full
 options of each program.

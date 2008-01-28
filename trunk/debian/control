@@ -11,11 +11,11 @@ Standards-Version: 3.7.3
 
 Package: thailatex
 Architecture: all 
-Recommends: swath|cttex
+Recommends: swath
 Depends: texlive-base-bin, texlive-latex-base, ${misc:Depends}
 Description: Thai support for Latex
  This package provides a Thai language add-on for Latex. It is based on 
  babel package which comes with the texlive distribution.
  .
- This package needs a Thai words separator such as cttex and swath, in
- order for latex to be able to break sentences.
+ This package needs a Thai words separator such as swath, in order for
+ latex to be able to break sentences.
