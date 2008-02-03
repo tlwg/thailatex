@@ -2,8 +2,9 @@ thailatex (0.4.2-3) unstable; urgency=low
 
   * debian/copyright: Add copyright info for the new fonts
     (fonts/{kinnari*,sawasdee*,umpush*,waree*}).
+  * Fix CVSROOT in Vcs-Cvs, so it really works with debcheckout.
 
- -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Mon, 28 Jan 2008 17:58:36 +0700
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sun, 03 Feb 2008 10:15:53 +0700
 
 thailatex (0.4.2-2) unstable; urgency=low
 
