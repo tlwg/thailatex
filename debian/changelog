@@ -1,3 +1,10 @@
+thailatex (0.4.2-4) UNRELEASED; urgency=low
+
+  * debian/watch: Fix watch pattern so that only *.tar.gz is matched, not
+    *.tar.gz.md5sum.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sat, 31 May 2008 08:14:11 +0700
+
 thailatex (0.4.2-3) unstable; urgency=low
 
   * debian/copyright: Add copyright info for the new fonts
