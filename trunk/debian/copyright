@@ -1,8 +1,22 @@
-It was downloaded from ftp://linux.thai.net/pub/thailinux/software/thailatex
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
+Upstream-Author:
+ Surapant Meknavin <surapan@siamguru.com>
+ Theppitak Karoonboonyanan <thep@linux.thai.net>
+ Chanop Silpa-Anan <chanop@debian.org>
+ Poonlap Veerathanabutr <poonlap@linux.thai.net>
+Packaged-By: Theppitak Karoonboonyanan <thep@linux.thai.net>
+Packaged-Date: Wed, 29 Nov 2000 06:01:23 +1100
+Original-Source-Location: ftp://linux.thai.net/pub/thailinux/software/thailatex
 
 Files: debian/*
 Copyright: © 2000 Chanop Silpa-Anan <chanop@debian.org>
            © 2006-2007 Theppitak Karoonboonyanan <thep@linux.thai.net>
+License: GPL-2+
+ This package was debianized by Chanop Silpa-Anan <chanop@debian.org> on
+ Wed, 29 Nov 2000 06:01:23 +1100.
+ .
+ The current Debian maintainer is Theppitak Karoonboonyanan 
+ <thep@linux.thai.net>.
 
 Files: *
 Copyright: © 1999 National Electronics and Computer Technology Center (NECTEC),
