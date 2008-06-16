@@ -15,9 +15,9 @@ Package: thailatex
 Architecture: all 
 Recommends: swath
 Depends: texlive-base-bin, texlive-latex-base, ${misc:Depends}
-Description: Thai support for Latex
- This package provides a Thai language add-on for Latex. It is based on 
- the babel package which comes with the TeX Live distribution.
+Description: Thai support for LaTeX
+ This package provides a Thai language add-on for LaTeX. It is based on 
+ the Babel package which comes with the TeX Live distribution.
  .
  This package needs a Thai word separator such as swath, in order for
- latex to be able to break sentences.
+ LaTeX to be able to break sentences.
