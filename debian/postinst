@@ -28,8 +28,8 @@ patch_babel_sty() {
     echo -n "Customizing babel.sty..."
 
     if [ ! -f ${SOURCE_BABELSTY} ]; then
-        echo "failed: system babel.sty does not exists."
-        echo "Warning: you will not be able to use [thai] option directly in \\documentclass."
+        printf "failed: system babel.sty does not exists.\n"
+        printf "Warning: you will not be able to use [thai] option directly in \\documentclass.\n"
         return
     fi
 

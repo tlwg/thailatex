@@ -1,9 +1,17 @@
-thailatex (0.4.2-4) UNRELEASED; urgency=low
+thailatex (0.4.2-4) unstable; urgency=low
 
   * debian/watch: Fix watch pattern so that only *.tar.gz is matched, not
     *.tar.gz.md5sum.
+  * debian/postinst: Use printf instead of echo, fixing bashism.
+    Thanks Raphael Geissert for the suggestion. (Closes: #486059)
+  * debian/copyright:
+    - Update format to recent proposal
+    - Add missing license info for debian/*
+  * debian/control: Add DM-Upload-Allowed.
+  * Bump Standards-Version to 3.8.0 (no changes needed).
+  * debian/doc-base: Fix section typo Tex -> TeX. Thanks Norbert Preining.
 
- -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sat, 31 May 2008 08:14:11 +0700
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Mon, 16 Jun 2008 10:07:25 +0700
 
 thailatex (0.4.2-3) unstable; urgency=low
 
