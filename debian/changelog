@@ -1,3 +1,11 @@
+thailatex (0.4.2-5) UNRELEASED; urgency=low
+
+  * debian/control:
+    - Replace all Latex/latex referals in descriptions with LaTeX, babel with
+      Babel. Thanks David Paleino for the notice.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Mon, 16 Jun 2008 16:39:39 +0700
+
 thailatex (0.4.2-4) unstable; urgency=low
 
   * debian/watch: Fix watch pattern so that only *.tar.gz is matched, not
