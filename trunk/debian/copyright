@@ -1,22 +1,7 @@
-Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
-Upstream-Author:
- Surapant Meknavin <surapan@siamguru.com>
- Theppitak Karoonboonyanan <thep@linux.thai.net>
- Chanop Silpa-Anan <chanop@debian.org>
- Poonlap Veerathanabutr <poonlap@linux.thai.net>
-Packaged-By: Theppitak Karoonboonyanan <thep@linux.thai.net>
-Packaged-Date: Wed, 29 Nov 2000 06:01:23 +1100
-Original-Source-Location: ftp://linux.thai.net/pub/thailinux/software/thailatex
-
-Files: debian/*
-Copyright: © 2000 Chanop Silpa-Anan <chanop@debian.org>
-           © 2006-2007 Theppitak Karoonboonyanan <thep@linux.thai.net>
-License: GPL-2+
- This package was debianized by Chanop Silpa-Anan <chanop@debian.org> on
- Wed, 29 Nov 2000 06:01:23 +1100.
- .
- The current Debian maintainer is Theppitak Karoonboonyanan 
- <thep@linux.thai.net>.
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=454
+Upstream-Name: thailatex
+Upstream-Maintainer: http://groups.google.com/group/thai-linux-foss-devel
+Upstream-Source: ftp://linux.thai.net/pub/thailinux/software/thailatex/
 
 Files: *
 Copyright: © 1999 National Electronics and Computer Technology Center (NECTEC),
@@ -36,128 +21,47 @@ License: LPPL-1.3+
 
 Files: fonts/kinnari*
 Copyright: © 1999 Db Type
-           © 2007 National Electronics and Computer Technology Center
-License: GPL-2+ | other
-  As a special exception, if you create a document which uses this font,
-  and embed this font or unaltered portions of this font into the
-  document, this font does not by itself cause the resulting document
-  to be covered by the GNU General Public License. This exception does
-  not however invalidate any other reasons why the document might be
-  covered by the GNU General Public License. If you modify this font,
-  you may extend this exception to your version of the font, but you
-  are not obligated to do so. If you do not wish to do so, delete this
-  exception statement from your version.
+Copyright: © 2007 National Electronics and Computer Technology Center
+License: GPL-2+-BY-Font
 
 Files: fonts/garuda*
 Copyright: Originally Public Domain
-           © 2001-2007 Theppitak Karoonboonyanan <thep@linux.thai.net>
-License: GPL-2+ | other
-  As a special exception, if you create a document which uses this font,
-  and embed this font or unaltered portions of this font into the
-  document, this font does not by itself cause the resulting document
-  to be covered by the GNU General Public License. This exception does
-  not however invalidate any other reasons why the document might be
-  covered by the GNU General Public License. If you modify this font,
-  you may extend this exception to your version of the font, but you
-  are not obligated to do so. If you do not wish to do so, delete this
-  exception statement from your version.
+Copyright: © 2001-2007 Theppitak Karoonboonyanan <thep@linux.thai.net>
+License: GPL-2+-BY-Font
 
 Files: fonts/norasi*
 Copyright: © 1999 The National Font Project 
-           © 1999 Yannis Haralambous, Virach Sornlertlamvanich and
+Copyright: © 1999 Yannis Haralambous, Virach Sornlertlamvanich and
                   Anutara Tantraporn
-           © 1999 URW++ Design & Development
-           © 2003-2004 Chanop Silpa-Anan <chanop@debian.org>
-License: GPL-2+ | other
-  As a special exception, if you create a document which uses this font,
-  and embed this font or unaltered portions of this font into the
-  document, this font does not by itself cause the resulting document
-  to be covered by the GNU General Public License. This exception does
-  not however invalidate any other reasons why the document might be
-  covered by the GNU General Public License. If you modify this font,
-  you may extend this exception to your version of the font, but you
-  are not obligated to do so. If you do not wish to do so, delete this
-  exception statement from your version.
+Copyright: © 1999 URW++ Design & Development
+Copyright: © 2003-2004 Chanop Silpa-Anan <chanop@debian.org>
+License: GPL-2+-BY-Font
 
 Files: fonts/loma*
 Copyright: © 2003 National Electronics and Computer Technology Center
-License: GPL-2+ | other
-  As a special exception, if you create a document which uses this font,
-  and embed this font or unaltered portions of this font into the
-  document, this font does not by itself cause the resulting document
-  to be covered by the GNU General Public License. This exception does
-  not however invalidate any other reasons why the document might be
-  covered by the GNU General Public License. If you modify this font,
-  you may extend this exception to your version of the font, but you
-  are not obligated to do so. If you do not wish to do so, delete this
-  exception statement from your version.
+License: GPL-2+-BY-Font
 
 Files: fonts/ttype*
 Copyright: © 2003, 2004 Poonlap Veerathanabutr <poonlap@linux.thai.net>
-License: GPL-2+ | other
-  As a special exception, if you create a document which uses this font,
-  and embed this font or unaltered portions of this font into the
-  document, this font does not by itself cause the resulting document
-  to be covered by the GNU General Public License. This exception does
-  not however invalidate any other reasons why the document might be
-  covered by the GNU General Public License. If you modify this font,
-  you may extend this exception to your version of the font, but you
-  are not obligated to do so. If you do not wish to do so, delete this
-  exception statement from your version.
+License: GPL-2+-BY-Font
 
 Files: fons/ttypist*
 Copyright: © 2003, 2004 Poonlap Veerathanabutr <poonlap@linux.thai.net>
-           © 2005-2007 Theppitak Karoonboonyanan <thep@linux.thai.net>
-License: GPL-2+ | other
-  As a special exception, if you create a document which uses this font,
-  and embed this font or unaltered portions of this font into the
-  document, this font does not by itself cause the resulting document
-  to be covered by the GNU General Public License. This exception does
-  not however invalidate any other reasons why the document might be
-  covered by the GNU General Public License. If you modify this font,
-  you may extend this exception to your version of the font, but you
-  are not obligated to do so. If you do not wish to do so, delete this
-  exception statement from your version.
+Copyright: © 2005-2007 Theppitak Karoonboonyanan <thep@linux.thai.net>
+License: GPL-2+-BY-Font
 
 Files: fonts/purisa*
 Copyright: © 2003, 2004 Poonlap Veerathanabutr <poonlap@linux.thai.net>
-License: GPL-2+ | other
-  As a special exception, if you create a document which uses this font,
-  and embed this font or unaltered portions of this font into the
-  document, this font does not by itself cause the resulting document
-  to be covered by the GNU General Public License. This exception does
-  not however invalidate any other reasons why the document might be
-  covered by the GNU General Public License. If you modify this font,
-  you may extend this exception to your version of the font, but you
-  are not obligated to do so. If you do not wish to do so, delete this
-  exception statement from your version.
+License: GPL-2+-BY-Font
 
 Files: fonts/sawasdee*
 Copyright: © 2007 Pol Udomwittayanukul <webnaipol@gmail.com>
-License: GPL-2+ | other
-  As a special exception, if you create a document which uses this font,
-  and embed this font or unaltered portions of this font into the
-  document, this font does not by itself cause the resulting document
-  to be covered by the GNU General Public License. This exception does
-  not however invalidate any other reasons why the document might be
-  covered by the GNU General Public License. If you modify this font,
-  you may extend this exception to your version of the font, but you
-  are not obligated to do so. If you do not wish to do so, delete this
-  exception statement from your version.
+License: GPL-2+-BY-Font
 
 Files: fonts/umpush*
 Copyright: © 2003 National Electronics and Computer Technology Center
-           © 2007 Widhaya Trisarnwadhana <widhaya3@gmail.com>
-License: GPL-2+ | other
-  As a special exception, if you create a document which uses this font,
-  and embed this font or unaltered portions of this font into the
-  document, this font does not by itself cause the resulting document
-  to be covered by the GNU General Public License. This exception does
-  not however invalidate any other reasons why the document might be
-  covered by the GNU General Public License. If you modify this font,
-  you may extend this exception to your version of the font, but you
-  are not obligated to do so. If you do not wish to do so, delete this
-  exception statement from your version.
+Copyright: © 2007 Widhaya Trisarnwadhana <widhaya3@gmail.com>
+License: GPL-2+-BY-Font
 
 Files: fonts/waree*
 Copyright: © 2003 Bitstream, Inc.
@@ -205,5 +109,24 @@ License: other
  or Bitstream Inc., respectively. For further information, contact:
  fonts at gnome dot org. 
 
-On Debian systems, the complete text of the GNU General Public License,
-version 2, can be found in /usr/share/common-licenses/GPL-2.
+Files: debian/*
+Copyright: © 2000 Chanop Silpa-Anan <chanop@debian.org>
+Copyright: © 2006-2009 Theppitak Karoonboonyanan <thep@linux.thai.net>
+License: GPL-2+
+ On Debian systems, the complete text of the GNU General Public License,
+ version 2, can be found in /usr/share/common-licenses/GPL-2.
+
+License: GPL-2+-BY-Font
+ On Debian GNU/Linux systems, the complete text of the GNU General Public
+ License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+ .
+ As a special exception, if you create a document which uses this font,
+ and embed this font or unaltered portions of this font into the
+ document, this font does not by itself cause the resulting document
+ to be covered by the GNU General Public License. This exception does
+ not however invalidate any other reasons why the document might be
+ covered by the GNU General Public License. If you modify this font,
+ you may extend this exception to your version of the font, but you
+ are not obligated to do so. If you do not wish to do so, delete this
+ exception statement from your version.
+
