@@ -1,5 +1,14 @@
 2009-07-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Add UTF-8 support.
+
+	* babel/lthenc.def: Add symbol definitions for UCS character names,
+	according to uni-14.def for Thai range.
+	* babel/thai.dtx: Replace Thai TIS-620 characters with symbolic
+	definitions, for encoding independence.
+
+2009-07-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in: post-release version suffix added.
 
 	* fonts/*.{afm,pfb}: Update fonts from thaifonts-scalable 0.4.13.
