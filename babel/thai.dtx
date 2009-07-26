@@ -290,26 +290,26 @@
 %    standard documentclasses provided with \LaTeX.
 %    \begin{macrocode}
 \addto\captionsthai{%
-  \def\prefacename{คำนำ}%
-  \def\refname{หนังสืออ้างอิง}%
-  \def\abstractname{บทคัดย่อ}%
-  \def\bibname{บรรณานุกรม}%
-  \def\chaptername{บทที่}%
-  \def\appendixname{ภาคผนวก}%
-  \def\contentsname{สารบัญ}%
-  \def\listfigurename{สารบัญรูป}%
-  \def\listtablename{สารบัญตาราง}%
-  \def\indexname{ดรรชนี}%
-  \def\figurename{รูปที่}%
-  \def\tablename{ตารางที่}%
-  \def\partname{ภาค}%
-  \def\enclname{สิ่งที่แนบมาด้วย}%
-  \def\ccname{สำเนาถึง}%
-  \def\headtoname{เรียน}%
-  \def\pagename{หน้า}%
-  \def\seename{ดู}%
-  \def\alsoname{ดูเพิ่มเติม}%
-  \def\proofname{พิสูจน์}%
+  \def\prefacename{\thaiKhoKhwai\thaiSaraAm\thaiNoNu\thaiSaraAm}%
+  \def\refname{\thaiHoHip\thaiNoNu\thaiMaiHanakat\thaiNgoNgu\thaiSoSua\thaiSaraUee\thaiOAng\thaiOAng\thaiMaiTho\thaiSaraAa\thaiNgoNgu\thaiOAng\thaiSaraI\thaiNgoNgu}%
+  \def\abstractname{\thaiBoBaimai\thaiThoThahan\thaiKhoKhwai\thaiMaiHanakat\thaiDoDek\thaiYoYak\thaiMaiEk\thaiOAng}%
+  \def\bibname{\thaiBoBaimai\thaiRoRua\thaiRoRua\thaiNoNen\thaiSaraAa\thaiNoNu\thaiSaraU\thaiKoKai\thaiRoRua\thaiMoMa}%
+  \def\chaptername{\thaiBoBaimai\thaiThoThahan\thaiThoThahan\thaiSaraIi\thaiMaiEk}%
+  \def\appendixname{\thaiPhoSamphao\thaiSaraAa\thaiKhoKhwai\thaiPhoPhung\thaiNoNu\thaiWoWaen\thaiKoKai}%
+  \def\contentsname{\thaiSoSua\thaiSaraAa\thaiRoRua\thaiBoBaimai\thaiMaiHanakat\thaiYoYing}%
+  \def\listfigurename{\thaiSoSua\thaiSaraAa\thaiRoRua\thaiBoBaimai\thaiMaiHanakat\thaiYoYing\thaiRoRua\thaiSaraUu\thaiPoPla}%
+  \def\listtablename{\thaiSoSua\thaiSaraAa\thaiRoRua\thaiBoBaimai\thaiMaiHanakat\thaiYoYing\thaiToTao\thaiSaraAa\thaiRoRua\thaiSaraAa\thaiNgoNgu}%
+  \def\indexname{\thaiDoDek\thaiRoRua\thaiRoRua\thaiChoChang\thaiNoNu\thaiSaraIi}%
+  \def\figurename{\thaiRoRua\thaiSaraUu\thaiPoPla\thaiThoThahan\thaiSaraIi\thaiMaiEk}%
+  \def\tablename{\thaiToTao\thaiSaraAa\thaiRoRua\thaiSaraAa\thaiNgoNgu\thaiThoThahan\thaiSaraIi\thaiMaiEk}%
+  \def\partname{\thaiPhoSamphao\thaiSaraAa\thaiKhoKhwai}%
+  \def\enclname{\thaiSoSua\thaiSaraI\thaiMaiEk\thaiNgoNgu\thaiThoThahan\thaiSaraIi\thaiMaiEk\thaiSaraAe\thaiNoNu\thaiBoBaimai\thaiMoMa\thaiSaraAa\thaiDoDek\thaiMaiTho\thaiWoWaen\thaiYoYak}%
+  \def\ccname{\thaiSoSua\thaiSaraAm\thaiSaraE\thaiNoNu\thaiSaraAa\thaiThoThung\thaiSaraUe\thaiNgoNgu}%
+  \def\headtoname{\thaiSaraE\thaiRoRua\thaiSaraIi\thaiYoYak\thaiNoNu}%
+  \def\pagename{\thaiHoHip\thaiNoNu\thaiMaiTho\thaiSaraAa}%
+  \def\seename{\thaiDoDek\thaiSaraUu}%
+  \def\alsoname{\thaiDoDek\thaiSaraUu\thaiSaraE\thaiPhoPhan\thaiSaraI\thaiMaiEk\thaiMoMa\thaiSaraE\thaiToTao\thaiSaraI\thaiMoMa}%
+  \def\proofname{\thaiPhoPhan\thaiSaraI\thaiSoSua\thaiSaraUu\thaiChoChan\thaiNoNu\thaiThanthakhat}%
   }
 %    \end{macrocode}
 % \end{macro}
@@ -324,9 +324,19 @@
 %    \begin{macrocode}
 \def\th@month{%
   \ifcase\month\or
-    มกราคม\or กุมภาพันธ์\or มีนาคม\or เมษายน
-   \or พฤษภาคม\or มิถุนายน\or กรกฎาคม\or สิงหาคม
-   \or กันยายน \or ตุลาคม\or พฤศจิกายน\or ธันวาคม   \fi}
+    \thaiMoMa\thaiKoKai\thaiRoRua\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
+    \thaiKoKai\thaiSaraU\thaiMoMa\thaiPhoSamphao\thaiSaraAa\thaiPhoPhan\thaiMaiHanakat\thaiNoNu\thaiThoThong\thaiThanthakhat \or 
+    \thaiMoMa\thaiSaraIi\thaiNoNu\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
+    \thaiSaraE\thaiMoMa\thaiSoRusi\thaiSaraAa\thaiYoYak\thaiNoNu \or 
+    \thaiPhoPhan\thaiRu\thaiSoRusi\thaiPhoSamphao\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
+    \thaiMoMa\thaiSaraI\thaiThoThung\thaiSaraU\thaiNoNu\thaiSaraAa\thaiYoYak\thaiNoNu \or 
+    \thaiKoKai\thaiRoRua\thaiKoKai\thaiDoChada\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
+    \thaiSoSua\thaiSaraI\thaiNgoNgu\thaiHoHip\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
+    \thaiKoKai\thaiMaiHanakat\thaiNoNu\thaiYoYak\thaiSaraAa\thaiYoYak\thaiNoNu \or 
+    \thaiToTao\thaiSaraU\thaiLoLing\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
+    \thaiPhoPhan\thaiRu\thaiSoSala\thaiChoChan\thaiSaraI\thaiKoKai\thaiSaraAa\thaiYoYak\thaiNoNu \or 
+    \thaiThoThong\thaiMaiHanakat\thaiNoNu\thaiWoWaen\thaiSaraAa\thaiKhoKhwai\thaiMoMa
+  \fi}
 %    \end{macrocode}
 %
 %    Thai official calendar uses Buddhist Era, the era whose start is marked 
@@ -346,7 +356,7 @@
 %    Thai date format is in the day-month-year order, using Buddhist Era.
 %    \begin{macrocode}
 \def\datethai{%
-  \def\today{\number\day \space \th@month\space พ.ศ.~\number\th@year}}
+  \def\today{\number\day \space \th@month\space \thaiPhoPhan.\thaiSoSala.~\number\th@year}}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -385,9 +395,11 @@
 %    \begin{macrocode}
 \def\thaitranslate#1{\ifx @#1%
      \else\ifcase#1
-        ๐\or ๑\or ๒\or ๓\or ๔\or ๕\or ๖\or ๗\or ๘\or ๙\else\fi
-        \expandafter\thaitranslate
-      \fi
+       \thaizero \or \thaione \or \thaitwo \or \thaithree \or \thaifour \or 
+       \thaifive \or \thaisix \or \thaiseven \or \thaieight \or \thainine
+       \else\fi
+       \expandafter\thaitranslate
+     \fi
 }
 %    \end{macrocode}
 % \end{macro}
@@ -435,10 +447,17 @@
 %    \begin{macrocode}
 \def\thaialph#1{\expandafter\@thaialph\csname c@#1\endcsname}
 \def\@thaialph#1{%
-  \ifcase#1\or ก\or ข\or ค\or ง\or จ\or ฉ\or ช\or ซ\or ฌ\or ญ\or ฎ\or
-   ฏ\or ฐ\or ฑ\or ฒ\or ณ\or ด\or ต\or ถ\or ท\or ธ\or น\or บ\or ป\or ผ\or 
-   ฝ\or พ\or ฟ\or ภ\or ม\or ย\or ร\or ล\or ว\or ศ\or ษ\or ส\or ห\or ฬ\or อ\or
-     ฮ\else\@ctrerr\fi}
+  \ifcase#1\or \thaiKoKai\or \thaiKhoKhai\or \thaiKhoKhwai\or \thaiNgoNgu\or 
+    \thaiChoChan\or \thaiChoChing\or \thaiChoChang\or \thaiSoSo\or 
+    \thaiChoChoe\or \thaiYoYing\or \thaiDoChada\or \thaiToPatak\or 
+    \thaiThoThan\or \thaiThoNangmontho\or \thaiThoPhuthao\or \thaiNoNen\or 
+    \thaiDoDek\or \thaiToTao\or \thaiThoThung\or \thaiThoThahan\or 
+    \thaiThoThong\or \thaiNoNu\or \thaiBoBaimai\or \thaiPoPla\or 
+    \thaiPhoPhung\or \thaiFoFa\or \thaiPhoPhan\or \thaiFoFan\or 
+    \thaiPhoSamphao\or \thaiMoMa\or \thaiYoYak\or \thaiRoRua\or 
+    \thaiLoLing\or \thaiWoWaen\or \thaiSoSala\or \thaiSoRusi\or 
+    \thaiSoSua\or \thaiHoHip\or \thaiLoChula\or \thaiOAng\or
+    \thaiHoNokhuk\else\@ctrerr\fi}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -451,10 +470,17 @@
 %    \begin{macrocode}
 \def\thaiAlph#1{\expandafter\@thaiAlph\csname c@#1\endcsname}
 \def\@thaiAlph#1{%
-  \ifcase#1\or ก\or ข\or ฃ\or ค\or ฅ\or ฆ\or ง\or จ\or ฉ\or ช\or ซ\or
-   ฌ\or ญ\or ฎ\or ฏ\or ฐ\or ฑ\or ฒ\or ณ\or ด\or ต\or ถ\or ท\or ธ\or น\or
-    บ\or ป\or ผ\or ฝ\or พ\or ฟ\or ภ\or ม\or ย\or ร\or ฤ\or ล\or ฦ\or ว\or
-     ศ\or ษ\or ส\or ห\or ฬ\or อ\or ฮ\else\@ctrerr\fi}
+  \ifcase#1\or \thaiKoKai\or \thaiKhoKhai\or \thaiKhoKhuat\or \thaiKhoKhwai\or 
+    \thaiKhoKhon\or \thaiKhoRakhang\or \thaiNgoNgu\or \thaiChoChan\or 
+    \thaiChoChing\or \thaiChoChang\or \thaiSoSo\or \thaiChoChoe\or 
+    \thaiYoYing\or \thaiDoChada\or \thaiToPatak\or \thaiThoThan\or 
+    \thaiThoNangmontho\or \thaiThoPhuthao\or \thaiNoNen\or \thaiDoDek\or 
+    \thaiToTao\or \thaiThoThung\or \thaiThoThahan\or \thaiThoThong\or 
+    \thaiNoNu\or \thaiBoBaimai\or \thaiPoPla\or \thaiPhoPhung\or
+    \thaiFoFa\or \thaiPhoPhan\or \thaiFoFan\or \thaiPhoSamphao\or 
+    \thaiMoMa\or \thaiYoYak\or \thaiRoRua\or \thaiLoLing\or 
+    \thaiWoWaen\or \thaiSoSala\or \thaiSoRusi\or \thaiSoSua\or 
+    \thaiHoHip\or \thaiLoChula\or \thaiOAng\or \thaiHoNokhuk\else\@ctrerr\fi}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -536,7 +562,7 @@
 %
 %    \begin{macrocode}
 \def\datethai{%
-  \def\today{\@thainum\day \space \th@month\space พ.ศ.~\@thainum\th@year}}
+  \def\today{\@thainum\day \space \th@month\space \thaiPhoPhan.\thaiSoSala.~\@thainum\th@year}}
 %    \end{macrocode}
 %
 %    And finish declaration of \Lopt{thainumber} option
