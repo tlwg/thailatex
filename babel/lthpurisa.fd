@@ -9,10 +9,10 @@
 % Primary declarations
 \DeclareFontFamily{LTH}{purisa}{}
 \DeclareFontShape{LTH}{purisa}{m}{n}{<->s * purisa}{}
-\DeclareFontShape{LTH}{purisa}{m}{sl}{<->s * purisa}{}
+\DeclareFontShape{LTH}{purisa}{m}{sl}{<->s * purisa_o}{}
 %%%%%%% bold series
-\DeclareFontShape{LTH}{purisa}{b}{n}{<->s * purisa}{}
-\DeclareFontShape{LTH}{purisa}{b}{sl}{<->s * purisa}{}
+\DeclareFontShape{LTH}{purisa}{b}{n}{<->s * purisa_b}{}
+\DeclareFontShape{LTH}{purisa}{b}{sl}{<->s * purisa_bo}{}
 
 % Substitutions
 \DeclareFontShape{LTH}{purisa}{m}{it}{<->ssub * purisa/m/sl}{}

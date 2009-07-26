@@ -45,6 +45,9 @@ FONTS = \
 	ttypist_o \
 	ttypist_bo \
 	purisa \
+	purisa_b \
+	purisa_o \
+	purisa_bo \
 	loma \
 	loma_b \
 	loma_o \
