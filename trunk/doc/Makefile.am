@@ -1,11 +1,11 @@
-DOC_FILES = orchid.tex teststd.tex
+DOC_FILES = orchid.tex teststd.tex utf-example.tex
 
 examplesdir = $(docdir)/examples
 examples_DATA = $(DOC_FILES)
 
-TESTS = test-orchid.sh test-teststd.sh
+TESTS = test-orchid.sh test-teststd.sh test-utf.sh
 
-check_SCRIPTS = test-orchid.sh test-teststd.sh
+check_SCRIPTS = test-orchid.sh test-teststd.sh test-utf.sh
 
 EXTRA_DIST = $(DOC_FILES) $(check_SCRIPTS)
 
