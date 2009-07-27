@@ -29,7 +29,3 @@ $MMV -v "*-Bold*" "#1_b#2"
 $MMV -v "*-Oblique*" "#1_o#2"
 $MMV -v "*-Italic*" "#1_i#2"
 
-# for Sawasdee, whose names don't include hyphen
-$MMV -v "*BoldOblique*" "#1_bo#2"
-$MMV -v "*Bold*" "#1_b#2"
-$MMV -v "*Oblique*" "#1_o#2"
