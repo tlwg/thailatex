@@ -1,5 +1,10 @@
 2009-07-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/Makefile.am: Use make pattern subst to generate lists of
+	generated files instead of sed in $(shell).
+
+2009-07-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* doc/teststd.tex: Add test messages for Purisa oblique, bold, and
 	bold oblique.
 
