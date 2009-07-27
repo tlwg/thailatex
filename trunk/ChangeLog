@@ -1,3 +1,8 @@
+2009-07-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* doc/teststd.tex: Add test messages for Purisa oblique, bold, and
+	bold oblique.
+
 2009-07-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Add UTF-8 support.
