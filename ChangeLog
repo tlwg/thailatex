@@ -1,5 +1,16 @@
 2009-07-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/thai.dtx:
+	  - Reorder the change logs in chronological order.
+	  - Adjust documentation to cover UTF-8 support.
+	  - Make `ttypist' the default typewriter font instead of `ttype'.
+	  - Drop the obsolete `\thai' command.
+	  - Revise some wordings, fix typos.
+	  - Wrap long Thai definitions within 80 columns.
+	  - Update copyright year, and bump version to 1.2.
+
+2009-07-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/Makefile.am: Use make pattern subst to generate lists of
 	generated files instead of sed in $(shell).
 

@@ -29,11 +29,11 @@
 %<code>\ProvidesLanguage{thai}
 %\fi
 %\ProvidesFile{thai.dtx}
-        [2006/07/05 v1.1 Thai support from the babel system]
+        [2009/07/27 v1.2 Thai support from the babel system]
 %\iffalse
 %% File `thai.dtx'
 %% Thai Language Definition File
-%% Copyright (C) 1999 - 2006
+%% Copyright (C) 1999 - 2009
 %%           by Surapant Meknavin,
 %%              Theppitak Karoonboonyanan (thep at linux.thai.net),
 %%              Chanop Silpa-Anan (chanop at debian.org),
@@ -67,9 +67,10 @@
 %\fi
 % \GetFileInfo{thai.dtx}
 %
-% \changes{thai-1.0d}{2002/01/16}{Theppitak Karoonboonyanan:
-%    Fix extra spaces appearing in \cs{selectlanguage\{thai\}}
-%    (as suggested by C. Visavakul)}
+% \changes{thai-1.0d}{2000/05/09}{Theppitak Karoonboonyanan:
+%    Encoding changed from TIS to LTH, according to TeX convention.
+%    Let `norasi' be Thai roman font, `dbttx' Thai sans serif.
+%    Correct some Thai translations.}
 % \changes{thai-1.0d}{2001/12/04}{Theppitak Karoonboonyanan:
 %    Add checks for \cs{thechapter} existence before redefining
 %    digits as Thai.
@@ -79,10 +80,9 @@
 %    Fix wrong encoding in heading for book style (as suggested by Chanop).}
 % \changes{thai-1.0d}{2001/12/04}{Chanop Silpa-Anan:
 %    Add thainumber and thaitoday option}
-% \changes{thai-1.0d}{2000/05/09}{Theppitak Karoonboonyanan:
-%    Encoding changed from TIS to LTH, according to TeX convention.
-%    Let `norasi' be Thai roman font, `dbttx' Thai sans serif.
-%    Correct some Thai translations.}
+% \changes{thai-1.0d}{2002/01/16}{Theppitak Karoonboonyanan:
+%    Fix extra spaces appearing in \cs{selectlanguage\{thai\}}
+%    (as suggested by C. Visavakul)}
 % \changes{thai-1.0d}{2003/01/07}{Poonlap Veerathanabutr:
 %    Change `dbttx' to `dbtt'}
 % \changes{thai-1.0d}{2003/02/26}{Theppitak Karoonboonyanan:
@@ -120,6 +120,11 @@
 %    Remove unnecessary workarounds for inhibition of capitalization
 %    of headers, as the catcodes already do the job.
 %    Also remove the mysterious redefinitions of figure and table counters.}
+% \changes{thai-1.2}{2009/07/27}{Theppitak Karoonboonyanan:
+%    Re-encode Thai messages with unicode symbolic names, instead of explicit
+%    TIS-620 bytes.  Adjust documentation to cover UTF-8 support.  Make
+%    \cs{ttypist} the default typewriter font instead of \cs{ttype}.
+%    Drop the obsolete \cs{\backslash{}thai} command.}
 %
 % \section{The Thai language}
 %
@@ -128,8 +133,9 @@
 % were made by Theppitak Karoonboonyanan (\texttt{thep@linux.thai.net}).} 
 % defines language-specific macros for Thai language.
 %
-% Thai documents to be supported by this language definition must be encoded
-% in TIS-620 (or ISO/IEC 8859-11).  UTF-8 is not supported for the time being.
+% Thai documents to be supported by this language definition can be encoded
+% in TIS-620 (or ISO/IEC 8859-11) or UTF-8 (with the aids of \texttt{inputenc}
+% package).
 %
 % Thai is written continuously without word delimitors.  The word boundary 
 % analysis is considered too complicated for rule-based approaches. 
@@ -150,7 +156,7 @@
 %   \begin{itemize}
 %   \item \emph{cttex} by Vuthichai Ampornaramveth
 %   \item \emph{swath} by Phaisarn Charoenpornsawat, now maintained by Thai 
-%         Linux Working Group, downloadable from 
+%         Linux Working Group, downloadable from:\\
 %         \texttt{ftp://linux.thai.net/pub/thailinux/software/swath}
 %   \end{itemize}
 %
@@ -171,8 +177,8 @@
 %
 % \DescribeEnv{thainumber}
 %   The above numbering styles can be automatically chosen with the 
-%   \Lopt{thainumber} option.  When supplying this option in |\usepackage| 
-%   command, Thai numberings will be applied to pages, sections, enumerations, 
+%   \Lopt{thainumber} option.  When supplying this option to the \babel{}
+%   package, Thai numberings will be applied to pages, sections, enumerations, 
 %   dates, etc.
 %
 % \StopEventually{}
@@ -187,7 +193,7 @@
 \LdfInit\CurrentOption{captions\CurrentOption}
 %    \end{macrocode}
 %
-%    When this file is read as an option, i.e. by the |\usepackage|
+%    When this file is read as an option, i.e. by the |\usepackage{babel}|
 %    command, \texttt{thai} will be an `unknown' language in which
 %    case we have to make it known.  So we check for the existence of
 %    |\l@thai| to see whether we have to do something here.
@@ -201,12 +207,11 @@
 %    \subsubsection{Thai character encoding}
 %
 %    In this language definition, we support TIS-620, the national standard 
-%    8-bit character encoding.  An equivalent code table can be found in 
-%    ISO/IEC 8859-11, with non-breaking space (|\xA0|) as an additional 
-%    character.
+%    8-bit character encoding, and Unicode by means of \texttt{inputenc} 
+%    package.
 %
-%    The encoding has been described as \texttt{LTH} in the \file{lthenc.def} 
-%    file.  So, we require it.
+%    The encoding has been described in terms of TIS-620 as \texttt{LTH} in 
+%    the \file{lthenc.def} file.  So, we require it.
 %
 %    \begin{macrocode}
 \InputIfFileExists{lthenc.def}{%
@@ -220,14 +225,14 @@
 %
 %    Then, we define default fonts for the document.  \texttt{norasi} and 
 %    \texttt{garuda} are Serif and San Serif fonts from the National Fonts 
-%    Project, initiated by NECTEC.  \texttt{ttype} is a typewriter font 
-%    created by Poonlap Veerathanabutr from Thai Linux Working Group.  
+%    Project, initiated by NECTEC.  \texttt{ttypist} is a typewriter font 
+%    created by Theppitak Karoonboonyanan from Thai Linux Working Group.  
 %    All fonts are available in free license.
 %
 %    \begin{macrocode}
 \def\thairmdefault{norasi}
 \def\thaisfdefault{garuda}
-\def\thaittdefault{ttype}
+\def\thaittdefault{ttypist}
 \def\englishrmdefault{cmr}
 \def\englishsfdefault{cmss}
 \def\englishttdefault{cmtt}
@@ -257,14 +262,6 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\thai}
-%    For backward compatibility with some old tools, we define |\thai| as 
-%    and alias to |\thaitext|.  It is now \emph{obsolete.}
-%    \begin{macrocode}
-\def\thai{\thaitext}
-%    \end{macrocode}
-% \end{macro}
-%
 %    \subsubsection{Hyphenation}
 %
 %    We define |\thaihyphenmins| macro for hyphenation parameters.  This is 
@@ -291,25 +288,49 @@
 %    \begin{macrocode}
 \addto\captionsthai{%
   \def\prefacename{\thaiKhoKhwai\thaiSaraAm\thaiNoNu\thaiSaraAm}%
-  \def\refname{\thaiHoHip\thaiNoNu\thaiMaiHanakat\thaiNgoNgu\thaiSoSua\thaiSaraUee\thaiOAng\thaiOAng\thaiMaiTho\thaiSaraAa\thaiNgoNgu\thaiOAng\thaiSaraI\thaiNgoNgu}%
-  \def\abstractname{\thaiBoBaimai\thaiThoThahan\thaiKhoKhwai\thaiMaiHanakat\thaiDoDek\thaiYoYak\thaiMaiEk\thaiOAng}%
-  \def\bibname{\thaiBoBaimai\thaiRoRua\thaiRoRua\thaiNoNen\thaiSaraAa\thaiNoNu\thaiSaraU\thaiKoKai\thaiRoRua\thaiMoMa}%
-  \def\chaptername{\thaiBoBaimai\thaiThoThahan\thaiThoThahan\thaiSaraIi\thaiMaiEk}%
-  \def\appendixname{\thaiPhoSamphao\thaiSaraAa\thaiKhoKhwai\thaiPhoPhung\thaiNoNu\thaiWoWaen\thaiKoKai}%
-  \def\contentsname{\thaiSoSua\thaiSaraAa\thaiRoRua\thaiBoBaimai\thaiMaiHanakat\thaiYoYing}%
-  \def\listfigurename{\thaiSoSua\thaiSaraAa\thaiRoRua\thaiBoBaimai\thaiMaiHanakat\thaiYoYing\thaiRoRua\thaiSaraUu\thaiPoPla}%
-  \def\listtablename{\thaiSoSua\thaiSaraAa\thaiRoRua\thaiBoBaimai\thaiMaiHanakat\thaiYoYing\thaiToTao\thaiSaraAa\thaiRoRua\thaiSaraAa\thaiNgoNgu}%
-  \def\indexname{\thaiDoDek\thaiRoRua\thaiRoRua\thaiChoChang\thaiNoNu\thaiSaraIi}%
-  \def\figurename{\thaiRoRua\thaiSaraUu\thaiPoPla\thaiThoThahan\thaiSaraIi\thaiMaiEk}%
-  \def\tablename{\thaiToTao\thaiSaraAa\thaiRoRua\thaiSaraAa\thaiNgoNgu\thaiThoThahan\thaiSaraIi\thaiMaiEk}%
+  \def\refname{\thaiHoHip\thaiNoNu\thaiMaiHanakat\thaiNgoNgu%
+               \thaiSoSua\thaiSaraUee\thaiOAng%
+               \thaiOAng\thaiMaiTho\thaiSaraAa\thaiNgoNgu%
+               \thaiOAng\thaiSaraI\thaiNgoNgu}%
+  \def\abstractname{\thaiBoBaimai\thaiThoThahan%
+                    \thaiKhoKhwai\thaiMaiHanakat\thaiDoDek%
+                    \thaiYoYak\thaiMaiEk\thaiOAng}%
+  \def\bibname{\thaiBoBaimai\thaiRoRua\thaiRoRua\thaiNoNen\thaiSaraAa%
+               \thaiNoNu\thaiSaraU\thaiKoKai\thaiRoRua\thaiMoMa}%
+  \def\chaptername{\thaiBoBaimai\thaiThoThahan%
+                   \thaiThoThahan\thaiSaraIi\thaiMaiEk}%
+  \def\appendixname{\thaiPhoSamphao\thaiSaraAa\thaiKhoKhwai%
+                    \thaiPhoPhung\thaiNoNu\thaiWoWaen\thaiKoKai}%
+  \def\contentsname{\thaiSoSua\thaiSaraAa\thaiRoRua%
+                    \thaiBoBaimai\thaiMaiHanakat\thaiYoYing}%
+  \def\listfigurename{\thaiSoSua\thaiSaraAa\thaiRoRua%
+                      \thaiBoBaimai\thaiMaiHanakat\thaiYoYing%
+                      \thaiRoRua\thaiSaraUu\thaiPoPla}%
+  \def\listtablename{\thaiSoSua\thaiSaraAa\thaiRoRua%
+                     \thaiBoBaimai\thaiMaiHanakat\thaiYoYing%
+                     \thaiToTao\thaiSaraAa\thaiRoRua\thaiSaraAa\thaiNgoNgu}%
+  \def\indexname{\thaiDoDek\thaiRoRua\thaiRoRua\thaiChoChang%
+                 \thaiNoNu\thaiSaraIi}%
+  \def\figurename{\thaiRoRua\thaiSaraUu\thaiPoPla%
+                  \thaiThoThahan\thaiSaraIi\thaiMaiEk}%
+  \def\tablename{\thaiToTao\thaiSaraAa\thaiRoRua\thaiSaraAa\thaiNgoNgu%
+                 \thaiThoThahan\thaiSaraIi\thaiMaiEk}%
   \def\partname{\thaiPhoSamphao\thaiSaraAa\thaiKhoKhwai}%
-  \def\enclname{\thaiSoSua\thaiSaraI\thaiMaiEk\thaiNgoNgu\thaiThoThahan\thaiSaraIi\thaiMaiEk\thaiSaraAe\thaiNoNu\thaiBoBaimai\thaiMoMa\thaiSaraAa\thaiDoDek\thaiMaiTho\thaiWoWaen\thaiYoYak}%
-  \def\ccname{\thaiSoSua\thaiSaraAm\thaiSaraE\thaiNoNu\thaiSaraAa\thaiThoThung\thaiSaraUe\thaiNgoNgu}%
+  \def\enclname{\thaiSoSua\thaiSaraI\thaiMaiEk\thaiNgoNgu%
+                \thaiThoThahan\thaiSaraIi\thaiMaiEk%
+                \thaiSaraAe\thaiNoNu\thaiBoBaimai%
+                \thaiMoMa\thaiSaraAa%
+                \thaiDoDek\thaiMaiTho\thaiWoWaen\thaiYoYak}%
+  \def\ccname{\thaiSoSua\thaiSaraAm\thaiSaraE\thaiNoNu\thaiSaraAa%
+              \thaiThoThung\thaiSaraUe\thaiNgoNgu}%
   \def\headtoname{\thaiSaraE\thaiRoRua\thaiSaraIi\thaiYoYak\thaiNoNu}%
   \def\pagename{\thaiHoHip\thaiNoNu\thaiMaiTho\thaiSaraAa}%
   \def\seename{\thaiDoDek\thaiSaraUu}%
-  \def\alsoname{\thaiDoDek\thaiSaraUu\thaiSaraE\thaiPhoPhan\thaiSaraI\thaiMaiEk\thaiMoMa\thaiSaraE\thaiToTao\thaiSaraI\thaiMoMa}%
-  \def\proofname{\thaiPhoPhan\thaiSaraI\thaiSoSua\thaiSaraUu\thaiChoChan\thaiNoNu\thaiThanthakhat}%
+  \def\alsoname{\thaiDoDek\thaiSaraUu%
+                \thaiSaraE\thaiPhoPhan\thaiSaraI\thaiMaiEk\thaiMoMa%
+                \thaiSaraE\thaiToTao\thaiSaraI\thaiMoMa}%
+  \def\proofname{\thaiPhoPhan\thaiSaraI%
+                 \thaiSoSua\thaiSaraUu\thaiChoChan\thaiNoNu\thaiThanthakhat}%
   }
 %    \end{macrocode}
 % \end{macro}
@@ -325,22 +346,30 @@
 \def\th@month{%
   \ifcase\month\or
     \thaiMoMa\thaiKoKai\thaiRoRua\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
-    \thaiKoKai\thaiSaraU\thaiMoMa\thaiPhoSamphao\thaiSaraAa\thaiPhoPhan\thaiMaiHanakat\thaiNoNu\thaiThoThong\thaiThanthakhat \or 
+    \thaiKoKai\thaiSaraU\thaiMoMa\thaiPhoSamphao\thaiSaraAa%
+      \thaiPhoPhan\thaiMaiHanakat\thaiNoNu\thaiThoThong\thaiThanthakhat \or 
     \thaiMoMa\thaiSaraIi\thaiNoNu\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
     \thaiSaraE\thaiMoMa\thaiSoRusi\thaiSaraAa\thaiYoYak\thaiNoNu \or 
-    \thaiPhoPhan\thaiRu\thaiSoRusi\thaiPhoSamphao\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
-    \thaiMoMa\thaiSaraI\thaiThoThung\thaiSaraU\thaiNoNu\thaiSaraAa\thaiYoYak\thaiNoNu \or 
-    \thaiKoKai\thaiRoRua\thaiKoKai\thaiDoChada\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
-    \thaiSoSua\thaiSaraI\thaiNgoNgu\thaiHoHip\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
-    \thaiKoKai\thaiMaiHanakat\thaiNoNu\thaiYoYak\thaiSaraAa\thaiYoYak\thaiNoNu \or 
+    \thaiPhoPhan\thaiRu\thaiSoRusi\thaiPhoSamphao\thaiSaraAa%
+      \thaiKhoKhwai\thaiMoMa \or 
+    \thaiMoMa\thaiSaraI\thaiThoThung\thaiSaraU\thaiNoNu\thaiSaraAa%
+      \thaiYoYak\thaiNoNu \or 
+    \thaiKoKai\thaiRoRua\thaiKoKai\thaiDoChada\thaiSaraAa%
+      \thaiKhoKhwai\thaiMoMa \or 
+    \thaiSoSua\thaiSaraI\thaiNgoNgu\thaiHoHip\thaiSaraAa%
+      \thaiKhoKhwai\thaiMoMa \or 
+    \thaiKoKai\thaiMaiHanakat\thaiNoNu\thaiYoYak\thaiSaraAa%
+      \thaiYoYak\thaiNoNu \or 
     \thaiToTao\thaiSaraU\thaiLoLing\thaiSaraAa\thaiKhoKhwai\thaiMoMa \or 
-    \thaiPhoPhan\thaiRu\thaiSoSala\thaiChoChan\thaiSaraI\thaiKoKai\thaiSaraAa\thaiYoYak\thaiNoNu \or 
-    \thaiThoThong\thaiMaiHanakat\thaiNoNu\thaiWoWaen\thaiSaraAa\thaiKhoKhwai\thaiMoMa
+    \thaiPhoPhan\thaiRu\thaiSoSala\thaiChoChan\thaiSaraI\thaiKoKai\thaiSaraAa%
+      \thaiYoYak\thaiNoNu \or 
+    \thaiThoThong\thaiMaiHanakat\thaiNoNu\thaiWoWaen\thaiSaraAa%
+      \thaiKhoKhwai\thaiMoMa
   \fi}
 %    \end{macrocode}
 %
 %    Thai official calendar uses Buddhist Era, the era whose start is marked 
-%    by Lord Bhuddha's passing away.  In original form, it is a lunar 
+%    by Buddha's entry into Parinirvana.  In original form, it is a lunar 
 %    calendar.  But in Thai contemporary calendar, it is synchronized to 
 %    Gregorian calendar, with offset of 543 years back.
 %
@@ -356,7 +385,8 @@
 %    Thai date format is in the day-month-year order, using Buddhist Era.
 %    \begin{macrocode}
 \def\datethai{%
-  \def\today{\number\day \space \th@month\space \thaiPhoPhan.\thaiSoSala.~\number\th@year}}
+  \def\today{\number\day \space \th@month\space %
+             \thaiPhoPhan.\thaiSoSala.~\number\th@year}}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -373,7 +403,7 @@
 %
 %    \subsection{Word break support}
 %
-%    As Thai is written continuously without word delimitors, we define 
+%    As Thai script is written continuously without word delimitors, we define 
 %    |\wbr| command to mark word boundaries without taking space, so that 
 %    \TeX typesetter can wrap Thai lines at proper positions.
 %
@@ -413,7 +443,7 @@
 %   value, then calls |\@thainum| to convert it into Thai digits.
 %
 %   The |\@thainum| macro converts a number into Thai digits.  It expands the 
-%   argument into a number, tarminates it with `|@|', and calls 
+%   argument into a number, terminates it with `|@|', and calls 
 %   |\thaitranslate| to convert it into Thai digits.
 %
 %   \begin{macrocode}
@@ -463,9 +493,8 @@
 %
 % \begin{macro}{\thaiAlph}
 %    Similar to |\thaialph|, the |\thaiAlph| macro provides Thai alphabetic 
-%    numbering with full alphabet set, plus two semi-vowels, Ru and Lu, 
-%    in the order defined in Thai official dictionary.  So, it supports up 
-%    to 46 entries.
+%    numbering with full alphabet set in the order defined in Thai official 
+%    dictionary.  So, it supports up to 44 entries.
 %
 %    \begin{macrocode}
 \def\thaiAlph#1{\expandafter\@thaiAlph\csname c@#1\endcsname}
