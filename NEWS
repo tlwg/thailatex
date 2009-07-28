@@ -1,3 +1,12 @@
+0.4.3 (2009-07-28)
+=====
+- Update fonts from thaifonts-scalable 0.4.13, changes include:
+  + thicker bold faces for ttpyist
+  + variation faces for purisa
+- Default monospace font is now ttypist.
+- Drop the obsolete '\thai' command.
+- UTF-8 support.
+
 0.4.2 (2008-01-27)
 =====
 - Correct changelog entry in thai.dtx, removing junks in generated document.
