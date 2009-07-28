@@ -1,3 +1,27 @@
+thailatex (0.4.3-1) unstable; urgency=low
+
+  * New upstream release
+    - Update fonts from thaifonts-scalable 0.4.13, changes include:
+      + thicker bold faces for ttpyist
+      + variation faces for purisa
+    - Default monospace font is now ttypist.
+    - Drop the obsolete '\thai' command.
+    - UTF-8 support.
+  * Add NEWS.Debian file to inform users of important changes.
+  * Update README.Debian:
+    - Mention the UTF-8 support, as well as swath UTF-8 support option
+    - Update cttex VCS location (CVS -> SVN)
+  * Adjust examples installation:
+    - Move list of examples from dh_installexamples arguments into
+      debian/examples
+    - Drop doc/Makefile
+    - Add doc/utf-example.tex
+  * Drop debian/preinst that was used to remove old config file, as it's no
+    longer required once Lenny was released.
+  * Bump Standards-Version to 3.8.2 (no changes needed).
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Tue, 28 Jul 2009 12:08:03 +0700
+
 thailatex (0.4.2-5) unstable; urgency=low
 
   * debian/control:

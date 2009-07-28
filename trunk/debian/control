@@ -9,7 +9,7 @@ Build-Depends-Indep: texlive-font-utils, texlive-latex-base,
 Vcs-Svn: http://linux.thai.net/svn/software/thailatex
 Vcs-Browser: http://linux.thai.net/websvn/wsvn/software.thailatex/?sc=0
 Homepage: http://linux.thai.net/projects/thailatex
-Standards-Version: 3.8.1
+Standards-Version: 3.8.2
 
 Package: thailatex
 Architecture: all 

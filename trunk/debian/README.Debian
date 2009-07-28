@@ -8,8 +8,9 @@ This package provides Thai fonts and babel-based Thai support for LaTeX.
 Document Composing
 ------------------
 You can see how to compose a Thai LaTeX document in the README file.
-Note that your document must be TIS-620 encoded. Currently, UTF-8 is not 
-supported.
+Starting from version 0.4.3, your document can be in TIS-620 or UTF-8.
+To use UTF-8, you just add a preamble '\usepackage[utf8x]{inputenc}'.
+TIS-620 documents do not require extra preamble.
 
 
 Preprocessing
@@ -17,12 +18,12 @@ Preprocessing
 As Thai has no word delimitor, you need some processing to make TeX wrap
 lines at proper positions.  Currently, preprocessing with programs like 
 `swath' (available in Debian) or `cttex' (currently removed from Debian,
-but is still accessible from its upstream CVS [1]) is recommended.  These
+but is still accessible from its upstream SVN [1]) is recommended.  These
 programs analyze Thai text in your document with dictionary look up
 and insert word break commands {\wbr} at word boundaries, so that TeX
 knows where to break lines.
 
-  [1] cvs -d :pserver:anonymous@linux.thai.net:/home/cvs co software/cttex
+  [1] svn co http://linux.thai.net/svn/software/cttex/trunk cttex
 
 With swath, a quick command to do so is:
 
@@ -31,6 +32,11 @@ With swath, a quick command to do so is:
 or if you prefer cttex:
 
   $ cttex -W < yourdoc.tex > yourdoc.ttex
+
+If you use UTF-8, swath has an extra option '-u u,u' to read/write documents
+in UTF-8:
+
+  $ swath -f latex -u u,u < yourdoc.tex > yourdoc.ttex
 
 Please consult the document of the corresponding packages for the full
 options of each program.
