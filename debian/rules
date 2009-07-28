@@ -48,7 +48,7 @@ binary-indep: build install
 	dh_testdir
 	dh_testroot
 	dh_installdocs
-	dh_installexamples doc/orchid.tex doc/teststd.tex doc/Makefile
+	dh_installexamples
 	dh_installemacsen
 	dh_installchangelogs ChangeLog
 	dh_install
