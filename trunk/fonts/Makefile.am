@@ -129,6 +129,7 @@ thai.map: $(tfm_DATA)
 
 install-data-hook:
 	@if test -z "$(DESTDIR)" ; then                                       \
+	  $(TEXHASH) ;                                                        \
 	  if test "$(UPDMAP_VER)" = "2"; then                                 \
 	    $(UPDMAP) --disable thai.map --nohash --nomkmap ;                 \
 	    $(UPDMAP) --enable Map thai.map ;                                 \
@@ -148,7 +149,6 @@ install-data-hook:
 	    echo "% thailatex"   >> $(PDFTEXCONFIG) ;                         \
 	    echo "map +thai.map" >> $(PDFTEXCONFIG) ;                         \
 	  fi ;                                                                \
-	  @TEXHASH@ ;                                                         \
 	else                                                                  \
 	  echo "***" ;                                                        \
 	  echo "*** Warning: tetex config files not patched" ;                \
@@ -159,6 +159,7 @@ install-data-hook:
 	fi
  
 uninstall-hook:
+	$(TEXHASH)                                                            \
 	if test "$(UPDMAP_VER)" = "2"; then                                   \
 	  $(UPDMAP) --disable thai.map ;                                      \
 	else                                                                  \
@@ -170,8 +171,7 @@ uninstall-hook:
 	    sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
 	    mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ;                             \
 	  fi ;                                                                \
-	fi ;                                                                  \
-	@TEXHASH@
+	fi
 
 CLEANFILES = *.vpl *.vf *.tfm thai.map
 
