@@ -159,7 +159,7 @@ install-data-hook:
 	fi
  
 uninstall-hook:
-	$(TEXHASH)                                                            \
+	$(TEXHASH) ;                                                          \
 	if test "$(UPDMAP_VER)" = "2"; then                                   \
 	  $(UPDMAP) --disable thai.map ;                                      \
 	else                                                                  \

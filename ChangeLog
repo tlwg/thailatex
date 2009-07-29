@@ -1,5 +1,9 @@
 2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/Makefile.am: Add missing semi-colon in last commit.
+
+2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in: Post-release version suffix added.
 
 	* configure.in: Drop the broken UPDMAP_FB fallback. It doesn't work
