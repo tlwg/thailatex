@@ -3,17 +3,8 @@ afmdir = $(texmfdir)/fonts/afm/public/thai
 tfmdir = $(texmfdir)/fonts/tfm/public/thai
 vfdir  = $(texmfdir)/fonts/vf/public/thai
 
-if NEW_TDS
 encdir = $(texmfdir)/fonts/enc/dvips/thai
 mapdir = $(texmfdir)/fonts/map/dvips/thai
-else
-encdir = $(texmfdir)/dvips/base
-mapdir = $(texmfdir)/dvips/config
-endif
-
-DVIPSCONFIG=$(DESTDIR)/$(texmfdir)/dvips/config/config.ps
-PDFTEXCONFIG=$(DESTDIR)/$(texmfdir)/pdftex/config/pdftex.cfg
-#UPDMAPCONFIG=$(DESTDIR)/$(texmfdir)/web2c/updmap.cfg
 
 enc_DATA = lthuni.enc
 
@@ -130,25 +121,8 @@ thai.map: $(tfm_DATA)
 install-data-hook:
 	@if test -z "$(DESTDIR)" ; then                                       \
 	  $(TEXHASH) ;                                                        \
-	  if test "$(UPDMAP_VER)" = "2"; then                                 \
-	    $(UPDMAP) --disable thai.map --nohash --nomkmap ;                 \
-	    $(UPDMAP) --enable Map thai.map ;                                 \
-	  else                                                                \
-	    mkdir -p `dirname $(DVIPSCONFIG)` ;                               \
-	    if test -f $(DVIPSCONFIG); then                                   \
-	      sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$; \
-	      mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ;                            \
-	    fi ;                                                              \
-	    echo "% thailatex" >> $(DVIPSCONFIG) ;                            \
-	    echo "p +thai.map" >> $(DVIPSCONFIG) ;                            \
-	    mkdir -p `dirname $(PDFTEXCONFIG)` ;                              \
-	    if test -f $(PDFTEXCONFIG); then                                  \
-	      sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$;\
-	      mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ;                           \
-	    fi ;                                                              \
-	    echo "% thailatex"   >> $(PDFTEXCONFIG) ;                         \
-	    echo "map +thai.map" >> $(PDFTEXCONFIG) ;                         \
-	  fi ;                                                                \
+	  $(UPDMAP) --disable thai.map --nohash --nomkmap ;                   \
+	  $(UPDMAP) --enable Map thai.map ;                                   \
 	else                                                                  \
 	  echo "***" ;                                                        \
 	  echo "*** Warning: tetex config files not patched" ;                \
@@ -159,19 +133,8 @@ install-data-hook:
 	fi
  
 uninstall-hook:
-	$(TEXHASH) ;                                                          \
-	if test "$(UPDMAP_VER)" = "2"; then                                   \
-	  $(UPDMAP) --disable thai.map ;                                      \
-	else                                                                  \
-	  if test -f $(DVIPSCONFIG); then                                     \
-	    sed -e '/thailatex/d;/thai.map/d' $(DVIPSCONFIG) > /tmp/tmp.$$$$ ; \
-	    mv -f /tmp/tmp.$$$$ $(DVIPSCONFIG) ;                              \
-	  fi ;                                                                \
-	  if test -f $(PDFTEXCONFIG); then                                    \
-	    sed -e '/thailatex/d;/thai.map/d' $(PDFTEXCONFIG) > /tmp/tmp.$$$$ ; \
-	    mv -f /tmp/tmp.$$$$ $(PDFTEXCONFIG) ;                             \
-	  fi ;                                                                \
-	fi
+	$(TEXHASH)
+	$(UPDMAP) --disable thai.map
 
 CLEANFILES = *.vpl *.vf *.tfm thai.map
 
