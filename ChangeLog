@@ -1,5 +1,9 @@
 2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/Makefile.am: Drop supports for old tetex directories.
+
+2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* scripts/sync-thailatex.in:
 	  - Drop supports for old tetex directories.
 	  - Update mapfile path according to the new TDS.
