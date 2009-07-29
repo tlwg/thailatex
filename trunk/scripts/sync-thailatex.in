@@ -4,92 +4,62 @@
 # License: GPL
 
 prefix=@prefix@
-UPDMAP_VER=@UPDMAP_VER@
 
-DVIPSFONTS_MAP=@texmfdir@/dvips/base/psfonts.map
-DVIPSCONFIG=@texmfdir@/dvips/config/config.ps
-PDFTEXCONFIG=@texmfdir@/pdftex/config/pdftex.cfg
-THAI_MAP=@texmfdir@/dvips/config/thai.map
+THAI_MAP=@texmfdir@/fonts/map/dvips/thai/thai.map
+EMACSLISPDIR=@emacsdir@/site-lisp
 
-# remove remaining Thai font entries in dvips base psfonts.map if any
-# (deprecated implementation)
-if test -f $DVIPSFONTS_MAP; then
-  sed -e '/^dbtt/d;/^rnorasi/d' $DVIPSFONTS_MAP > /tmp/tmp.$$
-  mv /tmp/tmp.$$ $DVIPSFONTS_MAP
-fi
+do_install()
+{
+  echo "Regenerating TeX ls-R ..."
+  @TEXHASH@
+
+  # thai.map exists -> do install
+  if @UPDMAP@ --quiet --listmaps | grep thai.map >/dev/null; then
+    echo "Thai fontmap already enabled, refreshing fontmaps ..."
+    @UPDMAP@ --quiet --nohash
+  else
+    echo "Thai fontmap is not enabled, enabling it ..."
+    @UPDMAP@ --quiet --nohash --enable Map thai.map
+  fi
+
+  # add Emacs macro for activating Thai LaTeX filter
+  echo "Installing emacs macro ..."
+  if test -f $EMACSLISPDIR/site-start.el; then
+    sed -i -e '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el
+  fi
+  if test -f $EMACSLISPDIR/thai-latex-setup.el; then
+    echo '(load-library "thai-latex-setup")' >> $EMACSLISPDIR/site-start.el
+  fi
+}
+
+do_uninstall()
+{
+  echo "Regenerating TeX ls-R ..."
+  @TEXHASH@
+
+  # thai.map doesn't exist -> do uninstall
+  if @UPDMAP@ --quiet --listmaps | grep thai.map >/dev/null; then
+    echo "Thai fontmap is enabled, disabling it ..."
+    @UPDMAP@ --disable thai.map
+  else
+    echo "Thai fontmap is not enabled, just refreshing fontmaps ..."
+    @UPDMAP@
+  fi
+
+  # remove Emacs macro for activating Thai LaTeX filter
+  echo "Uninstalling emacs macro ..."
+  if test -f $EMACSLISPDIR/site-start.el; then
+    sed -i -e '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el
+  fi
+}
+
+# Main script
 
 if test -f $THAI_MAP; then
-
-    # thai.map exists -> do install
-    if test "$UPDMAP_VER" = "2"; then
-      if @UPDMAP@ --listmaps 2>/dev/null | grep thai.map >/dev/null; then
-        @UPDMAP@
-      else
-        @UPDMAP@ --enable Map thai.map
-      fi
-    else
-      # add thai.map as additional map to dvips local config
-      mkdir -p `dirname $DVIPSCONFIG`
-      if test -f $DVIPSCONFIG; then
-        sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
-        mv -f /tmp/tmp.$$ $DVIPSCONFIG
-      fi
-      echo "% thailatex" >> $DVIPSCONFIG
-      echo "p +thai.map" >> $DVIPSCONFIG
-  
-      # add thai.map as additional map to pdftex local config
-      mkdir -p `dirname $PDFTEXCONFIG`
-      if test -f $PDFTEXCONFIG; then
-        sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
-        mv -f /tmp/tmp.$$ $PDFTEXCONFIG
-      fi
-      echo "% thailatex"   >> $PDFTEXCONFIG
-      echo "map +thai.map" >> $PDFTEXCONFIG
-    fi
-
-    @TEXHASH@
-
-    # add Emacs macro for activating Thai LaTeX filter
-    EMACSLISPDIR=@emacsdir@/site-lisp
-    if test -f $EMACSLISPDIR/site-start.el; then
-      sed -e '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el > /tmp/tmp.$$
-      mv /tmp/tmp.$$ $EMACSLISPDIR/site-start.el
-    fi
-    if test -f $EMACSLISPDIR/thai-latex-setup.el; then
-      echo '(load-library "thai-latex-setup")' >> $EMACSLISPDIR/site-start.el
-    fi
-
+  echo "Thai fontmap exists, so we will enable it."
+  do_install
 else
-
-    # thai.map doesn't exist -> do uninstall
-    if test "$UPDMAP_VER" = "2"; then
-      if @UPDMAP@ --listmaps 2>/dev/null | grep thai.map >/dev/null; then
-        @UPDMAP@ --disable thai.map
-      else
-        @UPDMAP@
-      fi
-    else
-      # remove thai.map from dvips local config
-      if test -f $DVIPSCONFIG; then
-        sed -e '/thailatex/d;/thai.map/d' $DVIPSCONFIG > /tmp/tmp.$$
-        mv -f /tmp/tmp.$$ $DVIPSCONFIG
-      fi
-  
-      # remove thai.map from pdftex local config
-      if test -f $PDFTEXCONFIG; then
-        sed -e '/thailatex/d;/thai.map/d' $PDFTEXCONFIG > /tmp/tmp.$$
-        mv -f /tmp/tmp.$$ $PDFTEXCONFIG
-      fi
-    fi
-
-    @TEXHASH@
-
-    # remove Emacs macro for activating Thai LaTeX filter
-    EMACSLISPDIR=@emacsdir@/site-lisp
-    if test -f $EMACSLISPDIR/site-start.el; then
-      sed -e '/thai-latex-setup/d' $EMACSLISPDIR/site-start.el > /tmp/tmp.$$
-      mv /tmp/tmp.$$ $EMACSLISPDIR/site-start.el
-    fi
-
+  echo "Thai fontmap no longer exists, so we will disable it."
+  do_uninstall
 fi
 
