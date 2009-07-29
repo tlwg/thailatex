@@ -67,9 +67,9 @@ else
   AC_MSG_RESULT(no)
 fi
 
-AC_PATH_PROG(TEXHASH,texhash,no)
+AC_PATH_PROG(TEXHASH,[mktexlsr texhash],no)
 if test "x$TEXHASH" = "xno" ; then
-  AC_MSG_ERROR([You need texhash (from texlive distribution)])
+  AC_MSG_ERROR([You need mktexlsr or texhash (from texlive distribution)])
 fi
 
 AC_ARG_WITH(emacsdir,
