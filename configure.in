@@ -1,5 +1,5 @@
 AC_INIT(babel/thai.dtx)
-AM_INIT_AUTOMAKE(thailatex, 0.4.3)
+AM_INIT_AUTOMAKE(thailatex, 0.4.3svn)
 
 AC_PROG_INSTALL
 AC_PROG_LN_S
@@ -56,13 +56,6 @@ if test "x$UPDMAP" = "xno" ; then
   UPDMAP_VER=1
 else
   UPDMAP_VER=2
-  if echo "$UPDMAP" | grep updmap-sys > /dev/null 2>&1; then
-    # also fall back to updmap for non-root builds
-    AC_CHECK_PROGS(UPDMAP_FB,updmap,no)
-    if test "x$UPDMAP_FB" != "xno"; then
-      UPDMAP="$UPDMAP || $UPDMAP_FB"
-    fi
-  fi
 fi
 AC_SUBST(UPDMAP_VER)
 

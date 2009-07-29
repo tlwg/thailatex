@@ -1,3 +1,13 @@
+2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Post-release version suffix added.
+
+	* configure.in: Drop the broken UPDMAP_FB fallback. It doesn't work
+	when used with command-line arguments.
+
+	* fonts/Makefile.am: Reorder so that TEXHASH is called before UPDMAP
+	on install/uninstall hooks.
+
 2009-07-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, NEWS:
