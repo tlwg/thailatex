@@ -1,5 +1,12 @@
 2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* configure.in:
+	  - Drop supports for old updmap, and stop with error if updmap is not
+	    found at usual location.
+	  - Drop checking of old TDS, as it's not supported any more.
+
+2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/Makefile.am: Drop supports for old tetex directories.
 
 2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>

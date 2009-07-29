@@ -47,24 +47,9 @@ AC_SUBST(texmfdir)
 
 dnl updmappath=`eval echo $PATH:$texmfdir/dvips/config`
 dnl AC_PATH_PROG(UPDMAP,updmap,no,$updmappath)
-dnl if test "x$UPDMAP" = "xno" ; then
-dnl   AC_MSG_ERROR([You need updmap (from texlive distribution)])
-dnl fi
 AC_PATH_PROGS(UPDMAP,[updmap-sys updmap],no)
 if test "x$UPDMAP" = "xno" ; then
-  AC_MSG_WARN([Not a new updmap from texlive, falling back to patching local maps])
-  UPDMAP_VER=1
-else
-  UPDMAP_VER=2
-fi
-AC_SUBST(UPDMAP_VER)
-
-AC_MSG_CHECKING(for new TeX Directory Structure)
-AM_CONDITIONAL(NEW_TDS,test ! -d `eval echo $texmfdir/dvips/config`)
-if test "x$NEW_TDS_TRUE" = "x" ; then
-  AC_MSG_RESULT(yes)
-else
-  AC_MSG_RESULT(no)
+  AC_MSG_ERROR([You need updmap-sys or updmap (from texlive distribution)])
 fi
 
 AC_PATH_PROG(TEXHASH,[mktexlsr texhash],no)
