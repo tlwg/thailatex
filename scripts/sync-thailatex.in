@@ -8,13 +8,18 @@ prefix=@prefix@
 THAI_MAP=@texmfdir@/fonts/map/dvips/thai/thai.map
 EMACSLISPDIR=@emacsdir@/site-lisp
 
+is_thai_map_enabled()
+{
+  @UPDMAP@ --quiet --listmaps | grep -v '^#' | grep thai.map >/dev/null
+}
+
 do_install()
 {
   echo "Regenerating TeX ls-R ..."
   @TEXHASH@
 
   # thai.map exists -> do install
-  if @UPDMAP@ --quiet --listmaps | grep thai.map >/dev/null; then
+  if is_thai_map_enabled; then
     echo "Thai fontmap already enabled, refreshing fontmaps ..."
     @UPDMAP@ --quiet --nohash
   else
@@ -38,7 +43,7 @@ do_uninstall()
   @TEXHASH@
 
   # thai.map doesn't exist -> do uninstall
-  if @UPDMAP@ --quiet --listmaps | grep thai.map >/dev/null; then
+  if is_thai_map_enabled; then
     echo "Thai fontmap is enabled, disabling it ..."
     @UPDMAP@ --disable thai.map
   else
