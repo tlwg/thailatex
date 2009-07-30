@@ -27,14 +27,26 @@ LATEXFILENEW=`echo $LATEXFILEORG | sed -e "s/.tex/.ttex/"`
 LATEXFILENAME=`echo $LATEXFILEORG | sed -e "s/.tex//"`
 
 WORDSEG=
-if which swath > /dev/null; then
-  WORDSEG="swath -f latex"
-elif which cttex > /dev/null; then
-  WORDSEG="cttex -W"
-else
-  echo "Cannot find either swath or cttex"
-  exit 1
-fi
+case `file --mime $LATEXFILEORG` in
+  *charset=utf-8*)
+    if which swath > /dev/null; then
+      WORDSEG="swath -f latex -u u,u"
+    else
+      echo "Cannot find swath to process UTF-8 source"
+      exit 1
+    fi
+    ;;
+  *)
+    if which swath > /dev/null; then
+      WORDSEG="swath -f latex"
+    elif which cttex > /dev/null; then
+      WORDSEG="cttex -W"
+    else
+      echo "Cannot find either swath or cttex"
+      exit 1
+    fi
+    ;;
+esac
 
 echo "Using: $WORDSEG for Thai word segmentation"
 $WORDSEG < $LATEXFILEORG > $LATEXFILENEW
