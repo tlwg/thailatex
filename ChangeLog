@@ -1,5 +1,9 @@
 2009-07-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* scripts/tlatex: Detect UTF-8 source and call swath with -u option.
+
+2009-07-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* scripts/sync-thailatex.in:
 	  - Ignore commented lines in "UPDMAP --listmaps" output, so that
 	    thai.map is not wrongly detected as enabled when it's actually
