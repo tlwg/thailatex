@@ -1,4 +1,4 @@
-EXTRA_DIST = patch-babel sync-thailatex.in sync-babel.in tlatex
+EXTRA_DIST = sync-thailatex.in sync-babel tlatex
 
-sbin_SCRIPTS = patch-babel sync-thailatex sync-babel
+sbin_SCRIPTS = sync-thailatex sync-babel
 bin_SCRIPTS = tlatex
