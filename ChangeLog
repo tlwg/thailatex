@@ -1,5 +1,15 @@
 2009-08-14  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* configure.in, scripts/Makefile.am,
+	scripts/sync-babel.in -> scripts/sync-babel:
+	Search for babel.sty with kpsewhich, instead of hard coding its
+	location.
+
+	* scripts/Makefile.am, -scripts/patch-babel:
+	Drop unused script.
+
+2009-08-14  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* Makefile.am: Add dist-ctan target for preparing CTAN uploads.
 
 2009-08-13  Theppitak Karoonboonyanan <thep@linux.thai.net>
