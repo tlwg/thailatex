@@ -1,3 +1,7 @@
+2009-08-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* ChangeLog: Convert to UTF-8.
+
 2009-08-14  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, scripts/Makefile.am,
@@ -976,7 +980,7 @@
 2001-12-04  Chanop Silpa-Anan  <chanop@debian.org>
 	* add support for using Thai numbering in page, section,
 	  date, and etc.
-	* Thank to K.¢Õ¡
+	* Thank to K.‡∏Ç‡∏≠‡∏°
 
 2001-02-23  Chanop Silpa-Anan  <chanop@debian.org>
 	* move patch-babel script from babel to scripts dir
