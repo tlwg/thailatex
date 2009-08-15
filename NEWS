@@ -1,3 +1,11 @@
+0.4.4 (2009-08-15)
+=====
+- Fix installation problems in Makefiles and related scripts.
+- Drop support for old teTeX versions, for simplicity.
+- Update ttypist font from thaifonts-scalable trunk, with manually adjusted
+  bold glyphs.
+- Support automated tarball preparation for CTAN upload.
+
 0.4.3 (2009-07-28)
 =====
 - Update fonts from thaifonts-scalable 0.4.13, changes include:
