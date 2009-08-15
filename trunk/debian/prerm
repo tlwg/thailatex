@@ -16,7 +16,7 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
-TARGET_TEXMF=/usr/share/texmf
+TARGET_TEXMF=/var/lib/texmf
 BABELSTY_LOC=tex/generic/babel/babel.sty
 
 TARGET_BABELSTY="${TARGET_TEXMF}/${BABELSTY_LOC}"

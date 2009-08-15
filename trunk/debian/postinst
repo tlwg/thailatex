@@ -18,7 +18,7 @@ set -e
 # the debian-policy package
 
 SOURCE_TEXMF=/usr/share/texmf-texlive
-TARGET_TEXMF=/usr/share/texmf
+TARGET_TEXMF=/var/lib/texmf
 BABELSTY_LOC=tex/generic/babel/babel.sty
 
 SOURCE_BABELSTY="${SOURCE_TEXMF}/${BABELSTY_LOC}"
@@ -36,10 +36,11 @@ patch_babel_sty() {
     if [ -f ${TARGET_BABELSTY} ]; then
         sed -i.dpkg-old '/thai.ldf/d' ${TARGET_BABELSTY}
     else
+        mkdir -p `dirname ${TARGET_BABELSTY}`
         cp ${SOURCE_BABELSTY} ${TARGET_BABELSTY}
     fi
 
-    sed -i '/swedish/i\
+    sed -i '/turkish/i\
 \\DeclareOption{thai}{\\input{thai.ldf}}' ${TARGET_BABELSTY}
 
     echo "done."
@@ -47,7 +48,7 @@ patch_babel_sty() {
 
 case "$1" in
     configure)
-    patch_babel_sty
+        patch_babel_sty
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

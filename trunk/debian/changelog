@@ -1,3 +1,18 @@
+thailatex (0.4.4-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control:
+    - Update my e-mail address to @debian.org.
+    - Drop DM-Upload-Allowed.
+  * debian/prerm, debian/postinst:
+    - Put patched babel.sty under /var/lib/texmf instead of /usr/share/texmf.
+  * debian/postinst:
+    - Insert 'thai' option before 'turkish', not 'swedish'.
+  * debian/preinst:
+    - Clear old babel.sty under /usr/share/texmf.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Sat, 15 Aug 2009 13:26:27 +0700
+
 thailatex (0.4.3-1) unstable; urgency=low
 
   * New upstream release
