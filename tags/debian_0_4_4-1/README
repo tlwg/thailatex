@@ -1,0 +1,30 @@
+%% This file is a part of thailatex package ver 0.2.2-pre4
+
+thailatex is a Thai package which enables typesetting Thai with LaTeX's 
+standard document classes. It is meant to become a part of "babel", 
+a multilingual package for LaTeX which supports a lot of non-American 
+languages.
+
+Usage
+In LaTeX2e, you can tell LaTeX that the document would be written in 
+Thai by adding 2 lines in the preamble as follows:
+
+\usepackage[thai]{babel}
+\usepackage{thswitch}
+
+An example of using thailatex can be found in the file 'orchid.tex'.
+
+If you patch babel.sty with the script patch-babel located in babel
+directory distributed with the source. You may use babel as follows:
+
+\document[thai]{article}
+
+\usepackage{babel}
+\usepackage{thswitch}
+
+Note that option [thai] will be passed to babel after it is patched.
+You may have to repatch babel.sty again if you reinstall LaTeX.
+
+For more information, please visit:
+  http://linux.thai.net/projects/thailatex
+
