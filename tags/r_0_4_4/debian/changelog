@@ -1,0 +1,330 @@
+thailatex (0.4.3-1) unstable; urgency=low
+
+  * New upstream release
+    - Update fonts from thaifonts-scalable 0.4.13, changes include:
+      + thicker bold faces for ttpyist
+      + variation faces for purisa
+    - Default monospace font is now ttypist.
+    - Drop the obsolete '\thai' command.
+    - UTF-8 support.
+  * Add NEWS.Debian file to inform users of important changes.
+  * Update README.Debian:
+    - Mention the UTF-8 support, as well as swath UTF-8 support option
+    - Update cttex VCS location (CVS -> SVN)
+  * Adjust examples installation:
+    - Move list of examples from dh_installexamples arguments into
+      debian/examples
+    - Drop doc/Makefile
+    - Add doc/utf-example.tex
+  * Drop debian/preinst that was used to remove old config file, as it's no
+    longer required once Lenny was released.
+  * Bump Standards-Version to 3.8.2 (no changes needed).
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Tue, 28 Jul 2009 12:08:03 +0700
+
+thailatex (0.4.2-5) unstable; urgency=low
+
+  * debian/control:
+    - Replace all Latex/latex referals in descriptions with LaTeX, babel with
+      Babel. Thanks David Paleino for the notice.
+  * VCS moved from CVS to SVN; update Vcs-* fields accordingly.
+  * Bump debhelper compat to level 7
+    - Bump debian/compat to 7
+    - Build-dep on debhelper (>= 7)
+    - debian/rules:
+      + Replace obsoleted 'dh_clean -k' with 'dh_prep'
+      + Remove *-stamp clean-ups in clean target, as dh_clean now does it
+  * debian/copyright:
+    - Update format to proposal rev 454
+  * Bump Standards-Version to 3.8.1 (no changes needed).
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Fri, 03 Apr 2009 12:30:41 +0700
+
+thailatex (0.4.2-4) unstable; urgency=low
+
+  * debian/watch: Fix watch pattern so that only *.tar.gz is matched, not
+    *.tar.gz.md5sum.
+  * debian/postinst: Use printf instead of echo, fixing bashism.
+    Thanks Raphael Geissert for the suggestion. (Closes: #486059)
+  * debian/copyright:
+    - Update format to recent proposal
+    - Add missing license info for debian/*
+  * debian/control: Add DM-Upload-Allowed.
+  * Bump Standards-Version to 3.8.0 (no changes needed).
+  * debian/doc-base: Fix section typo Tex -> TeX. Thanks Norbert Preining.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Mon, 16 Jun 2008 10:07:25 +0700
+
+thailatex (0.4.2-3) unstable; urgency=low
+
+  * debian/copyright: Add copyright info for the new fonts
+    (fonts/{kinnari*,sawasdee*,umpush*,waree*}).
+  * Fix CVSROOT in Vcs-Cvs, so it really works with debcheckout.
+  * Build-dep on dpkg-dev (>= 1.14.13), for proper support of Vcs-Cvs field.
+  * Corrections by Paul Wise's comments:
+    + Improve package description.
+    + debian/copyright: Don't refer to file in License field.
+    + Move dpkg-dev from Build-dep to Build-dep-indep.
+    + Do not distribute babel.sty, as it's unclear whether we're allowed to do
+      so outside the Babel system. Instead, let's copy and patch/unpatch it
+      with postinst/prerm.
+  * Corrections by Norbert Preining's comments:
+    + Fix spelling "texlive" -> "TeX Live" in description (warned by newer
+      lintian).
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Wed, 20 Feb 2008 22:18:23 +0700
+
+thailatex (0.4.2-2) unstable; urgency=low
+
+  * Remove 'cttex' mentionings, as it has been removed from Debian
+    - debian/control: Remove from Recommends and Description.
+    - debian/README.Debian: Adjust message mentioning cttex.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sun, 27 Jan 2008 17:31:33 +0700
+
+thailatex (0.4.2-1) unstable; urgency=low
+
+  * debian/control: Adjust package description. (Thanks Paul Wise.)
+  * debian/README.Debian: Fix typo and add blank lines for readability.
+    (Thanks Paul Wise.)
+  * Bump debhelper build-dep version to >=5.0.0. (Thanks Paul Wise.)
+  * Use three-digit version for Standards-Version. (Thanks Paul Wise.)
+  * New upstream release
+    - Update fonts from thaifonts-scalable 0.4.9, plus some changes from CVS.
+    - Reintroduced font: kinnari, with resolved licensing issue.
+    - New fonts: sawasdee, umpush, waree.
+    - Handle the case of tone marks over long-ascender base characters with
+      below-base vowel combined, e.g. "PO PLA + SARA UU + MAI EK", using
+      Werner Lemberg's method as published in TUGboat Volume 21 (2000), No. 2.
+    - Correct changelog entry in thai.dtx, removing junks in generated
+      document.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sun, 27 Jan 2008 13:10:54 +0700
+
+thailatex (0.4.0-3) unstable; urgency=low
+
+  * debian/babel.sty: Update to v3.8h, and apply usual changes.
+  * debian/copyright: Rewrite in machine-interpretable format.
+  * debian/postinst: Remove. Its only purpose was to remove diversion, which
+    has gone since etch release.
+  * debian/dirs: Remove, unnecessary.
+  * debian/preinst:
+    - Remove old config file /etc/texmf/updmap.d/10thailatex.cfg which was
+      left from old versions. (Closes: #455459)
+    - No more handle /etc/texmf/dvips/thai.map removal. It has long gone
+      before etch release.
+  * debian/rules: Do not ignore 'make distclean' errors.
+  * debian/doc-base: Fix typo. Thanks lintian.
+  * debian/control: Add Vcs-Cvs, Vcs-Browser and Homepage info.
+  * Bump standards version to 3.7.3.0, no changes needed.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Tue, 18 Dec 2007 18:52:56 +0700
+
+thailatex (0.4.0-2) unstable; urgency=medium
+
+  * Urgency medium due to RC bug fix.
+  * Replace tetex-bin build-dep with texlive-font-utils and texlive-latex-base,
+    fixing FTBFS in lenny/sid. (Closes: #422472)
+  * Drop unneeded gs build-dep, just gs-common is enough.
+  * Drop obsolete tetex-bin, tetex-base deps.
+  * debian/postinst: Use shell condition instead of non-POSIX -a option of
+    test.
+  * debian/rules: Remove DH_COMPAT setting. Use debian/compat instead. Bump
+    debhelper compatibility to version 5.
+  * debian/doc-base: Remove last empty line, to quiet lintian.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sun, 06 May 2007 18:48:51 +0700
+
+thailatex (0.4.0-1) unstable; urgency=medium
+
+  * Urgency medium due to RC bug fix.
+  * New upstream release
+    - Relicensed to LPPL, with permission from NECTEC, the copyright holder.
+      (Closes: #394283)
+    - Create `thai.dtx' for documenting and generating `thai.ldf'.
+    - Clean up some unneeded macros.
+    - Update fonts from thaifonts-scalable 0.4.5.
+    - Add ttypist (TLWG Typist) font.
+  * debian/copyright:
+    - Update copyright info.
+    - Add fonts copyright.
+  * debian/docs:
+    - Ship upstream HISTORY file that describes the license change.
+  * debian/rules, debian/install:
+    - Move build rules from build-arch to build-indep.
+    - Remove unused dh_installmenu, dh_shlibdeps.
+    - Install files using dh_install instead of hard-coded shell scripts.
+  * debian/links, debian/doc-base:
+    - Install the generated `thai.pdf' to doc-base and texdoc.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Wed,  8 Nov 2006 14:56:37 +0700
+
+thailatex (0.3.7-2) unstable; urgency=high
+
+  * Urgency high due to RC bug fix.
+  * Fix upgrading from sarge:
+      - Remove diversion at postinst instead of preinst.  Also move away the
+        babel.sty before removing, and move it back afterward, to make
+        dpkg-divert work.
+    Thanks to Bill Allombert for discovering the bug and to Steve Langasek
+    for the solution.  (Closes: #393519)
+  * Add subversion to babel.sty to distinguish it from babel original.
+    Thanks to Frank Küster for suggesting.
+  * Bumped standard version to 3.7.2.2, no changes needed.
+  * debian/watch: Added.
+  * debian/copyright:
+      - Clarify original authors and current maintainers info.
+      - Remove irrelevant tetex-base license terms. 
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Thu, 19 Oct 2006 10:52:33 +0700
+
+thailatex (0.3.7-1) unstable; urgency=low
+
+  * New maintainer (Closes:357871)
+    Thanks to Frank Küster for intensive sponsoring
+  * New upstream release
+    - updated fonts
+    - new Loma font
+    - new TDS conformance
+    - addressed some fixes in 0.3.2-0.1 NMU
+  * Acknowledged NMU, with some fixes addressed upstream
+    (Closes: #318384, #338619)
+  * Repackaged as non-native. (Closes: #344554)
+  * Bumped standards version to 3.6.2.2, with following changes:
+    - converted changelog to UTF-8
+  * General changes
+    + debian/control:
+      - put myself as the maintainer
+      - Build-Depends, rather than Build-Depends-Indep, on debhelper
+      - added optional dependencies on texlive-base-bin and texlive-latex-base,
+        thanks to Norbert Preining's suggestion
+    + debian/rules:
+      - used $DESTDIR instead of $prefix when "make install". This is the way
+        upstream has prepared for package building.
+      - removed unneeded dh_strip
+      - changed DH_COMPAT to 4
+    + debian/conffiles:
+      - removed, as we moved to debhelper compat level 4
+  * Used dh_installtex to install fonts
+    + debian/control:
+      - build-depends on tex-common >= 0.19 for a working dh_installtex
+      - added ${misc:Depends} and depended on tetex >= 3.0
+    + debian/rules:
+      - installed map config file with dh_installtex
+    + debian/10thailatex.cfg:
+      - renamed to "maps", and let dh_installtex handle it
+    + debian/dirs:
+      - removed /etc/texmf/updmap.d, as it's now handled by dh_installtex
+    + debian/postinst, debian/postrm:
+      - removed, as they are now replaced by dh_installtex auto-generated
+        scripts (Thanks to Norbert Preining for pointing out)
+  * Do not install thai.map under TEXMFSYSCONFIG
+    + debian/rules:
+      - removed thai.map installation, left it where upstream installed it
+    + debian/dirs:
+      - removed /etc/texmf/dvips, as we wouldn't install thai.map there any more
+    + debian/preinst:
+      - removed /etc/texmf/dvips/thai.map if unchanged from previous version
+  * Docs management
+    + debian/rules, debian/docs:
+      - replaced manual upstream ChangeLog installation with
+        dh_installchangelogs
+    + debian/docs:
+      - added upstream NEWS
+    + debian/README.Debian:
+      - rewritten
+    + debian/links:
+      - added, to register upstream README with texdoc
+    + debian/copyright:
+      - updated the download location and my e-mail address
+      - added copyright info for babel.sty
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Fri, 28 Apr 2006 18:13:47 +0700
+
+thailatex (0.3.2-0.1) unstable; urgency=low
+
+  * NMU to fix RC bug: closes: #318384
+  * Fix upstream Makefile to not call install-data-hook
+  * Invoke updmap-sys instead of updmap, but fall back to updmap if
+    updmap-sys is not found (only needed for sarge backports).
+  * Update debian/babel.sty so that all new languages provided by
+    teTeX-3.0 are still available when thailatex is installed.
+    dpkg-diverting the file is no longer necessary, since teTeX's file is
+    at a different place (closes: #338619).
+
+ -- Frank Küster <frank@debian.org>  Fri, 23 Dec 2005 20:07:32 +0100
+
+thailatex (0.3.2) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Thu, 25 Mar 2004 18:00:30 +1100
+
+thailatex (0.3.1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Mon,  2 Jun 2003 07:12:20 +1000
+
+thailatex (0.2.99.3) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Fri, 18 Apr 2003 14:09:27 +1000
+
+thailatex (0.2.99.2.cvs20030329) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Sat, 29 Mar 2003 23:32:00 +1100
+
+thailatex (0.2.5.cvs20020221) unstable; urgency=low
+
+  * New upsteam release.
+  * Fix Build-Depends-Indep. (closes: #134860)
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Thu, 21 Feb 2002 17:31:41 +1100
+
+thailatex (0.2.3.cvs20011206) unstable; urgency=low
+
+  * Fix some bugs when using book class.
+  * New thaialph and thaiAlph counter.
+  * thaitoday option was removed.
+  * Remove running bibtex from tlatex script.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Thu,  6 Dec 2001 16:51:20 +1100
+
+thailatex (0.2.2.cvs20011205) unstable; urgency=low
+
+  * King Birthday Release.
+  * Ditch patch-babel.sty from the postinstall. (closes: #122016)
+  * Provide patched babel.sty instead, hence depends on version of
+    tetex-base.
+  * New thainumber and thaitoday as document option.
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Tue,  4 Dec 2001 17:33:29 +1100
+
+thailatex (0.2.2.cvs20010403) unstable; urgency=low
+
+  * Finally, debian dir is in upstream cvs
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Tue,  3 Apr 2001 09:46:19 +1000
+
+thailatex (0.2.2-pre4-1) unstable; urgency=low
+
+  * New upstream Release
+  * Bump Standards-Version to 3.5.2 
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Thu,  1 Mar 2001 00:27:14 +1100
+
+thailatex (0.2.2-pre2-1) unstable; urgency=low
+
+  * New Upstream Release 
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Sat, 10 Feb 2001 02:57:15 +1100
+
+thailatex (0.2.2-pre1-1) unstable; urgency=low
+
+  * Initial Release
+
+ -- Chanop Silpa-Anan <chanop@debian.org>  Wed, 29 Nov 2000 06:01:23 +1100
