@@ -1,5 +1,15 @@
 2010-09-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Add support for high MaiTaikhu and Nikhahit.
+
+	* fonts/thai-dummy.afm, fonts/lthuni.enc, fonts/thailigs.enc:
+	Add code points for high MaiTaikhu, high Nikhahit, and dottedcircle,
+	wrt. current fonts.
+	* fonts/thailigs.enc: Add ligkern rules to convert Maitaikhu and
+	Nikhanit after upper vowels to their high versions.
+
+2010-09-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/thailigs.enc: Add ligkern rules for Thanthakhat and Nikhahit
 	when combined with Po Pla, Fo Fa, Fo Fan, Lo Chula.
 

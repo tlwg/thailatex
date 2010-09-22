@@ -76,8 +76,8 @@
 % 0xD0
 /uni0E30 /uni0E31 /uni0E32 /uni0E33
 /uni0E34 /uni0E35 /uni0E36 /uni0E37
-/uni0E38 /uni0E39 /uni0E3A /.notdef
-/zerowidthspace /.notdef /.notdef /uni0E3F
+/uni0E38 /uni0E39 /uni0E3A /uni0E4D.high
+/zerowidthspace /dottedcircle /uni0E47.high /uni0E3F
 % 0xE0
 /uni0E40 /uni0E41 /uni0E42 /uni0E43
 /uni0E44 /uni0E45 /uni0E46 /uni0E47
