@@ -1,3 +1,8 @@
+2010-09-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/thailigs.enc: Add ligkern rules for Thanthakhat and Nikhahit
+	when combined with Po Pla, Fo Fa, Fo Fan, Lo Chula.
+
 2010-08-01  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/garuda*.{afm,pfb}: Update to version 2.63: 2010-08-01 from

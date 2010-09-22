@@ -17,11 +17,14 @@
 %LIGKERN uni0E1B uni0E39 |=:> uni0E39.left ;
 %LIGKERN uni0E1B uni0E3A |=:> uni0E3A.left ;
 %LIGKERN uni0E1B uni0E47 |=:> uni0E47.left ;
-%Popla left tone marks
+%Popla left tone marks, thanthakhat, nikhahit
 %LIGKERN uni0E1B uni0E48.low |=:> uni0E48.low_left ;
 %LIGKERN uni0E1B uni0E49.low |=:> uni0E49.low_left ;
 %LIGKERN uni0E1B uni0E4A.low |=:> uni0E4A.low_left ;
 %LIGKERN uni0E1B uni0E4B.low |=:> uni0E4B.low_left ;
+%LIGKERN uni0E1B uni0E4C.low |=:> uni0E4C.low_left ;
+%LIGKERN uni0E1B uni0E4D |=:> uni0E4D.left ;
+%Popla sara-am
 %LIGKERN uni0E1B uni0E33 |=:|> uni0E4D.left ;
 %LIGKERN uni0E4D.left uni0E33 |=:> uni0E32 ;
 
@@ -35,11 +38,14 @@
 %LIGKERN uni0E1D uni0E39 |=:> uni0E39.left ;
 %LIGKERN uni0E1D uni0E3A |=:> uni0E3A.left ;
 %LIGKERN uni0E1D uni0E47 |=:> uni0E47.left ;
-%FoFa left tone marks
+%FoFa left tone marks, thanthakhat, nikhahit
 %LIGKERN uni0E1D uni0E48.low |=:> uni0E48.low_left ;
 %LIGKERN uni0E1D uni0E49.low |=:> uni0E49.low_left ;
 %LIGKERN uni0E1D uni0E4A.low |=:> uni0E4A.low_left ;
 %LIGKERN uni0E1D uni0E4B.low |=:> uni0E4B.low_left ;
+%LIGKERN uni0E1D uni0E4C.low |=:> uni0E4C.low_left ;
+%LIGKERN uni0E1D uni0E4D |=:> uni0E4D.left ;
+%FoFa sara-am
 %LIGKERN uni0E1D uni0E33 |=:|> uni0E4D.left ;
 %LIGKERN uni0E4D.left uni0E33 |=:> uni0E32 ;
 
@@ -53,11 +59,14 @@
 %LIGKERN uni0E1F uni0E39 |=:> uni0E39.left ;
 %LIGKERN uni0E1F uni0E3A |=:> uni0E3A.left ;
 %LIGKERN uni0E1F uni0E47 |=:> uni0E47.left ;
-%FoFan left tone marks
+%FoFan left tone marks, thanthakhat, nikhahit
 %LIGKERN uni0E1F uni0E48.low |=:> uni0E48.low_left ;
 %LIGKERN uni0E1F uni0E49.low |=:> uni0E49.low_left ;
 %LIGKERN uni0E1F uni0E4A.low |=:> uni0E4A.low_left ;
 %LIGKERN uni0E1F uni0E4B.low |=:> uni0E4B.low_left ;
+%LIGKERN uni0E1F uni0E4C.low |=:> uni0E4C.low_left ;
+%LIGKERN uni0E1F uni0E4D |=:> uni0E4D.left ;
+%FoFan sara-am
 %LIGKERN uni0E1F uni0E33 |=:|> uni0E4D.left ;
 %LIGKERN uni0E4D.left uni0E33 |=:> uni0E32 ;
 
@@ -71,11 +80,14 @@
 %LIGKERN uni0E2C uni0E39 |=:> uni0E39.left ;
 %LIGKERN uni0E2C uni0E3A |=:> uni0E3A.left ;
 %LIGKERN uni0E2C uni0E47 |=:> uni0E47.left ;
-%LoChula left tone marks
+%LoChula left tone marks, thanthakhat, nikhahit
 %LIGKERN uni0E2C uni0E48.low |=:> uni0E48.low_left ;
 %LIGKERN uni0E2C uni0E49.low |=:> uni0E49.low_left ;
 %LIGKERN uni0E2C uni0E4A.low |=:> uni0E4A.low_left ;
 %LIGKERN uni0E2C uni0E4B.low |=:> uni0E4B.low_left ;
+%LIGKERN uni0E2C uni0E4C.low |=:> uni0E4C.low_left ;
+%LIGKERN uni0E2C uni0E4D |=:> uni0E4D.left ;
+%LoChula sara-am
 %LIGKERN uni0E2C uni0E33 |=:|> uni0E4D.left ;
 %LIGKERN uni0E4D.left uni0E33 |=:> uni0E32 ;
 
@@ -120,7 +132,7 @@
 %LIGKERN uni0E37 uni0E4B.low |=:> uni0E4B ;
 %LIGKERN uni0E37 uni0E4C.low |=:> uni0E4C ;
 
-%ligature for making LEFT HI tone marks and thantakhad
+%ligature for making LEFT HI tone marks and thantakhat
 %LIGKERN uni0E31.left uni0E48.low |=:> uni0E48.left ;
 %LIGKERN uni0E34.left uni0E48.low |=:> uni0E48.left ;
 %LIGKERN uni0E35.left uni0E48.low |=:> uni0E48.left ;
@@ -147,7 +159,7 @@
 
 %LIGKERN uni0E34.left uni0E4C.low |=:> uni0E4C.left ;
 
-%ligature for making LEFT LOW tone marks and thantakhad
+%ligature for making LEFT LOW tone marks and thantakhat
 %LIGKERN uni0E38.left uni0E48.low |=:> uni0E48.low_left ;
 %LIGKERN uni0E39.left uni0E48.low |=:> uni0E48.low_left ;
 %LIGKERN uni0E3A.left uni0E48.low |=:> uni0E48.low_left ;
