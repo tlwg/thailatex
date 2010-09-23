@@ -262,6 +262,37 @@
 %    \end{macrocode}
 % \end{macro}
 %
+%    \subsubsection{Pali-Sanskrit Characters}
+%
+%    Thai script can also be used for writing Pali and Sanskrit.  Additional
+%    conventions are applied when doing so: (a) Yo Ying and Tho Than must be
+%    written without descender; (b) Phinthu is used for marking cluster;
+%    (c) Nikhahit is used as a Pali-Sanskrit consonant.  
+%
+%    (b) is inherently applicable as combining character.  So is (c), with
+%    an exception for the case in which it is combined over upper vowel
+%    (namely, Sara I), where it must be shifted to higher position.  Nikhahit
+%    shifting is implemented in the ligkern rules with the extra glyph
+%    provision in the fonts.
+%
+%    What is left here is (a).  Yo Ying and Tho Than must be converted to
+%    their descender-less vairations.  The |\textpali| macro is defined
+%    for this purpose.
+%
+% \begin{macro}{\textpali}
+%    This command converts all Yo Ying and Tho Than in its argument to
+%    their descender-less variations.
+%    \begin{macrocode}
+\DeclareRobustCommand{\textpali}[1]{%
+  \begingroup
+    \def\thaiYoYing{\textYoYingPali{}}%
+    \def\thaiThoThan{\textThoThanPali{}}%
+    \scantokens\expandafter{#1}\relax
+  \endgroup
+}
+%    \end{macrocode}
+% \end{macro}
+%
 %    \subsubsection{Hyphenation}
 %
 %    We define |\thaihyphenmins| macro for hyphenation parameters.  This is 
