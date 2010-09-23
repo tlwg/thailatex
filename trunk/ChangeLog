@@ -1,3 +1,12 @@
+2010-09-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add support for Pali-Sanskrit descender-less Yo Ying & Tho Than.
+
+	* babel/lthenc.def: Add text symbols \textYoYingPali and
+	\textThoThanPali according to encoding slots in fonts/lthuni.enc.
+	* babel/thai.dtx: Add \textpali macro for converting all Yo Ying &
+	Tho Than in its argument to their descender-less variations.
+
 2010-09-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Add support for high MaiTaikhu and Nikhahit.

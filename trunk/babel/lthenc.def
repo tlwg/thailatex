@@ -37,6 +37,9 @@
 \DeclareTextSymbol{\textfongmun}{LTH}{239}
 \DeclareTextSymbol{\textangkhankhu}{LTH}{250}
 \DeclareTextSymbol{\textkhomut}{LTH}{251}
+% Pali-Sanskrit
+\DeclareTextSymbol{\textYoYingPali}{LTH}{144}
+\DeclareTextSymbol{\textThoThanPali}{LTH}{128}
 % UCS support
 \DeclareTextSymbol{\thaiKoKai}{LTH}{161}
 \DeclareTextSymbol{\thaiKhoKhai}{LTH}{162}
