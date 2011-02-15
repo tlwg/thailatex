@@ -1,5 +1,10 @@
 2011-02-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/thai.dtx: Update translation for \refname from
+	  "หนังสืออ้างอิง" to "เอกสารอ้างอิง".
+
+2011-02-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* babel/thai.dtx: Add revision history for previous commit.
 
 2010-09-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
