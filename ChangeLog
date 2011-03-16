@@ -1,3 +1,12 @@
+2011-03-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Make sure \textpali{} also works on TIS-620 text, not just UTF-8.
+	This requires "inputenc" package.
+
+	* babel/Makefile.am, +babel/tis620.def: Add "tis620" input encoding
+	definition for use with "inputenc" package.
+	* doc/teststd.tex: Add Pali test text.
+
 2011-03-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/purisa*.{afm,pfb}: Update to version 002.012: 2011-03-11 from
