@@ -1,4 +1,4 @@
-BABEL_COMMON = thai.sty thswitch.sty lthenc.def \
+BABEL_COMMON = thai.sty thswitch.sty lthenc.def tis620.def \
 	lthkinnari.fd lthgaruda.fd lthnorasi.fd \
 	lthttype.fd lthttypist.fd \
 	lthpurisa.fd lthloma.fd \
