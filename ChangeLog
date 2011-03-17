@@ -1,5 +1,11 @@
 2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/thai.dtx: Disable \wbr effect in \textpali{} command, as Pali
+	is already space-delimited, and there is no proper tool to hyphenate
+	it yet.
+
+2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* Makefile.am: Add rules for preparing CTAN package in ZIP format,
 	which is preferred by Windows users, and let ZIP be the default,
 	.tar.gz be an option.
