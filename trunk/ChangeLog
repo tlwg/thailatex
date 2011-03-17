@@ -1,5 +1,10 @@
 2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/thai.dtx: Add documentation sentences about \wbr being
+	ignored.
+
+2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* babel/thai.dtx: Update copyright years and changelog dates.
 
 2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
