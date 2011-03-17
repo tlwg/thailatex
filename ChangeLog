@@ -1,3 +1,9 @@
+2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* Makefile.am: Add rules for preparing CTAN package in ZIP format,
+	which is preferred by Windows users, and let ZIP be the default,
+	.tar.gz be an option.
+
 2011-03-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Make sure \textpali{} also works on TIS-620 text, not just UTF-8.
