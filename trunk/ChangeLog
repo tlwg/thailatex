@@ -1,5 +1,9 @@
 2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/thai.dtx: Update copyright years and changelog dates.
+
+2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* babel/thai.dtx: Disable \wbr effect in \textpali{} command, as Pali
 	is already space-delimited, and there is no proper tool to hyphenate
 	it yet.
