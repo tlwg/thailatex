@@ -1,5 +1,10 @@
 2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/Makefile.am: Revert the if-block change, as it does not work.
+	The exit just exits a spawned shell, not the whole script.
+
+2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* babel/Makefile.am: Remove thai.ldf before re-compiling thai.dtx,
 	so it can build twice in a row.
 
