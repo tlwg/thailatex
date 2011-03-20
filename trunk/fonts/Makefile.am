@@ -119,18 +119,18 @@ thai.map: $(tfm_DATA)
 # 	$(UPDMAP) --disable thai.map
 
 install-data-hook:
-	@if test -n "$(DESTDIR)" ; then                                       \
+	@if test -z "$(DESTDIR)" ; then                                       \
+	  $(TEXHASH) ;                                                        \
+	  $(UPDMAP) --disable thai.map --nohash --nomkmap ;                   \
+	  $(UPDMAP) --enable Map thai.map ;                                   \
+	else                                                                  \
 	  echo "***" ;                                                        \
-	  echo "*** Warning: texlive config files not patched" ;              \
+	  echo "*** Warning: tetex config files not patched" ;                \
 	  echo "***" ;                                                        \
 	  echo "*** update these files on the target system" ;                \
 	  echo "*** using sync-thailatex script" ;                            \
 	  echo "***" ;                                                        \
-	  exit 0 ;                                                            \
 	fi
-	$(TEXHASH)
-	$(UPDMAP) --disable thai.map --nohash --nomkmap
-	$(UPDMAP) --enable Map thai.map
  
 uninstall-hook:
 	$(TEXHASH)
