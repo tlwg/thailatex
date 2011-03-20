@@ -1,3 +1,8 @@
+2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, Makefile.am, -thailatex.spec.in:
+	Remove the outdated, unmaintained RPM spec.
+
 2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/thai.dtx: Add documentation sentences about \wbr being
