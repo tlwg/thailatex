@@ -24,6 +24,7 @@ thai.ldf: thai.ins thai.dtx
 	if [ ! -f thai.dtx ]; then \
 	  $(LN_S) $(srcdir)/thai.dtx thai.dtx; \
 	fi
+	rm -f thai.ldf
 	latex thai.ins
 
 thai.pdf: thai.dtx
