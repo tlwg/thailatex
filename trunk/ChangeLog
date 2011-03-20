@@ -1,5 +1,13 @@
 2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/Makefile.am:
+	Use exception-styled if-block instead of if-then-else for separating
+	normal and exceptional cases.
+
+	* Makefile.am: Remove old commented lines.
+
+2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in, Makefile.am, -thailatex.spec.in:
 	Remove the outdated, unmaintained RPM spec.
 

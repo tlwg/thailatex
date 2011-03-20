@@ -7,12 +7,6 @@ DISTCLEANFILES = thailatex.spec \
 
 doc_DATA = README
 
-#install-data-hook:
-#	@TEXHASH@
-
-#uninstall-hook:
-#	@TEXHASH@
-
 tdsdist_tgz = $(PACKAGE)-$(VERSION).tds.tar.gz
 ctandist_tgz = $(PACKAGE)-$(VERSION).ctan.tar.gz
 
