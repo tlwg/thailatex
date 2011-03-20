@@ -71,6 +71,5 @@ AC_OUTPUT(Makefile
   fonts/Makefile
   scripts/Makefile
   scripts/sync-thailatex
-  doc/Makefile
-  thailatex.spec)
+  doc/Makefile)
 
