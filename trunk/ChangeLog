@@ -1,5 +1,10 @@
 2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/Makefile.am: Remove thai.ldf before re-compiling thai.dtx,
+	so it can build twice in a row.
+
+2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/Makefile.am:
 	Use exception-styled if-block instead of if-then-else for separating
 	normal and exceptional cases.
