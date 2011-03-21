@@ -1,3 +1,19 @@
+0.4.5 (2011-03-21)
+=====
+- Update fonts from thaifonts-scalable 0.4.15, changes include:
+  + Improved Latin glyphs in garuda
+  + Overlap-free Thai glyphs in ttypist
+  + Bug fixes in Purisa (clean wrong ligature and fix glyph name)
+- Correct positioning of THANTHAKHAT and NIKHAHIT over long-ascender Thai
+  glyphs.
+- Support for high MAITAIKHU (e.g. in Kuy) and high NIKHAHIT (e.g. in Pali).
+- Add \textpali{} command for Pali-Sanskrit text with descender-less YO YING
+  and THO THAN.
+- Add "tis620" inputenc option for proper Pali-Sanskrit support.
+- Adjust translation for \refname from "หนังสืออ้างอิง" to "เอกสารอ้างอิง".
+- CTAN package is now in ZIP format by default, as preferred by Windows users.
+- Outdated and unmaintained RPM spec is now removed.
+
 0.4.4 (2009-08-15)
 =====
 - Fix installation problems in Makefiles and related scripts.
