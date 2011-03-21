@@ -1,0 +1,91 @@
+% An example of UTF-8 usage with thailatex.
+%
+% Created: 2009-07-27
+% Author: Theppitak Karoonboonyanan <thep@linux.thai.net>
+%
+% You will need some additional language packs to compile this document.
+%
+% For TeXLive:
+%   - texlive-lang-greek
+%   - texlive-lang-spanish
+%   - texlive-lang-french
+%   - texlive-lang-cyrillic
+%
+\documentclass{article}
+\usepackage[greek,spanish,french,russian,english,thai,thainumber]{babel}
+\usepackage[utf8x]{inputenc}
+
+\begin{document}
+
+\title{ตัวอย่างการใช้ UTF-8}
+
+\maketitle
+
+\section{ภาษาที่ทดสอบ}
+
+\begin{enumerate}
+  \item ภาษาไทย
+  \item \foreignlanguage{english}{English} --- ภาษาอังกฤษ
+  \item \foreignlanguage{greek}{Ελληνικά} --- ภาษากรีก
+  \item \foreignlanguage{spanish}{Español} --- ภาษาสเปน
+  \item \foreignlanguage{french}{Français} --- ภาษาฝรั่งเศส
+  \item \foreignlanguage{russian}{Русский} --- ภาษารัสเซีย
+\end{enumerate}
+
+\section{ใช้คำสั่งทีละข้อความ}
+
+ภาษาไทย -- \foreignlanguage{english}{English} --
+\foreignlanguage{greek}{Ελληνικά} -- \foreignlanguage{spanish}{Español} --
+\foreignlanguage{french}{Français} -- \foreignlanguage{russian}{Русский}
+
+\section{ใช้คำสั่งเปลี่ยนภาษา}
+
+ภาษาไทย -- \selectlanguage{english} English \selectlanguage{thai} --
+\selectlanguage{greek} Ελληνικά \selectlanguage{thai} --
+\selectlanguage{spanish} Español \selectlanguage{thai} --
+\selectlanguage{french} Français \selectlanguage{thai} --
+\selectlanguage{russian} Русский \selectlanguage{thai}
+
+\section{ใช้ environment}
+
+ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย 
+ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย 
+ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย 
+ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย ภาษาไทย 
+
+\begin{otherlanguage*}{english}
+English English English English English English English English English English
+English English English English English English English English English English
+English English English English English English English English English English
+English English English English English English English English English English
+\end{otherlanguage*}
+
+\begin{otherlanguage*}{greek}
+Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά 
+Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά 
+Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά 
+Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά Ελληνικά 
+\end{otherlanguage*}
+
+\begin{otherlanguage*}{spanish}
+Español Español Español Español Español Español Español Español Español 
+Español Español Español Español Español Español Español Español Español 
+Español Español Español Español Español Español Español Español Español 
+Español Español Español Español Español Español Español Español Español 
+\end{otherlanguage*}
+
+\begin{otherlanguage*}{french}
+Français Français Français Français Français Français Français Français 
+Français Français Français Français Français Français Français Français 
+Français Français Français Français Français Français Français Français 
+Français Français Français Français Français Français Français Français 
+\end{otherlanguage*}
+
+\begin{otherlanguage*}{russian}
+Русский Русский Русский Русский Русский Русский Русский Русский Русский 
+Русский Русский Русский Русский Русский Русский Русский Русский Русский 
+Русский Русский Русский Русский Русский Русский Русский Русский Русский 
+Русский Русский Русский Русский Русский Русский Русский Русский Русский 
+\end{otherlanguage*}
+
+\end{document}

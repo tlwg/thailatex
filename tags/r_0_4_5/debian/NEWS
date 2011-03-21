@@ -1,0 +1,11 @@
+thailatex (0.4.3-1) unstable; urgency=low
+
+  * thailatex now supports UTF-8 documents, with the aids of inputenc package.
+    See /usr/share/doc/examples/utf-example.tex.gz for an example.  (You will
+    need additional textlive-lang-* packages if you want to compile it.)
+  * If you use swath to insert word breaks in UTF-8 documents, do not forget to
+    add '-u u,u' command-line argument.
+  * The '\thai' backward-compatible command is no longer provided in this
+    version.  Use '\thaitext' instead in your documents.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Tue, 28 Jul 2009 11:23:18 +0700
