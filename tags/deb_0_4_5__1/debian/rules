@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_test:
+# 'make check' won't work without package being installed first. Skip it.
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp
+
+binary-arch: build install
+# We have nothing to do.
+

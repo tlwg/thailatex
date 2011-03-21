@@ -1,0 +1,22 @@
+Source: thailatex
+Section: tex
+Priority: optional
+Maintainer: Theppitak Karoonboonyanan <thep@debian.org>
+Build-Depends: debhelper (>= 7.0.50~)
+Build-Depends-Indep: texlive-font-utils, texlive-latex-base,
+ tex-common (>=0.19), ghostscript
+Vcs-Svn: http://linux.thai.net/svn/software/thailatex
+Vcs-Browser: http://linux.thai.net/websvn/wsvn/software.thailatex/?sc=0
+Homepage: http://linux.thai.net/projects/thailatex
+Standards-Version: 3.9.1
+
+Package: thailatex
+Architecture: all 
+Recommends: swath
+Depends: texlive-base-bin, texlive-latex-base, ${misc:Depends}
+Description: Thai support for LaTeX
+ This package provides a Thai language add-on for LaTeX. It is based on 
+ the Babel package which comes with the TeX Live distribution.
+ .
+ This package needs a Thai word separator such as swath, in order for
+ LaTeX to be able to break sentences.
