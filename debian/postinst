@@ -47,7 +47,7 @@ patch_babel_sty() {
 }
 
 case "$1" in
-    configure)
+    configure|triggered)
         patch_babel_sty
     ;;
 

@@ -1,3 +1,22 @@
+thailatex (0.4.5-1) unstable; urgency=low
+
+  * New upstream release
+    - Add NEWS to inform users about the new command.
+    - Update README.Debian for some new requirements.
+  * debian/copyright:
+    - Updated to DEP-5 rev 173.
+    - Update copyright years.
+  * B-Dep on ghostscript instead of the obsolete gs-common, fixing FTBFS
+    (Closes: #618182).
+  * Drop versioned Dep on ancient dpkg-dev.
+  * debian/rules: Switch to dh 7 rules.
+  * B-Dep on debhelper (>= 7.0.50~) for override_dh_ targets support.
+  * debian/triggers, debian/postinst:
+    - Add trigger on system babel.sty for re-generating patched version.
+  * Bump Standards-Version to 3.9.1 (no changes needed).
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Mon, 21 Mar 2011 14:27:25 +0700
+
 thailatex (0.4.4-2) unstable; urgency=low
 
   * debian/doc-base:
