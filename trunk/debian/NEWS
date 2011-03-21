@@ -1,3 +1,15 @@
+thailatex (0.4.5-1) unstable; urgency=low
+
+  thailatex now supports Pali/Sanskrit text with descender-less YO YING
+  and THO THAN, as well as NIKHAHIT over SARA I (no need for workaround
+  using SARA UE as seen in many documents).  Just use \textpali{...}
+  command.
+
+  If you are using TIS-620 encoding with Pali/Sanskrit text, you will need
+  'inputenc' package with 'tis620' option to make it work properly.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Mon, 21 Mar 2011 13:59:07 +0700
+
 thailatex (0.4.3-1) unstable; urgency=low
 
   * thailatex now supports UTF-8 documents, with the aids of inputenc package.

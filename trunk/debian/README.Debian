@@ -10,7 +10,9 @@ Document Composing
 You can see how to compose a Thai LaTeX document in the README file.
 Starting from version 0.4.3, your document can be in TIS-620 or UTF-8.
 To use UTF-8, you just add a preamble '\usepackage[utf8x]{inputenc}'.
-TIS-620 documents do not require extra preamble.
+For TIS-620 documents, '\usepackage[tis620]{inputenc}' may be needed
+for some commands to work properly (available since 0.4.5).  Normally,
+it is not needed otherwise.
 
 
 Preprocessing
