@@ -1,5 +1,7 @@
 aclocal.m4
+autom4te.cache
 configure
+INSTALL
 install-sh
 Makefile.in
 missing
