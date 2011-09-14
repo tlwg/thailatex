@@ -12,9 +12,8 @@ Standards-Version: 3.9.2
 
 Package: thailatex
 Architecture: all 
-Recommends: swath
+Recommends: swath, texlive-latex-extra
 Depends: texlive-base-bin, texlive-latex-base, ${misc:Depends}
-Recommends: texlive-latex-extra
 Description: Thai support for LaTeX
  This package provides a Thai language add-on for LaTeX. It is based on 
  the Babel package which comes with the TeX Live distribution.
