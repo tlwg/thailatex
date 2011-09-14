@@ -1,3 +1,4 @@
 debian/tmp/usr/share/doc/thailatex/thai.pdf usr/share/doc/thailatex
 debian/tmp/usr/share/texmf/*                usr/share/texmf
+debian/updmap.d/*                           etc/texmf/updmap.d
 emacs/thai-latex-setup.el                   usr/share/emacs/site-lisp/thailatex
