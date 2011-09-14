@@ -2,8 +2,10 @@ thailatex (0.4.5-2) UNRELEASED; urgency=low
 
   * Recommends texlive-latex-extra, for utf8 support.
   * Bump Standards-Version to 3.9.2 (no changes needed).
+  * Install /etc/texmf/updmap.d/20thailatex.cfg so thai.map gets listed
+    with the 'update-updmap' command.
 
- -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 14 Sep 2011 19:20:52 +0700
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 14 Sep 2011 21:51:53 +0700
 
 thailatex (0.4.5-1) unstable; urgency=low
 
