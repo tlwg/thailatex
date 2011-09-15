@@ -1,0 +1,23 @@
+#!/bin/sh
+# Patch/unpatch thailatex babel.sty with that of tetex
+# Written by Theppitak Karoonboonyanan <thep@linux.thai.net>
+# License: GPL
+
+BABELSTY=`kpsewhich babel.sty`
+
+if [ "x$BABELSTY" = "x" ]; then
+  echo "Cannot find babel.sty to update"
+  exit 1
+fi
+
+echo "Updating $BABELSTY"
+
+sed -i -e '/thai.ldf/d' $BABELSTY
+
+THAILDF=`kpsewhich thai.ldf`
+
+if [ "x$THAILDF" != "x" ]; then
+  sed -i -e '/turkish/i\
+\\DeclareOption{thai}{\\input{thai.ldf}}' $BABELSTY
+fi
+
