@@ -1,5 +1,9 @@
 2011-10-11  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/Makefile.am: Remove old commented lines.
+
+2011-10-11  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in:
 	  - Post-release version suffix added.
 	  - Add bug report address.

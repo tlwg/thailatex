@@ -110,14 +110,6 @@ r%.tfm: %.afm lthuni.enc
 thai.map: $(tfm_DATA)
 	LC_COLLATE=C sort $@ | uniq > /tmp/tmp.$$$$; mv /tmp/tmp.$$$$ $@
 
-# For tetex > 1.0.7 only
-# 
-# install-data-hook:
-# 	$(UPDMAP) --enable Map thai.map
-#  
-# uninstall-hook:
-# 	$(UPDMAP) --disable thai.map
-
 install-data-hook:
 	@if test -z "$(DESTDIR)" ; then                                       \
 	  $(TEXHASH) ;                                                        \
