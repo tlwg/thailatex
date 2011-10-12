@@ -1,5 +1,12 @@
 2011-10-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/Makefile.am, fonts/thaifont.mk.am:
+	  - Move non-generic parts out of thaifont.mk.am.
+	  - Move thailigs.vpl to non-generic part.
+	  - Fix one literal 'thai.map' left in generic part.
+
+2011-10-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/Makefile.am, +fonts/thaifont.mk.am:
 	  - Split make rules to file, for generalization.
 
