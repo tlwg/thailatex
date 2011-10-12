@@ -3,10 +3,7 @@ afmdir = $(texmfdir)/fonts/afm/public/thai
 tfmdir = $(texmfdir)/fonts/tfm/public/thai
 vfdir  = $(texmfdir)/fonts/vf/public/thai
 
-encdir = $(texmfdir)/fonts/enc/dvips/thai
 mapdir = $(texmfdir)/fonts/map/dvips/thai
-
-enc_DATA = lthuni.enc
 
 map_DATA = $(MAP)
 
@@ -24,24 +21,11 @@ tfm_DATA = $(TFMFILES) $(RTFMFILES)
 
 vf_DATA = $(VFFILES)
 
-EXTRA_DIST = \
-	thaifont.mk.am \
-	lthuni.enc \
-	thailigs.enc \
-	thai-dummy.afm \
+EXTRA_DIST += \
 	$(PFBFILES) \
 	$(AFMFILES)
 
 # Local Rules
-
-thailigs.vpl: thailigs.enc thai-dummy.afm
-	if [ ! -f thai-dummy.afm ]; then \
-	  $(LN_S) $(srcdir)/thai-dummy.afm thai-dummy.afm; \
-	fi
-	if [ ! -f thailigs.enc ]; then \
-	  $(LN_S) $(srcdir)/thailigs.enc thailigs.enc; \
-	fi
-	$(AFM2TFM) thai-dummy.afm -v $@ -T thailigs.enc thailigs.tfm
 
 r%.tfm: %.afm lthuni.enc
 %.vpl: %.afm lthuni.enc thailigs.vpl
@@ -62,7 +46,7 @@ r%.tfm: %.afm lthuni.enc
 %.tfm: %.vpl
 	$(VPTOVF) $*
 
-thai.map: $(tfm_DATA)
+$(MAP): $(tfm_DATA)
 	LC_COLLATE=C sort $@ | uniq > /tmp/tmp.$$$$; mv /tmp/tmp.$$$$ $@
 
 install-data-hook:

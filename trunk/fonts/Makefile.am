@@ -1,3 +1,22 @@
+EXTRA_DIST = \
+	thaifont.mk.am \
+	lthuni.enc \
+	thailigs.enc \
+	thai-dummy.afm
+
+encdir = $(texmfdir)/fonts/enc/dvips/thai
+
+enc_DATA = lthuni.enc
+
+thailigs.vpl: thailigs.enc thai-dummy.afm
+	if [ ! -f thai-dummy.afm ]; then \
+	  $(LN_S) $(srcdir)/thai-dummy.afm thai-dummy.afm; \
+	fi
+	if [ ! -f thailigs.enc ]; then \
+	  $(LN_S) $(srcdir)/thailigs.enc thailigs.enc; \
+	fi
+	$(AFM2TFM) thai-dummy.afm -v $@ -T thailigs.enc thailigs.tfm
+
 FONTS = \
 	kinnari \
 	kinnari_b \
