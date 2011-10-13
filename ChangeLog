@@ -1,3 +1,9 @@
+2011-10-13  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/thaifont.mk.am:
+	  - Optionally use lthuni.enc from TEXMF if missing from $(srcdir),
+	    partially generalizing the make rule.
+
 2011-10-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/Makefile.am, fonts/thaifont.mk.am:

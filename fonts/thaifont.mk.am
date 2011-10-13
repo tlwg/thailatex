@@ -25,15 +25,18 @@ EXTRA_DIST += \
 	$(PFBFILES) \
 	$(AFMFILES)
 
+ENC_PATH = $(shell kpsewhich -show-path=.enc)
+LTH_ENC = $(shell kpsewhich -path=$(srcdir)/:$(ENC_PATH) lthuni.enc)
+
 # Local Rules
 
-r%.tfm: %.afm lthuni.enc
-%.vpl: %.afm lthuni.enc thailigs.vpl
+r%.tfm: %.afm $(LTH_ENC)
+%.vpl: %.afm $(LTH_ENC) thailigs.vpl
 	if [ ! -f $*.afm ]; then \
 	  $(LN_S) $(srcdir)/$*.afm $*.afm; \
 	fi
 	if [ ! -f lthuni.enc ]; then \
-	  $(LN_S) $(srcdir)/lthuni.enc lthuni.enc; \
+	  $(LN_S) $(LTH_ENC) lthuni.enc; \
 	fi
 	$(AFM2TFM) $*.afm -v $*.vpl -T lthuni.enc r$*.tfm \
 	| $(SED) "s/$$/ <$*.pfb/" >> $(MAP)
