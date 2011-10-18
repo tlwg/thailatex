@@ -1,5 +1,10 @@
 2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/thai-dummy.afm:
+	  - Add back the file accidentally lost in previous commit.
+
+2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Remove fonts.
 
 	* fonts/Makefile.am, -fonts/*.afm, -fonts/*.pfb:
