@@ -1,5 +1,11 @@
 2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/thai.dtx, babel/thswitch.sty:
+	  - Move font-specific macros from language definition to
+	    thswitch.sty.
+
+2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/thai-dummy.afm:
 	  - Add back the file accidentally lost in previous commit.
 
