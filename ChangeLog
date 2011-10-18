@@ -1,5 +1,10 @@
 2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/Makefile.am, -babel/*.fd:
+	  - Remove more font-specific stuffs.
+
+2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* babel/thai.dtx, babel/thswitch.sty:
 	  - Move font-specific macros from language definition to
 	    thswitch.sty.
