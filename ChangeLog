@@ -1,3 +1,22 @@
+2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Remove fonts.
+
+	* fonts/Makefile.am, -fonts/*.afm, -fonts/*.pfb:
+	  - Remove fonts from source.
+	* fonts/Makefile.am:
+	  - Install thailigs.enc and thai-dummy.afm under TEXMF, to allow
+	    font packages to build thailigs.vpl on-the-fly via kpathsea.
+	  - Install thaifont.mk.am snippet for font packages use.
+	* fonts/thaifont.mk.am:
+	  - No more symlinks for thai-dummy.afm, thailigs.enc and lthuni.enc.
+	    Just access them via kpathsea.
+	* fonts/Makefile.am, fonts/thaifont.mk.am:
+	  - Move thailigs.vpl build rule to font package side and build it
+	    on-the-fly, as VPL files are not accessible via kpathsea.
+	* Makefile.am:
+	  - Add $(TEXHASH) calls for install/uninstall hooks.
+
 2011-10-13  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/thaifont.mk.am:

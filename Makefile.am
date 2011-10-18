@@ -7,6 +7,21 @@ DISTCLEANFILES = thailatex.spec \
 
 doc_DATA = README
 
+install-data-hook:
+	@if test -z "$(DESTDIR)" ; then                                       \
+	  $(TEXHASH) ;                                                        \
+	else                                                                  \
+	  echo "***" ;                                                        \
+	  echo "*** Warning: TeX index not updated" ;                         \
+	  echo "***" ;                                                        \
+	  echo "*** update it on the target system" ;                         \
+	  echo "*** using $(TEXHASH) command" ;                               \
+	  echo "***" ;                                                        \
+	fi
+ 
+uninstall-hook:
+	$(TEXHASH)
+
 tdsdist_tgz = $(PACKAGE)-$(VERSION).tds.tar.gz
 ctandist_tgz = $(PACKAGE)-$(VERSION).ctan.tar.gz
 
