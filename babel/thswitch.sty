@@ -5,6 +5,19 @@
 %%            - add \ttdefault
 %% 2000/05/10 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
 %%            - add \sfdefault
+\def\thairmdefault{norasi}
+\def\thaisfdefault{garuda}
+\def\thaittdefault{ttypist}
+\def\englishrmdefault{cmr}
+\def\englishsfdefault{cmss}
+\def\englishttdefault{cmtt}
+\DeclareRobustCommand{\thaitext}{%
+  \fontencoding{LTH}\fontfamily{\thairmdefault}\selectfont
+  \def\rmdefault{\thairmdefault}%
+  \def\sfdefault{\thaisfdefault}%
+  \def\ttdefault{\thaittdefault}%
+  \def\encodingdefault{LTH}}
+
 \DeclareRobustCommand{\latintext}{%
   \fontencoding{\latinencoding}\fontfamily{\englishrmdefault}\selectfont
   \def\rmdefault{\englishrmdefault}%

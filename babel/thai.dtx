@@ -29,7 +29,7 @@
 %<code>\ProvidesLanguage{thai}
 %\fi
 %\ProvidesFile{thai.dtx}
-        [2011/03/17 v1.3 Thai support from the babel system]
+        [2011/10/18 v1.4 Thai support from the babel system]
 %\iffalse
 %% File `thai.dtx'
 %% Thai Language Definition File
@@ -129,6 +129,8 @@
 %    Add \cs{\backslash{}textpali} macro for typesetting Pali text with
 %    descender-less Yo Ying and Tho Than.  Update translation for 
 %    \cs{\backslash{}refname}}
+% \changes{thai-1.4}{2011/10/18}{Theppitak Karoonboonyanan:
+%    Remove font-specific macros
 %
 % \section{The Thai language}
 %
@@ -227,21 +229,6 @@
  }
 %    \end{macrocode}
 %
-%    Then, we define default fonts for the document.  \texttt{norasi} and 
-%    \texttt{garuda} are Serif and San Serif fonts from the National Fonts 
-%    Project, initiated by NECTEC.  \texttt{ttypist} is a typewriter font 
-%    created by Theppitak Karoonboonyanan from Thai Linux Working Group.  
-%    All fonts are available in free license.
-%
-%    \begin{macrocode}
-\def\thairmdefault{norasi}
-\def\thaisfdefault{garuda}
-\def\thaittdefault{ttypist}
-\def\englishrmdefault{cmr}
-\def\englishsfdefault{cmss}
-\def\englishttdefault{cmtt}
-%    \end{macrocode}
-%
 %    The next step consists of defining commands to switch to the
 %    Thai language. The reason for this is that a user might want
 %    to switch back and forth between languages.
@@ -250,10 +237,7 @@
 %    We define |\thaitext| as a declarative switch to Thai font encoding.
 %    \begin{macrocode}
 \DeclareRobustCommand{\thaitext}{%
-  \fontencoding{LTH}\fontfamily{\thairmdefault}\selectfont%
-  \def\rmdefault{\thairmdefault}%
-  \def\sfdefault{\thaisfdefault}%
-  \def\ttdefault{\thaittdefault}%
+  \fontencoding{LTH}\selectfont%
   \def\encodingdefault{LTH}}
 %    \end{macrocode}
 % \end{macro}
