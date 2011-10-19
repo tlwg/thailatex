@@ -1,4 +1,4 @@
-BABEL_COMMON = thai.sty thswitch.sty lthenc.def tis620.def
+BABEL_COMMON = thswitch.sty lthenc.def tis620.def
 
 BABEL_SRC = thai.dtx thai.ins $(BABEL_COMMON)
 BABEL_INS = thai.ldf $(BABEL_COMMON)
