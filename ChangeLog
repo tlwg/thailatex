@@ -1,5 +1,10 @@
 2011-10-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/Makefile.am, -babel/thai.sty:
+	  - Remove obsolete file.
+
+2011-10-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* babel/thai.dtx:
 	  - Improve wording.
 
