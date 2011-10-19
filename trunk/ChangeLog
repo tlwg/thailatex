@@ -1,3 +1,8 @@
+2011-10-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Add missing '}'.
+
 2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/Makefile.am, -babel/*.fd:
