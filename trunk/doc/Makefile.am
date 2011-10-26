@@ -3,10 +3,6 @@ DOC_FILES = orchid.tex utf-example.tex
 examplesdir = $(docdir)/examples
 examples_DATA = $(DOC_FILES)
 
-TESTS = test-orchid.sh test-utf.sh
-
-check_SCRIPTS = test-orchid.sh test-teststd.sh test-utf.sh
-
 EXTRA_DIST = $(DOC_FILES) $(check_SCRIPTS)
 
 CLEANFILES = *.log *.aux *.ttex *.dvi *.ps *.pdf

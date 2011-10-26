@@ -1,5 +1,11 @@
 2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* doc/Makefile.am, -doc/test-utf.sh, -doc/test-orchid.sh:
+	  - Remove all tests, as they require installed font maps and
+	    thus usually fail 'make distcheck' before installing.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* doc/Makefile.am, -doc/test-teststd.sh, -doc/teststd.tex:
 	  - Remove teststd.tex example; moved to thaifonts-scalable.
 
