@@ -20,11 +20,11 @@ thai.ldf: thai.ins thai.dtx
 	  $(LN_S) $(srcdir)/thai.dtx thai.dtx; \
 	fi
 	rm -f thai.ldf
-	latex thai.ins
+	$(LATEX) thai.ins
 
 thai.pdf: thai.dtx
 	if [ ! -f thai.dtx ]; then \
 	  $(LN_S) $(srcdir)/thai.dtx thai.dtx; \
 	fi
-	pdflatex thai.dtx
+	$(PDFLATEX) thai.dtx
 

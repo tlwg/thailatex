@@ -1,5 +1,10 @@
 2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/Makefile.am, emacs/Makefile.am:
+	  - Use commands from configured vars, not explicitly, in recipes.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in:
 	  - Drop checks for unused programs: awk, dvips, pf2afm, afm2tfm,
 	    vptovf, ps2pdf, swath, cttex, updmap-sys.
