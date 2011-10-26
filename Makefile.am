@@ -1,4 +1,4 @@
-EXTRA_DIST = HISTORY COPYING.fonts
+EXTRA_DIST = HISTORY
 SUBDIRS = babel emacs fonts scripts doc
 
 DISTCLEANFILES = thailatex.spec \
