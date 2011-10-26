@@ -1,3 +1,8 @@
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am, -fonts/thaifont.mk.am:
+	  - Remove thaifont.mk.am, cancelling shared automake fragment usage.
+
 2011-10-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/Makefile.am, -babel/thai.sty:
