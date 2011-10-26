@@ -1,5 +1,11 @@
 2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* README:
+	  - Fix script name 'patch-babel' -> 'sync-babel'.
+	  - Remove version info.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* scripts/sync-thailatex.in:
 	  - Remove updmap calls & referrals to thai.map.
 	  - Check for thai-latex-setup.el existence instead to determine
