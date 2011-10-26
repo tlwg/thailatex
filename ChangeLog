@@ -1,5 +1,15 @@
 2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* configure.in:
+	  - Add checks for swath & cttex back, but not make mandatory.
+	* doc/Makefile.am:
+	  - Check swath/cttex availability from configured vars, not
+	    "which ...".
+	  - Fall back to cp when both swath & cttex are not available.
+	  - Use pdflatex to generate PDF directly.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* babel/Makefile.am, emacs/Makefile.am:
 	  - Use commands from configured vars, not explicitly, in recipes.
 

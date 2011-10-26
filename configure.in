@@ -14,6 +14,8 @@ AC_CHECK_PROGS(PDFLATEX,pdflatex,no)
 if test "x$PDFLATEX" = "xno" ; then
   AC_MSG_ERROR([You need pdflatex (from texlive distribution)])
 fi
+AC_CHECK_PROGS(SWATH,swath,no)
+AC_CHECK_PROGS(CTTEX,cttex,no)
 
 AC_ARG_WITH(texmfdir,
   [AC_HELP_STRING([--with-texmfdir=DIR],
