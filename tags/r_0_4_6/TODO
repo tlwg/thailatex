@@ -1,0 +1,9 @@
+- Karl Berry's font naming scheme
+- use fontinst
+- kerning
+- tutorial doc
+
+WISHLIST
+- hyphenation?
+- macro for multi-pass wordseg?
+
