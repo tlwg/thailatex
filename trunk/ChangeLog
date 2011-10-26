@@ -1,5 +1,12 @@
 2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* configure.in:
+	  - Drop checks for unused programs: awk, dvips, pf2afm, afm2tfm,
+	    vptovf, ps2pdf, swath, cttex, updmap-sys.
+	  - Add check for pdflatex.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* Makefile.am, -GPL, -COPYING.fonts:
 	  - Remove fonts license info.
 

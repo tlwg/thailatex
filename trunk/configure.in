@@ -3,7 +3,6 @@ AM_INIT_AUTOMAKE(thailatex, 0.4.5svn, thep@linux.thai.net)
 
 AC_PROG_INSTALL
 AC_PROG_LN_S
-AC_PROG_AWK
 AC_PROG_SED
 AC_CHECK_PROGS(RMDIR,rmdir,no)
 
@@ -11,30 +10,9 @@ AC_CHECK_PROGS(LATEX,latex,no)
 if test "x$LATEX" = "xno" ; then
   AC_MSG_ERROR([You need latex (from texlive distribution)])
 fi
-AC_CHECK_PROGS(DVIPS,dvips,no)
-if test "x$DVIPS" = "xno" ; then
-  AC_MSG_ERROR([You need dvips (from texlive distribution)])
-fi
-AC_CHECK_PROGS(PF2AFM,pf2afm,no)
-if test "x$PF2AFM" = "xno" ; then
-  AC_MSG_ERROR([You need pf2afm (from ghostscript distribution)])
-fi
-AC_CHECK_PROGS(AFM2TFM,afm2tfm,no)
-if test "x$AFM2TFM" = "xno" ; then
-  AC_MSG_ERROR([You need afm2tfm (from texlive distribution)])
-fi
-AC_CHECK_PROGS(VPTOVF,vptovf,no)
-if test "x$VPTOVF" = "xno" ; then
-  AC_MSG_ERROR([You need vptovf (from texlive distribution)])
-fi
-AC_CHECK_PROGS(PS2PDF,ps2pdf,no)
-if test "x$PS2PDF" = "xno" ; then
-  AC_MSG_ERROR([You need ps2pdf (from ghostscipt distribution)])
-fi
-AC_CHECK_PROGS(SWATH,swath,no)
-AC_CHECK_PROGS(CTTEX,cttex,no)
-if test "x$SWATH" = "xno" && test "x$CTTEX" = "xno" ; then
-  AC_MSG_WARN([You may need either swath or cttex (from corresponding package)])
+AC_CHECK_PROGS(PDFLATEX,pdflatex,no)
+if test "x$PDFLATEX" = "xno" ; then
+  AC_MSG_ERROR([You need pdflatex (from texlive distribution)])
 fi
 
 AC_ARG_WITH(texmfdir,
@@ -44,13 +22,6 @@ AC_ARG_WITH(texmfdir,
 AC_MSG_CHECKING(--with-texmfdir)
 AC_MSG_RESULT("$texmfdir")                                                                                                           
 AC_SUBST(texmfdir)
-
-dnl updmappath=`eval echo $PATH:$texmfdir/dvips/config`
-dnl AC_PATH_PROG(UPDMAP,updmap,no,$updmappath)
-AC_PATH_PROGS(UPDMAP,[updmap-sys updmap],no)
-if test "x$UPDMAP" = "xno" ; then
-  AC_MSG_ERROR([You need updmap-sys or updmap (from texlive distribution)])
-fi
 
 AC_PATH_PROG(TEXHASH,[mktexlsr texhash],no)
 if test "x$TEXHASH" = "xno" ; then
