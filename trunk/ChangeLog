@@ -1,5 +1,10 @@
 2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* configure.in, NEWS:
+	=== Version 0.4.6 ===
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in:
 	  - Remove unused RMDIR check.
 
