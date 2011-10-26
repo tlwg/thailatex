@@ -1,9 +1,9 @@
-DOC_FILES = orchid.tex teststd.tex utf-example.tex
+DOC_FILES = orchid.tex utf-example.tex
 
 examplesdir = $(docdir)/examples
 examples_DATA = $(DOC_FILES)
 
-TESTS = test-orchid.sh test-teststd.sh test-utf.sh
+TESTS = test-orchid.sh test-utf.sh
 
 check_SCRIPTS = test-orchid.sh test-teststd.sh test-utf.sh
 
