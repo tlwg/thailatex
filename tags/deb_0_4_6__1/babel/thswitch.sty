@@ -1,0 +1,27 @@
+%% This file is part of the thailatex package
+%% Created by Surapant Meknavin: surapan@nectec.or.th
+%% 21 June 1999
+%% 2004/03/04 Theppitak Karoonboonyanan <thep@linux.thai.net>
+%%            - add \ttdefault
+%% 2000/05/10 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+%%            - add \sfdefault
+\def\thairmdefault{norasi}
+\def\thaisfdefault{garuda}
+\def\thaittdefault{ttypist}
+\def\englishrmdefault{cmr}
+\def\englishsfdefault{cmss}
+\def\englishttdefault{cmtt}
+\DeclareRobustCommand{\thaitext}{%
+  \fontencoding{LTH}\fontfamily{\thairmdefault}\selectfont
+  \def\rmdefault{\thairmdefault}%
+  \def\sfdefault{\thaisfdefault}%
+  \def\ttdefault{\thaittdefault}%
+  \def\encodingdefault{LTH}}
+
+\DeclareRobustCommand{\latintext}{%
+  \fontencoding{\latinencoding}\fontfamily{\englishrmdefault}\selectfont
+  \def\rmdefault{\englishrmdefault}%
+  \def\sfdefault{\englishsfdefault}%
+  \def\ttdefault{\englishttdefault}%
+  \def\encodingdefault{\latinencoding}}
+
