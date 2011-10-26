@@ -4,7 +4,6 @@ AM_INIT_AUTOMAKE(thailatex, 0.4.5svn, thep@linux.thai.net)
 AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_SED
-AC_CHECK_PROGS(RMDIR,rmdir,no)
 
 AC_CHECK_PROGS(LATEX,latex,no)
 if test "x$LATEX" = "xno" ; then
