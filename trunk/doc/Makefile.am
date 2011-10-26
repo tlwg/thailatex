@@ -5,23 +5,19 @@ examples_DATA = $(DOC_FILES)
 
 EXTRA_DIST = $(DOC_FILES) $(check_SCRIPTS)
 
-CLEANFILES = *.log *.aux *.ttex *.dvi *.ps *.pdf
+CLEANFILES = *.log *.aux *.ttex *.pdf
 
-SUFFIXES = .tex .dvi .ps .pdf
+SUFFIXES = .tex .pdf
 
-.dvi.ps:
-	$(DVIPS) $< -o $@
-
-.ps.pdf:
-	$(PS2PDF) $<
-
-.tex.dvi:
-	if (which $(SWATH) > /dev/null) ; then \
+.tex.pdf: 
+	if test "x$(SWATH)" != "xno" ; then \
 	  $(SWATH) -f latex < $< > $@.ttex ; \
-	elif (which $(CTTEX) > /dev/null) ; then \
+	elif test "x$(CTTEX)" != "xno" ; then \
 	  $(CTTEX) -W < $< > $@.ttex ; \
+	else \
+	  cp $< $@.ttex ; \
 	fi
-	$(LATEX) $@.ttex
-	$(LATEX) $@.ttex
-	mv $@.dvi $@
+	$(PDFLATEX) $@.ttex
+	$(PDFLATEX) $@.ttex
+	mv $@.pdf $@
 
