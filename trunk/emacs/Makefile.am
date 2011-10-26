@@ -8,7 +8,7 @@ EMACS_SITE_START=$(DESTDIR)$(emacslispdir)/site-start.el
 install-data-hook:
 	@if test -z "$(DESTDIR)" ; then                                       \
 	  if [ -f $(EMACS_SITE_START) ] ; then                                \
-	    sed -e '/thai-latex-setup/d' $(EMACS_SITE_START)                  \
+	    $(SED) -e '/thai-latex-setup/d' $(EMACS_SITE_START)               \
 	      > /tmp/tmp.$$$$ ;                                               \
 	    mv /tmp/tmp.$$$$ $(EMACS_SITE_START) ;                            \
 	  fi ;                                                                \
@@ -25,7 +25,7 @@ install-data-hook:
 
 uninstall-hook:
 	if [ -f $(EMACS_SITE_START) ] ; then \
-	  sed -e '/thai-latex-setup/d' $(EMACS_SITE_START) \
+	  $(SED) -e '/thai-latex-setup/d' $(EMACS_SITE_START) \
 	    > /tmp/tmp.$$$$ ; \
 	  mv /tmp/tmp.$$$$ $(EMACS_SITE_START) ; \
 	fi
