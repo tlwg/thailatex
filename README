@@ -1,4 +1,4 @@
-%% This file is a part of thailatex package ver 0.2.2-pre4
+%% This file is a part of thailatex package
 
 thailatex is a Thai package which enables typesetting Thai with LaTeX's 
 standard document classes. It is meant to become a part of "babel", 
@@ -14,7 +14,7 @@ Thai by adding 2 lines in the preamble as follows:
 
 An example of using thailatex can be found in the file 'orchid.tex'.
 
-If you patch babel.sty with the script patch-babel located in babel
+If you patch babel.sty with the script sync-babel located in babel
 directory distributed with the source. You may use babel as follows:
 
 \document[thai]{article}
