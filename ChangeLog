@@ -1,5 +1,12 @@
 2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* scripts/sync-thailatex.in:
+	  - Remove updmap calls & referrals to thai.map.
+	  - Check for thai-latex-setup.el existence instead to determine
+	    install/uninstall operation.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in:
 	  - Add checks for swath & cttex back, but not make mandatory.
 	* doc/Makefile.am:
