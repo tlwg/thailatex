@@ -1,5 +1,10 @@
 2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* Makefile.am, -GPL, -COPYING.fonts:
+	  - Remove fonts license info.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* doc/Makefile.am, -doc/test-utf.sh, -doc/test-orchid.sh:
 	  - Remove all tests, as they require installed font maps and
 	    thus usually fail 'make distcheck' before installing.
