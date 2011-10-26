@@ -1,3 +1,10 @@
+0.4.6 (2011-10-26)
+=====
+- Remove fonts and provide them directly from thaifonts-scalable source
+  package.
+- No more build-dependency on TeX font utils and Ghostscript.
+- Build-dependency on swath/cttex is now optional.
+
 0.4.5 (2011-03-21)
 =====
 - Update fonts from thaifonts-scalable 0.4.15, changes include:
