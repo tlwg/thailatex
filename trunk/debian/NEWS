@@ -1,3 +1,17 @@
+thailatex (0.4.6-1) unstable; urgency=low
+
+  Built-in fonts have now been split out to latex-fonts-thai-tlwg package.
+
+  If your old Thai LaTeX documents do not use 'thswitch' package,
+  font families will not be switched with \sffamily or \ttfamily commands.
+  Only the default one will be used throughout the document.
+
+  To allow font switching, it is now recommended to \usepackage{fonts-tlwg}.
+  It is currently equivalent to \usepackage{thswitch}, but the latter is
+  deprecated soon, to allow alternative Thai font packages to come.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 26 Oct 2011 16:24:08 +0700
+
 thailatex (0.4.5-1) unstable; urgency=low
 
   thailatex now supports Pali/Sanskrit text with descender-less YO YING

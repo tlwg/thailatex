@@ -6,9 +6,6 @@
 %:
 	dh $@ --with tex
 
-override_dh_auto_test:
-# 'make check' won't work without package being installed first. Skip it.
-
 override_dh_auto_install:
 	dh_auto_install --destdir=debian/tmp
 

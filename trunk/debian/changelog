@@ -1,3 +1,20 @@
+thailatex (0.4.6-1) unstable; urgency=low
+
+  * New upstrem release
+    - Fonts removed.
+  * Drop B-Dep-Indep on texlive-font-utils, ghostscript.
+  * debian/map: Dropped, no more fonts.
+  * debian/examples: Drop teststd.tex, as per upstream.
+  * debian/install: Strip debian/tmp prefix.
+  * debian/copyright: Use non-forwarding format URL. Bump to revision 202.
+  * debian/rules: Drop override_dh_auto_test. Upstream doesn't fail any more.
+  * Drop Depends on texlive-base-bin, which is already pulled in by
+    texlive-latex-base.
+  * Add Depends on latex-fonts-thai-tlwg.
+  * Add NEWS to inform user about the side-effect of the font split.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 26 Oct 2011 16:39:57 +0700
+
 thailatex (0.4.5-2) unstable; urgency=medium
 
   * Bug fix release, according to discussion with Witchakorn Kamolpornwijit
