@@ -1,0 +1,57 @@
+thailatex for Debian
+====================
+
+
+This package provides Thai fonts and babel-based Thai support for LaTeX.
+
+
+Document Composing
+------------------
+You can see how to compose a Thai LaTeX document in the README file.
+Starting from version 0.4.3, your document can be in TIS-620 or UTF-8.
+To use UTF-8, you just add a preamble '\usepackage[utf8x]{inputenc}'.
+For TIS-620 documents, '\usepackage[tis620]{inputenc}' may be needed
+for some commands to work properly (available since 0.4.5).  Normally,
+it is not needed otherwise.
+
+
+Preprocessing
+-------------
+As Thai has no word delimitor, you need some processing to make TeX wrap
+lines at proper positions.  Currently, preprocessing with programs like 
+`swath' (available in Debian) or `cttex' (currently removed from Debian,
+but is still accessible from its upstream SVN [1]) is recommended.  These
+programs analyze Thai text in your document with dictionary look up
+and insert word break commands {\wbr} at word boundaries, so that TeX
+knows where to break lines.
+
+  [1] svn co http://linux.thai.net/svn/software/cttex/trunk cttex
+
+With swath, a quick command to do so is:
+
+  $ swath -f latex < yourdoc.tex > yourdoc.ttex
+
+or if you prefer cttex:
+
+  $ cttex -W < yourdoc.tex > yourdoc.ttex
+
+If you use UTF-8, swath has an extra option '-u u,u' to read/write documents
+in UTF-8:
+
+  $ swath -f latex -u u,u < yourdoc.tex > yourdoc.ttex
+
+Please consult the document of the corresponding packages for the full
+options of each program.
+
+After this preprocessing, you can compile your document with usual LaTeX 
+programs, for example:
+
+  $ latex yourdoc.ttex
+  $ dvips yourdoc.dvi
+
+or with pdflatex:
+
+  $ pdflatex yourdoc.ttex
+
+and so on.
+
