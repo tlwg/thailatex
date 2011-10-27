@@ -1,3 +1,10 @@
+thailatex (0.4.6-2) unstable; urgency=low
+
+  * debian/copyright: Remove copyrights for the removed fonts.
+  * debian/preinst: Clear old conffile /etc/texmf/updmap.d/20thailatex.cfg.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Thu, 27 Oct 2011 21:41:44 +0700
+
 thailatex (0.4.6-1) unstable; urgency=low
 
   * New upstrem release
