@@ -1,3 +1,11 @@
+thailatex (0.4.6-3) unstable; urgency=low
+
+  * Downgrade dependency on latex-fonts-thai-tlwg to Recommends to prevent
+    circular dependency, as the fonts should depend on it.
+  * Suggests latex-fonts-sipa-arundina.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 02 Nov 2011 15:18:05 +0700
+
 thailatex (0.4.6-2) unstable; urgency=low
 
   * debian/copyright: Remove copyrights for the removed fonts.
