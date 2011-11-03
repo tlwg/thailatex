@@ -1,3 +1,13 @@
+2011-11-03  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	A few adjustments before CTAN upload.
+
+	* README:
+	  - Replace 'thswitch' mentioning with 'fonts-tlwg'.
+	  - Add information for UTF-8 usage.
+	* doc/utf-example.tex, doc/orchid.tex:
+	  - Use 'fonts-tlwg' package instead of 'thswitch'.
+
 2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* configure.in, NEWS:
