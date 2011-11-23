@@ -29,7 +29,7 @@
 %<code>\ProvidesLanguage{thai}
 %\fi
 %\ProvidesFile{thai.dtx}
-        [2011/10/18 v1.4 Thai support from the babel system]
+        [2011/11/23 v1.4a Thai support from the babel system]
 %\iffalse
 %% File `thai.dtx'
 %% Thai Language Definition File
@@ -131,24 +131,46 @@
 %    \cs{\backslash{}refname}}
 % \changes{thai-1.4}{2011/10/18}{Theppitak Karoonboonyanan:
 %    Remove font-specific macros}
+% \changes{thai-1.4a}{2011/11/23}{Theppitak Karoonboonyanan:
+%    Revise documentation}
 %
 % \section{The Thai language}
 %
 % The file \file{\filename}\footnote{The file described in this section has 
-% version number \fileversion\ and was last revised on \filedate. Contributions 
-% were made by Theppitak Karoonboonyanan (\texttt{thep@linux.thai.net}).} 
+% version number \fileversion\ and was last revised on \filedate.  The original
+% author was Surapant Meknavin, and it was composed into \file{\filename} and
+% maintained by Theppitak Karoonboonyanan (\texttt{thep@linux.thai.net}).} 
 % defines language-specific macros for Thai language.
 %
-% Thai documents to be supported by this language definition can be encoded
-% in TIS-620 (or ISO/IEC 8859-11) or UTF-8 (with the aids of \texttt{inputenc}
-% package).
+% \subsection{Input encoding}
+%
+% Thai documents supported by this language definition can be encoded in
+% either TIS-620 (ISO/IEC 8859-11) or UTF-8 with the aids of \texttt{inputenc}
+% package.
+%
+% \DescribeMacro{\thaitext}
+% \DescribeMacro{\latintext}
+%   The commands |\thaitext| and |\latintext| can be used to switch to Thai
+%   or Latin fonts.  These are declarations.
+%
+% \DescribeMacro{\textthai}
+% \DescribeMacro{\textlatin}
+%   The commands |\textthai| and |\textlatin| both take one argument
+%   which is then typeset using the requested font encoding.
+%
+% \DescribeMacro{\textpali}
+%   The command |\textpali| takes one argument which is then typeset using
+%   Thai font encoding, with special shapes for certain characters, such as
+%   descender-less Yo Ying and Tho Than, as required by usual Pali text.
+%
+% \subsection{Word breaks}
 %
 % Thai is written continuously without word delimitors.  The word boundary 
 % analysis is considered too complicated for rule-based approaches. 
-% Most good quality word analysis tools available employ special matching
-% algorithms against pre-defined dictionaries.  Some even use contextual 
-% analysis for ambiguous cases based on statistics.  Therefore, no good 
-% hyphenation pattern is found to be comparable with those tools yet.  
+% Most available good-quality word analysis tools employ special matching
+% algorithms against pre-defined dictionaries.  Some even use statistics-based
+% contextual analysis to resolve ambiguities.  Therefore, no good hyphenation 
+% pattern is found to be comparable with those tools yet.  
 %
 % \DescribeMacro{\wbr}
 %   What the Thai language definition provides here for the word boundary 
@@ -166,38 +188,40 @@
 %         \texttt{ftp://linux.thai.net/pub/thailinux/software/swath}
 %   \end{itemize}
 %
-%   Some certain Thai documents use Thai digits instead of Arabic.
-%   And Thai alphabetic numbering is also commonly used for appendices.
-%   This file provides a number of numbering styles that can apply 
-%   to \LaTeX\ |\pagenumbering| command:
+% \subsection{Thai numbering}
 %
-%    \begin{itemize}
-%    \item |\thainum| for plain Thai digits
-%    \item |\thaibracenum| for Thai digits in parentheses
-%    \item |\thaialph| for Thai alphabetic numbering, using a reduced set
-%          (with three alphabets skipped: Kho Khuat, Kho Khon and Kho Rakhang)
-%    \item |\thaiAlph| for Thai alphabetic numbering, using the full set
-%          (with full alphabet set, plus two semi-vowels, Ru and Lu, in the
-%          order defined in Thai official dictionary)
-%    \end{itemize}
+% Some certain Thai documents use Thai digits instead of Arabic.
+% And Thai alphabetic numbering is also commonly used for appendices.
+% This file provides a number of numbering styles that can be applied 
+% to \LaTeX\ |\pagenumbering| command:
+%
+%   \begin{itemize}
+%   \item |\thainum| for plain Thai digits
+%   \item |\thaibracenum| for Thai digits in parentheses
+%   \item |\thaialph| for Thai alphabetic numbering, using a reduced set
+%         (with three alphabets skipped: Kho Khuat, Kho Khon and Kho Rakhang)
+%   \item |\thaiAlph| for Thai alphabetic numbering, using the full set
+%         (with full alphabet set, plus two semi-vowels, Ru and Lu, in the
+%         order defined in Thai official dictionary)
+%   \end{itemize}
 %
 % \DescribeEnv{thainumber}
-%   The above numbering styles can be automatically chosen with the 
+%   The above numbering styles can be automatically chosen using the 
 %   \Lopt{thainumber} option.  When supplying this option to the \babel{}
 %   package, Thai numberings will be applied to pages, sections, enumerations, 
 %   dates, etc.
 %
 % \StopEventually{}
 %
-%    \subsection{Thai language definition}
+% \subsection{Thai language definition}
 %
-%    The macro |\LdfInit| takes care of preventing file from being
-%    loaded more than once, checking the category code of the
-%    \texttt{@} sign, etc.
-%    \begin{macrocode}
+% The macro |\LdfInit| takes care of preventing file from being
+% loaded more than once, checking the category code of the
+% \texttt{@} sign, etc.
+% \begin{macrocode}
 %<*code>
 \LdfInit\CurrentOption{captions\CurrentOption}
-%    \end{macrocode}
+% \end{macrocode}
 %
 %    When this file is read as an option, i.e. by the |\usepackage{babel}|
 %    command, \texttt{thai} will be an `unknown' language in which
