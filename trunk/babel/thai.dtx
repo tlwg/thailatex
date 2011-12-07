@@ -133,6 +133,8 @@
 %    Remove font-specific macros}
 % \changes{thai-1.4a}{2011/11/23}{Theppitak Karoonboonyanan:
 %    Revise documentation}
+% \changes{thai-1.4b}{2011/12/07}{Theppitak Karoonboonyanan:
+%    Adjust \cs{\wbr} word spacing from 0.6pt to 0.4em, taken from XeTeX}
 %
 % \section{The Thai language}
 %
@@ -454,7 +456,7 @@
 %    \TeX typesetter can wrap Thai lines at proper positions.
 %
 %    \begin{macrocode}
-\def\wbr{\hskip0pt plus0.6pt\relax}
+\def\wbr{\hskip0pt plus0.4em\relax}
 \renewcommand{\baselinestretch}{1.2}
 %    \end{macrocode}
 %
