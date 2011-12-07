@@ -1,3 +1,8 @@
+2011-12-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Adjust \wbr word spacing from 0.6pt to 0.4em, taken from XeTeX
+
 2011-11-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/thai.dtx: Revise documentation
