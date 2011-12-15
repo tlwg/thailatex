@@ -1,3 +1,8 @@
+2011-12-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Remove extra space in \wbr.  Word spacing is considered suboptimal.
+
 2011-12-14  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/thai.dtx:
