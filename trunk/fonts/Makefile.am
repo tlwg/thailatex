@@ -3,8 +3,8 @@ EXTRA_DIST = \
 	thailigs.enc \
 	thai-dummy.afm
 
-encdir = $(texmfdir)/fonts/enc/dvips/thai
-pkgafmdir = $(texmfdir)/fonts/afm/public/thai
+encdir = $(texmfdir)/fonts/enc/dvips/$(PACKAGE)
+pkgafmdir = $(texmfdir)/fonts/afm/public/$(PACKAGE)
 
 enc_DATA = lthuni.enc thailigs.enc
 
