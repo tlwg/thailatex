@@ -1,5 +1,10 @@
 2011-12-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* fonts/Makefile.am, babel/Makefile.am:
+	  - Install files under consistent package's subdir name.
+
+2011-12-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* babel/thai.dtx:
 	  - Escape backslash in changelog.
 
