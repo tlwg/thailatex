@@ -1,3 +1,8 @@
+2011-12-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Escape backslash in changelog.
+
 2011-12-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/thai.dtx:
