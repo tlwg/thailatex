@@ -39,7 +39,9 @@ inst-tds:
 	       --with-texmfdir=/ --docdir=/doc/latex/$(PACKAGE) \
 	  && $(MAKE) $(AM_MAKEFLAGS) \
 	  && $(MAKE) $(AM_MAKEFLAGS) DESTDIR=`pwd`/inst install \
-	  && rm -rf inst/usr
+	  && rm -rf inst/usr \
+	  && mkdir -p inst/source/latex/$(PACKAGE) \
+	  && make distdir distdir=inst/source/latex/$(PACKAGE)
 
 dist-tds-tgz: inst-tds
 	cd $(tdsdistdir)/inst \
