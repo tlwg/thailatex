@@ -1,3 +1,7 @@
+2011-12-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* Makefile.am: Add source in TDS zip.
+
 2011-12-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/Makefile.am, babel/Makefile.am:
