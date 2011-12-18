@@ -1,3 +1,9 @@
+2011-12-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/thai-dummy.afm, fonts/thailigs.enc:
+	  - Remove duplicated entries for quoteleft and quoteright, which
+	    prevent LIGKERN rules from being included in VPL.
+
 2011-12-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* Makefile.am: Add source in TDS zip.

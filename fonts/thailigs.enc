@@ -283,7 +283,7 @@
 /uni0E4A.low_left /uni0E4B.low_left /uni0E4C.low_left /uni0E48
 /uni0E49 /uni0E4A /uni0E4B /uni0E4C
 % 0x90
-/uni0E0D.descless /quoteleft /quoteright /quotedblleft
+/uni0E0D.descless /.notdef /.notdef /quotedblleft
 /quotedblright /bullet /endash /emdash
 /uni0E31.left /uni0E4D.left /uni0E47.left /uni0E48.left
 /uni0E49.left /uni0E4A.left /uni0E4B.left /uni0E4C.left
