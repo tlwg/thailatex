@@ -1,3 +1,8 @@
+2011-12-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Revise documentation (rev 1.4c).
+
 2011-12-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* fonts/thai-dummy.afm, fonts/thailigs.enc:
