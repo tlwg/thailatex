@@ -29,7 +29,7 @@
 %<code>\ProvidesLanguage{thai}
 %\fi
 %\ProvidesFile{thai.dtx}
-        [2011/11/23 v1.4a Thai support from the babel system]
+        [2011/12/19 v1.4c Thai support from the babel system]
 %\iffalse
 %% File `thai.dtx'
 %% Thai Language Definition File
@@ -136,6 +136,8 @@
 % \changes{thai-1.4b}{2011/12/16}{Theppitak Karoonboonyanan:
 %    Remove extra space in \cs{\backslash{}wbr}.  Word spacing is considered
 %    suboptimal.}
+% \changes{thai-1.4c}{2011/12/19}{Theppitak Karoonboonyanan:
+%    Revise documentation}
 %
 % \section{The Thai language}
 %
@@ -176,19 +178,22 @@
 % pattern is found to be comparable with those tools yet.  
 %
 % \DescribeMacro{\wbr}
-%   What the Thai language definition provides here for the word boundary 
-%   problem is the |\wbr| command for separating words.  It occupies no 
-%   space but aids the \TeX\ typesetter in wrapping lines at proper positions, 
-%   meanwhile leaves some room for distributing little spaces between words 
-%   in case of narrow columns.
+%   What provided here for the word boundary problem is the |\wbr| command
+%   for separating words.  It delimits words without taking physical space,
+%   so that the \TeX\ typesetter still wraps lines at word boundary like
+%   when it typesets English text.
 %
-% Some preprocessing tools that analyze word boundaries and insert the |\wbr| 
-% commands are available, for example
+% Therefore, one can preprocess their Thai document using Thai word analysis
+% tools which automatically insert the |\wbr| commands between words, such as:
 %   \begin{itemize}
 %   \item \emph{cttex} by Vuthichai Ampornaramveth
 %   \item \emph{swath} by Phaisarn Charoenpornsawat, now maintained by Thai 
-%         Linux Working Group, downloadable from:\\
+%         Linux Working Group, which can be downloaded from:\\
 %         \texttt{ftp://linux.thai.net/pub/thailinux/software/swath}
+
+          To compile \emph{swath}, you need \emph{libdatrie} as the
+          dependency:\\
+%         \texttt{ftp://linux.thai.net/pub/thailinux/software/libthai}
 %   \end{itemize}
 %
 % \subsection{Thai numbering}
