@@ -44,11 +44,13 @@ inst-tds:
 	  && make distdir distdir=inst/source/latex/$(PACKAGE)
 
 dist-tds-tgz: inst-tds
+	rm -f $(tdsdist_tgz)
 	cd $(tdsdistdir)/inst \
 	  && tar cf - * | gzip -9 -c > ../../$(tdsdist_tgz)
 	rm -rf $(tdsdistdir)
 
 dist-tds-zip: inst-tds
+	rm -f $(tdsdist_zip)
 	cd $(tdsdistdir)/inst \
 	  && zip -r ../../$(tdsdist_zip) *
 	rm -rf $(tdsdistdir)
@@ -58,12 +60,14 @@ dist-tds: dist-tds-zip
 dist-ctan-tgz: dist-tds-tgz distdir
 	tar xzOf $(tdsdist_tgz) doc/latex/thailatex/thai.pdf \
 	  > $(distdir)/doc/thai.pdf
+	rm -f $(ctandist_tgz)
 	tar cf - $(tdsdist_tgz) $(distdir) | gzip -9 -c > $(ctandist_tgz)
 	$(am__remove_distdir)
 
 dist-ctan-zip: dist-tds-zip distdir
 	unzip -p $(tdsdist_zip) doc/latex/thailatex/thai.pdf \
 	  > $(distdir)/doc/thai.pdf
+	rm -f $(ctandist_zip)
 	zip -r $(ctandist_zip) $(tdsdist_zip) $(distdir)
 	$(am__remove_distdir)
 
