@@ -1,5 +1,18 @@
 2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Support more common Latin characters with native font glyphs.
+
+	* fonts/lthuni.enc fonts/thailigs.enc:
+	  - Drop rarely-used quotesinglbase, guilsinglleft, guilsinglright.
+	  - Add dagger, daggerdbl, section, paragraph, copyright, registered,
+	    trademark, germandbls, ae, AE, oe, OE.
+	* babel/lthenc.def:
+	  - Drop text commands for copyright, registered, trademark, SS,
+	    in favor of native font glyphs.
+	  - Declare symbols for the added glyphs in .enc files.
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* babel/lthenc.def:
 	  - Add ASCII symbols \textasciicircum \textasciitilde
 	    \textbackslash \textbar \textbraceleft \textbraceright

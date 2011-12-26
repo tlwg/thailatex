@@ -239,9 +239,9 @@
 /LTHEncoding [
 % 0x00
 /.notdef /.notdef /.notdef /.notdef
-/.notdef /.notdef /.notdef /.notdef 
-/.notdef /.notdef /.notdef /.notdef 
-/.notdef /quotesinglbase /guilsinglleft /guilsinglright
+/dagger /daggerdbl /section /paragraph
+/copyright /registered /trademark /germandbls
+/ae /AE /oe /OE
 % 0x10
 /exclamdown /questiondown /quotedblbase /guillemotleft 
 /guillemotright /uni0E38.left /uni0E39.left /uni0E3A.left
