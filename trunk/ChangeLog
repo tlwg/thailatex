@@ -1,5 +1,12 @@
 2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/lthenc.def:
+	  - Add ASCII symbols \textasciicircum \textasciitilde
+	    \textbackslash \textbar \textbraceleft \textbraceright
+	    \textgreater \textless \textquotedbl
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/lthuni.enc, fonts/thailigs.enc:
 	  - Move the mythical left variants of lower vowels to free slots
 	    below, to make continuous free area for Latin characters.
