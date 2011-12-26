@@ -1,6 +1,11 @@
 2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* babel/lthenc.def:
+	  - Add Latin symbols \i \j.
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/lthenc.def:
 	  - Add ASCII symbol \textdollar.
 
 2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
