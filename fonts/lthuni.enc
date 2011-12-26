@@ -9,13 +9,13 @@
 
 /LTHEncoding [
 % 0x00
-/.notdef /uni0E38 /uni0E39 /uni0E3A 
+/.notdef /.notdef /.notdef /.notdef
 /.notdef /.notdef /.notdef /.notdef 
 /.notdef /.notdef /.notdef /.notdef 
 /.notdef /quotesinglbase /guilsinglleft /guilsinglright
 % 0x10
 /exclamdown /questiondown /quotedblbase /guillemotleft 
-/guillemotright /.notdef /.notdef /.notdef
+/guillemotright /uni0E38 /uni0E39 /uni0E3A
 /perthousand /dotlessi /dotlessj /ff
 /fi /fl /ffi /ffl
 % 0x20
