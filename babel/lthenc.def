@@ -1,7 +1,9 @@
 %% This file is part of the thailatex package
 %% Created by Surapant Meknavin: surapan@nectec.or.th
 %% 2011/12/26 Theppitak Karoonboonyanan <thep@linux.thai.net>
-%%            - add ASCII symbol \textdollar
+%%            - add ASCII symbols \textdollar \textasciicircum \textasciitilde
+%%              \textbackslash \textbar \textbraceleft \textbraceright
+%%              \textgreater \textless \textquotedbl
 %%            - add Latin symbols \i \j
 %% 2004/06/14 Theppitak Karoonboonyanan <thep@linux.thai.net>
 %%            - guard against recursive assignments of \ltxTeX and \ltxLaTeX
@@ -30,7 +32,16 @@
 \ProvideTextCommand{\SS}{LTH}{%
   \textlatin{SS}}
 % ASCII/Latin
-\DeclareTextSymbol{\textdollar}{LTH}{36}
+\DeclareTextSymbol{\textdollar}{LTH}{`\$}
+\DeclareTextSymbol{\textasciicircum}{LTH}{`\^}
+\DeclareTextSymbol{\textasciitilde}{LTH}{`\~}
+\DeclareTextSymbol{\textbackslash}{LTH}{`\\}
+\DeclareTextSymbol{\textbar}{LTH}{`\|}
+\DeclareTextSymbol{\textbraceleft}{LTH}{`\{}
+\DeclareTextSymbol{\textbraceright}{LTH}{`\}}
+\DeclareTextSymbol{\textgreater}{LTH}{`\>}
+\DeclareTextSymbol{\textless}{LTH}{`\<}
+\DeclareTextSymbol{\textquotedbl}{LTH}{`\"}
 \DeclareTextSymbol{\textquoteleft}{LTH}{145}
 \DeclareTextSymbol{\textquoteright}{LTH}{146}
 \DeclareTextSymbol{\textquotedblleft}{LTH}{147}
