@@ -2,6 +2,7 @@
 %% Created by Surapant Meknavin: surapan@nectec.or.th
 %% 2011/12/26 Theppitak Karoonboonyanan <thep@linux.thai.net>
 %%            - add ASCII symbol \textdollar
+%%            - add Latin symbols \i \j
 %% 2004/06/14 Theppitak Karoonboonyanan <thep@linux.thai.net>
 %%            - guard against recursive assignments of \ltxTeX and \ltxLaTeX
 %%              (Reported by donzakh)
@@ -28,6 +29,7 @@
   \textsuperscript{\textlatin{TM}}}
 \ProvideTextCommand{\SS}{LTH}{%
   \textlatin{SS}}
+% ASCII/Latin
 \DeclareTextSymbol{\textdollar}{LTH}{36}
 \DeclareTextSymbol{\textquoteleft}{LTH}{145}
 \DeclareTextSymbol{\textquoteright}{LTH}{146}
@@ -36,6 +38,9 @@
 \DeclareTextSymbol{\textbullet}{LTH}{149}
 \DeclareTextSymbol{\textendash}{LTH}{150}
 \DeclareTextSymbol{\textemdash}{LTH}{151}
+\DeclareTextSymbol{\i}{LTH}{25}
+\DeclareTextSymbol{\j}{LTH}{26}
+% Thai special characters
 \DeclareTextSymbol{\textyamakkan}{LTH}{238}
 \DeclareTextSymbol{\textfongmun}{LTH}{239}
 \DeclareTextSymbol{\textangkhankhu}{LTH}{250}
