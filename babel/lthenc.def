@@ -4,7 +4,11 @@
 %%            - add ASCII symbols \textdollar \textasciicircum \textasciitilde
 %%              \textbackslash \textbar \textbraceleft \textbraceright
 %%              \textgreater \textless \textquotedbl
-%%            - add Latin symbols \i \j
+%%            - add Latin symbols \textdagger \textdaggerdbl \textsection
+%%              \textparagraph \copyright \textregistered \texttrademark
+%%              \ss \ae \AE \oe \OE \i \j
+%%            - drop text commands for copyright, registered, trademark, SS,
+%%              in favor of native font glyphs
 %% 2004/06/14 Theppitak Karoonboonyanan <thep@linux.thai.net>
 %%            - guard against recursive assignments of \ltxTeX and \ltxLaTeX
 %%              (Reported by donzakh)
@@ -23,14 +27,6 @@
 \DeclareTextCommandDefault{\TeX}{\textlatin{\ltxTeX}}
 \ifx\ltxLaTeX\undefined\let\ltxLaTeX\LaTeX\fi
 \DeclareTextCommandDefault{\LaTeX}{\textlatin{\ltxLaTeX}}
-\ProvideTextCommand{\copyright}{LTH}{%
-  \textcircled{\textlatin{c}}}
-\ProvideTextCommand{\textregistered}{LTH}{%
-  \textcircled{\textlatin{\textsc r}}}
-\ProvideTextCommand{\textrademark}{LTH}{%
-  \textsuperscript{\textlatin{TM}}}
-\ProvideTextCommand{\SS}{LTH}{%
-  \textlatin{SS}}
 % ASCII/Latin
 \DeclareTextSymbol{\textdollar}{LTH}{`\$}
 \DeclareTextSymbol{\textasciicircum}{LTH}{`\^}
@@ -49,6 +45,18 @@
 \DeclareTextSymbol{\textbullet}{LTH}{149}
 \DeclareTextSymbol{\textendash}{LTH}{150}
 \DeclareTextSymbol{\textemdash}{LTH}{151}
+\DeclareTextSymbol{\textdagger}{LTH}{4}
+\DeclareTextSymbol{\textdaggerdbl}{LTH}{5}
+\DeclareTextSymbol{\textsection}{LTH}{6}
+\DeclareTextSymbol{\textparagraph}{LTH}{7}
+\DeclareTextSymbol{\copyright}{LTH}{8}
+\DeclareTextSymbol{\textregistered}{LTH}{9}
+\DeclareTextSymbol{\texttrademark}{LTH}{10}
+\DeclareTextSymbol{\ss}{LTH}{11}
+\DeclareTextSymbol{\ae}{LTH}{12}
+\DeclareTextSymbol{\AE}{LTH}{13}
+\DeclareTextSymbol{\oe}{LTH}{14}
+\DeclareTextSymbol{\OE}{LTH}{15}
 \DeclareTextSymbol{\i}{LTH}{25}
 \DeclareTextSymbol{\j}{LTH}{26}
 % Thai special characters
