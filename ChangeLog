@@ -1,5 +1,10 @@
 2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* babel/lthenc.def:
+	  - Drop Latin wrapper to \TeX and \LaTeX commands.
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Support more common Latin characters with native font glyphs.
 
 	* fonts/lthuni.enc fonts/thailigs.enc:
