@@ -1,3 +1,8 @@
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Fix missing comment marks in documentation lines.
+
 2011-12-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* Makefile.am: Remove old CTAN/TDS zip files before zipping.
