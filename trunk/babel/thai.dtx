@@ -221,15 +221,15 @@
 %
 % \StopEventually{}
 %
-% \subsection{Thai language definition}
+%    \subsection{Thai language definition}
 %
-% The macro |\LdfInit| takes care of preventing file from being
-% loaded more than once, checking the category code of the
-% \texttt{@} sign, etc.
-% \begin{macrocode}
+%    The macro |\LdfInit| takes care of preventing file from being
+%    loaded more than once, checking the category code of the
+%    \texttt{@} sign, etc.
+%    \begin{macrocode}
 %<*code>
 \LdfInit\CurrentOption{captions\CurrentOption}
-% \end{macrocode}
+%    \end{macrocode}
 %
 %    When this file is read as an option, i.e. by the |\usepackage{babel}|
 %    command, \texttt{thai} will be an `unknown' language in which
@@ -254,11 +254,11 @@
 %    \begin{macrocode}
 \InputIfFileExists{lthenc.def}{%
   \message{Loading the definitions for the Thai font encoding}}{%
-  \errhelp{I can't find the lthenc.def file for the Thai fonts}%
-  \errmessage{Since I do not know what the LTH encoding means^^J
-    I can't typeset Thai.^^J
-    I stop here, while you get a suitable lthenc.def file}\@@end
- }
+    \errhelp{I can't find the lthenc.def file for the Thai fonts}%
+    \errmessage{Since I do not know what the LTH encoding means^^J
+      I can't typeset Thai.^^J
+      I stop here, while you get a suitable lthenc.def file}\@@end
+   }
 %    \end{macrocode}
 %
 %    The next step consists of defining commands to switch to the
