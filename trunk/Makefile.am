@@ -57,20 +57,4 @@ dist-tds-zip: inst-tds
 
 dist-tds: dist-tds-zip
 
-dist-ctan-tgz: dist-tds-tgz distdir
-	tar xzOf $(tdsdist_tgz) doc/latex/thailatex/thai.pdf \
-	  > $(distdir)/doc/thai.pdf
-	rm -f $(ctandist_tgz)
-	tar cf - $(tdsdist_tgz) $(distdir) | gzip -9 -c > $(ctandist_tgz)
-	$(am__remove_distdir)
-
-dist-ctan-zip: dist-tds-zip distdir
-	unzip -p $(tdsdist_zip) doc/latex/thailatex/thai.pdf \
-	  > $(distdir)/doc/thai.pdf
-	rm -f $(ctandist_zip)
-	zip -r $(ctandist_zip) $(tdsdist_zip) $(distdir)
-	$(am__remove_distdir)
-
-dist-ctan: dist-ctan-zip
-
-.PHONY: dist-ctan dist-ctan-tgz dist-ctan-zip dist-tds dist-tds-tgz dist-tds-zip inst-tds
+.PHONY: dist-tds dist-tds-tgz dist-tds-zip inst-tds
