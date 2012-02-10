@@ -139,85 +139,87 @@
 % \changes{thai-1.4c}{2011/12/19}{Theppitak Karoonboonyanan:
 %    Revise documentation}
 %
-% \section{The Thai language}
+%    \section{The Thai language}
 %
-% The file \file{\filename}\footnote{The file described in this section has 
-% version number \fileversion\ and was last revised on \filedate.  The original
-% author was Surapant Meknavin, and it was composed into \file{\filename} and
-% maintained by Theppitak Karoonboonyanan (\texttt{thep@linux.thai.net}).} 
-% defines language-specific macros for Thai language.
+%    The file \file{\filename}\footnote{The file described in this section has 
+%    version number \fileversion\ and was last revised on \filedate.  The
+%    original author was Surapant Meknavin, and it was composed into
+%    \file{\filename} and maintained by Theppitak Karoonboonyanan
+%    (\texttt{thep@linux.thai.net}).} 
+%    defines language-specific macros for Thai language.
 %
-% \subsection{Input encoding}
+%    \subsection{Input encoding}
 %
-% Thai documents supported by this language definition can be encoded in
-% either TIS-620 (ISO/IEC 8859-11) or UTF-8 with the aids of \texttt{inputenc}
-% package.
+%    Thai documents supported by this language definition can be encoded in
+%    either TIS-620 (ISO/IEC 8859-11) or UTF-8 with the aids of the
+%    \texttt{inputenc} package.
 %
-% \DescribeMacro{\thaitext}
-% \DescribeMacro{\latintext}
-%   The commands |\thaitext| and |\latintext| can be used to switch to Thai
-%   or Latin fonts.  These are declarations.
+%    \DescribeMacro{\thaitext}
+%    \DescribeMacro{\latintext}
+%      The commands |\thaitext| and |\latintext| can be used to switch to Thai
+%      or Latin fonts.  These are declarations.
 %
-% \DescribeMacro{\textthai}
-% \DescribeMacro{\textlatin}
-%   The commands |\textthai| and |\textlatin| both take one argument
-%   which is then typeset using the requested font encoding.
+%    \DescribeMacro{\textthai}
+%    \DescribeMacro{\textlatin}
+%      The commands |\textthai| and |\textlatin| both take one argument
+%      which is then typeset using the requested font encoding.
 %
-% \DescribeMacro{\textpali}
-%   The command |\textpali| takes one argument which is then typeset using
-%   Thai font encoding, with special shapes for certain characters, such as
-%   descender-less Yo Ying and Tho Than, as required by usual Pali text.
+%    \DescribeMacro{\textpali}
+%      The command |\textpali| takes one argument which is then typeset using
+%      Thai font encoding, with special shapes for certain characters, such as
+%      descender-less Yo Ying and Tho Than, as required by usual Pali text.
 %
-% \subsection{Word breaks}
+%    \subsection{Word breaks}
 %
-% Thai is written continuously without word delimitors.  The word boundary 
-% analysis is considered too complicated for rule-based approaches. 
-% Most available good-quality word analysis tools employ special matching
-% algorithms against pre-defined dictionaries.  Some even use statistics-based
-% contextual analysis to resolve ambiguities.  Therefore, no good hyphenation 
-% pattern is found to be comparable with those tools yet.  
+%    Thai is written continuously without word delimitors.  The word boundary 
+%    analysis is considered too complicated for rule-based approaches. 
+%    Most available good-quality word analysis tools employ special matching
+%    algorithms against pre-defined dictionaries.  Some even use
+%    statistics-based contextual analysis to resolve ambiguities.  Therefore,
+%    no good hyphenation pattern is found to be comparable with those tools yet.  
 %
-% \DescribeMacro{\wbr}
-%   What provided here for the word boundary problem is the |\wbr| command
-%   for separating words.  It delimits words without taking physical space,
-%   so that the \TeX\ typesetter still wraps lines at word boundary like
-%   when it typesets English text.
+%    \DescribeMacro{\wbr}
+%      What provided here for the word boundary problem is the |\wbr| command
+%      for separating words.  It delimits words without taking physical space,
+%      so that the \TeX\ typesetter still wraps lines at word boundary like
+%      when it typesets English text.
 %
-% Therefore, one can preprocess their Thai document using Thai word analysis
-% tools which automatically insert the |\wbr| commands between words, such as:
-%   \begin{itemize}
-%   \item \emph{cttex} by Vuthichai Ampornaramveth
-%   \item \emph{swath} by Phaisarn Charoenpornsawat, now maintained by Thai 
-%         Linux Working Group, which can be downloaded from:\\
-%         \texttt{ftp://linux.thai.net/pub/thailinux/software/swath}
+%    Therefore, one can preprocess their Thai document using Thai word analysis
+%    tools which automatically insert the |\wbr| commands between words, such
+%    as:
+%      \begin{itemize}
+%      \item \emph{cttex} by Vuthichai Ampornaramveth
+%      \item \emph{swath} by Phaisarn Charoenpornsawat, now maintained by Thai 
+%            Linux Working Group, which can be downloaded from:\\
+%            \texttt{ftp://linux.thai.net/pub/thailinux/software/swath}
 %
-%         To compile \emph{swath}, you need \emph{libdatrie} as the
-%         dependency:\\
-%         \texttt{ftp://linux.thai.net/pub/thailinux/software/libthai}
-%   \end{itemize}
+%            To compile \emph{swath}, you need \emph{libdatrie} as the
+%            dependency:\\
+%            \texttt{ftp://linux.thai.net/pub/thailinux/software/libthai}
+%      \end{itemize}
 %
-% \subsection{Thai numbering}
+%    \subsection{Thai numbering}
 %
-% Some certain Thai documents use Thai digits instead of Arabic.
-% And Thai alphabetic numbering is also commonly used for appendices.
-% This file provides a number of numbering styles that can be applied 
-% to \LaTeX\ |\pagenumbering| command:
+%    Some certain Thai documents use Thai digits instead of Arabic.
+%    And Thai alphabetic numbering is also commonly used for appendices.
+%    This file provides a number of numbering styles that can be applied 
+%    to \LaTeX\ |\pagenumbering| command:
 %
-%   \begin{itemize}
-%   \item |\thainum| for plain Thai digits
-%   \item |\thaibracenum| for Thai digits in parentheses
-%   \item |\thaialph| for Thai alphabetic numbering, using a reduced set
-%         (with three alphabets skipped: Kho Khuat, Kho Khon and Kho Rakhang)
-%   \item |\thaiAlph| for Thai alphabetic numbering, using the full set
-%         (with full alphabet set, plus two semi-vowels, Ru and Lu, in the
-%         order defined in Thai official dictionary)
-%   \end{itemize}
+%      \begin{itemize}
+%      \item |\thainum| for plain Thai digits
+%      \item |\thaibracenum| for Thai digits in parentheses
+%      \item |\thaialph| for Thai alphabetic numbering, using a reduced set
+%            (with three alphabets skipped: Kho Khuat, Kho Khon and Kho Rakhang)
+%      \item |\thaiAlph| for Thai alphabetic numbering, using the full set
+%            (with full alphabet set, plus two semi-vowels, Ru and Lu, in the
+%            order defined in Thai official dictionary)
+%      \end{itemize}
 %
-% \DescribeEnv{thainumber}
-%   The above numbering styles can be automatically chosen using the 
-%   \Lopt{thainumber} option.  When supplying this option to the \babel{}
-%   package, Thai numberings will be applied to pages, sections, enumerations, 
-%   dates, etc.
+%    \DescribeEnv{thainumber}
+%      The above numbering styles can be automatically chosen using the 
+%      \Lopt{thainumber} option.  When supplying this option to the \babel{}
+%      package, Thai numberings will be applied to pages, sections,
+%      enumerations, dates, etc.
 %
 % \StopEventually{}
 %
@@ -489,18 +491,18 @@
 % \end{macro}
 %
 % \begin{macro}{\thainum}
-%   The |\thainum| macro is to be used as a numbering style in \LaTeX\ 
-%   |\pagenumbering| command.
+%    The |\thainum| macro is to be used as a numbering style in \LaTeX\ 
+%    |\pagenumbering| command.
 %
-%   It takes a counter name and converts its value into Thai digits.  
-%   In details, it prepends the counter name with `|c@|' to access the counter 
-%   value, then calls |\@thainum| to convert it into Thai digits.
+%    It takes a counter name and converts its value into Thai digits.  
+%    In details, it prepends the counter name with `|c@|' to access the counter 
+%    value, then calls |\@thainum| to convert it into Thai digits.
 %
-%   The |\@thainum| macro converts a number into Thai digits.  It expands the 
-%   argument into a number, terminates it with `|@|', and calls 
-%   |\thaitranslate| to convert it into Thai digits.
+%    The |\@thainum| macro converts a number into Thai digits.  It expands the 
+%    argument into a number, terminates it with `|@|', and calls 
+%    |\thaitranslate| to convert it into Thai digits.
 %
-%   \begin{macrocode}
+%    \begin{macrocode}
 \def\@thainum#1{\expandafter\thaitranslate\number#1@}
 \def\thainum#1{\expandafter\@thainum\csname c@#1\endcsname}
 %    \end{macrocode}
