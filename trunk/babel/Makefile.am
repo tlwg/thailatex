@@ -27,4 +27,5 @@ thai.pdf: thai.dtx
 	  $(LN_S) $(srcdir)/thai.dtx thai.dtx; \
 	fi
 	$(PDFLATEX) thai.dtx
+	$(PDFLATEX) thai.dtx
 
