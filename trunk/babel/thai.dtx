@@ -138,6 +138,8 @@
 %    suboptimal.}
 % \changes{thai-1.4c}{2011/12/19}{Theppitak Karoonboonyanan:
 %    Revise documentation}
+% \changes{thai-1.4d}{2012/02/10}{Theppitak Karoonboonyanan:
+%    Revise documentation.  Add documentation for Thai line stretching.}
 %
 %    \section{The Thai language}
 %
@@ -161,13 +163,14 @@
 %
 %    \DescribeMacro{\textthai}
 %    \DescribeMacro{\textlatin}
-%      The commands |\textthai| and |\textlatin| both take one argument
-%      which is then typeset using the requested font encoding.
+%      The commands |\textthai| and |\textlatin| both take one text argument
+%      which is then typeset using the requested language settings.
 %
 %    \DescribeMacro{\textpali}
-%      The command |\textpali| takes one argument which is then typeset using
-%      Thai font encoding, with special shapes for certain characters, such as
-%      descender-less Yo Ying and Tho Than, as required by usual Pali text.
+%      The command |\textpali| takes one text argument which is then typeset
+%      using Thai font, with special shapes for certain characters, such as
+%      descender-less Yo Ying and Tho Than, as required by usual Pali-Sanskrit
+%      transcription.
 %
 %    \subsection{Word breaks}
 %
@@ -176,7 +179,8 @@
 %    Most available good-quality word analysis tools employ special matching
 %    algorithms against pre-defined dictionaries.  Some even use
 %    statistics-based contextual analysis to resolve ambiguities.  Therefore,
-%    no good hyphenation pattern is found to be comparable with those tools yet.  
+%    no good hyphenation pattern is found to be comparable with those tools
+%    yet.  
 %
 %    \DescribeMacro{\wbr}
 %      What provided here for the word boundary problem is the |\wbr| command
@@ -194,11 +198,12 @@
 %            \texttt{ftp://linux.thai.net/pub/thailinux/software/swath}
 %
 %            To compile \emph{swath}, you need \emph{libdatrie} as the
-%            dependency:\\
+%            dependency, which is provided under the \emph{libthai} project:\\
 %            \texttt{ftp://linux.thai.net/pub/thailinux/software/libthai}
 %      \end{itemize}
 %
 %    \subsection{Thai numbering}
+%    \label{thai-numbering}
 %
 %    Some certain Thai documents use Thai digits instead of Arabic.
 %    And Thai alphabetic numbering is also commonly used for appendices.
@@ -217,7 +222,7 @@
 %
 %    \DescribeEnv{thainumber}
 %      The above numbering styles can be automatically chosen using the 
-%      \Lopt{thainumber} option.  When supplying this option to the \babel{}
+%      \Lopt{thainumber} option.  When this option is supplied to the \babel{}
 %      package, Thai numberings will be applied to pages, sections,
 %      enumerations, dates, etc.
 %
@@ -234,8 +239,8 @@
 %    \end{macrocode}
 %
 %    When this file is read as an option, i.e. by the |\usepackage{babel}|
-%    command, \texttt{thai} will be an `unknown' language in which
-%    case we have to make it known.  So we check for the existence of
+%    command, \texttt{thai} will be an `unknown' language, in which
+%    case we have to make it known.  So, we check for the existence of
 %    |\l@thai| to see whether we have to do something here.
 %
 %    \begin{macrocode}
@@ -254,18 +259,18 @@
 %    the \file{lthenc.def} file.  So, we require it.
 %
 %    \begin{macrocode}
-\InputIfFileExists{lthenc.def}{%
-  \message{Loading the definitions for the Thai font encoding}}{%
+\InputIfFileExists{lthenc.def}%
+  {\message{Loading the definitions for the Thai font encoding}}%
+  {%
     \errhelp{I can't find the lthenc.def file for the Thai fonts}%
     \errmessage{Since I do not know what the LTH encoding means^^J
       I can't typeset Thai.^^J
       I stop here, while you get a suitable lthenc.def file}\@@end
-   }
+  }
 %    \end{macrocode}
 %
-%    The next step consists of defining commands to switch to the
-%    Thai language. The reason for this is that a user might want
-%    to switch back and forth between languages.
+%    The next step consists of defining commands to switch to the Thai
+%    language, for users to switch back and forth between languages.
 %
 % \begin{macro}{\thaitext}
 %    We define |\thaitext| as a declarative switch to Thai font encoding.
@@ -277,14 +282,14 @@
 % \end{macro}
 %
 % \begin{macro}{\textthai}
-%    This command takes an argument which is then typeset using Thai font 
+%    This command takes one text argument which is then typeset using Thai font 
 %    encoding.
 %    \begin{macrocode}
 \DeclareRobustCommand{\textthai}[1]{{\thaitext #1}}
 %    \end{macrocode}
 % \end{macro}
 %
-%    \subsubsection{Pali-Sanskrit Characters}
+%    \subsubsection{Pali-Sanskrit Transcription}
 %
 %    Thai script can also be used for writing Pali and Sanskrit.  Additional
 %    conventions are applied when doing so: (a) Yo Ying and Tho Than must be
@@ -298,7 +303,7 @@
 %    provision in the fonts.
 %
 %    What is left here is (a).  Yo Ying and Tho Than must be converted to
-%    their descender-less vairations.  The |\textpali| macro is defined
+%    their descender-less variants.  The |\textpali| macro is defined
 %    for this purpose.  Note that |\wbr| commands which are normally inserted
 %    by automatic tools are ignored here, as most of such tools are not
 %    designed for Pali/Sanskrit.  Besides, Pali/Sanskrit is already space
@@ -326,7 +331,7 @@
 %
 % \begin{macro}{\thaihyphenmins}
 %    This macro is used to store the correct values of the hyphenation
-%    parameters |\lefthyphenmin| and |\righthyphenmin|. They are set to 11.
+%    parameters |\lefthyphenmin| and |\righthyphenmin|.  They are set to 11.
 % \changes{thai-1.1}{2006/07/02}{Theppitak Karoonboonyanan:
 %    Now use \cs{providehyphenmins} to provide a default value}
 %    \begin{macrocode}
@@ -465,13 +470,25 @@
 %
 %    \begin{macrocode}
 \def\wbr{\hskip0pt\relax}
+%    \end{macrocode}
+%
+%    \subsection{Line spacing}
+%
+%    Due to multi-level combining character stacking, Thai text lines
+%    can occupy more vertical space than English.  To prevent overlapping,
+%    \TeX{} allocates more height for lines with combining characters
+%    but not for those without.  This can cause irregular line spacing.
+%    To avoid this problem, we need to stretch the line spacing.
+%
+%    \begin{macrocode}
 \renewcommand{\baselinestretch}{1.2}
 %    \end{macrocode}
 %
 %    \subsection{Thai numbering support}
 %
-%    This section provides Thai numbering styles as described at the beginning
-%    of this document: |\thainum|, |\thaibracenum|, |\thaialph| and |\thaiAlph|.
+%    This section provides Thai numbering styles as described in
+%    \S\ref{thai-numbering}: |\thainum|, |\thaibracenum|, |\thaialph| and
+%    |\thaiAlph|.
 %
 %    First, we define a macro for translating decimal digits into Thai digits.
 %
@@ -573,7 +590,7 @@
 %
 %    Not all Thai documents use Thai digits.  So, we support this as an 
 %    option.  If \Lopt{thainumber} option is supplied in the |\usepackage| 
-%    command, all numbering will use Thai digits.
+%    command, Thai digits will be used in all numberings.
 %
 %    \begin{macrocode}
 \DeclareOption{thainumber}{
@@ -637,9 +654,11 @@
        \def\@oddhead{\reset@font\hfil\thepage\hfil}\let\@oddfoot\@empty
        \let\@evenhead\@oddhead\let\@evenfoot\@empty}
   \let\@ltxfrontmatter\frontmatter
-  \renewcommand\frontmatter{\@ltxfrontmatter\pagestyle{headnum}\pagenumbering{thaibracenum}}
+  \renewcommand\frontmatter%
+    {\@ltxfrontmatter\pagestyle{headnum}\pagenumbering{thaibracenum}}
   \let\@ltxmainmatter\mainmatter
-  \renewcommand\mainmatter{\@ltxmainmatter\pagestyle{headings}\pagenumbering{thainum}}
+  \renewcommand\mainmatter%
+    {\@ltxmainmatter\pagestyle{headings}\pagenumbering{thainum}}
 }{}
 %    \end{macrocode}
 %
@@ -647,7 +666,9 @@
 %
 %    \begin{macrocode}
 \def\datethai{%
-  \def\today{\@thainum\day \space \th@month\space \thaiPhoPhan.\thaiSoSala.~\@thainum\th@year}}
+  \def\today{\@thainum\day\space \th@month\space %
+             \thaiPhoPhan.\thaiSoSala.~\@thainum\th@year}
+}
 %    \end{macrocode}
 %
 %    And finish declaration of \Lopt{thainumber} option
@@ -682,7 +703,7 @@
 }{}
 %    \end{macrocode}
 %
-%    \subsection{Miscelleneous}
+%    \subsection{Miscellaneous}
 %
 %    Initialize character codes for Thai
 %
