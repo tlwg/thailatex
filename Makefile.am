@@ -1,5 +1,5 @@
 EXTRA_DIST = HISTORY
-SUBDIRS = babel emacs fonts scripts doc
+SUBDIRS = babel emacs scripts doc
 
 DISTCLEANFILES = thailatex.spec \
 	$(tdsdist_tgz) $(ctandist_tgz) \
