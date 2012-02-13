@@ -3,6 +3,8 @@
 % 2002-12-30
 % 2003-09-15 Chanop Silpa-Anan <chanop@debian.org>
 %  * Use new unicode variant name.
+% 2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+%  * Support more common Latin characters with native font glyphs.
 %
 % This is LaTeX LTH (Locale Thai) encoding for unicode encoded fonts
 %
