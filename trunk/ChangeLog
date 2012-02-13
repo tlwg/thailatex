@@ -1,5 +1,11 @@
 2012-02-13  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	* Makefile.am, -fonts/*:
+	  - Drop font enc & ligkern stuff, which has been moved to
+	    font packages, making the subdir totally unneeded any more.
+
+2012-02-13  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* fonts/lthuni.enc, fonts/thailigs.enc:
 	  - Add change log for recent change.
 
