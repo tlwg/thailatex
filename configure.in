@@ -40,7 +40,6 @@ AC_SUBST(emacsdir)
 AC_OUTPUT(Makefile
   babel/Makefile
   emacs/Makefile
-  fonts/Makefile
   scripts/Makefile
   scripts/sync-thailatex
   doc/Makefile)
