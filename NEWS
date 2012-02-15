@@ -1,3 +1,14 @@
+0.4.7 (2012-02-15)
+=====
+- No more stretch for \wbr. It caused uneven spacing between words.
+- CTAN TDS zip is now complete in a single file, with source.
+- Font encoding and ligkern stuff is now moved to font packages,
+  to allow custom ligkern rules per font.
+- Supports more LaTeX escape sequences, namely \textdollar, \i, \j,
+  \textasciicircum, \textasciitilde, \textbackslash, \textbar, \textbraceleft,
+  \textbraceright, \textgreater, \textless, \textquotedbl
+- Revised documentation for the Thai language definition.
+
 0.4.6 (2011-10-26)
 =====
 - Remove fonts and provide them directly from thaifonts-scalable source
