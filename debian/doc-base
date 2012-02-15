@@ -1,9 +1,0 @@
-Document: thailatex
-Title: Thai LaTeX documentation
-Author: Theppitak Karoonboonyanan <thep@linux.thai.net>
-Abstract: This document describes the usage and implementation of Thai 
- LaTeX support using Babel.
-Section: Typesetting
-
-Format: pdf
-Files: /usr/share/doc/thailatex/thai.pdf.gz
