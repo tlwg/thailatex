@@ -28,5 +28,6 @@ uninstall-hook:
 	  $(SED) -e '/thai-latex-setup/d' $(EMACS_SITE_START) \
 	    > /tmp/tmp.$$$$ ; \
 	  mv /tmp/tmp.$$$$ $(EMACS_SITE_START) ; \
+	  [ -s $(EMACS_SITE_START) ] || rm -f $(EMACS_SITE_START) ; \
 	fi
 
