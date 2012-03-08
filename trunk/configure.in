@@ -13,6 +13,10 @@ AC_CHECK_PROGS(PDFLATEX,pdflatex,no)
 if test "x$PDFLATEX" = "xno" ; then
   AC_MSG_ERROR([You need pdflatex (from texlive distribution)])
 fi
+AC_CHECK_PROGS(PATGEN,patgen,no)
+if test "x$PATGEN" = "xno" ; then
+  AC_MSG_ERROR([You need patgen (from texlive distribution)])
+fi
 AC_CHECK_PROGS(SWATH,swath,no)
 AC_CHECK_PROGS(CTTEX,cttex,no)
 
@@ -29,6 +33,11 @@ if test "x$TEXHASH" = "xno" ; then
   AC_MSG_ERROR([You need mktexlsr or texhash (from texlive distribution)])
 fi
 
+AC_PATH_PROG(FMTUTIL,[fmtutil-sys fmtutil],no)
+if test "x$FMTUTIL" = "xno" ; then
+  AC_MSG_ERROR([You need fmtutil(-sys) (from texlive distribution)])
+fi
+
 AC_ARG_WITH(emacsdir,
   [AC_HELP_STRING([--with-emacsdir=DIR],
                   [emacs directory in DIR [PREFIX/share/emacs]])],
@@ -39,6 +48,7 @@ AC_SUBST(emacsdir)
 
 AC_OUTPUT(Makefile
   babel/Makefile
+  hyphen/Makefile
   emacs/Makefile
   scripts/Makefile
   scripts/sync-thailatex

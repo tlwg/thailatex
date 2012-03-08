@@ -1,5 +1,5 @@
 EXTRA_DIST = HISTORY
-SUBDIRS = babel emacs scripts doc
+SUBDIRS = babel hyphen emacs scripts doc
 
 DISTCLEANFILES = thailatex.spec \
 	$(tdsdist_tgz) $(ctandist_tgz) \
@@ -10,17 +10,19 @@ doc_DATA = README
 install-data-hook:
 	@if test -z "$(DESTDIR)" ; then                                       \
 	  $(TEXHASH) ;                                                        \
+	  $(FMTUTIL) --all ;                                                  \
 	else                                                                  \
 	  echo "***" ;                                                        \
 	  echo "*** Warning: TeX index not updated" ;                         \
 	  echo "***" ;                                                        \
 	  echo "*** update it on the target system" ;                         \
-	  echo "*** using $(TEXHASH) command" ;                               \
+	  echo "*** using $(TEXHASH) && $(FMTUTIL) --all commands" ;          \
 	  echo "***" ;                                                        \
 	fi
  
 uninstall-hook:
 	$(TEXHASH)
+	$(FMTUTIL) --all
 
 tdsdist_tgz = $(PACKAGE)-$(VERSION).tds.tar.gz
 ctandist_tgz = $(PACKAGE)-$(VERSION).ctan.tar.gz
