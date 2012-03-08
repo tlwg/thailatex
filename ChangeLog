@@ -1,5 +1,37 @@
 2012-03-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Add hyphenation support.
+
+	* Makefile.am, configure.in, +hyphen/:
+	  - Add hyphen/ subdir.
+	* +hyphen/Makefile.am, +hyphen/loadhyph-th.tex:
+	  - Add targets we want to install: the hyphenation pattern loader
+	    for Unicode/8-bit environments, and the hyphenation pattern
+	    files for each environment.
+	  - The loader is here. The pattern files are to be generated.
+	* hyphen/Makefile.am, +hyphen/README, +hyphen/tdict-*.txt:
+	  - Import hyphenated word list from libthai project.
+	  - Add rule for generating sorted word list from libthai dicts.
+	* hyphen/Makefile.am, +hyphen/thai.tra:
+	  - Add translate file and rule for generating hyphenation pattern
+	    using patgen.
+	* hyphen/Makefile.am, +hyphen/hyph-th-utf8.tex.in:
+	  - Add rule for generating the Unicode TeX pattern file by merging
+	    the generated pattern into the Unicode skeleton file.
+	* hyphen/Makefile.am, +hyphen/conv-utf8-hex.sed,
+	  +hyphen/hyph-th.tex.in:
+	  - Add sed script for converting hyphenation pattern to 8-bit hex
+	    format.
+	  - Add rule for generating the 8-bit TeX pattern file by converting
+	    the generated Unicode pattern and merging it in hex format into
+	    the 8-bit skeleton file.
+	* Makefile.am:
+	  - Add fmtutil to the hooks, for hyphenation patterns regeneration.
+	* configure.in:
+	  - Add checks for patgen and fmtutil[-sys].
+
+2012-03-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in: Post-release version suffix added.
 
 2012-02-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
