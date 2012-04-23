@@ -5,7 +5,11 @@ DISTCLEANFILES = thailatex.spec \
 	$(tdsdist_tgz) $(ctandist_tgz) \
 	$(tdsdist_zip) $(ctandist_zip)
 
+DISTCHECK_CONFIGURE_FLAGS = --disable-hooks
+
 doc_DATA = README
+
+if ENABLE_HOOKS
 
 install-data-hook:
 	@if test -z "$(DESTDIR)" ; then                                       \
@@ -23,6 +27,8 @@ install-data-hook:
 uninstall-hook:
 	$(TEXHASH)
 	$(FMTUTIL) --all
+
+endif # ENABLE_HOOKS
 
 tdsdist_tgz = $(PACKAGE)-$(VERSION).tds.tar.gz
 ctandist_tgz = $(PACKAGE)-$(VERSION).ctan.tar.gz

@@ -5,6 +5,8 @@ emacslisp_DATA = thai-latex-setup.el
 
 EMACS_SITE_START=$(DESTDIR)$(emacslispdir)/site-start.el
 
+if ENABLE_HOOKS
+
 install-data-hook:
 	@if test -z "$(DESTDIR)" ; then                                       \
 	  if [ -f $(EMACS_SITE_START) ] ; then                                \
@@ -30,4 +32,6 @@ uninstall-hook:
 	  mv /tmp/tmp.$$$$ $(EMACS_SITE_START) ; \
 	  [ -s $(EMACS_SITE_START) ] || rm -f $(EMACS_SITE_START) ; \
 	fi
+
+endif # ENABLE_HOOKS
 
