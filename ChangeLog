@@ -1,3 +1,15 @@
+2012-04-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Bypass hooks on 'make distcheck'.
+
+	* configure.in:
+	  - Add '--disable-hooks' configure flag.
+	  - Don't check for programs used by the hooks if disabled.
+	* Makefile.am, emacs/Makefile.am:
+	  - Protect hook targets with ENABLE_HOOKS condition.
+	* Makefile.am:
+	  - Set DISTCHECK_CONFIGURE_FLAGS to disable hooks.
+
 2012-03-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	* hyphen/Makefile.am:
