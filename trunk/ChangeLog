@@ -1,3 +1,11 @@
+2012-04-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Don't load hypenation pattern for ptex (unsupported).
+
+	* hyphen/loadhyph-th.tex:
+	  - Guard hyphenation loader with ptex check. Thanks Norbert Preining
+	    for the suggestion.
+
 2012-04-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Bypass hooks on 'make distcheck'.

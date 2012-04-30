@@ -11,6 +11,7 @@
 %
 \begingroup
 \lccode`\'=`\'
+\ifx\kanjiskip\undefined
 % Test whether we received one or two arguments
 \def\testengine#1#2!{\def\secondarg{#2}}
 % That's Tau (as in Taco or ΤΕΧ, Tau-Epsilon-Chi), a 2-byte UTF-8 character
@@ -22,5 +23,7 @@
 \else
     \message{LTH Thai Hyphenation Patterns}
     \input hyph-th.tex
+\fi\else
+    \message{Thai patterns not supported on ptex}
 \fi
 \endgroup
