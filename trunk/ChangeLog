@@ -1,3 +1,13 @@
+2012-05-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add hyphenation exception patterns to cope with errors.
+
+	* +hyphen/thai-exc.pat:
+	  - Add exception patterns at level 6, 7.
+	* hyphen/Makefile.am, +hyphen/thai-exc.pat:
+	  - Add the exception file to dist.
+	  - Append exception contents to the generated patterns.
+
 2012-04-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Don't load hypenation pattern for ptex (unsupported).
