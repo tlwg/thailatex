@@ -1,5 +1,12 @@
 2012-05-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Fix dictionary entries.
+
+	* hyphen/tdict-std.txt:
+	  - Make hyphenations for "เล-ขา" more consistent.
+
+2012-05-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Add hyphenation exception patterns to cope with errors.
 
 	* +hyphen/thai-exc.pat:
