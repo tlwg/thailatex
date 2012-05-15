@@ -23,6 +23,7 @@ EXTRA_DIST = \
 	hyph-th.tex.in          \
 	hyph-th-utf8.tex.in     \
 	thai.tra                \
+	thai-exc.pat            \
 	conv-utf8-hex.sed       \
 	$(TDICT_SRC)
 
@@ -43,11 +44,12 @@ y
 thai.dic:  $(TDICT_SRC)
 	cat $(TDICT_SRC) | LC_ALL=C sort -u > $@
 
-thai.out: thai.dic thai.tra
+thai.out: thai.dic thai.tra thai-exc.pat
 	rm -f thai.pat
 	touch thai.pat
 	printf "$(PATGEN_ANS)" \
 	  | $(PATGEN) thai.dic thai.pat thai.out $(srcdir)/thai.tra
+	cat $(srcdir)/thai-exc.pat >> $@
 
 hyph-th-utf8.tex: thai.out hyph-th-utf8.tex.in
 	$(AWK) "BEGIN {show=1} /@PATTERNS@/ {show=0} {if(show) print}" \
