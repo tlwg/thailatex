@@ -1,5 +1,13 @@
 2012-05-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Reduce pattern lengths at high levels.
+
+	* hyphen/Makefile.am (PATGEN_ANS):
+	  - Reduce lower-bound of pattern lengths in level 4, 5, to allow
+	    better inhibition effect.
+
+2012-05-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Fix dictionary entries.
 
 	* hyphen/tdict-std.txt:
