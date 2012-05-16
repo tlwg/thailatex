@@ -1,3 +1,19 @@
+2012-05-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Adjust pattern lengths at low levels.
+
+	* hyphen/Makefile.am (PATGEN_ANS):
+	  - Set lower-bound for level 2 to 1, to allow inhibition on single
+	    vowels & tone marks.
+	  - Increase lower-bound for level 1 to 2, to prevent aggressive
+	    hyphenation on single characters, which caused more errors than
+	    valid results.
+	  - Decrease lower-bounds for levels 3-5 to get closer to the new
+	    values on lower levels. This appears to yield fewer patterns.
+
+	* hyphen/thai-exc.pat:
+	  - Remove unnecessary exception due to the new parameters.
+
 2012-05-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Reduce pattern lengths at high levels.
