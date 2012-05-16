@@ -1,5 +1,14 @@
 2012-05-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Revert changes for levels 3-5 part in previous commit.
+
+	It caused too aggressive patterns.
+
+	* hyphen/Makefile.am (PATGEN_ANS):
+	  - Set lower-bounds for levels 3-5 back to previous values.
+
+2012-05-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Adjust pattern lengths at low levels.
 
 	* hyphen/Makefile.am (PATGEN_ANS):
