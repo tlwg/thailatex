@@ -25,6 +25,7 @@ EXTRA_DIST = \
 	thai.tra                \
 	thai-exc.pat            \
 	conv-utf8-hex.sed       \
+	test-hyphen.sh		\
 	$(TDICT_SRC)
 
 PATGEN_ANS = \

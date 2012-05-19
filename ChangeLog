@@ -1,3 +1,11 @@
+2012-05-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add hyphenation test script.
+
+	* hyphen/Makefile.am, +hyphen/test-hyphen.sh:
+	  - Added as EXTRA_DIST. It's not added as 'check' target because
+	    it relies on installed hyphenation patterns.
+
 2012-05-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Add more exception patterns.
