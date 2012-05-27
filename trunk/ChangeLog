@@ -1,5 +1,14 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Fix dictionary.
+
+	* hyphen/tdict-std.txt, hyphen/tdict-std-compound.txt:
+	  - Fix some inconsistent hyphenations in dictionary.
+
+	Current dict test errors: 1763
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Force hyphenation after SARA AM.
 
 	* hyphen/thai-std-compound.txt:
