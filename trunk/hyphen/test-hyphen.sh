@@ -17,9 +17,9 @@ EOT
 pdflatex hyphtest.tex \
   | grep '^\[\]' | cut -d' ' -f3 | iconv -f tis-620 -t utf-8 > hyphres.dic
 
-comm --nocheck-order -1 -3 thai.dic hyphres.dic > hyph.diff
+diff -u thai.dic hyphres.dic > hyph.diff
 
-ERRS=`wc -l hyph.diff | cut -d' ' -f1`
+ERRS=`grep '^+[^+]' hyph.diff | wc -l | cut -d' ' -f1`
 if test ${ERRS} -ne 0; then
   echo "${ERRS} words are not correctly hyphenated. Check hyph.diff for the list."
   exit 1

@@ -1,5 +1,14 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Use 'diff' instead of 'comm' in test script.
+
+	* hyphen/test-hyphen.sh:
+	  - Use 'diff' instead of 'comm' when comparing test result with
+	    original dictionary, as 'comm' can cause false positives.
+	    With this, the true error count become 3280, not 9293.
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Add exception pattern.
 
 	* hyphen/thai-exc.pat:
