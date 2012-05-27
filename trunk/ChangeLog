@@ -1,5 +1,15 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Remove excessive exceptions at word begin.
+
+	* hyphen/thai-exc.pat:
+	  - The commit before the last one introduced wrong exceptions at
+	    word begin for RU and LU. Remove them.
+
+	Current dict test errors: 1979
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Add common exceptions at word end.
 
 	* hyphen/thai-exc.pat:
