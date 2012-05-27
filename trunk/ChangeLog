@@ -1,5 +1,16 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Add common exceptions at word begin.
+
+	* hyphen/thai-exc.pat:
+	  - Add exception patterns to prevent hyphenation after the first
+	    consonant of the word.
+	  - Drop unneeded patterns covered by the new exceptions.
+
+	Current dict test errors: 2574
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Add common exceptions.
 
 	* hyphen/thai-exc.pat:
