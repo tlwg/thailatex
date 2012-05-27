@@ -1,5 +1,14 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Fix typo in dictionary.
+
+	* hyphen/tdict-std.txt, hyphen/tdict-std-compound.txt:
+	  - Fix some inconsistent hyphenations in dictionary.
+
+	Current dict test errors: 1973
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Remove excessive exceptions at word begin.
 
 	* hyphen/thai-exc.pat:
