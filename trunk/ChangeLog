@@ -1,5 +1,12 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Add exception pattern.
+
+	* hyphen/thai-exc.pat:
+	  - Add exception pattern for "ม-หัพ-ภาค", "ม-หันต์" errors.
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Adjust patgen parameters.
 
 	* hyphen/Makefile.am (PATGEN_ANS):
