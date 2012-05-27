@@ -1,5 +1,15 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Handle hyphenation before MAI MALAI.
+
+	* hyphen/thai-exc.pat:
+	  - Force hyphenation before MAI MALAI at level 5 and add exceptions
+	    in level 6.
+
+	Current dict test errors: 1721
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Add exception pattern.
 
 	* hyphen/thai-exc.pat:
