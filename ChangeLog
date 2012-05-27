@@ -1,5 +1,14 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Add exception pattern.
+
+	* hyphen/thai-exc.pat:
+	  - Add exceptions to fix 'วัตถุ' errors.
+
+	Current dict test errors: 1754
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Don't rebuild patgen when only exceptions are added.
 
 	* hyphen/Makefile.am:
