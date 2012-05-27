@@ -1,5 +1,16 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Force hyphenation after SARA AM.
+
+	* hyphen/thai-std-compound.txt:
+	  - Fix inconsistent hypenations, esp. after SARA AM.
+	* hyphen/thai-exc.pat:
+	  - Force hyphenation after SARA AM.
+
+	Current dict test errors: 1819
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Force hyphenation before MAI MUAN.
 
 	* hyphen/thai-exc.pat:
