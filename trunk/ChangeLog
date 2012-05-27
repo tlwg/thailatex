@@ -1,5 +1,14 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Add common exceptions.
+
+	* hyphen/thai-exc.pat:
+	  - Add exception patterns for combining characters and vowels.
+
+	Current dict test errors: 3253
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Use 'diff' instead of 'comm' in test script.
 
 	* hyphen/test-hyphen.sh:
