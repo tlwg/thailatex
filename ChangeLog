@@ -1,5 +1,14 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Force hyphenation before MAI MUAN.
+
+	* hyphen/thai-exc.pat:
+	  - Force hyphenation before MAI MUAN, fixing numerous errors.
+
+	Current dict test errors: 1844
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Add exceptions.
 
 	* hyphen/thai-exc.pat:
