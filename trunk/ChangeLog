@@ -1,5 +1,19 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Fix dictionary.
+
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-country.txt:
+	* hyphen/tdict-history.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt:
+	  - Fix some inconsistent hyphenations in dictionary.
+
+	Current dict test errors: 1689
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Handle hyphenation before MAI MALAI.
 
 	* hyphen/thai-exc.pat:
