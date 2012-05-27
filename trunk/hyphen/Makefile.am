@@ -45,26 +45,30 @@ y
 thai.dic:  $(TDICT_SRC)
 	cat $(TDICT_SRC) | LC_ALL=C sort -u > $@
 
-thai.out: thai.dic thai.tra thai-exc.pat
+thai.out: thai.dic thai.tra
 	rm -f thai.pat
 	touch thai.pat
 	printf "$(PATGEN_ANS)" \
 	  | $(PATGEN) thai.dic thai.pat thai.out $(srcdir)/thai.tra
-	cat $(srcdir)/thai-exc.pat >> $@
 
-hyph-th-utf8.tex: thai.out hyph-th-utf8.tex.in
+thai-comb.pat: thai.out thai-exc.pat
+	cat thai.out $(srcdir)/thai-exc.pat > $@
+
+hyph-th-utf8.tex: thai-comb.pat hyph-th-utf8.tex.in
 	$(AWK) "BEGIN {show=1} /@PATTERNS@/ {show=0} {if(show) print}" \
 	  $(srcdir)/hyph-th-utf8.tex.in > $@
-	cat thai.out >> $@
+	cat thai-comb.pat >> $@
 	$(AWK) "BEGIN {show=0;pat=0} /@PATTERNS@/ {pat=1} {if(show) print; if(pat) show=1}" \
 	  $(srcdir)/hyph-th-utf8.tex.in >> $@
 
-hyph-th.tex: thai.out conv-utf8-hex.sed hyph-th.tex.in
+hyph-th.tex: thai-comb.pat conv-utf8-hex.sed hyph-th.tex.in
 	$(AWK) "BEGIN {show=1} /@PATTERNS@/ {show=0} {if(show) print}" \
 	  $(srcdir)/hyph-th.tex.in > $@
-	$(SED) -f $(srcdir)/conv-utf8-hex.sed thai.out >> $@
+	$(SED) -f $(srcdir)/conv-utf8-hex.sed thai-comb.pat >> $@
 	$(AWK) "BEGIN {show=0;pat=0} /@PATTERNS@/ {pat=1} {if(show) print; if(pat) show=1}" \
 	  $(srcdir)/hyph-th.tex.in >> $@
 
-CLEANFILES = thai.dic thai.pat pattmp.* thai.out hyph-th.tex hyph-th-utf8.tex
+CLEANFILES = \
+	thai.dic thai.pat pattmp.* thai.out thai-comb.pat \
+	hyph-th.tex hyph-th-utf8.tex
 

@@ -1,5 +1,13 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Don't rebuild patgen when only exceptions are added.
+
+	* hyphen/Makefile.am:
+	  - Separate patterns concatenation from patgen building step,
+	    so that patgen is not called every time exception is changed.
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Fix dictionary.
 
 	* hyphen/tdict-std.txt, hyphen/tdict-std-compound.txt:
