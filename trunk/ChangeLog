@@ -1,5 +1,16 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Add common exceptions at word end.
+
+	* hyphen/thai-exc.pat:
+	  - Add exception patterns to prevent hyphenation before the last
+	    consonant of the word, as well as its GARAN.
+	  - Drop unneeded patterns covered by the new exceptions.
+
+	Current dict test errors: 1982
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Add common exceptions at word begin.
 
 	* hyphen/thai-exc.pat:
