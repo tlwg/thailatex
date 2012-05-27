@@ -1,6 +1,15 @@
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
-	Fix typo in dictionary.
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  - Add exceptions to fix 'ช-วา', 'ม-ว' errors.
+
+	Current dict test errors: 1956
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix typos in dictionary.
 
 	* hyphen/tdict-std.txt, hyphen/tdict-std-compound.txt:
 	  - Fix some inconsistent hyphenations in dictionary.
