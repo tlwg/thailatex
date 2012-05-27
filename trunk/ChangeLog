@@ -1,3 +1,13 @@
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Adjust patgen parameters.
+
+	* hyphen/Makefile.am (PATGEN_ANS):
+	  - Adjust patgen parameters, which from experiment can reduce
+	    test-hyphen.sh errors from 9660 to 9293.
+	* hyphen/thai-exc.pat:
+	  - Comment out an unnecessary pattern.
+
 2012-05-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Add hyphenation test script.
