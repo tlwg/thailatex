@@ -1,5 +1,29 @@
 2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt:
+	  - Fix some inconsistent hyphenations in dictionary.
+
+	* hyphen/thai-exc.pat:
+	  - Lower down aggressiveness for '7ผี' to '5ผี', to avoid 'เ-ผียน' error.
+	  - Add exceptions for 'รำ'
+	  - for 'ชน'
+	  - for 'กร'
+	  - for 'มานะ', 'ฐานะ', 'ปานะ', 'คานะ' etc.
+	  - for 'เถระ'
+	  - for 'นายก', 'ทายก'
+	  - for '*ายน', '*านี', '*าวี', '*าฐี'
+	  - for 'ปทา', which requires dictionary modification, and thus affect
+	    '*ปโ*'. Also add exceptions for it.
+	  - for 'ทัศนะ', 'ทรรศนะ'
+	  - for 'ธรรมะ'
+	  - for 'หัตถี', 'สาวัตถี'
+
+	Current dict test errors: 1372
+
+2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Fix dictionary.
 
 	* hyphen/tdict-common.txt:
