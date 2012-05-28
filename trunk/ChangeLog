@@ -1,5 +1,18 @@
 2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  - Elaborate 'เ6*' patterns, to make it effective at higher level,
+	    as 'เ6' conflicts with patgen-generated 'เ2'.
+	  - Solve 'เม-ตร' case with more generic '6ตร.', as more similar
+	    errors have been found.
+	  - Add exceptions for several cases.
+
+	Current dict test errors: 1606
+
+2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Reorganize exceptions.
 
 	* hyphen/thai-exc.pat:

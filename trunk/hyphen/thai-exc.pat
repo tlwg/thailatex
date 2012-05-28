@@ -252,6 +252,51 @@
 6ํ
 6ฺ
 6๎
+% Since 'เ6' conflicts with 'เ2', let's elaborate it instead
+%เ6ก
+เ6ข
+เ6ฃ
+เ6ค
+เ6ฅ
+เ6ฆ
+เ6ง
+เ6จ
+เ6ฉ
+เ6ช
+เ6ซ
+เ6ฌ
+เ6ญ
+เ6ฎ
+เ6ฏ
+เ6ฐ
+เ6ฑ
+เ6ฒ
+เ6ณ
+เ6ด
+เ6ต
+เ6ถ
+เ6ท
+เ6ธ
+เ6น
+เ6บ
+เ6ป
+เ6ผ
+เ6ฝ
+เ6พ
+เ6ฟ
+เ6ภ
+เ6ม
+เ6ย
+เ6ร
+เ6ล
+เ6ว
+เ6ศ
+เ6ษ
+เ6ส
+เ6ห
+เ6ฬ
+เ6อ
+เ6ฮ
 %%
 %% Begin of exception lists
 %%
@@ -282,7 +327,58 @@
 ล7ชน
 % Force 'วัต-ถุ', but not 'วัต-ถ์'
 วัต7ถุ
-% Block 'เม-ตร'
-% but still enable 'เม-ตริก'
-เม6ตร
-เม7ตริ
+% Block 'เม-ตร', 'สู-ตร', 'ปริ-ตร', etc.
+6ตร.
+% Block 'ธา-ตุ' caused by 'ธา5ตุ' pattern
+% but still allow 'ธา-ตุ-โขภ' and 'ธา-ตุม-มิส-สา'
+ธา6ตุ.
+% Block 'บุ-ตร' caused by 'บุ5ตร' pattern
+% but still allow 'บุ-ตรี'
+บุ6ตร.
+% Block 'ค-รู' caused by '1รู' pattern
+ค6รู
+% Block 'ส-ภา' caused by '1ภา' pattern
+% but still allow 'เส-ภา', 'โส-ภา', 'อังส-ภา~ระ'
+ส6ภา
+ส7ภาร
+เส7ภา
+โส7ภา
+% Block 'ผ-วา' caused by '1วา' pattern
+ผ6วา
+% Block 'สกล~น-คร' caused by 'น1ค' pattern
+% but still allow 'ครืน-ครั่น', 'ปืน-ครก', 'สวน-ครัว', 'สำ-มะ-โน-ครัว'
+น6คร.
+% Block 'เห-ยง' caused by 'เห5ยง' pattern
+% but still allow 'มเห-ยงค์'
+.เห6ยง
+% Block 'เปี่-ยม' caused by 'ปี่3' pattern
+เปี่6
+% Block 'เขี้-ยว' caused by 'ขี้1' pattern
+เขี้6
+% Block 'ม-ณี' caused by '1ณี' pattern
+% but still allow 'คาม-ณีย์', 'พราหม-ณี', 'รม-ณีย์', 'รม-ณีย-สถาน', 'รัม-ณีย-สถาน'
+ม6ณี
+คาม7ณี
+.รม7ณี
+.รัม7ณี
+หม7ณี
+% Block 'งง~ง-วย', 'จอ~หง-วน', 'ทราม~สง-วน', 'ลม~ง-วง', 'หง-วน', 'เข้ม~ง-วด'
+%   caused by 'ง1ว'
+% but still allow many others, including 'ฆ้อง-วง', 'วัง-วน'
+ง6วด
+ง6วน
+วัง7วน
+ง6วย
+มง6วง
+% Force '-ผี'
+7ผี
+% Force '-จำ'
+7จำ
+% Force '-งำ', but not 'ห-งำ'
+5งำ
+ห6งำ
+% Force '-งง', but not 'หงอง~แห-งง'
+5งง.
+ห6งง
+% Force 'งัน-งก'
+น7งก
