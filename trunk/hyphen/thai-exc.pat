@@ -1,3 +1,6 @@
+%%
+%% No hyphenation at the very word begin
+%%
 .ก6
 .ข6
 .ฃ6
@@ -42,6 +45,9 @@
 .ฬ6
 .อ6
 .ฮ6
+%%
+%% No hyphenation at the very word end.
+%%
 6ก.
 6ข.
 6ฃ.
@@ -218,27 +224,9 @@
 6ฬุ์.
 6อุ์.
 6ฮุ์.
-ช6วา.
-ช6ไ
-ธ6ไน
-บ6ทคว
-ม6วก
-ม6วน
-ม6วด
-ม7วดี
-ม6วย
-ม6ไห
-ล7ชน
-วัต7ถุ
-ส6ไต
-ส6ไน
-ส6ไบ
-ส6ไป
-ส6ไล
-ะม6วง
-เม6ตร
-เม7ตริ
-เลส7ไต
+%%
+%% Force hyphenation/no-hyphenation on certain characters.
+%%
 6ะ
 %6ั
 6า
@@ -264,3 +252,37 @@
 6ํ
 6ฺ
 6๎
+%%
+%% Begin of exception lists
+%%
+% Block 'ช-วา'
+ช6วา.
+% Block 'ไอน์~ส-ไตน์', after '5ไ6' pattern
+% but still enable 'ปา~เลส-ไตน์'
+ช6ไ
+ธ6ไน
+ม6ไห
+ส6ไต
+เลส7ไต
+ส6ไน
+ส6ไบ
+ส6ไป
+ส6ไล
+% Block 'บ-ท~ความ'
+บ6ทคว
+% Fix aggressive 'ม1ว'
+% but still enable 'เหม-วดี', 'ล้อม-วง'
+ม6วก
+ม6วน
+ม6วด
+ม7วดี
+ม6วย
+ะม6วง
+% Force 'มวล-ชน', but not 'แฟล-ช'
+ล7ชน
+% Force 'วัต-ถุ', but not 'วัต-ถ์'
+วัต7ถุ
+% Block 'เม-ตร'
+% but still enable 'เม-ตริก'
+เม6ตร
+เม7ตริ

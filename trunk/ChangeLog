@@ -1,3 +1,10 @@
+2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Reorganize exceptions.
+
+	* hyphen/thai-exc.pat:
+	  - Categorize exceptions into sets and add comments on what they do.
+
 2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Fix dictionary.
