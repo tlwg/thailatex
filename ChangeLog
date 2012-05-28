@@ -2,6 +2,34 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-std.txt, hyphen/tdict-std-compound.txt:
+	  - Adjust hyphenation for '-ณี' in 'กรณี' and 'ธรณี' for consistency.
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - ฮิบรู, ฮีบรู
+	    - ต่อยอด
+	    - นางพญา
+	    - จุรณ
+	  + Add enforcing exceptions for:
+	    - *บท
+	    - *บถ
+	    - *ฟู
+	    - จักษุ
+	    - *ตะ
+	    - *ามี
+	    - *มิผล
+	    - *ากิ
+	    - *ากล
+	    - *นำ
+	    - นารีผล
+
+	Current dict test errors: 1297
+
+2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-std.txt:
 	  - Fix some inconsistent hyphenations in dictionary.
 
