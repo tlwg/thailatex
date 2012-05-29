@@ -1,5 +1,49 @@
 2012-05-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-city.txt:
+	  - Adjust 'นิวเดลี'
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
+	  - ฤชา, ฤดี et al.
+	  - ปาฏลิ, ตัณหา
+	  - บัณรสี
+	  - จุฬา, จุฑา, จุลินทรีย์
+	  - มิติ, สมิติ
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - ฤชา
+	    - ฤทัย
+	    - (จักร)พรรดิ
+	    - (ครุ)วนา
+	    - (คู่)อริ
+	    - (ปัญจ)นที
+	    - (พุทธ)คยา
+	    - (มนิ)มนา
+	    - (มนุษย์)มนา
+	    - (ปัณ)รสี
+	  + Add enforcing exceptions for:
+	    - -ผล
+	    - -ดล
+	    - -รส
+	    - -คน
+	    - -ลี
+	    - กัณหา, ตัณหา
+	    - ฤๅ-, ฤา-
+	    - ยี่-
+	    - ภาวะ, กาสาวะ, ปัสสาวะ
+	    - เทพี, เทวี
+	    - บรรจง, บรรจบ, บรรจุ, บรรถร, บรรพต
+	    - ทักษิโณทก, ปริตโตทก, วัสโสทก
+
+	Current dict test errors: 1078
+
+2012-05-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Fix dictionary + Add exceptions for '-ยะ' cases.
 
 	* hyphen/tdict-common.txt, hyphen/tdict-std.txt:
