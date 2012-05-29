@@ -1,5 +1,20 @@
 2012-05-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Fix dictionary + Add exceptions for '-ยะ' cases.
+
+	* hyphen/tdict-common.txt, hyphen/tdict-std.txt:
+	  - Adjust hyphenation for '-ยะ' cases.
+	  - Drop problematic 'วิ-ชย' entry.
+
+	* hyphen/thai-exc.pat:
+	  + Add enforcing exceptions for:
+	    - '*ยะ'.
+	    - 'พิหารี' (failed as a side-effect of above changes)
+
+	Current dict test errors: 1191
+
+2012-05-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Fix dictionary + Add exceptions.
 
 	* hyphen/tdict-std.txt:
