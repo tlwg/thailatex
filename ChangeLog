@@ -2,6 +2,35 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-std.txt: Adjust:
+	  - กเรนทร
+	* hyphen/tdict-std-compound.txt: Adjust:
+	  - เจ้าพนักงาน
+	* hyphen/tdict-common.txt: Adjust:
+	  - ภคันทลาพาธ
+	* hyphen/tdict-science.txt: Adjust:
+	  - ไฮเพอร์โบลา
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ดร
+	    - -ทร
+	    - -อู (กวนอู, ตองอู)
+	    - -พล
+	    - ไพร่-
+	    - -ศก
+	    - อัฐ-
+	    - -วี
+	    - -ตี
+	    - -สี
+	    - -ลา
+
+	Current dict test errors: 980
+
+2012-05-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-city.txt:
 	  - Adjust 'นิวเดลี'
 	* hyphen/tdict-common.txt:
