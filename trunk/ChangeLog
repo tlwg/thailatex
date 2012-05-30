@@ -2,6 +2,21 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-std-common.txt: Adjust:
+	  - วาทะ
+	* hyphen/tdict-std.txt: Adjust:
+	  - *กะ, (+ some *นะ)
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -กะ
+
+	Current dict test errors: 902
+
+2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-std-compound.txt: Adjust:
 	  - เสรี*
 	* hyphen/tdict-std.txt: Adjust:
