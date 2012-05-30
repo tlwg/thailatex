@@ -386,6 +386,8 @@
 .ฤ6ทัย
 % Block 'พรร-ดิ' caused by 'ร1ด'
 พรร6ดิ
+% Block 'สวา-ดิ' caused by 'า1ดิ'
+สวา6ดิ
 % Block 'ครุ~ว-นา', 'เส~ว-นา' caused by '1นา'
 รุว6นา
 เสว6นา
@@ -742,3 +744,18 @@
 มล7กะ
 % Force '-ทุ.'
 7ทุ.
+% Block 'โซ-รม', caused by 'โซ1' pattern
+โซ6ร
+% Block 'อินทร~ธ-นู', caused by '1นู' pattern
+ธ6นู
+% Force 'วัส-ดุ'
+วัส7ดุ
+% Force 'สวรร-คต', 'สุร-คต'
+ร7คต
+% Force 'อัส~ดง-คต' inhibited by 'ดง4ค' pattern
+ดง7คต
+% Force '-กง.' but not 'เ-กง.'
+5กง.
+เ6กง
+% Force 'ปิ-ฎก', 'สา-ฎก', etc.
+7ฎก
