@@ -2,7 +2,26 @@
 
 	Fix dictionary + Add exceptions.
 
-	* hyphen/tdict-std-common.txt: Adjust:
+	* hyphen/tdict-std-compound.txt: Adjust:
+	  - ยานพาหนะ
+	* hyphen/tdict-std.txt: Adjust:
+	  - *นะ, (+ some *นา, *นีย์, ทะ)
+	  - รุจา
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - เสว-นา
+	    - ก-นะ
+	  + Add forcing exceptions for:
+	    - -นะ
+
+	Current dict test errors: 838
+
+2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-common.txt: Adjust:
 	  - วาทะ
 	* hyphen/tdict-std.txt: Adjust:
 	  - *กะ, (+ some *นะ)
