@@ -1,3 +1,22 @@
+2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt: Adjust:
+	  - เสรี*
+	* hyphen/tdict-std.txt: Adjust:
+	  - เกสรี
+	  - จามรี
+	  - สิขรี, สิขเรศ
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - มโห-
+	    - -รี
+	    - ตุ้ม-
+
+	Current dict test errors: 952
+
 2012-05-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Fix dictionary + Add exceptions.
