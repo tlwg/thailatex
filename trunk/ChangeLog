@@ -2,6 +2,22 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ณะ, (+ some *ณา, *นา)
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - อังค-ณา, อังค-นา
+	  + Add forcing exceptions for:
+	    - -ทุ.
+	    - -ณะ
+
+	Current dict test errors: 806
+
+2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-std-compound.txt: Adjust:
 	  - ยานพาหนะ
 	* hyphen/tdict-std.txt: Adjust:
