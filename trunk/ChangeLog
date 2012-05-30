@@ -2,6 +2,28 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-std.txt:
+	  - Adjust various entries.
+	  - Remove partial word 'สวัสดิ', 'ปรีดิ'
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - โซ-รม
+	    - อินทรธ-นู
+	    - สวา-ดิ
+	  + Add forcing exceptions for:
+	    - วัส-ดุ
+	    - สวรร-คต, สุร-คต, อัสดง-คต
+	    - -กง
+	    - -ฎก
+
+	Current dict test errors: 776
+
+2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-std.txt: Adjust:
 	  - *ณะ, (+ some *ณา, *นา)
 
