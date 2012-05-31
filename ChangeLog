@@ -2,6 +2,27 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-city.txt: Adjust:
+	  - บูคาเรสต์, บูดาเปสต์
+	* hyphen/tdict-std.txt: Adjust:
+	  - ปฐพี, ปฐวี
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ดำ
+	    - -คำ
+	    - -สะ
+	    - -ฐะ
+	    - -ธะ
+	    - -พี
+	    - -ดา
+
+	Current dict test errors: 613
+
+2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-spell.txt: Adjust:
 	  - ปรากฏ
 	* hyphen/tdict-std-compound.txt:
