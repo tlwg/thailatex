@@ -3,7 +3,26 @@
 	Fix dictionary + Add exceptions.
 
 	* hyphen/tdict-std-compound.txt:
-	* a/hyphen/tdict-std.txt: Adjust:
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ณา* (+ some *นา*)
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ดี
+	  + Adjust forcing exceptions:
+	    - extends วัสดุ for พัสดุ, ศุภมัสดุ (but not กบิลพัสดุ์)
+	  + Remove blocking exceptions (let's relax for acceptable variants)
+	    for:
+	    - อังคณา, อังคนา
+
+	Current dict test errors: 730
+
+2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
 	  - *ติ
 	  - *ดี
 	  - *ภาวนา, ภารยทรัพย์, ภารยา
