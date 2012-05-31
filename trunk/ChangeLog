@@ -2,6 +2,31 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-spell.txt: Adjust:
+	  - ปรากฏ
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
+	  - *กฎ, *กฏ
+	  - กมลา, กมลาศ et al.
+	  - *หะ, *หา
+	  - มัตสยา (relax)
+	  - *มะ
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -กฎ, -กฏ
+	    - -หะ, -หา
+	    - -มะ
+	    - -หู
+	  + Remove blocking exceptions for:
+	    - ตุ้ม- (ตุ้ม-หู has been covered by -หู)
+
+	Current dict test errors: 656
+
+2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-common.txt: Adjust:
 	  - เซ็กซี่
 	* hyphen/tdict-std-compound.txt:
