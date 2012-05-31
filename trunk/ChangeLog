@@ -2,6 +2,32 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-common.txt: Adjust:
+	  - เซ็กซี่
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ณะ
+	  - นักสราช
+	  - ซิกซี้
+	  - *รา* (+ some *รี*)
+
+	* hyphen/thai-exc.pat:
+	  + Remove blocking exceptions (let's relax for acceptable variants)
+	    for:
+	    - ธารณะ, ชิรณะ, บูรณะ, อุรณะ
+	  + Add forcing exceptions for:
+	    - นัก-
+	    - กุณ-
+	    - -ซี.
+	    - -ที.
+	    - รา
+
+	Current dict test errors: 702
+
+2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-std-compound.txt:
 	* hyphen/tdict-std.txt: Adjust:
 	  - *ณา* (+ some *นา*)
