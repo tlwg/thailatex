@@ -1,3 +1,22 @@
+2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt:
+	* a/hyphen/tdict-std.txt: Adjust:
+	  - *ติ
+	  - *ดี
+	  - *ภาวนา, ภารยทรัพย์, ภารยา
+	  - เสวนา, ครุวนา
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -มี
+	  + Remove blocking exceptions (let's relax for acceptable variants)
+	    for:
+	    - ครุวนา, เสวนา
+
+	Current dict test errors: 750
+
 2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Fix dictionary + Add exceptions.
