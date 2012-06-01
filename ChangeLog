@@ -1,3 +1,19 @@
+2012-06-01  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-geo.txt: Adjust:
+	  - *ระ*
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ระ*
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - บุษ-บก, บุษ-บง, บุษ-ปะ
+	    - -ระ
+
+	Current dict test errors: 571
+
 2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Fix dictionary + Add exceptions.
