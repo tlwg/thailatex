@@ -3,6 +3,32 @@
 	Fix dictionary + Add exceptions.
 
 	* hyphen/tdict-std.txt: Adjust:
+	  - *ชะ (+ related words)
+	  - โร-หิต
+	* hyphen/tdict-std-compound.txt: Adjust:
+	  - โล-หิต
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ธี
+	    - -ชะ
+	    - -ฆะ
+	    - -ฟะ
+	    - พิ-กล, เล่ห์-กล
+	    - กัดดา-ฟี, โครมาโทกรา-ฟี
+	    - -ถี
+	    - -ฮา
+	    - -ญี
+	    - -ผา
+	    - -หิ
+
+	Current dict test errors: 456
+
+2012-06-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt: Adjust:
 	  - โฆ-ษะ
 
 	* hyphen/thai-exc.pat:
