@@ -1,3 +1,26 @@
+2012-06-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt: Adjust:
+	  - โฆ-ษะ
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ษี
+	    - -วะ (+ อา~ชี-วก)
+	    - -ถะ
+	    - -ษะ
+	    - -พร
+	    - -ผง
+	  + Add blocking exceptions for:
+	    - ฤ-, ฦ- (missed from block list for initial character)
+	    - ด-นู
+	  + Modify forcing exceptions for:
+	    - วัต-ถุ -> วัต-ถุ, สัต-ถุ
+
+	Current dict test errors: 508
+
 2012-06-04  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Fix dictionary + Add exceptions.
