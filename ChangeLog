@@ -2,6 +2,43 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-std.txt:
+	  - วิสา-ร-ทะ
+	  - อา~ศิ-ร~พจน์ (as allowed by -รพ exceptions below)
+	  - มโห-ร~สพ (let's relax)
+	  - นันท~ทา-ยี
+	* hyphen/tdict-std-compound.txt:
+	  - จา-ตุ*
+	* hyphen/tdict-country.txt:
+	  - ตุ~ร-กี (as allowed by -กี exceptions below)
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ทะ
+	    - ชัน-ตุ
+	    - สวัส-ติ, มา-ตฤ (side effect from 'จา-ตุ*' dict mod)
+	    - -รพ
+	    - -ศุ
+	    - -ถา
+	    - -สพ
+	    - -ขี
+	    - -สอ
+	    - -ดะ
+	    - -บะ
+	    - -ยี
+	    - -กี
+	    - -หก
+	  + Add blocking exceptions for:
+	    - กรร-ตุ
+	  + Remove blocking exceptions for:
+	    - มโห-ร~สพ (let's relax)
+
+	Current dict test errors: 382
+
+2012-06-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-collection.txt:
 	* hyphen/tdict-std.txt:
 	  - กร*
