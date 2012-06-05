@@ -1,3 +1,19 @@
+2012-06-04  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt: Adjust:
+	  - จรร-ยาบรรณ, ฉา-ยาลักษณ์
+	* hyphen/tdict-std.txt: Adjust:
+	  - มหาสา-วก
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ยา
+	    - สา-วก
+
+	Current dict test errors: 564
+
 2012-06-01  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Fix dictionary + Add exceptions.

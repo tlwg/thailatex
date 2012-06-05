@@ -872,3 +872,11 @@
 ิส7ระ
 % Force 'เป-ระ'
 เป7ระ
+% Force 'ดื้อ-ยา', 'หมอ-ยา' inhibited by 'อ4ยา' pattern
+อ7ยา.
+% Force 'กัต-ติ-เก-ยา' inhibited by 'เก2' pattern
+เก7ยา
+% Force 'สวรร-ยา' inhibited by '1วรร4' pattern
+รร7ยา
+% Force 'สา-วก'
+สา7วก
