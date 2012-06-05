@@ -2,6 +2,23 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ธิ*
+	  - กร-วิก, กร-สาปน์, กร-สุทธิ์
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - *ธิ*
+	  + Add blocking exceptions for:
+	    - ขัดสมา-ธิ, พยา-ธิ
+
+	Current dict test errors: 552
+
+2012-06-04  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-std-compound.txt: Adjust:
 	  - จรร-ยาบรรณ, ฉา-ยาลักษณ์
 	* hyphen/tdict-std.txt: Adjust:
