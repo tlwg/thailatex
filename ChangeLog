@@ -2,6 +2,31 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-collection.txt:
+	* hyphen/tdict-std.txt:
+	  - กร*
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt:
+	  - ลัญ-จ-กร, ลัญ-ฉ-กร (eliminating patgen 'ลัญ2' pattern which caused
+	    error on 'กาลัญญู')
+	  - ศาลล้มละ-ลาย
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - สิน-ธพ, สิน-ธุ, สิน-ธู
+	    - -ชู
+	    - -ศะ
+	    - -ละ
+	  + Remove forcing exceptions:
+	    - 6ชน์ (conflict with patgen '4ชน์', and indeed not necessary at
+	      higher level)
+
+	Current dict test errors: 432
+
+2012-06-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-std.txt: Adjust:
 	  - *ชะ (+ related words)
 	  - โร-หิต
