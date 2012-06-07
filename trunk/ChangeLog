@@ -1,3 +1,46 @@
+2012-06-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-std.txt:
+	  - พัน-ธุ*
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-std-compound.txt:
+	  - รา-ชา*
+	* hyphen/tdict-std-compound.txt:
+	  - เมือ*ง-ขึ้น
+	  - ภา-รต~วิทยา
+	  - มุ-สา~วาท
+	  - กา~สา-ว~พัสตร์
+	  - ซึม~กะ-ทือ
+	  - พิ-นัย~กรรม
+	  - หนัง~ตะ-ลุง
+	  - จักร~รา-ศี
+	* hyphen/tdict-std.txt:
+	  - ประ~ทา-ศี
+	  - กะ~ลอ-จี๊
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ฬี
+	    - -ปะ
+	    - -ลู
+	    - -ตู
+	    - -ยู
+	    - -ชิ
+	    - -จี
+	    - -ศี
+	    - -มน
+	    - -ยอ
+	    - -สง
+	    - -สร
+	    - -ดก
+	    - -โก
+	    - ฝึก-ฝน
+
+	Current dict test errors: 258
+
 2012-06-06  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Fix dictionary + Add exceptions.
