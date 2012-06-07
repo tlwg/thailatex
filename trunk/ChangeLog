@@ -2,6 +2,47 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-std.txt:
+	  - กท-ลี, คุป-ติ
+	  - จม-รี, จา~ม-รี, ภระ~ม-รี'
+	  - ชี-ร-ณะ
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt:
+	  - *วิ-สัย
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-geo.txt:
+	  - *ษา
+	* hyphen/tdict-std.txt:
+	  - คันธ~กุ-ฎี
+	  - วิ~ศา-ข~บู~ชา
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-std.txt:
+	  - ม-ภ: กุม-ภ~กรรณ, อา~รัม-ภ~บท/กถา
+
+	* hyphen/thai-exc.pat:
+	  + Modify forcing exceptions for:
+	    - นท7ลี -> ท7ลี (for กท-ลี)
+	  + Add forcing exceptions for:
+	    - จม-รี
+	    - คุป-ติ
+	    - ลา-มก
+	    - -ซอ
+	    - -ขะ
+	    - วรร-ษา
+	    - -ภะ
+	    - โศ-ภน, โศ-ภี
+	    - ดิ-ลก, ติ-ลก
+	    - กุ-ฎี
+	    - วิ~ศา-ขา
+	    - -สา
+	    - -ซู
+
+	Current dict test errors: 228
+
+2012-06-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-common.txt:
 	* hyphen/tdict-std.txt:
 	  - พัน-ธุ*
