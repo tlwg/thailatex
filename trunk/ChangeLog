@@ -3,6 +3,37 @@
 	Fix dictionary + Add exceptions.
 
 	* hyphen/tdict-std.txt:
+	  - นิร~โทษ-กรรม
+	  - คอ-แลน
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ษก
+	    - -ฐี
+	    - -ดม
+	    - -ลม
+	    - -ศล
+	    - -ยต
+	    - -งู
+	    - -จะ
+	    - -สก
+	    - -ยศ
+	    - -ธก
+	    - -กบ
+	    - -ฆี
+	    - -คู
+	    - พลาส-มา, เส-มา
+	    - -แล
+	    - -พก
+	    - โส-ภณ, โส-ภี
+
+	Current dict test errors: 179
+
+2012-06-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt:
 	  - กท-ลี, คุป-ติ
 	  - จม-รี, จา~ม-รี, ภระ~ม-รี'
 	  - ชี-ร-ณะ
