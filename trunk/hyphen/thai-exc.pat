@@ -1190,3 +1190,55 @@
 5พก.
 % Force 'โส-ภณ', 'โส-ภี'
 โส7ภ
+% Block 'กรร-ดิ' caused by 'ร1ด' pattern
+% but still allow 'กรร-ดิก'
+รร6ดิ.
+% Force 'กา-ฬา-วก', 'ศรา-วก', but not 'ก้า-ว~ก่าย'
+า7วก.
+% Force 'กิน-นร', inhibited by 'น4นร' pattern (สนน-รา-คา)
+น7นร.
+% Force 'กุ~ลี~กุ-จอ', but not 'เ-จอ', 'อา-จ~อง', 'อเน-จ~อนาถ'
+5จอ.
+% Force 'ขจร-จบ', but not 'แ-จบ'
+5จบ.
+% Force 'ค่า-คบ', but not 'แ-คบ'
+5คบ.
+% Force 'ฉ้อ-ฉล', but not 'แ-ฉลบ'
+5ฉล.
+% Force 'ชม-รม', but not 'โค-รม'
+ม7รม
+% Force 'อบ-รม', but not 'บ-รม'
+อบ7รม
+% Force 'บริ-รม' (but not 'นิ-ร~มล'), 'อี-รม'
+ิ7รม.
+ี7รม.
+% Force 'ซุก-ซน', but not 'โ-ซน'
+5ซน.
+% Force 'สี-ดอ', but not 'เ-ดอะ'
+5ดอ.
+% Force 'ซู~ซู-กิ' but not 'เ-กิด', 'ป-กิณ~กะ'
+5กิ.
+% Force 'อี~ซู-ซุ' (but not potential 'ซู-ซ'), 'ซู-ฮก' (but not potential 'ซู-ฮ์')
+ซู7ซุ
+ซู7ฮก
+% Force 'ดา-บส', 'ดาว-บส', but not 'เ-บส', 'จ็อ-บส์'
+5บส.
+% Force 'ดิ้น-รน', but not 'เนร-นาด'
+น7รน.
+% Force 'ตก-ลง', but not 'แก-ลง'
+ตก7ลง
+% Force 'ลืม-ตน'
+ม7ตน
+% Force 'ตัว-ตน', but not 'เว-ตน์'
+ตัว7ตน
+% Force 'ตี-วง'
+ี7วง
+% Force 'พิศ-วง'
+ศ7วง.
+% Force 'แตร-วง', 'แวด-วง' explicitly
+แตร7วง
+แวด7วง
+% Force 'ทมิฬ~นา-ฑู'
+า7ฑู
+% Force 'ทร-หด', but not 'โ-หด'
+5หด.

@@ -1,3 +1,36 @@
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-std.txt:
+	  - วา-ท~* (to unblock 'ทวา-ทศ')
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - กรร-ดิ
+	  + Add forcing exceptions for:
+	    - กา~ฬา-วก, ศรา-วก
+	    - กิน-นร
+	    - กุ~ลี~กุ-จอ
+	    - ขจร-จบ
+	    - ค่า-คบ
+	    - ฉ้อ-ฉล
+	    - -รม
+	    - ซุก-ซน
+	    - สี-ดอ
+	    - ซู~ซู-กิ
+	    - อี~ซู-ซุ, ซู-ฮก
+	    - -บส
+	    - ดิ้น-รน
+	    - ตก-ลง
+	    - -ตน
+	    - -วง
+	    - ทมิฬ~นา-ฑู
+	    - ทร-หด
+
+	Current dict test errors: 148
+
 2012-06-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Fix dictionary + Add exceptions.
