@@ -1,5 +1,33 @@
 2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - ระ~เห-หน
+	    - รัน-ทด
+	    - ราว-นม, เทพ-นม, โค-นม
+	    - ราษ-ฎร
+	    - ริ-ปุ, ริ-ปู
+	    - รี-รอ
+	    - -ลำ
+	    - -ทม
+	    - -วน
+	    - วิ-จล
+	    - วิช-ญะ
+	    - ศี-ขร
+	    - ศีล-อด
+	    - สดก~ก๊อก-ธม
+	    - สม-รด, สัก-วา
+	    - สัป-ดน, สัป-ทน
+	    - สา-สม, เจือ-สม
+	    - สิ~ขา-นล
+	    - ภี-รุ, อู-รุ, สิ~เน-รุ
+
+	Current dict test errors: 86
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Fix dictionary + Add exceptions.
 
 	* hyphen/tdict-std.txt:
