@@ -1,5 +1,26 @@
 2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt:
+	  - สว-ยม~ภู
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - มเห-สิ
+	    - วัฏ-ฏิ, ยัษ-ฏิ
+	    - ศิษ-ฎิ
+	    - อิษ-ฏี
+	    - ราก-ษส
+	    - ลิ-ปิ
+	    - สู-ริ
+	    - เลฑ-ฑุ
+	    - เลษ-ฏุ
+
+	Current dict test errors: 0
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Add exceptions.
 
 	* hyphen/thai-exc.pat:
