@@ -4,6 +4,34 @@
 
 	* hyphen/thai-exc.pat:
 	  + Add forcing exceptions for:
+	    - กรร-กศ
+	    - กัล-บก
+	    - กัศ-ยป
+	    - กา-นน
+	    - กุ-ฎา, กู-ฏา
+	    - กุ~โน~กา-มอ
+	    - ขิ~ป~สัท-โท
+	    - จุ-ทส
+	    - จ่า-รง
+	    - ทัฬ-หี
+	    - ทา-ฒะ
+	    - ธต-รฐ
+	    - บุท-คล
+	    - ปัต-ถร
+	    - ปิ-ฐิ
+	    - ปุป-ผะ
+	    - พฤ-ษภ
+	    - พิ-ธุ
+	    - มา-ฬก
+
+	Current dict test errors: 11
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
 	    - เลี้ยว-ลด
 	    - เสื่อ-กก
 	    - เหลือ-ขอ, เหล่า-กอ

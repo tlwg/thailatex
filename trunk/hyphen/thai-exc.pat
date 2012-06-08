@@ -1436,3 +1436,42 @@
 ไช7โย
 % Force 'ไอ~รา-พต', but not potential 'แ-พต'
 5พต.
+% Force 'กรร-กศ' explicitly
+กรร7กศ
+% Force 'กัล-บก'
+ล7บก.
+% Force 'กัศ-ยป'
+ศ7ยป.
+% Force 'กา-นน', but not 'โล~ซา-นน์'
+า7นน.
+% Force 'กุ-ฎา', 'กู-ฏา'
+ุ7ฎา
+ู7ฏา
+% Force 'กุ~โน~กา-มอ'
+า7มอ.
+% Force 'ขิ~ป~สัท-โท'
+ท7โท
+% Force 'จุ-ทส'
+ุ7ทส
+% Force 'จ่า-รง'
+จ่า7ร
+% Force 'ทัฬ-หี'
+ฬ7หี
+% Force 'ทา-ฒะ', but not potential 'เ-ฒะ'
+า7ฒะ
+% Force 'ธต-รฐ' explicitly
+ธต7รฐ
+% Force 'บุท-คล'
+ท7คล.
+% Force 'ปัต-ถร'
+ต7ถร.
+% Force 'ปิ-ฐิ'
+ิ7ฐิ
+% Force 'ปุป-ผะ'
+ป7ผะ
+% Force 'พฤ-ษภ' explicitly, but not 'พฤ-ษ~ภา~คม'
+พฤ7ษภ.
+% Force 'พิ-ธุ'
+ิ7ธุ
+% Force 'มา-ฬก'
+า7ฬก.
