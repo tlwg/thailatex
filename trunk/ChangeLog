@@ -4,6 +4,36 @@
 
 	* hyphen/thai-exc.pat:
 	  + Add forcing exceptions for:
+	    - เลี้ยว-ลด
+	    - เสื่อ-กก
+	    - เหลือ-ขอ, เหล่า-กอ
+	    - แด-วู
+	    - แยบ-ยล
+	    - โฉ-เก
+	    - โด-มร, โต-มร
+	    - โต้-โผ
+	    - โท-โส
+	    - โป้-ปด
+	    - โผ-เผ
+	    - โภ-คี
+	    - โย-นก
+	    - โส-มม
+	    - โส-ฬส
+	    - โสต-ถิ
+	    - โอ้-โฮ
+	    - ใจ-คอ
+	    - ไค-ฟง
+	    - ไช-โย
+	    - ไอ-รา-พต
+
+	Current dict test errors: 31
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
 	    - สิง-หล
 	    - สีห-นุ
 	    - สุ-ภร

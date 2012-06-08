@@ -282,7 +282,8 @@
 เ6น
 เ6บ
 เ6ป
-เ6ผ
+% (also force 'โผ-เผ')
+7เ6ผ
 เ6ฝ
 เ6พ
 เ6ฟ
@@ -1392,3 +1393,46 @@
 % Force 'เรือ-ธง', 'เรือ-บด'
 เรือ7ธ
 เรือ7บ
+% Force 'เลี้ยว-ลด'
+เลี้ยว7
+% Force 'เสื่อ-กก', but not 'เ-กก'
+5กก.
+เ6กก
+% Force 'เหลือ-ขอ', 'เหล่า-กอ'
+อ7ขอ.
+า7กอ.
+% Force 'แด-วู' explicitly
+แด7วู
+% Force 'แยบ-ยล'
+บ7ยล.
+% Force 'โฉ-เก' explicitly
+โฉ7เก
+% Force 'โด-มร', 'โต-มร' explicitly
+โด7มร
+โต7มร
+% Force 'โต้-โผ'
+7โผ
+% Force 'โท-โส' explicitly
+โท7โส
+% Force 'โป้-ปด'
+้7ปด.
+% Force 'โภ-คี'
+7คี.
+% Force 'โย-นก', but not โย-น~กลอง
+โย7นก.
+% Force 'โส-มม' explicitly
+โส7มม
+% Force 'โส-ฬส', but not 'กา-ฬ~สินธุ์
+7ฬส.
+% Force 'โสต-ถิ'
+ต7ถิ
+% Force 'โอ้-โฮ'
+7โฮ
+% Force 'ใจ-คอ'
+ใจ7
+% Force 'ไค-ฟง', but not 'แ-ฟง'
+5ฟง
+% Force 'ไช-โย' explicitly
+ไช7โย
+% Force 'ไอ~รา-พต', but not potential 'แ-พต'
+5พต.
