@@ -2,6 +2,38 @@
 
 	Fix dictionary + Add exceptions.
 
+	* hyphen/tdict-std.txt:
+	  - โด*รณ
+	  - คันถ~รจ-นา~จารย์
+	* hyphen/tdict-proper.txt:
+	  - ภู-ริ~ทัต
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - นอบ-นบ
+	    - นา-คร
+	    - บี-ฑา
+	    - บู-ดู
+	    - ปรา-รภ
+	    - ปลา-ฝา
+	    - -รบ
+	    - พา-รณ
+	    - -ยง
+	    - สุ~ริ-ยน
+	    - มหา-พน
+	    - มิ~ยา-งิ
+	    - -รถ
+	    - ยุ~คัน-ธร
+	    - มณ-ฑก, มณ-โฑ
+	    - มร-กต, มร-ฑป
+	    - -อก
+
+	Current dict test errors: 117
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
 	* hyphen/tdict-common.txt:
 	* hyphen/tdict-std.txt:
 	  - วา-ท~* (to unblock 'ทวา-ทศ')
