@@ -4,6 +4,39 @@
 
 	* hyphen/thai-exc.pat:
 	  + Add forcing exceptions for:
+	    - สิง-หล
+	    - สีห-นุ
+	    - สุ-ภร
+	    - หมด-จด
+	    - หยิบ-ยก
+	    - -ศร
+	    - อพ-ยพ
+	    - อร-ชร
+	    - เน~แบรส-กา, อะ~แลส-กา
+	    - อาจ-อง
+	    - อี-มู
+	    - อึง-อล
+	    - อุ-ชุ
+	    - อุ-สภ
+	    - เก-ชา, เก-ศา
+	    - โช-ตก, เก็บ-ตก
+	    - เข-ฬะ
+	    - เคราห-ณี
+	    - เจือ-ปน
+	    - เชย-ชม
+	    - เบื้อง-บน
+	    - -คะ
+	    - -ออ
+	    - เรือ-ธง, เรือ-บด
+
+	Current dict test errors: 54
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
 	    - ระ~เห-หน
 	    - รัน-ทด
 	    - ราว-นม, เทพ-นม, โค-นม
