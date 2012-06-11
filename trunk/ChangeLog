@@ -1,5 +1,17 @@
 2012-06-11  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Update dict from latest libthai SVN.
+
+	* hyphen/tdict-city.txt:
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-ict.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-spell.txt:
+	* hyphen/tdict-std.txt:
+	  - Update dict from libthai SVN.
+
+2012-06-11  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Add script for comparing with libthai source dicts.
 
 	* hyphen/Makefile.am, +hyphen/diff-dicts.sh:
