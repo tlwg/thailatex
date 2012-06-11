@@ -1,3 +1,12 @@
+2012-06-11  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add script for comparing with libthai source dicts.
+
+	* hyphen/Makefile.am, +hyphen/diff-dicts.sh:
+	  - Add script taking libthai dict source dir as an argument,
+	    scan all dicts and try hyphenating them, then compare with
+	    current source.
+
 2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Fix dictionary + Add exceptions.
