@@ -1,5 +1,15 @@
 2012-06-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Update dict from latest libthai SVN.
+
+	* hyphen/tdict-city.txt:
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-lang-ethnic.txt:
+	* hyphen/tdict-proper.txt:
+	  - Update dict from libthai SVN.
+
+2012-06-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Check arguments for diff-dicts.sh
 
 	* hyphen/diff-dicts.sh:
