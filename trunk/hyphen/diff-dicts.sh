@@ -10,6 +10,11 @@
 #
 # Usage diff-dicts.sh {libthai-dict-src-dir}
 
+if [ $# -ne 1 ]; then
+  echo "Usage: diff-dicts.sh {libthai-dict-src-dir}"
+  exit 1
+fi
+
 DICTS=`echo tdict-*.txt`
 DIR=$1
 

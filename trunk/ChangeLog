@@ -1,3 +1,10 @@
+2012-06-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Check arguments for diff-dicts.sh
+
+	* hyphen/diff-dicts.sh:
+	  - Check for command-line argument and print usage if missing.
+
 2012-06-11  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Update dict from latest libthai SVN.
