@@ -1,0 +1,54 @@
+Notes on hyphenation setup.
+
+ThaiLaTeX >= 0.5.0 comes with hyphenation patterns.  However, due to different
+TeXLive FSH on different systems, the installation cannot be automated.  You
+will need to modify your system manually after installation.
+
+What you need is add this line to your "language.dat" file:
+
+---8<---
+thai  loadhyph-th.tex
+---8<---
+
+And then invoke "fmtutil-sys --all".  That's all.
+
+However, the way to modify "language.dat" differs from systems to systems.
+For example:
+
+Debian/Ubuntu
+-------------
+
+Mostly, you don't need to modify anything if you install thailatex from their
+official apt repositories.  But just in case you want to install it from
+source:
+
+# cat > /etc/texmf/hyphen.d/90thailatex.cnf << EOF
+name=thai file=loadhyph-th.tex lefthyphenmin=2 righthyphenmin=3
+EOF
+# update-language
+# update-fmtutil
+
+The file /var/lib/texmf/tex/generic/config/language.* for different TeX
+engines will be refreshed simultaneously.
+
+After that, you can invoke this to regenerate hyphention trie:
+
+# fmtutil-sys --all
+
+Fedora 17
+---------
+
+For Fedora 17's TeXLive 2007, the "language.dat" file is located at
+/usr/share/texmf/tex/generic/config/.  I am not sure how to modify it the
+right way.  You are supposed to create "language.th.dat" file and invoke
+some command to update "language.dat" accordingly.  But I cannot figure out
+the command.  So, the quick way to do it is edit the "language.dat" file
+directly, by adding our required line.  For example:
+
+# echo "thai  loadhyph-th.tex" \
+  >> /usr/share/texmf/tex/generic/config/language.dat
+
+And then, as usual, invoke:
+
+# fmtutil-sys --all
+
