@@ -1,3 +1,7 @@
+0.5.0 (2012-06-15)
+=====
+- Hyphenation support.
+
 0.4.7 (2012-02-15)
 =====
 - No more stretch for \wbr. It caused uneven spacing between words.
