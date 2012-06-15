@@ -1,3 +1,14 @@
+2012-06-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Inform user how to set up hyphenation.
+
+	* Makefile.am, +README.hyphen:
+	  - Add explanation on how to set up hyphenation on different systems.
+	  - Drop FMTUTIL invokation on install hook, as it didn't really work
+	    without human intervention anyway.
+	  - Print some message to inform user to read README.hyphen after
+	    installation.
+
 2012-06-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
 	Update dict from latest libthai SVN.
