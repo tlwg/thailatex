@@ -1,4 +1,4 @@
-EXTRA_DIST = HISTORY
+EXTRA_DIST = HISTORY README.hyphen
 SUBDIRS = babel hyphen emacs scripts doc
 
 DISTCLEANFILES = thailatex.spec \
@@ -14,15 +14,18 @@ if ENABLE_HOOKS
 install-data-hook:
 	@if test -z "$(DESTDIR)" ; then                                       \
 	  $(TEXHASH) ;                                                        \
-	  $(FMTUTIL) --all ;                                                  \
 	else                                                                  \
 	  echo "***" ;                                                        \
 	  echo "*** Warning: TeX index not updated" ;                         \
 	  echo "***" ;                                                        \
 	  echo "*** update it on the target system" ;                         \
-	  echo "*** using $(TEXHASH) && $(FMTUTIL) --all commands" ;          \
+	  echo "*** using $(TEXHASH) command" ;          \
 	  echo "***" ;                                                        \
 	fi
+	@echo "***"
+	@echo "Almost done. See README.hyphen for further steps to"
+	@echo "set up the hyphenation pattern."
+	@echo "***"
  
 uninstall-hook:
 	$(TEXHASH)
