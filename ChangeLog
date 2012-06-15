@@ -1,5 +1,13 @@
 2012-06-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Update AUTHORS list
+
+	* AUTHORS:
+	  - Move Chanop & Poonlap to Previous Maintainers.
+	  - Add info for hyphenation word list.
+
+2012-06-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Inform user how to set up hyphenation.
 
 	* Makefile.am, +README.hyphen:
