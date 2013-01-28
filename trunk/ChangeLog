@@ -1,5 +1,24 @@
 2013-01-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Update dict from latest libthai SVN.
+
+	* hyphen/tdict-city.txt:
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-district.txt:
+	* hyphen/tdict-geo.txt:
+	* hyphen/tdict-ict.txt:
+	* hyphen/tdict-lang-ethnic.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-science.txt:
+	* hyphen/tdict-spell.txt:
+	* hyphen/tdict-std-compound.txt:
+	  - Update dict from libthai SVN.
+
+	* hyphen/thai-exc.pat:
+	  - Drop now-duplicated exception for 'สวัส-ติ'.
+
+2013-01-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	* configure.in: Post-release version suffix added.
 
 2012-06-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
