@@ -1,5 +1,23 @@
 2013-01-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
 
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt:
+	  - เก-เร
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - ชา-ตา
+	    - ดาว-ตก, ปลง-ตก
+	    - เส-ตุ, มัส-ตุ
+	    - วิ~โอ-ลา, โซ-ลา
+	    - ลิ-บง
+	    - เฮ-โล
+	  + Add blocking exceptions for:
+	    - เก-ตุ
+
+2013-01-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
 	Update dict from latest libthai SVN.
 
 	* hyphen/tdict-city.txt:
