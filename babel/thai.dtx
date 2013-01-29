@@ -29,11 +29,11 @@
 %<code>\ProvidesLanguage{thai}
 %\fi
 %\ProvidesFile{thai.dtx}
-        [2011/12/19 v1.4c Thai support from the babel system]
+        [2013/01/29 v1.5 Thai support from the babel system]
 %\iffalse
 %% File `thai.dtx'
 %% Thai Language Definition File
-%% Copyright (C) 1999 - 2011
+%% Copyright (C) 1999 - 2013
 %%           by Surapant Meknavin,
 %%              Theppitak Karoonboonyanan (thep at linux.thai.net),
 %%              Chanop Silpa-Anan (chanop at debian.org),
@@ -140,6 +140,8 @@
 %    Revise documentation}
 % \changes{thai-1.4d}{2012/02/10}{Theppitak Karoonboonyanan:
 %    Revise documentation.  Add documentation for Thai line stretching.}
+% \changes{thai-1.5}{2013/01/29}{Theppitak Karoonboonyanan:
+%    Add space stretching support.}
 %
 %    \section{The Thai language}
 %
@@ -470,6 +472,30 @@
 %
 %    \begin{macrocode}
 \def\wbr{\hskip0pt\relax}
+%    \end{macrocode}
+%
+%    \subsection{Space stretching}
+%
+%    Since ordinary Thai text contains fewer spaces than English,
+%    the \TeX{} justification is stressed with fewer places to stretch
+%    to make the line reach the right margin.  This usually ends up with
+%    overfull lines when \TeX{} decides to include the next word to fill
+%    the space, instead of trying to manipulate spacing with appropriate
+%    amount of text.  Possible solutions to this problem include:
+%    \begin{itemize}
+%      \item \emph{Use letter spacing.}  This is a common practice in Thai
+%        publishing.  However, \TeX{} does not allow this, probably not to
+%        shag sheep.\footnote{\emph{``Men who would letterspace blackletter
+%        would shag sheep'' --- Frederick Goudy.}}
+%      \item \emph{Allow stretching between words.}  This used to be a simple
+%        hack in an old version of this module, until it was finally
+%        dropped in version 1.4b, as it was considered suboptimal.
+%      \item \emph{Allow more space stretching.}  This can be more acceptable,
+%        compared to the ragged right margin.  And it is what we do here.
+%    \end{itemize}
+%
+%    \begin{macrocode}
+\setlength{\emergencystretch}{0.6em}
 %    \end{macrocode}
 %
 %    \subsection{Line spacing}
