@@ -1,3 +1,12 @@
+2013-01-29  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Add space stretching support.
+
+	* babel/thai.dtx:
+	  - Add space stretching support.
+	  - Bump version to 1.5.
+	  - Update copyright years.
+
 2013-01-28  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	Modernize autoconf & switch to XZ tarball compression.
