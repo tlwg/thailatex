@@ -1,0 +1,29 @@
+% loadhyph-th.tex
+%
+% Loader for hyphenation patterns for "thai"
+%
+% Copyright 2008 TeX Users Group.
+% You may freely use, modify and/or distribute this file.
+% (But consider adapting the scripts if you need modifications.)
+%
+% Once it turns out that more than a simple definition is needed,
+% these lines may be moved to a separate file.
+%
+\begingroup
+\lccode`\'=`\'
+\ifx\kanjiskip\undefined
+% Test whether we received one or two arguments
+\def\testengine#1#2!{\def\secondarg{#2}}
+% That's Tau (as in Taco or ΤΕΧ, Tau-Epsilon-Chi), a 2-byte UTF-8 character
+\testengine Τ!\relax
+% Unicode-aware engine (such as XeTeX or LuaTeX) only sees a single (2-byte) argument
+\ifx\secondarg\empty
+    \message{UTF-8 Thai Hyphenation Patterns}
+    \input hyph-th-utf8.tex
+\else
+    \message{LTH Thai Hyphenation Patterns}
+    \input hyph-th.tex
+\fi\else
+    \message{Thai patterns not supported on ptex}
+\fi
+\endgroup

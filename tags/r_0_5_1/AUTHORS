@@ -1,0 +1,13 @@
+Original Author:
+- Surapant Meknavin <surapan@siamguru.com>
+
+Previous Maintainers:
+- Chanop Silpa-Anan <chanop@debian.org>
+- Poonlap Veerathanabutr <poonlap@linux.thai.net>
+
+Current Maintainer:
+- Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+Hyphenation word list:
+- Non-hyphenated word lists were taken from the LibThai project.
+    http://linux.thai.net/projects/libthai

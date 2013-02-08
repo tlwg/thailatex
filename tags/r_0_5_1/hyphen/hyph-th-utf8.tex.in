@@ -1,0 +1,5 @@
+\message{Hyphenation patterns for Thai}
+\patterns{%
+@PATTERNS@
+}
+\endinput
