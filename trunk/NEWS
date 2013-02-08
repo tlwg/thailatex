@@ -1,3 +1,9 @@
+0.5.1 (2013-02-08)
+=====
+- Updated hyphenation patterns.
+- Cope with ragged right margin problem with space stretching.
+* Switched to XZ tarball compression.
+
 0.5.0 (2012-06-15)
 =====
 - Hyphenation support.

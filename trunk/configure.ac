@@ -1,6 +1,6 @@
 AC_PREREQ(2.50)
 
-AC_INIT(thailatex, 0.5.0svn, thep@linux.thai.net)
+AC_INIT(thailatex, 0.5.1, thep@linux.thai.net)
 AC_CONFIG_SRCDIR([babel/thai.dtx])
 
 AM_INIT_AUTOMAKE(dist-xz no-dist-gzip)
