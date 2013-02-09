@@ -1,5 +1,14 @@
 2013-02-09  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	Resurrect dist-ctan make target.
+
+	* Makefile.am:
+	  - Revert revision 360 which removed dist-ctan target.
+	    CTAN now requires source and TDS to be uploaded as a single ZIP
+	    again.
+
+2013-02-09  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	* configure.ac: Post-release version suffix added.
 
 2013-02-08  Theppitak Karoonboonyanan  <thep@linux.thai.net>
