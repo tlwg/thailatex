@@ -1,4 +1,4 @@
-EXTRA_DIST = sync-thailatex.in sync-babel tlatex
+EXTRA_DIST = sync-babel tlatex
 
-sbin_SCRIPTS = sync-thailatex sync-babel
+sbin_SCRIPTS = sync-babel
 bin_SCRIPTS = tlatex

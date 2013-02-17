@@ -1,5 +1,5 @@
 EXTRA_DIST = HISTORY README.hyphen
-SUBDIRS = babel hyphen emacs scripts doc
+SUBDIRS = babel hyphen scripts doc
 
 DISTCLEANFILES = thailatex.spec \
 	$(tdsdist_tgz) $(ctandist_tgz) \
