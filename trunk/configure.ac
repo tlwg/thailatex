@@ -50,19 +50,9 @@ if test "x$enable_hooks" = "xyes"; then
   fi
 fi
 
-AC_ARG_WITH(emacsdir,
-  [AC_HELP_STRING([--with-emacsdir=DIR],
-                  [emacs directory in DIR [PREFIX/share/emacs]])],
-  [emacsdir="$withval"], [emacsdir=${datarootdir}/emacs])
-AC_MSG_CHECKING(--with-emacsdir)
-AC_MSG_RESULT("$emacsdir")                                                                                                           
-AC_SUBST(emacsdir)
-
 AC_OUTPUT(Makefile
   babel/Makefile
   hyphen/Makefile
-  emacs/Makefile
   scripts/Makefile
-  scripts/sync-thailatex
   doc/Makefile)
 

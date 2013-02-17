@@ -1,3 +1,14 @@
+2013-02-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Drop outdated and unmaintained emacs support.
+
+	* configure.ac, Makefile.am, -emacs/:
+	  - Remove emacs subdir.
+	* configure.ac:
+	  - Remove 'emacsdir' configure option.
+	* configure.ac, scripts/Makefile.am, -scripts/sync-thailatex.in:
+	  - Remove sync-thailatex script which synced emacs stuffs.
+
 2013-02-09  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	Resurrect dist-ctan make target.
