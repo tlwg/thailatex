@@ -1,5 +1,13 @@
 2013-02-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	Update TODO.
+
+	* TODO:
+	  - Drop finished hyphenation wish list.
+	  - Drop unclear wish list on multi-pass word segmentation.
+
+2013-02-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	Drop outdated and unmaintained emacs support.
 
 	* configure.ac, Makefile.am, -emacs/:
