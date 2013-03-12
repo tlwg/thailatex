@@ -1,3 +1,11 @@
+2013-03-13  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Limit scope of emergencystretch within Thai language.
+
+	* babel/thai.dtx:
+	  - Instead of directly \setlength{}, do it via \extrasthai and
+	    restore it in \noextrasthai.
+
 2013-03-12  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	Fix crash when using thainumber with section-less doc class.
