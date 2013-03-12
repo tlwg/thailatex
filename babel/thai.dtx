@@ -29,7 +29,7 @@
 %<code>\ProvidesLanguage{thai}
 %\fi
 %\ProvidesFile{thai.dtx}
-        [2013/01/29 v1.5 Thai support from the babel system]
+        [2013/03/12 v1.6 Thai support from the babel system]
 %\iffalse
 %% File `thai.dtx'
 %% Thai Language Definition File
@@ -142,6 +142,9 @@
 %    Revise documentation.  Add documentation for Thai line stretching.}
 % \changes{thai-1.5}{2013/01/29}{Theppitak Karoonboonyanan:
 %    Add space stretching support.}
+% \changes{thai-1.6}{2013/03/12}{Theppitak Karoonboonyanan:
+%    Fix crash on \cs{\backslash{}renewcommand} when \cs{thainumber} option
+%    is used with section-less document classes, such as letter.}
 %
 %    \section{The Thai language}
 %
@@ -629,38 +632,47 @@
 \catcode`\@=11
 %    \end{macrocode}
 %
+%    Since |\renewcommand| will fail if the renewed command does not exist,
+%    and we are redefining counters independently on the document class
+%    being used, we had better check for the counters' existence before
+%    redefining them.  To do so, we define a helper macro for this.
+%
+%    \begin{macrocode}
+\def\@overridecommand#1#2{\ifdefined#1\renewcommand{#1}{#2}\fi}
+%    \end{macrocode}
+%
 %    Then, set default page numbering to |thainum|, and redefine counters
 %    to |thainum|.
 %
 %    \begin{macrocode}
 \pagenumbering{thainum}
-\renewcommand\theenumi{\@thainum\c@enumi}
-\renewcommand\theenumii{\@thaialph\c@enumii}
-%\renewcommand\theenumiii{\@roman\c@enumiii}
-%\renewcommand\theenumiv{\@Alph\c@enumiv}
+\@overridecommand\theenumi{\@thainum\c@enumi}
+\@overridecommand\theenumii{\@thaialph\c@enumii}
+%\@overridecommand\theenumiii{\@roman\c@enumiii}
+%\@overridecommand\theenumiv{\@Alph\c@enumiv}
 \@ifundefined{thechapter}%
-  {\renewcommand\thesection{\@thainum\c@section}%
-   \renewcommand\thesubsection{\thesection.\@thainum\c@subsection}%
-   \renewcommand\thesubsubsection{\thesubsection.\@thainum\c@subsubsection}%
-   \renewcommand\theparagraph    {\thesubsubsection.\@thainum\c@paragraph}%
-   \renewcommand\thesubparagraph {\theparagraph.\@thainum\c@subparagraph}%
-   \renewcommand\theequation{\@thainum\c@equation}%
-   \renewcommand\thetable{\@thainum\c@table}%
-   \renewcommand\thefigure{\@thainum\c@figure}}%
-  {\renewcommand\thepart{\@thainum\c@part}%
-   \renewcommand\thechapter{\@thainum\c@chapter}%
-   \renewcommand\thesection{\thechapter.\@thainum\c@section}%
-   \renewcommand\thesubsection{\thesection.\@thainum\c@subsection}%
-   \renewcommand\thesubsubsection{\thesubsection.\@thainum\c@subsubsection}%
-   \renewcommand\theparagraph    {\thesubsubsection.\@thainum\c@paragraph}%
-   \renewcommand\thesubparagraph {\theparagraph.\@thainum\c@subparagraph}%
-   \renewcommand\theequation%
+  {\@overridecommand\thesection{\@thainum\c@section}%
+   \@overridecommand\thesubsection{\thesection.\@thainum\c@subsection}%
+   \@overridecommand\thesubsubsection{\thesubsection.\@thainum\c@subsubsection}%
+   \@overridecommand\theparagraph    {\thesubsubsection.\@thainum\c@paragraph}%
+   \@overridecommand\thesubparagraph {\theparagraph.\@thainum\c@subparagraph}%
+   \@overridecommand\theequation{\@thainum\c@equation}%
+   \@overridecommand\thetable{\@thainum\c@table}%
+   \@overridecommand\thefigure{\@thainum\c@figure}}%
+  {\@overridecommand\thepart{\@thainum\c@part}%
+   \@overridecommand\thechapter{\@thainum\c@chapter}%
+   \@overridecommand\thesection{\thechapter.\@thainum\c@section}%
+   \@overridecommand\thesubsection{\thesection.\@thainum\c@subsection}%
+   \@overridecommand\thesubsubsection{\thesubsection.\@thainum\c@subsubsection}%
+   \@overridecommand\theparagraph    {\thesubsubsection.\@thainum\c@paragraph}%
+   \@overridecommand\thesubparagraph {\theparagraph.\@thainum\c@subparagraph}%
+   \@overridecommand\theequation%
        {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@equation}%
-   \renewcommand \thetable%
+   \@overridecommand \thetable%
        {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@table}%
-   \renewcommand \thefigure%
+   \@overridecommand \thefigure%
        {\ifnum \c@chapter>\z@ \thechapter.\fi \@thainum\c@figure}}
-\renewcommand\thefootnote{\@thainum\c@footnote}
+\@overridecommand\thefootnote{\@thainum\c@footnote}
 %    \end{macrocode}
 %
 %    For theorems, we support all custom theorem counters at once by 

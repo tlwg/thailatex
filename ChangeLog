@@ -1,3 +1,15 @@
+2013-03-12  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Fix crash when using thainumber with section-less doc class.
+
+	'thainumber' option is found to crash on, 'letter' document class,
+	which has no 'section' counters.
+
+	* babel/thai.dtx:
+	  - Define \@overridecommand{} helper macro which checks for existence
+	    of the command before renewing it.
+	  - Use \@overridecommand instead of \renewcommand on counters.
+
 2013-02-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	Update TODO.
