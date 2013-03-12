@@ -29,7 +29,7 @@
 %<code>\ProvidesLanguage{thai}
 %\fi
 %\ProvidesFile{thai.dtx}
-        [2013/03/12 v1.6 Thai support from the babel system]
+        [2013/03/13 v1.7 Thai support from the babel system]
 %\iffalse
 %% File `thai.dtx'
 %% Thai Language Definition File
@@ -145,6 +145,9 @@
 % \changes{thai-1.6}{2013/03/12}{Theppitak Karoonboonyanan:
 %    Fix crash on \cs{\backslash{}renewcommand} when \cs{thainumber} option
 %    is used with section-less document classes, such as letter.}
+% \changes{thai-1.7}{2013/03/13}{Theppitak Karoonboonyanan:
+%    Limit the scope of emergency stretch within Thai language by using
+%    \cs{\backslash{}extrasthai} and \cs{\backslash{}noextrasthai}.}
 %
 %    \section{The Thai language}
 %
@@ -498,7 +501,10 @@
 %    \end{itemize}
 %
 %    \begin{macrocode}
-\setlength{\emergencystretch}{0.6em}
+\addto\extrasthai{%
+  \edef\th@restoreemstretch{\emergencystretch=\the\emergencystretch}
+  \setlength{\emergencystretch}{0.6em}}
+\addto\noextrasthai{\th@restoreemstretch}
 %    \end{macrocode}
 %
 %    \subsection{Line spacing}
