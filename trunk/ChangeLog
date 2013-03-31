@@ -1,5 +1,14 @@
 2013-03-31  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	Some refinements.
+
+	* babel/thai.dtx:
+	  - Wrap lines to 80 columns.
+	  - Use 2 spaces after fullstops.
+	  - Make \@afterindent... mentionings in the doc verbatim.
+
+2013-03-31  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	Fix compilation error in the last commit.
 
 	* babel/thai.dtx:
