@@ -1,3 +1,11 @@
+2013-03-31  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Fix compilation error in the last commit.
+
+	* babel/thai.dtx:
+	  - Close \changes{} added by me before committing Pruet's patch
+	    in last commit.
+
 2013-03-31  Pruet Boonma  <pruetboonma@gmail.com>
 
 	Add thaiindentfirst option to force first paragraph indentation.
