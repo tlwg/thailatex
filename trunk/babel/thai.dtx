@@ -29,7 +29,7 @@
 %<code>\ProvidesLanguage{thai}
 %\fi
 %\ProvidesFile{thai.dtx}
-        [2013/03/13 v1.7 Thai support from the babel system]
+        [2013/03/31 v1.8 Thai support from the babel system]
 %\iffalse
 %% File `thai.dtx'
 %% Thai Language Definition File
@@ -148,6 +148,9 @@
 % \changes{thai-1.7}{2013/03/13}{Theppitak Karoonboonyanan:
 %    Limit the scope of emergency stretch within Thai language by using
 %    \cs{\backslash{}extrasthai} and \cs{\backslash{}noextrasthai}.}
+% \changes{thai-1.8}{2013/03/31}{Pruet Boonma:
+%    Add \Lopt{thaiindentfirst} option to force indentation on section's
+%    first paragraph.
 %
 %    \section{The Thai language}
 %
@@ -209,6 +212,18 @@
 %            dependency, which is provided under the \emph{libthai} project:\\
 %            \texttt{ftp://linux.thai.net/pub/thailinux/software/libthai}
 %      \end{itemize}
+%
+%    \subsection{Thai paragraph}
+%    \label{thai-paragraph}
+%    Generally speaking, Thai paragraph uses the same rule as in English. However,
+%    there are some differences, such as how to start the paragraph in a new chapter 
+%    or section.
+%
+%    \DescribeEnv{thaiindentfirst}
+%    As suggested by English writing guideline, the first paragraph in each 
+%    section shall not be indented. However, for Thai language, indenting the
+%    first paragraph is more popular and widely suggested. The option 
+%    \Lopt{thaiindentfirst} can be used to control this behavior.
 %
 %    \subsection{Thai numbering}
 %    \label{thai-numbering}
@@ -517,6 +532,42 @@
 %
 %    \begin{macrocode}
 \renewcommand{\baselinestretch}{1.2}
+%    \end{macrocode}
+%
+%    \subsection{Paragraph}
+%    This section provides Thai paragarph formating style as described in
+%    \S\ref{thai-paragraph}.
+%
+%    \subsubsection{\Lopt{thaiindentfirst} option}
+%
+%    If \Lopt{thaiindentfirst} is supplied in the |\usepackage| command, the
+%    first Thai paragraph in each section will be indented. The other 
+%    paragraphs will behave as default.
+%
+%    \begin{macrocode}
+\DeclareOption{thaiindentfirst} {%
+%    \end{macrocode}
+%
+%    When switching to Thai language, point \@afterindentfalse to 
+%    \@afterindentrue, so that \LaTeX\ will never indent the first
+%    paragraph. 
+%
+%    \begin{macrocode}
+  \addto\extrasthai{%
+    \let\th@afterindentfalse\@afterindentfalse
+    \let\@afterindentfalse\@afterindenttrue
+    \@afterindenttrue
+  }
+%    \end{macrocode}
+%
+%    When switching out of Thai language, point \@afterindentfalse
+%    back to its original function.
+%
+%    \begin{macrocode}
+  \addto\noextrasthai{%
+    \let\@afterindentfalse\th@afterindentfalse
+  }
+}
 %    \end{macrocode}
 %
 %    \subsection{Thai numbering support}
