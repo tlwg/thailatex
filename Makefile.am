@@ -1,5 +1,12 @@
-EXTRA_DIST = HISTORY README.hyphen
-SUBDIRS = babel hyphen scripts doc
+EXTRA_DIST = HISTORY
+SUBDIRS = babel scripts doc
+
+if ENABLE_HYPHENATION
+EXTRA_DIST += README.hyphen
+SUBDIRS += hyphen
+endif
+
+DIST_SUBDIRS = $(SUBDIRS)
 
 DISTCLEANFILES = thailatex.spec \
 	$(tdsdist_tgz) $(ctandist_tgz) \

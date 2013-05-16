@@ -1,3 +1,22 @@
+2013-05-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Optionally exclude hyphenation source.
+
+	As a transition to hyph-utf8 in CTAN, exclude hyphenation patterns
+	and source from the distribution, while still provide an option
+	'--enable-hyphenation' to include it for some legacy TeX Live.
+	This way, we can still keep the source in VCS during the transition.
+
+	* configure.ac:
+	  - Add --enable-hyphenation option, with AM_CONDITIONAL.
+	  - Also check availability of hyphen/ in distribution before
+	    actually enabling hyphenation as instructed.
+	  - Check for patgen only if hyphenation is enabled.
+	  - Generate hyphen/Makefile only if hyphenation is enabled.
+	* Makefile.am:
+	  - Include README.hyphen and hyphen/ subdir, both in building
+	    process and in distribution, only if hyphenation is enabled.
+
 2013-03-31  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	Some refinements.
