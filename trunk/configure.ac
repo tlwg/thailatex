@@ -15,6 +15,16 @@ AC_ARG_ENABLE(hooks,
               , enable_hooks="yes")
 AM_CONDITIONAL(ENABLE_HOOKS,test $enable_hooks = "yes")
 
+AC_ARG_ENABLE(hyphenation,
+              [AC_HELP_STRING([--enable-hyphenation],
+                              [include hyphenation patterns and source (for VCS build only)])],
+              , enable_hyphenation="no")
+if test "x$enable_hyphenation" = "xyes" && ! test -f $srcdir/hyphen/Makefile.am
+then
+  AC_MSG_ERROR([No hyphenation source in this distribution. Cannot enable hyphenation.])
+fi
+AM_CONDITIONAL(ENABLE_HYPHENATION,test $enable_hyphenation = "yes")
+
 AC_CHECK_PROGS(LATEX,latex,no)
 if test "x$LATEX" = "xno" ; then
   AC_MSG_ERROR([You need latex (from texlive distribution)])
@@ -23,9 +33,11 @@ AC_CHECK_PROGS(PDFLATEX,pdflatex,no)
 if test "x$PDFLATEX" = "xno" ; then
   AC_MSG_ERROR([You need pdflatex (from texlive distribution)])
 fi
-AC_CHECK_PROGS(PATGEN,patgen,no)
-if test "x$PATGEN" = "xno" ; then
-  AC_MSG_ERROR([You need patgen (from texlive distribution)])
+if test "x$enable_hyphenation" = "xyes"; then
+  AC_CHECK_PROGS(PATGEN,patgen,no)
+  if test "x$PATGEN" = "xno" ; then
+    AC_MSG_ERROR([You need patgen (from texlive distribution)])
+  fi
 fi
 AC_CHECK_PROGS(SWATH,swath,no)
 AC_CHECK_PROGS(CTTEX,cttex,no)
@@ -50,9 +62,15 @@ if test "x$enable_hooks" = "xyes"; then
   fi
 fi
 
-AC_OUTPUT(Makefile
+AC_CONFIG_FILES(
+  Makefile
   babel/Makefile
-  hyphen/Makefile
   scripts/Makefile
   doc/Makefile)
+
+if test "x$enable_hyphenation" = "xyes"; then
+  AC_CONFIG_FILES(hyphen/Makefile)
+fi
+
+AC_OUTPUT
 
