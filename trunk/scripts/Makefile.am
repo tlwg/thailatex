@@ -1,4 +1,3 @@
-EXTRA_DIST = sync-babel tlatex
+EXTRA_DIST = tlatex
 
-sbin_SCRIPTS = sync-babel
 bin_SCRIPTS = tlatex
