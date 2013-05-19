@@ -1,0 +1,2902 @@
+2013-05-19  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	=== First release for babel-thai ===
+
+	* configure.ac, NEWS:
+	=== Version 1.0.0 ===
+
+2013-05-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Add babel-thai CTAN zip preparation.
+
+	* Makefile.am:
+	  - Add dist-babel-thai target for preparing upload Zip file for CTAN.
+
+2013-05-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Drop sync-babel script.
+
+	* scripts/Makefile.am, -scripts/sync-babel:
+	  - Drop sync-babel script, as we are merging into it.
+
+2013-05-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Drop obsolete thswitch.sty.
+
+	* babel/Makefile.am -babel/thswitch.sty:
+	  - Drop thswitch.sty. It won't be included in the upcoming
+	    babel-thai CTAN upload.
+
+2013-05-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Optionally exclude hyphenation source.
+
+	As a transition to hyph-utf8 in CTAN, exclude hyphenation patterns
+	and source from the distribution, while still provide an option
+	'--enable-hyphenation' to include it for some legacy TeX Live.
+	This way, we can still keep the source in VCS during the transition.
+
+	* configure.ac:
+	  - Add --enable-hyphenation option, with AM_CONDITIONAL.
+	  - Also check availability of hyphen/ in distribution before
+	    actually enabling hyphenation as instructed.
+	  - Check for patgen only if hyphenation is enabled.
+	  - Generate hyphen/Makefile only if hyphenation is enabled.
+	* Makefile.am:
+	  - Include README.hyphen and hyphen/ subdir, both in building
+	    process and in distribution, only if hyphenation is enabled.
+
+2013-03-31  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Some refinements.
+
+	* babel/thai.dtx:
+	  - Wrap lines to 80 columns.
+	  - Use 2 spaces after fullstops.
+	  - Make \@afterindent... mentionings in the doc verbatim.
+
+2013-03-31  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Fix compilation error in the last commit.
+
+	* babel/thai.dtx:
+	  - Close \changes{} added by me before committing Pruet's patch
+	    in last commit.
+
+2013-03-31  Pruet Boonma  <pruetboonma@gmail.com>
+
+	Add thaiindentfirst option to force first paragraph indentation.
+
+	* babel/thai.dtx:
+	  - Add thaiindentfirst option with documentation.
+	  - Bump file version to 1.8.
+
+2013-03-13  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Limit scope of emergencystretch within Thai language.
+
+	* babel/thai.dtx:
+	  - Instead of directly \setlength{}, do it via \extrasthai and
+	    restore it in \noextrasthai.
+
+2013-03-12  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Fix crash when using thainumber with section-less doc class.
+
+	'thainumber' option is found to crash on, 'letter' document class,
+	which has no 'section' counters.
+
+	* babel/thai.dtx:
+	  - Define \@overridecommand{} helper macro which checks for existence
+	    of the command before renewing it.
+	  - Use \@overridecommand instead of \renewcommand on counters.
+
+2013-02-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Update TODO.
+
+	* TODO:
+	  - Drop finished hyphenation wish list.
+	  - Drop unclear wish list on multi-pass word segmentation.
+
+2013-02-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Drop outdated and unmaintained emacs support.
+
+	* configure.ac, Makefile.am, -emacs/:
+	  - Remove emacs subdir.
+	* configure.ac:
+	  - Remove 'emacsdir' configure option.
+	* configure.ac, scripts/Makefile.am, -scripts/sync-thailatex.in:
+	  - Remove sync-thailatex script which synced emacs stuffs.
+
+2013-02-09  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Resurrect dist-ctan make target.
+
+	* Makefile.am:
+	  - Revert revision 360 which removed dist-ctan target.
+	    CTAN now requires source and TDS to be uploaded as a single ZIP
+	    again.
+
+2013-02-09  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac: Post-release version suffix added.
+
+2013-02-08  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac, NEWS:
+	=== Version 0.5.1 ===
+
+2013-01-29  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Add space stretching support.
+
+	* babel/thai.dtx:
+	  - Add space stretching support.
+	  - Bump version to 1.5.
+	  - Update copyright years.
+
+2013-01-28  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Modernize autoconf & switch to XZ tarball compression.
+
+	* configure.in -> configure.ac:
+	  - Rename file for modern autoconf.
+	  - Require autoconf2.50.
+	  - Replace deprecated AC_INIT() form with PACKAGE, VERSION form.
+	  - Use AC_CONFIG_SRCDIR() instead for the old AC_INIT() form.
+	  - Replace deprecated AC_INIT_AUTOMAKE() form with OPTIONS form,
+	    passing "dist-xz no-dist-gzip" options to switch to XZ tarball.
+
+2013-01-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt:
+	  - เก-เร
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - ชา-ตา
+	    - ดาว-ตก, ปลง-ตก
+	    - เส-ตุ, มัส-ตุ
+	    - วิ~โอ-ลา, โซ-ลา
+	    - ลิ-บง
+	    - เฮ-โล
+	  + Add blocking exceptions for:
+	    - เก-ตุ
+
+2013-01-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Update dict from latest libthai SVN.
+
+	* hyphen/tdict-city.txt:
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-district.txt:
+	* hyphen/tdict-geo.txt:
+	* hyphen/tdict-ict.txt:
+	* hyphen/tdict-lang-ethnic.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-science.txt:
+	* hyphen/tdict-spell.txt:
+	* hyphen/tdict-std-compound.txt:
+	  - Update dict from libthai SVN.
+
+	* hyphen/thai-exc.pat:
+	  - Drop now-duplicated exception for 'สวัส-ติ'.
+
+2013-01-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Post-release version suffix added.
+
+2012-06-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	=== Version 0.5.0 ===
+
+2012-06-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Update AUTHORS list
+
+	* AUTHORS:
+	  - Move Chanop & Poonlap to Previous Maintainers.
+	  - Add info for hyphenation word list.
+
+2012-06-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Inform user how to set up hyphenation.
+
+	* Makefile.am, +README.hyphen:
+	  - Add explanation on how to set up hyphenation on different systems.
+	  - Drop FMTUTIL invokation on install hook, as it didn't really work
+	    without human intervention anyway.
+	  - Print some message to inform user to read README.hyphen after
+	    installation.
+
+2012-06-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Update dict from latest libthai SVN.
+
+	* hyphen/tdict-city.txt:
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-lang-ethnic.txt:
+	* hyphen/tdict-proper.txt:
+	  - Update dict from libthai SVN.
+
+2012-06-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Check arguments for diff-dicts.sh
+
+	* hyphen/diff-dicts.sh:
+	  - Check for command-line argument and print usage if missing.
+
+2012-06-11  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Update dict from latest libthai SVN.
+
+	* hyphen/tdict-city.txt:
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-ict.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-spell.txt:
+	* hyphen/tdict-std.txt:
+	  - Update dict from libthai SVN.
+
+2012-06-11  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add script for comparing with libthai source dicts.
+
+	* hyphen/Makefile.am, +hyphen/diff-dicts.sh:
+	  - Add script taking libthai dict source dir as an argument,
+	    scan all dicts and try hyphenating them, then compare with
+	    current source.
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt:
+	  - สว-ยม~ภู
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - มเห-สิ
+	    - วัฏ-ฏิ, ยัษ-ฏิ
+	    - ศิษ-ฎิ
+	    - อิษ-ฏี
+	    - ราก-ษส
+	    - ลิ-ปิ
+	    - สู-ริ
+	    - เลฑ-ฑุ
+	    - เลษ-ฏุ
+
+	Current dict test errors: 0
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - กรร-กศ
+	    - กัล-บก
+	    - กัศ-ยป
+	    - กา-นน
+	    - กุ-ฎา, กู-ฏา
+	    - กุ~โน~กา-มอ
+	    - ขิ~ป~สัท-โท
+	    - จุ-ทส
+	    - จ่า-รง
+	    - ทัฬ-หี
+	    - ทา-ฒะ
+	    - ธต-รฐ
+	    - บุท-คล
+	    - ปัต-ถร
+	    - ปิ-ฐิ
+	    - ปุป-ผะ
+	    - พฤ-ษภ
+	    - พิ-ธุ
+	    - มา-ฬก
+
+	Current dict test errors: 11
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - เลี้ยว-ลด
+	    - เสื่อ-กก
+	    - เหลือ-ขอ, เหล่า-กอ
+	    - แด-วู
+	    - แยบ-ยล
+	    - โฉ-เก
+	    - โด-มร, โต-มร
+	    - โต้-โผ
+	    - โท-โส
+	    - โป้-ปด
+	    - โผ-เผ
+	    - โภ-คี
+	    - โย-นก
+	    - โส-มม
+	    - โส-ฬส
+	    - โสต-ถิ
+	    - โอ้-โฮ
+	    - ใจ-คอ
+	    - ไค-ฟง
+	    - ไช-โย
+	    - ไอ-รา-พต
+
+	Current dict test errors: 31
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - สิง-หล
+	    - สีห-นุ
+	    - สุ-ภร
+	    - หมด-จด
+	    - หยิบ-ยก
+	    - -ศร
+	    - อพ-ยพ
+	    - อร-ชร
+	    - เน~แบรส-กา, อะ~แลส-กา
+	    - อาจ-อง
+	    - อี-มู
+	    - อึง-อล
+	    - อุ-ชุ
+	    - อุ-สภ
+	    - เก-ชา, เก-ศา
+	    - โช-ตก, เก็บ-ตก
+	    - เข-ฬะ
+	    - เคราห-ณี
+	    - เจือ-ปน
+	    - เชย-ชม
+	    - เบื้อง-บน
+	    - -คะ
+	    - -ออ
+	    - เรือ-ธง, เรือ-บด
+
+	Current dict test errors: 54
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - ระ~เห-หน
+	    - รัน-ทด
+	    - ราว-นม, เทพ-นม, โค-นม
+	    - ราษ-ฎร
+	    - ริ-ปุ, ริ-ปู
+	    - รี-รอ
+	    - -ลำ
+	    - -ทม
+	    - -วน
+	    - วิ-จล
+	    - วิช-ญะ
+	    - ศี-ขร
+	    - ศีล-อด
+	    - สดก~ก๊อก-ธม
+	    - สม-รด, สัก-วา
+	    - สัป-ดน, สัป-ทน
+	    - สา-สม, เจือ-สม
+	    - สิ~ขา-นล
+	    - ภี-รุ, อู-รุ, สิ~เน-รุ
+
+	Current dict test errors: 86
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt:
+	  - โด*รณ
+	  - คันถ~รจ-นา~จารย์
+	* hyphen/tdict-proper.txt:
+	  - ภู-ริ~ทัต
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - นอบ-นบ
+	    - นา-คร
+	    - บี-ฑา
+	    - บู-ดู
+	    - ปรา-รภ
+	    - ปลา-ฝา
+	    - -รบ
+	    - พา-รณ
+	    - -ยง
+	    - สุ~ริ-ยน
+	    - มหา-พน
+	    - มิ~ยา-งิ
+	    - -รถ
+	    - ยุ~คัน-ธร
+	    - มณ-ฑก, มณ-โฑ
+	    - มร-กต, มร-ฑป
+	    - -อก
+
+	Current dict test errors: 117
+
+2012-06-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-std.txt:
+	  - วา-ท~* (to unblock 'ทวา-ทศ')
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - กรร-ดิ
+	  + Add forcing exceptions for:
+	    - กา~ฬา-วก, ศรา-วก
+	    - กิน-นร
+	    - กุ~ลี~กุ-จอ
+	    - ขจร-จบ
+	    - ค่า-คบ
+	    - ฉ้อ-ฉล
+	    - -รม
+	    - ซุก-ซน
+	    - สี-ดอ
+	    - ซู~ซู-กิ
+	    - อี~ซู-ซุ, ซู-ฮก
+	    - -บส
+	    - ดิ้น-รน
+	    - ตก-ลง
+	    - -ตน
+	    - -วง
+	    - ทมิฬ~นา-ฑู
+	    - ทร-หด
+
+	Current dict test errors: 148
+
+2012-06-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt:
+	  - นิร~โทษ-กรรม
+	  - คอ-แลน
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ษก
+	    - -ฐี
+	    - -ดม
+	    - -ลม
+	    - -ศล
+	    - -ยต
+	    - -งู
+	    - -จะ
+	    - -สก
+	    - -ยศ
+	    - -ธก
+	    - -กบ
+	    - -ฆี
+	    - -คู
+	    - พลาส-มา, เส-มา
+	    - -แล
+	    - -พก
+	    - โส-ภณ, โส-ภี
+
+	Current dict test errors: 179
+
+2012-06-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt:
+	  - กท-ลี, คุป-ติ
+	  - จม-รี, จา~ม-รี, ภระ~ม-รี'
+	  - ชี-ร-ณะ
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt:
+	  - *วิ-สัย
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-geo.txt:
+	  - *ษา
+	* hyphen/tdict-std.txt:
+	  - คันธ~กุ-ฎี
+	  - วิ~ศา-ข~บู~ชา
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-std.txt:
+	  - ม-ภ: กุม-ภ~กรรณ, อา~รัม-ภ~บท/กถา
+
+	* hyphen/thai-exc.pat:
+	  + Modify forcing exceptions for:
+	    - นท7ลี -> ท7ลี (for กท-ลี)
+	  + Add forcing exceptions for:
+	    - จม-รี
+	    - คุป-ติ
+	    - ลา-มก
+	    - -ซอ
+	    - -ขะ
+	    - วรร-ษา
+	    - -ภะ
+	    - โศ-ภน, โศ-ภี
+	    - ดิ-ลก, ติ-ลก
+	    - กุ-ฎี
+	    - วิ~ศา-ขา
+	    - -สา
+	    - -ซู
+
+	Current dict test errors: 228
+
+2012-06-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-std.txt:
+	  - พัน-ธุ*
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-std-compound.txt:
+	  - รา-ชา*
+	* hyphen/tdict-std-compound.txt:
+	  - เมือ*ง-ขึ้น
+	  - ภา-รต~วิทยา
+	  - มุ-สา~วาท
+	  - กา~สา-ว~พัสตร์
+	  - ซึม~กะ-ทือ
+	  - พิ-นัย~กรรม
+	  - หนัง~ตะ-ลุง
+	  - จักร~รา-ศี
+	* hyphen/tdict-std.txt:
+	  - ประ~ทา-ศี
+	  - กะ~ลอ-จี๊
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ฬี
+	    - -ปะ
+	    - -ลู
+	    - -ตู
+	    - -ยู
+	    - -ชิ
+	    - -จี
+	    - -ศี
+	    - -มน
+	    - -ยอ
+	    - -สง
+	    - -สร
+	    - -ดก
+	    - -โก
+	    - ฝึก-ฝน
+
+	Current dict test errors: 258
+
+2012-06-06  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt:
+	  - คู่~ชี-วิต
+	* hyphen/tdict-std.txt:
+	  - *พ-จร, *ว-จร
+	  - ตา-ลุ
+	  - อรร-ณพ
+	  - สา~ธา~ร-ณู*
+	* hyphen/tdict-district.txt:
+	  - อุ-บล, อุ-ดร, อุ-ทัย, กัน-ทร~ลักษ์
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -อร.
+	    - -วร
+	    - *พู-นท
+	    - -จร
+	    - ซาก-ศพ
+	    - *โป-ลี
+	    - -ภพ
+	    - -นพ
+	    - -ณพ
+	    - -รก
+	    - -มล
+	    - -บล
+	    - -ชล
+	    - -ชก
+	    - -โพ
+	    - -ณู
+	    - -ปี
+	    - -บี
+	    - -ฏะ
+
+	Current dict test errors: 309
+
+2012-06-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt:
+	  - วิสา-ร-ทะ
+	  - อา~ศิ-ร~พจน์ (as allowed by -รพ exceptions below)
+	  - มโห-ร~สพ (let's relax)
+	  - นันท~ทา-ยี
+	* hyphen/tdict-std-compound.txt:
+	  - จา-ตุ*
+	* hyphen/tdict-country.txt:
+	  - ตุ~ร-กี (as allowed by -กี exceptions below)
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ทะ
+	    - ชัน-ตุ
+	    - สวัส-ติ, มา-ตฤ (side effect from 'จา-ตุ*' dict mod)
+	    - -รพ
+	    - -ศุ
+	    - -ถา
+	    - -สพ
+	    - -ขี
+	    - -สอ
+	    - -ดะ
+	    - -บะ
+	    - -ยี
+	    - -กี
+	    - -หก
+	  + Add blocking exceptions for:
+	    - กรร-ตุ
+	  + Remove blocking exceptions for:
+	    - มโห-ร~สพ (let's relax)
+
+	Current dict test errors: 382
+
+2012-06-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-collection.txt:
+	* hyphen/tdict-std.txt:
+	  - กร*
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt:
+	  - ลัญ-จ-กร, ลัญ-ฉ-กร (eliminating patgen 'ลัญ2' pattern which caused
+	    error on 'กาลัญญู')
+	  - ศาลล้มละ-ลาย
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - สิน-ธพ, สิน-ธุ, สิน-ธู
+	    - -ชู
+	    - -ศะ
+	    - -ละ
+	  + Remove forcing exceptions:
+	    - 6ชน์ (conflict with patgen '4ชน์', and indeed not necessary at
+	      higher level)
+
+	Current dict test errors: 432
+
+2012-06-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ชะ (+ related words)
+	  - โร-หิต
+	* hyphen/tdict-std-compound.txt: Adjust:
+	  - โล-หิต
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ธี
+	    - -ชะ
+	    - -ฆะ
+	    - -ฟะ
+	    - พิ-กล, เล่ห์-กล
+	    - กัดดา-ฟี, โครมาโทกรา-ฟี
+	    - -ถี
+	    - -ฮา
+	    - -ญี
+	    - -ผา
+	    - -หิ
+
+	Current dict test errors: 456
+
+2012-06-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt: Adjust:
+	  - โฆ-ษะ
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ษี
+	    - -วะ (+ อา~ชี-วก)
+	    - -ถะ
+	    - -ษะ
+	    - -พร
+	    - -ผง
+	  + Add blocking exceptions for:
+	    - ฤ-, ฦ- (missed from block list for initial character)
+	    - ด-นู
+	  + Modify forcing exceptions for:
+	    - วัต-ถุ -> วัต-ถุ, สัต-ถุ
+
+	Current dict test errors: 508
+
+2012-06-04  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ธิ*
+	  - กร-วิก, กร-สาปน์, กร-สุทธิ์
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - *ธิ*
+	  + Add blocking exceptions for:
+	    - ขัดสมา-ธิ, พยา-ธิ
+
+	Current dict test errors: 552
+
+2012-06-04  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt: Adjust:
+	  - จรร-ยาบรรณ, ฉา-ยาลักษณ์
+	* hyphen/tdict-std.txt: Adjust:
+	  - มหาสา-วก
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ยา
+	    - สา-วก
+
+	Current dict test errors: 564
+
+2012-06-01  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-geo.txt: Adjust:
+	  - *ระ*
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ระ*
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - บุษ-บก, บุษ-บง, บุษ-ปะ
+	    - -ระ
+
+	Current dict test errors: 571
+
+2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-city.txt: Adjust:
+	  - บูคาเรสต์, บูดาเปสต์
+	* hyphen/tdict-std.txt: Adjust:
+	  - ปฐพี, ปฐวี
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ดำ
+	    - -คำ
+	    - -สะ
+	    - -ฐะ
+	    - -ธะ
+	    - -พี
+	    - -ดา
+
+	Current dict test errors: 613
+
+2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-spell.txt: Adjust:
+	  - ปรากฏ
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
+	  - *กฎ, *กฏ
+	  - กมลา, กมลาศ et al.
+	  - *หะ, *หา
+	  - มัตสยา (relax)
+	  - *มะ
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -กฎ, -กฏ
+	    - -หะ, -หา
+	    - -มะ
+	    - -หู
+	  + Remove blocking exceptions for:
+	    - ตุ้ม- (ตุ้ม-หู has been covered by -หู)
+
+	Current dict test errors: 656
+
+2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-common.txt: Adjust:
+	  - เซ็กซี่
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ณะ
+	  - นักสราช
+	  - ซิกซี้
+	  - *รา* (+ some *รี*)
+
+	* hyphen/thai-exc.pat:
+	  + Remove blocking exceptions (let's relax for acceptable variants)
+	    for:
+	    - ธารณะ, ชิรณะ, บูรณะ, อุรณะ
+	  + Add forcing exceptions for:
+	    - นัก-
+	    - กุณ-
+	    - -ซี.
+	    - -ที.
+	    - รา
+
+	Current dict test errors: 702
+
+2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ณา* (+ some *นา*)
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ดี
+	  + Adjust forcing exceptions:
+	    - extends วัสดุ for พัสดุ, ศุภมัสดุ (but not กบิลพัสดุ์)
+	  + Remove blocking exceptions (let's relax for acceptable variants)
+	    for:
+	    - อังคณา, อังคนา
+
+	Current dict test errors: 730
+
+2012-05-31  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ติ
+	  - *ดี
+	  - *ภาวนา, ภารยทรัพย์, ภารยา
+	  - เสวนา, ครุวนา
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -มี
+	  + Remove blocking exceptions (let's relax for acceptable variants)
+	    for:
+	    - ครุวนา, เสวนา
+
+	Current dict test errors: 750
+
+2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-std.txt:
+	  - Adjust various entries.
+	  - Remove partial word 'สวัสดิ', 'ปรีดิ'
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - โซ-รม
+	    - อินทรธ-นู
+	    - สวา-ดิ
+	  + Add forcing exceptions for:
+	    - วัส-ดุ
+	    - สวรร-คต, สุร-คต, อัสดง-คต
+	    - -กง
+	    - -ฎก
+
+	Current dict test errors: 776
+
+2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt: Adjust:
+	  - *ณะ, (+ some *ณา, *นา)
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - อังค-ณา, อังค-นา
+	  + Add forcing exceptions for:
+	    - -ทุ.
+	    - -ณะ
+
+	Current dict test errors: 806
+
+2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt: Adjust:
+	  - ยานพาหนะ
+	* hyphen/tdict-std.txt: Adjust:
+	  - *นะ, (+ some *นา, *นีย์, ทะ)
+	  - รุจา
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - เสว-นา
+	    - ก-นะ
+	  + Add forcing exceptions for:
+	    - -นะ
+
+	Current dict test errors: 838
+
+2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-common.txt: Adjust:
+	  - วาทะ
+	* hyphen/tdict-std.txt: Adjust:
+	  - *กะ, (+ some *นะ)
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -กะ
+
+	Current dict test errors: 902
+
+2012-05-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std-compound.txt: Adjust:
+	  - เสรี*
+	* hyphen/tdict-std.txt: Adjust:
+	  - เกสรี
+	  - จามรี
+	  - สิขรี, สิขเรศ
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - มโห-
+	    - -รี
+	    - ตุ้ม-
+
+	Current dict test errors: 952
+
+2012-05-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt: Adjust:
+	  - กเรนทร
+	* hyphen/tdict-std-compound.txt: Adjust:
+	  - เจ้าพนักงาน
+	* hyphen/tdict-common.txt: Adjust:
+	  - ภคันทลาพาธ
+	* hyphen/tdict-science.txt: Adjust:
+	  - ไฮเพอร์โบลา
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - -ดร
+	    - -ทร
+	    - -อู (กวนอู, ตองอู)
+	    - -พล
+	    - ไพร่-
+	    - -ศก
+	    - อัฐ-
+	    - -วี
+	    - -ตี
+	    - -สี
+	    - -ลา
+
+	Current dict test errors: 980
+
+2012-05-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-city.txt:
+	  - Adjust 'นิวเดลี'
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt: Adjust:
+	  - ฤชา, ฤดี et al.
+	  - ปาฏลิ, ตัณหา
+	  - บัณรสี
+	  - จุฬา, จุฑา, จุลินทรีย์
+	  - มิติ, สมิติ
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - ฤชา
+	    - ฤทัย
+	    - (จักร)พรรดิ
+	    - (ครุ)วนา
+	    - (คู่)อริ
+	    - (ปัญจ)นที
+	    - (พุทธ)คยา
+	    - (มนิ)มนา
+	    - (มนุษย์)มนา
+	    - (ปัณ)รสี
+	  + Add enforcing exceptions for:
+	    - -ผล
+	    - -ดล
+	    - -รส
+	    - -คน
+	    - -ลี
+	    - กัณหา, ตัณหา
+	    - ฤๅ-, ฤา-
+	    - ยี่-
+	    - ภาวะ, กาสาวะ, ปัสสาวะ
+	    - เทพี, เทวี
+	    - บรรจง, บรรจบ, บรรจุ, บรรถร, บรรพต
+	    - ทักษิโณทก, ปริตโตทก, วัสโสทก
+
+	Current dict test errors: 1078
+
+2012-05-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions for '-ยะ' cases.
+
+	* hyphen/tdict-common.txt, hyphen/tdict-std.txt:
+	  - Adjust hyphenation for '-ยะ' cases.
+	  - Drop problematic 'วิ-ชย' entry.
+
+	* hyphen/thai-exc.pat:
+	  + Add enforcing exceptions for:
+	    - '*ยะ'.
+	    - 'พิหารี' (failed as a side-effect of above changes)
+
+	Current dict test errors: 1191
+
+2012-05-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt:
+	  - Adjust hyphenation for '-ณี', '-ณุ', '-นี', 'กริ-ยา', 'กรุ-ณา' for
+	    consistency.
+
+	* hyphen/thai-exc.pat:
+	  + Add enforcing exceptions for:
+	    - *ณุ
+	    - *นี
+	    - คัน-ยิ (failed as a side-effect of above changes)
+
+	Current dict test errors: 1244
+
+2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt, hyphen/tdict-std-compound.txt:
+	  - Adjust hyphenation for '-ณี' in 'กรณี' and 'ธรณี' for consistency.
+
+	* hyphen/thai-exc.pat:
+	  + Add blocking exceptions for:
+	    - ฮิบรู, ฮีบรู
+	    - ต่อยอด
+	    - นางพญา
+	    - จุรณ
+	  + Add enforcing exceptions for:
+	    - *บท
+	    - *บถ
+	    - *ฟู
+	    - จักษุ
+	    - *ตะ
+	    - *ามี
+	    - *มิผล
+	    - *ากิ
+	    - *ากล
+	    - *นำ
+	    - นารีผล
+
+	Current dict test errors: 1297
+
+2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary + Add exceptions.
+
+	* hyphen/tdict-std.txt:
+	  - Fix some inconsistent hyphenations in dictionary.
+
+	* hyphen/thai-exc.pat:
+	  - Lower down aggressiveness for '7ผี' to '5ผี', to avoid 'เ-ผียน' error.
+	  - Add exceptions for 'รำ'
+	  - for 'ชน'
+	  - for 'กร'
+	  - for 'มานะ', 'ฐานะ', 'ปานะ', 'คานะ' etc.
+	  - for 'เถระ'
+	  - for 'นายก', 'ทายก'
+	  - for '*ายน', '*านี', '*าวี', '*าฐี'
+	  - for 'ปทา', which requires dictionary modification, and thus affect
+	    '*ปโ*'. Also add exceptions for it.
+	  - for 'ทัศนะ', 'ทรรศนะ'
+	  - for 'ธรรมะ'
+	  - for 'หัตถี', 'สาวัตถี'
+
+	Current dict test errors: 1372
+
+2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary.
+
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-country.txt:
+	* hyphen/tdict-district.txt:
+	* hyphen/tdict-ict.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-spell.txt:
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt:
+	  - Fix some inconsistent hyphenations in dictionary.
+
+	Current dict test errors: 1508
+
+2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  - Elaborate 'เ6*' patterns, to make it effective at higher level,
+	    as 'เ6' conflicts with patgen-generated 'เ2'.
+	  - Solve 'เม-ตร' case with more generic '6ตร.', as more similar
+	    errors have been found.
+	  - Add exceptions for several cases.
+
+	Current dict test errors: 1606
+
+2012-05-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Reorganize exceptions.
+
+	* hyphen/thai-exc.pat:
+	  - Categorize exceptions into sets and add comments on what they do.
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary.
+
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-country.txt:
+	* hyphen/tdict-history.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt:
+	  - Fix some inconsistent hyphenations in dictionary.
+
+	Current dict test errors: 1689
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Handle hyphenation before MAI MALAI.
+
+	* hyphen/thai-exc.pat:
+	  - Force hyphenation before MAI MALAI at level 5 and add exceptions
+	    in level 6.
+
+	Current dict test errors: 1721
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exception pattern.
+
+	* hyphen/thai-exc.pat:
+	  - Add exceptions to fix 'วัตถุ' errors.
+
+	Current dict test errors: 1754
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Don't rebuild patgen when only exceptions are added.
+
+	* hyphen/Makefile.am:
+	  - Separate patterns concatenation from patgen building step,
+	    so that patgen is not called every time exception is changed.
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary.
+
+	* hyphen/tdict-std.txt, hyphen/tdict-std-compound.txt:
+	  - Fix some inconsistent hyphenations in dictionary.
+
+	Current dict test errors: 1763
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Force hyphenation after SARA AM.
+
+	* hyphen/thai-std-compound.txt:
+	  - Fix inconsistent hypenations, esp. after SARA AM.
+	* hyphen/thai-exc.pat:
+	  - Force hyphenation after SARA AM.
+
+	Current dict test errors: 1819
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Force hyphenation before MAI MUAN.
+
+	* hyphen/thai-exc.pat:
+	  - Force hyphenation before MAI MUAN, fixing numerous errors.
+
+	Current dict test errors: 1844
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exceptions.
+
+	* hyphen/thai-exc.pat:
+	  - Add exceptions to fix 'ช-วา', 'ม-ว' errors.
+
+	Current dict test errors: 1956
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix typos in dictionary.
+
+	* hyphen/tdict-std.txt, hyphen/tdict-std-compound.txt:
+	  - Fix some inconsistent hyphenations in dictionary.
+
+	Current dict test errors: 1973
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Remove excessive exceptions at word begin.
+
+	* hyphen/thai-exc.pat:
+	  - The commit before the last one introduced wrong exceptions at
+	    word begin for RU and LU. Remove them.
+
+	Current dict test errors: 1979
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add common exceptions at word end.
+
+	* hyphen/thai-exc.pat:
+	  - Add exception patterns to prevent hyphenation before the last
+	    consonant of the word, as well as its GARAN.
+	  - Drop unneeded patterns covered by the new exceptions.
+
+	Current dict test errors: 1982
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add common exceptions at word begin.
+
+	* hyphen/thai-exc.pat:
+	  - Add exception patterns to prevent hyphenation after the first
+	    consonant of the word.
+	  - Drop unneeded patterns covered by the new exceptions.
+
+	Current dict test errors: 2574
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add common exceptions.
+
+	* hyphen/thai-exc.pat:
+	  - Add exception patterns for combining characters and vowels.
+
+	Current dict test errors: 3253
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Use 'diff' instead of 'comm' in test script.
+
+	* hyphen/test-hyphen.sh:
+	  - Use 'diff' instead of 'comm' when comparing test result with
+	    original dictionary, as 'comm' can cause false positives.
+	    With this, the true error count become 3280, not 9293.
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add exception pattern.
+
+	* hyphen/thai-exc.pat:
+	  - Add exception pattern for "ม-หัพ-ภาค", "ม-หันต์" errors.
+
+2012-05-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Adjust patgen parameters.
+
+	* hyphen/Makefile.am (PATGEN_ANS):
+	  - Adjust patgen parameters, which from experiment can reduce
+	    test-hyphen.sh errors from 9660 to 9293.
+	* hyphen/thai-exc.pat:
+	  - Comment out an unnecessary pattern.
+
+2012-05-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add hyphenation test script.
+
+	* hyphen/Makefile.am, +hyphen/test-hyphen.sh:
+	  - Added as EXTRA_DIST. It's not added as 'check' target because
+	    it relies on installed hyphenation patterns.
+
+2012-05-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add more exception patterns.
+
+	* hyphen/thai-exc.pat:
+	  - Add more exception patterns found in experiments.
+
+2012-05-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add more exception patterns.
+
+	* hyphen/thai-exc.pat:
+	  - Add more exception patterns found in experiments.
+
+2012-05-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Revert changes for levels 3-5 part in previous commit.
+
+	It caused too aggressive patterns.
+
+	* hyphen/Makefile.am (PATGEN_ANS):
+	  - Set lower-bounds for levels 3-5 back to previous values.
+
+2012-05-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Adjust pattern lengths at low levels.
+
+	* hyphen/Makefile.am (PATGEN_ANS):
+	  - Set lower-bound for level 2 to 1, to allow inhibition on single
+	    vowels & tone marks.
+	  - Increase lower-bound for level 1 to 2, to prevent aggressive
+	    hyphenation on single characters, which caused more errors than
+	    valid results.
+	  - Decrease lower-bounds for levels 3-5 to get closer to the new
+	    values on lower levels. This appears to yield fewer patterns.
+
+	* hyphen/thai-exc.pat:
+	  - Remove unnecessary exception due to the new parameters.
+
+2012-05-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Reduce pattern lengths at high levels.
+
+	* hyphen/Makefile.am (PATGEN_ANS):
+	  - Reduce lower-bound of pattern lengths in level 4, 5, to allow
+	    better inhibition effect.
+
+2012-05-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fix dictionary entries.
+
+	* hyphen/tdict-std.txt:
+	  - Make hyphenations for "เล-ขา" more consistent.
+
+2012-05-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add hyphenation exception patterns to cope with errors.
+
+	* +hyphen/thai-exc.pat:
+	  - Add exception patterns at level 6, 7.
+	* hyphen/Makefile.am, +hyphen/thai-exc.pat:
+	  - Add the exception file to dist.
+	  - Append exception contents to the generated patterns.
+
+2012-04-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Don't load hypenation pattern for ptex (unsupported).
+
+	* hyphen/loadhyph-th.tex:
+	  - Guard hyphenation loader with ptex check. Thanks Norbert Preining
+	    for the suggestion.
+
+2012-04-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Bypass hooks on 'make distcheck'.
+
+	* configure.in:
+	  - Add '--disable-hooks' configure flag.
+	  - Don't check for programs used by the hooks if disabled.
+	* Makefile.am, emacs/Makefile.am:
+	  - Protect hook targets with ENABLE_HOOKS condition.
+	* Makefile.am:
+	  - Set DISTCHECK_CONFIGURE_FLAGS to disable hooks.
+
+2012-03-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* hyphen/Makefile.am:
+	  - Adjust patgen configuration to 5-level according to Liang's,
+	    which can reduce total patterns by 27%.
+
+2012-03-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add hyphenation support.
+
+	* Makefile.am, configure.in, +hyphen/:
+	  - Add hyphen/ subdir.
+	* +hyphen/Makefile.am, +hyphen/loadhyph-th.tex:
+	  - Add targets we want to install: the hyphenation pattern loader
+	    for Unicode/8-bit environments, and the hyphenation pattern
+	    files for each environment.
+	  - The loader is here. The pattern files are to be generated.
+	* hyphen/Makefile.am, +hyphen/README, +hyphen/tdict-*.txt:
+	  - Import hyphenated word list from libthai project.
+	  - Add rule for generating sorted word list from libthai dicts.
+	* hyphen/Makefile.am, +hyphen/thai.tra:
+	  - Add translate file and rule for generating hyphenation pattern
+	    using patgen.
+	* hyphen/Makefile.am, +hyphen/hyph-th-utf8.tex.in:
+	  - Add rule for generating the Unicode TeX pattern file by merging
+	    the generated pattern into the Unicode skeleton file.
+	* hyphen/Makefile.am, +hyphen/conv-utf8-hex.sed,
+	  +hyphen/hyph-th.tex.in:
+	  - Add sed script for converting hyphenation pattern to 8-bit hex
+	    format.
+	  - Add rule for generating the 8-bit TeX pattern file by converting
+	    the generated Unicode pattern and merging it in hex format into
+	    the 8-bit skeleton file.
+	* Makefile.am:
+	  - Add fmtutil to the hooks, for hyphenation patterns regeneration.
+	* configure.in:
+	  - Add checks for patgen and fmtutil[-sys].
+
+2012-03-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Post-release version suffix added.
+
+2012-02-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	=== Version 0.4.7 ===
+
+2012-02-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* emacs/Makefile.am:
+	  - Remove Emacs site-start.el if empty, to pass 'make discheck'.
+
+2012-02-14  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in:
+	  - Also drop fonts/Makefile.in here.
+
+2012-02-13  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* Makefile.am, -fonts/*:
+	  - Drop font enc & ligkern stuff, which has been moved to
+	    font packages, making the subdir totally unneeded any more.
+
+2012-02-13  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/lthuni.enc, fonts/thailigs.enc:
+	  - Add change log for recent change.
+
+2012-02-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - s/transcription/transliteration/ for Pali-Sanskrit.
+
+2012-02-10  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/Makefile.am:
+	  - Compile thai.dtx twice, to resolve cross-references.
+
+2012-02-10  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Adjust wordings in documentation.
+	  - Fix typos.
+	  - Re-wrap source lines.
+	  - Add documentation for Thai line stretching.
+
+2012-02-10  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - More indent adjustments.
+
+2012-02-09  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Fix indentation which caused confusion in documentation boundary.
+
+2012-02-09  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* Makefile.am:
+	  - Drop unneeded dist-ctan targets, as dist-tds already suffices.
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/lthenc.def:
+	  - Drop Latin wrapper to \TeX and \LaTeX commands.
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Support more common Latin characters with native font glyphs.
+
+	* fonts/lthuni.enc fonts/thailigs.enc:
+	  - Drop rarely-used quotesinglbase, guilsinglleft, guilsinglright.
+	  - Add dagger, daggerdbl, section, paragraph, copyright, registered,
+	    trademark, germandbls, ae, AE, oe, OE.
+	* babel/lthenc.def:
+	  - Drop text commands for copyright, registered, trademark, SS,
+	    in favor of native font glyphs.
+	  - Declare symbols for the added glyphs in .enc files.
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/lthenc.def:
+	  - Add ASCII symbols \textasciicircum \textasciitilde
+	    \textbackslash \textbar \textbraceleft \textbraceright
+	    \textgreater \textless \textquotedbl
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/lthuni.enc, fonts/thailigs.enc:
+	  - Move the mythical left variants of lower vowels to free slots
+	    below, to make continuous free area for Latin characters.
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/lthenc.def:
+	  - Add Latin symbols \i \j.
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/lthenc.def:
+	  - Add ASCII symbol \textdollar.
+
+2011-12-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Fix missing comment marks in documentation lines.
+
+2011-12-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* Makefile.am: Remove old CTAN/TDS zip files before zipping.
+
+2011-12-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Revise documentation (rev 1.4c).
+
+2011-12-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/thai-dummy.afm, fonts/thailigs.enc:
+	  - Remove duplicated entries for quoteleft and quoteright, which
+	    prevent LIGKERN rules from being included in VPL.
+
+2011-12-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* Makefile.am: Add source in TDS zip.
+
+2011-12-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am, babel/Makefile.am:
+	  - Install files under consistent package's subdir name.
+
+2011-12-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Escape backslash in changelog.
+
+2011-12-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Remove extra space in \wbr.  Word spacing is considered suboptimal.
+
+2011-12-14  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Adjust \wbr word spacing to 0.1em. XeTeX's 0.4em was too wide.
+
+2011-12-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Adjust \wbr word spacing from 0.6pt to 0.4em, taken from XeTeX
+
+2011-11-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx: Revise documentation
+	  - Clarify original author & maintainer
+	  - Rearrange contents into sections
+	  - Add documentation for \thaitext, \latintext et al
+	  - Improve wording
+
+2011-11-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Post-release version suffix added.
+
+2011-11-03  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	A few adjustments before CTAN upload.
+
+	* README:
+	  - Replace 'thswitch' mentioning with 'fonts-tlwg'.
+	  - Add information for UTF-8 usage.
+	* doc/utf-example.tex, doc/orchid.tex:
+	  - Use 'fonts-tlwg' package instead of 'thswitch'.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	=== Version 0.4.6 ===
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in:
+	  - Remove unused RMDIR check.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* README:
+	  - Fix script name 'patch-babel' -> 'sync-babel'.
+	  - Remove version info.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* scripts/sync-thailatex.in:
+	  - Remove updmap calls & referrals to thai.map.
+	  - Check for thai-latex-setup.el existence instead to determine
+	    install/uninstall operation.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in:
+	  - Add checks for swath & cttex back, but not make mandatory.
+	* doc/Makefile.am:
+	  - Check swath/cttex availability from configured vars, not
+	    "which ...".
+	  - Fall back to cp when both swath & cttex are not available.
+	  - Use pdflatex to generate PDF directly.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/Makefile.am, emacs/Makefile.am:
+	  - Use commands from configured vars, not explicitly, in recipes.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in:
+	  - Drop checks for unused programs: awk, dvips, pf2afm, afm2tfm,
+	    vptovf, ps2pdf, swath, cttex, updmap-sys.
+	  - Add check for pdflatex.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* Makefile.am, -GPL, -COPYING.fonts:
+	  - Remove fonts license info.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* doc/Makefile.am, -doc/test-utf.sh, -doc/test-orchid.sh:
+	  - Remove all tests, as they require installed font maps and
+	    thus usually fail 'make distcheck' before installing.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* doc/Makefile.am, -doc/test-teststd.sh, -doc/teststd.tex:
+	  - Remove teststd.tex example; moved to thaifonts-scalable.
+
+2011-10-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am, -fonts/thaifont.mk.am:
+	  - Remove thaifont.mk.am, cancelling shared automake fragment usage.
+
+2011-10-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/Makefile.am, -babel/thai.sty:
+	  - Remove obsolete file.
+
+2011-10-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Improve wording.
+
+2011-10-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Add missing '}'.
+
+2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/Makefile.am, -babel/*.fd:
+	  - Remove more font-specific stuffs.
+
+2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx, babel/thswitch.sty:
+	  - Move font-specific macros from language definition to
+	    thswitch.sty.
+
+2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/thai-dummy.afm:
+	  - Add back the file accidentally lost in previous commit.
+
+2011-10-18  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Remove fonts.
+
+	* fonts/Makefile.am, -fonts/*.afm, -fonts/*.pfb:
+	  - Remove fonts from source.
+	* fonts/Makefile.am:
+	  - Install thailigs.enc and thai-dummy.afm under TEXMF, to allow
+	    font packages to build thailigs.vpl on-the-fly via kpathsea.
+	  - Install thaifont.mk.am snippet for font packages use.
+	* fonts/thaifont.mk.am:
+	  - No more symlinks for thai-dummy.afm, thailigs.enc and lthuni.enc.
+	    Just access them via kpathsea.
+	* fonts/Makefile.am, fonts/thaifont.mk.am:
+	  - Move thailigs.vpl build rule to font package side and build it
+	    on-the-fly, as VPL files are not accessible via kpathsea.
+	* Makefile.am:
+	  - Add $(TEXHASH) calls for install/uninstall hooks.
+
+2011-10-13  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/thaifont.mk.am:
+	  - Optionally use lthuni.enc from TEXMF if missing from $(srcdir),
+	    partially generalizing the make rule.
+
+2011-10-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am, fonts/thaifont.mk.am:
+	  - Move non-generic parts out of thaifont.mk.am.
+	  - Move thailigs.vpl to non-generic part.
+	  - Fix one literal 'thai.map' left in generic part.
+
+2011-10-12  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am, +fonts/thaifont.mk.am:
+	  - Split make rules to file, for generalization.
+
+2011-10-11  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am: Remove old commented lines.
+
+2011-10-11  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in:
+	  - Post-release version suffix added.
+	  - Add bug report address.
+
+2011-03-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	=== Version 0.4.5 ===
+
+2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am: Revert the if-block change, as it does not work.
+	The exit just exits a spawned shell, not the whole script.
+
+2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/Makefile.am: Remove thai.ldf before re-compiling thai.dtx,
+	so it can build twice in a row.
+
+2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	Use exception-styled if-block instead of if-then-else for separating
+	normal and exceptional cases.
+
+	* Makefile.am: Remove old commented lines.
+
+2011-03-20  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, Makefile.am, -thailatex.spec.in:
+	Remove the outdated, unmaintained RPM spec.
+
+2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx: Add documentation sentences about \wbr being
+	ignored.
+
+2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx: Update copyright years and changelog dates.
+
+2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx: Disable \wbr effect in \textpali{} command, as Pali
+	is already space-delimited, and there is no proper tool to hyphenate
+	it yet.
+
+2011-03-17  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* Makefile.am: Add rules for preparing CTAN package in ZIP format,
+	which is preferred by Windows users, and let ZIP be the default,
+	.tar.gz be an option.
+
+2011-03-16  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Make sure \textpali{} also works on TIS-620 text, not just UTF-8.
+	This requires "inputenc" package.
+
+	* babel/Makefile.am, +babel/tis620.def: Add "tis620" input encoding
+	definition for use with "inputenc" package.
+	* doc/teststd.tex: Add Pali test text.
+
+2011-03-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/purisa*.{afm,pfb}: Update to version 002.012: 2011-03-11 from
+	thaifonts-scalable trunk.
+
+2011-02-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx: Update translation for \refname from
+	  "หนังสืออ้างอิง" to "เอกสารอ้างอิง".
+
+2011-02-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx: Add revision history for previous commit.
+
+2010-09-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add support for Pali-Sanskrit descender-less Yo Ying & Tho Than.
+
+	* babel/lthenc.def: Add text symbols \textYoYingPali and
+	\textThoThanPali according to encoding slots in fonts/lthuni.enc.
+	* babel/thai.dtx: Add \textpali macro for converting all Yo Ying &
+	Tho Than in its argument to their descender-less variations.
+
+2010-09-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add support for high MaiTaikhu and Nikhahit.
+
+	* fonts/thai-dummy.afm, fonts/lthuni.enc, fonts/thailigs.enc:
+	Add code points for high MaiTaikhu, high Nikhahit, and dottedcircle,
+	wrt. current fonts.
+	* fonts/thailigs.enc: Add ligkern rules to convert Maitaikhu and
+	Nikhanit after upper vowels to their high versions.
+
+2010-09-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/thailigs.enc: Add ligkern rules for Thanthakhat and Nikhahit
+	when combined with Po Pla, Fo Fa, Fo Fan, Lo Chula.
+
+2010-08-01  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/garuda*.{afm,pfb}: Update to version 2.63: 2010-08-01 from
+	thaifonts-scalable trunk.
+
+2010-07-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Post-release version suffix added.
+
+	* fonts/*.{afm,pfb}: Update fonts from thaifonts-scalable 0.4.14.
+
+2009-08-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	=== Version 0.4.4 ===
+
+2009-08-15  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* ChangeLog: Convert to UTF-8.
+
+2009-08-14  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, scripts/Makefile.am,
+	scripts/sync-babel.in -> scripts/sync-babel:
+	Search for babel.sty with kpsewhich, instead of hard coding its
+	location.
+
+	* scripts/Makefile.am, -scripts/patch-babel:
+	Drop unused script.
+
+2009-08-14  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* Makefile.am: Add dist-ctan target for preparing CTAN uploads.
+
+2009-08-13  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/ttypist*.{afm,pfb}: Update ttypist font to version
+	001.017: 2009-08-13, from thaifonts-scalable trunk.
+
+2009-07-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* scripts/tlatex: Detect UTF-8 source and call swath with -u option.
+
+2009-07-30  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* scripts/sync-thailatex.in:
+	  - Ignore commented lines in "UPDMAP --listmaps" output, so that
+	    thai.map is not wrongly detected as enabled when it's actually
+	    disabled. Thanks zodmaner for the suggestion.
+	  - Split out the map enabling check as a function.
+
+2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in:
+	  - Drop supports for old updmap, and stop with error if updmap is not
+	    found at usual location.
+	  - Drop checking of old TDS, as it's not supported any more.
+
+2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am: Drop supports for old tetex directories.
+
+2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* scripts/sync-thailatex.in:
+	  - Drop supports for old tetex directories.
+	  - Update mapfile path according to the new TDS.
+	  - Reorder so that TEXHASH is called before UPDMAP.
+	  - Refactor the code into do_install() and do_uninstall().
+
+2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Also check for, and prefer, mktexlsr for TEXHASH.
+
+2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am: Add missing semi-colon in last commit.
+
+2009-07-29  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Post-release version suffix added.
+
+	* configure.in: Drop the broken UPDMAP_FB fallback. It doesn't work
+	when used with command-line arguments.
+
+	* fonts/Makefile.am: Reorder so that TEXHASH is called before UPDMAP
+	on install/uninstall hooks.
+
+2009-07-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	=== Version 0.4.3 ===
+
+2009-07-28  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* doc/utf-example.tex: Add comments. Drop unneeded thswitch usage.
+
+2009-07-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* doc/Makefile.am, +doc/utf-example.tex, +doc/test-utf.sh:
+	Add UTF-8 example and test.
+
+2009-07-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx:
+	  - Reorder the change logs in chronological order.
+	  - Adjust documentation to cover UTF-8 support.
+	  - Make `ttypist' the default typewriter font instead of `ttype'.
+	  - Drop the obsolete `\thai' command.
+	  - Revise some wordings, fix typos.
+	  - Wrap long Thai definitions within 80 columns.
+	  - Update copyright year, and bump version to 1.2.
+
+2009-07-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am: Use make pattern subst to generate lists of
+	generated files instead of sed in $(shell).
+
+2009-07-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* doc/teststd.tex: Add test messages for Purisa oblique, bold, and
+	bold oblique.
+
+2009-07-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Add UTF-8 support.
+
+	* babel/lthenc.def: Add symbol definitions for UCS character names,
+	according to uni-14.def for Thai range.
+	* babel/thai.dtx: Replace Thai TIS-620 characters with symbolic
+	definitions, for encoding independence.
+
+2009-07-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: post-release version suffix added.
+
+	* fonts/*.{afm,pfb}: Update fonts from thaifonts-scalable 0.4.13.
+	* babel/ltnpurisa.fd, fonts/Makefile.am, +fonts/purisa_b[o].{afm,pfb},
+	+fonts/purisa_o.{afm,pfb}: Add variation faces for Purisa font.
+
+2008-01-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	=== Version 0.4.2 ===
+
+2008-01-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx: Correct bracing in changelog entry, eliminating
+	junks in generated documentation.
+
+2008-01-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	=== Version 0.4.1 ===
+
+2008-01-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am: Use ',' as delimiter instead of '/' in sed
+	scripts for generating file lists, as '/' confused automake when used
+	in EXTRA_DIST and thus broke 'make dist'.
+
+2008-01-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Warn about swath or cttex only when both are missing.
+
+2008-01-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Werner's afm2tfm trick solves the "PO PLA + SARA UU + MAI EK" case
+	well. But the separation of LIGTABLE construction results in a single
+	full set of ligatures, including ff, fi, fl, ffi and ffl, which was
+	available only in some fonts. One solution to this is to selectively
+	merge LIGTABLE. Another is to add those ligatures in all fonts.
+	And I choose the latter.
+
+	* fonts/garuda*.{afm,pfb}:
+	* fonts/loma*.{afm,pfb}:
+	* fonts/purisa.{afm,pfb}:
+	* fonts/sawasdee*.{afm,pfb}:
+	* fonts/ttype*.{afm,pfb}:
+	* fonts/ttypist*.{afm,pfb}:
+	* fonts/umpush*.{afm,pfb}:
+	* fonts/waree*.{afm,pfb}:  Update fonts from thaifonts-scalable CVS
+	snapshot, with f* ligatures either added or renamed from uniXXX forms
+	to Adobe Glyph Names.
+
+2008-01-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Mention texlive instead of tetex.
+	* TODO: Remove finished issues: .dtx and Werner Lemberg's ligatures.
+	* README: Update URL of the project page.
+
+2008-01-25  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/Makefile.am, fonts/Makefile.am, emacs/Makefile.am:
+	Refer to texmfdir and emacsdir with Makefile variables, rather than
+	autoconf substitutions.
+
+2008-01-25  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Use ${datarootdir} instead of ${datadir} for default
+	texmfdir and emacsdir, eliminating undefined referals to ${datarootdir}
+	in the generated script/sync-thailatex.
+
+	* configure.in, Makefile.am, babel/Makefile.am, doc/Makefile.am:
+	Remove --with-docdir configure option, which may confuse users with
+	autoconf's --docdir. In Makefiles, just use autoconf's docdir rather
+	than trying to derive pkgdocdir, as autoconf already appends
+	${PACKAGE} to docdir for us.
+
+2008-01-24  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* COPYING.fonts: Update copyright info from thaifonts-scalable 0.4.9,
+	plus minor changes from its CVS snapshot. Update URL for
+	thaifonts-scalable project page.
+	* +GPL: Added, as referred to from COPYING.fonts.
+
+2008-01-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Check for sed with AC_PROG_SED instead of manual
+	AC_CHECK_PROGS. Also check for awk, as required by the added code.
+
+	* fonts/Makefile.am, fonts/lthuni.enc, +fonts/thailigs.enc,
+	+fonts/thai-dummy.afm: Support the case of "PO PLA + SARA UU + MAI EK",
+	with the afm2tfm trick proposed by Werner Lemberg in "Thai fonts",
+	TUGboat Volume 21 (2000), No. 2:
+	  - Split lthuni.enc into lthuni.enc + thailigs.enc, with LIGKERN
+	    rules moved to thailigs.enc
+	  - Add .left variants for below-base signs at character 0x01, 0x02,
+	    0x03, with *.left names in thailigs.enc, and with real glyph names
+	    without .left extensions in lthuni.enc.
+	  - Add separate LIGKERN rules for below-base signs when placed under
+	    base characters with long-shooting ascender.
+	  - Do the trick by generating thailigs.vpl from thailigs.enc +
+	    thai-dummy.afm and merge the resulting LIGTABLE into ligature-less
+	    VPL's generated from fonts' AFM + lthuni.enc.
+	  - The LIGTABLE in thailigs.vpl will process the below-base marks
+	    under those long-descender chars by placing glyphs 0x01, 0x02,
+	    0x03, as referred to by *.left names in LIGKERN rules, for them.
+	    But the character map part in fonts' VPL will map these glyphs to
+	    usual names for the marks, due to what described in lthuni.enc.
+	  - As a result, the below-base marks have two variants for LIGKERN,
+	    which both referring to the same glyphs.
+	  - See the TUGboat article for more details.
+	    http://www.tug.org/TUGboat/Articles/tb21-2/tb67lemb.pdf
+
+	* fonts/lthuni.enc, fonts/thailigs.enc: Adjust the LTHEncoding:
+	  - Remove compwordmark (0x17).
+	  - Rename perthousandzero to perthousand (0x18).
+	  - Rename visualspace to space (0x20).
+	  - Remove duplicated hyphen at 0x7f.
+	  - Remove duplicated nonbreakingspace at 0xdb.
+	  - Rename ThaiWordBreak to zerowidthspace at 0xdc.
+
+	* doc/teststd.tex: Add test samples for "PO PLA + SARA UU + MAI EK".
+
+2008-01-22  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/kinnari.{afm,pfb}, fonts/kinnari_o.{afm,pfb}: Get new version
+	from thaifonts-scalable CVS snapshot, correcting SARA AM width.
+
+	* fonts/kinnari_i.{afm,pfb}: Get new version from thaifonts-scalable
+	CVS snapshot, with improved hinting for SARA AA and references usage
+	for SARA AM.
+
+2008-01-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/ttypist_b.{afm,pfb}: Get new version from thaifonts-scalable
+	CVS snapshot, in which missing values in OtherBlues are added, to fix
+	Postscript stack error in PS file generated by dvips.
+
+2008-01-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* doc/teststd.tex: Add sample text for Kinnari, Waree, Umpush and
+	Sawasdee. Rearrange National Fonts in order.
+
+2008-01-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/Makefile.am: Add a missing backspace at end of line in
+	previous commit. lthsawasdee.fd was not included due to this error.
+
+2008-01-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/garuda*.{afm,pfb}, fonts/norasi*.{afm,pfb},
+	fonts/loma*.{afm,pfb}: Update fonts from thaifonts-scalable 0.4.9.
+
+	* fonts/Makefile.am, fonts/kinnari*.{afm,pfb},
+	+fonts/waree*.{afm,pfb}, +fonts/umpush*.{afm,pfb},
+	+fonts/sawasdee*.{afm,pfb}: Add Kinnari back to the distribution.
+	Add new fonts: Waree, Umpush and Sawasdee from t-s 0.4.9.
+
+	* fonts/Makefile.am: Rewrite variables using sed substitution instead
+	of exhaustive lists.
+
+	* babel/Makefile.am, +babel/lthwaree.fd, +babel/lthumpush.fd,
+	+babel/lthsawasdee.fd: Add Kinnari back to the distribution.
+	Add font descriptors for new fonts: Waree, Umpush and Sawasdee.
+
+2007-02-07  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/garuda*.{afm,pfb}: Get new Garuda fonts from
+	thaifonts-scalable CVS snapshot, where duplicated encodings are
+	removed. This fixes ligkern bug for endash, emdash, as reported by
+	Pasu Boonvisut <bpasu@intania85.org>.
+
+2006-11-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS, HISTORY:
+	=== Version 0.4.0 ===
+
+2006-11-08  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Relicensing to LPPL.
+
+	* AUTHORS: Clarify original author and current maintainers.
+	* COPYING, -LICENSE: Replace with LPPL Version 1.3c.
+	* +COPYING.fonts: Clarify fonts copyright and license info, as declared
+	in thaifonts-scalable package.
+	* +HISTORY: Add relicensing history.
+	* Makefile.am: Include new files in EXTRA_DIST. Remove removed file.
+	* configure.in: Update AC_INIT, as the referred file is now removed.
+	* babel/lth{garuda,norasi,loma,ttype,ttypist,purisa}.fd,
+	* babel/lthenc.def: Clarify files as part of thailatex package.
+	* babel/thai.dtx, babel/thswitch.sty: Update copyright info.
+
+	Minor clean-up.
+
+	* babel/Makefile.am: Clean latex-generated files.
+
+2006-10-23  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/*.{afm,pfb}: Update fonts from thaifonts-scalable 0.4.5.
+
+	* fonts/Makefile.am, +fonts/ttypist*.{afm,pfb}:
+	* babel/Makefile.am, +babel/lthttypist.fd:
+	Add ttypist (Tlwg Typist) font from thaifonts-scalable 0.4.5.
+
+	* doc/teststd.tex: Add ttypist sample text.
+
+	* {fonts,doc}/Makefile.am: Use CLEANFILES instead of *clean-local
+	target. Also correctly clean files previously cleaned with distclean.
+
+	* fonts/Makefile.am: Call texhash after updmap.
+
+	* configure.in: When checking for new TDS, check for non-existence of
+	old TDS instead of existence of the new.
+
+2006-10-21  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, babel/Makefile.am,
+	babel/thai.{dtx,ins}.in -> babel/thai.{dtx,ins}: Replace weird hack
+	for non-source-dir build by creating symlinks to source dir instead
+	of using AC_OUTPUT trick.
+
+2006-07-09  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* babel/thai.dtx.in: Removed unnecessary workarounds for inhibition 
+	of capitalization of headers, as the catcodes already do the job.
+	Also removed the mysterious redefinitions of figure and table counters.
+
+2006-07-05  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Created `thai.dtx' for documenting and generating `thai.ldf'.
+
+	* configure.in, babel/Makefile.am, +babel/thai.{dtx,ins}.in,
+	-babel/thai.ldf:  Replaced `thai.ldf' with `thai.dtx'. Added
+	`thai.ins' and rules for docstripping `thai.dtx' into `thai.ldf'.
+	Also added rules for generating `thai.pdf' documentation from
+	`thai.dtx'.
+
+2006-03-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	=== Version 0.3.7 ===
+
+2006-03-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Fixed many package building issues.
+
+	* configure.in, Makefile.am, -debian/Makefile.am:  Removed debian 
+	directory from source distribution, as well as the autogen.sh extra 
+	file.
+
+	* configure.in:  Tried to fall back to updmap as well, even if
+	updmap-sys is available, to pass "make distcheck" as non-root user.
+
+	* fonts/Makefile.am:  Called @TEXHASH@ only if $(DESTDIR) is null.
+
+2006-03-27  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	=== Version 0.3.6 ===
+
+2006-03-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/{purisa,ttype*}.{afm,pfb}: Updated fonts from 
+	thaifonts-scalable CVS which fixed error with dvips.
+
+2006-03-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/Makefile.am: Fixed typo in tfm_DATA which caused raw TFM's to
+	be missed from installation.
+
+	* doc/teststd.tex: Replaced the references to old 'pmono' font with
+	'ttype'.
+
+2006-03-26  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	Added Loma font.
+
+	* fonts/Makefile.am, +fonts/loma*.{afm,pfb}: Added Loma font and
+	metrics.
+
+	* babel/Makefile.am, +babel/lthloma.fd: Added Loma font description.
+
+	* doc/teststd.tex: Added test message for Loma.
+
+2006-03-25  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* fonts/*.{afm,pfb}: Updated fonts from thaifonts-scalable 0.4.4.
+
+2006-02-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in, fonts/Makefile.am: Checked for new TeX Directory
+	Structure (http://tug.org/tds/) and install files in new locations 
+	if possible.
+
+2006-02-19  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in: Preferred updmap-sys to updmap if present.
+	Change inspired by Debian NMU patch.
+
+2005-10-09  Theppitak Karoonboonyanan <thep@linux.thai.net>
+
+	* configure.in:
+	  Formatted configure options help strings with AC_HELP_STRING().
+
+2005-07-03  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/{garuda*,norasi*,ttype*}.{afm,pfb}:
+	  Update fonts from thaifonts-scalable 0.4.3.1.
+
+	* configure.in, NEWS:
+	  Version 0.3.5.1.
+
+2005-06-10  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/Makefile.am, babel/Makefile.am:
+	  Drop dbtt and kinnari fonts, as they have been dropped in the new
+	  thaifonts-scalable release due to the unclear licenses.
+
+	* doc/teststd.tex:
+	  Remove test samples for dbtt and kinnari as well.
+
+	* doc/Makefile.am:
+	  Include check scripts in the EXTRA_DIST as well.
+
+	* configure.in, NEWS:
+	  Version 0.3.5.
+
+2005-06-07  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/*.{afm,pfb}:
+	  Update fonts from thaifonts-scalable CVS.
+
+2005-04-05  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Add missing entries (kinnari_{i,bi}.afm) in EXTRA_DIST.
+	  (bug noticed by "ball" in LTN forum).
+
+2005-03-29  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Disable thai.map (quickly) before enabling it upon installation, to
+	  ensure that updmap --enable command is always effective.
+	  (http://vuthi.blogspot.com/2005/03/thai-latex-mac-os-x.html)
+
+2005-01-26  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* doc/Makefile.am, +doc/test-orchid.sh, +doc/test-teststd.sh:
+	  Add "make check" targets by testing building orchid and teststd
+	  docs.
+
+2005-01-26  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* doc/Makefile.am:
+	  Use abstract make rules so that all docs are covered at once.
+
+2005-01-26  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* doc/teststd.tex:
+	  Add slant shape samples for Norasi and Kinnari.  Fix the Thai name
+	  of National Font project.
+
+2005-01-24  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/lthnorasi.fd:
+	  Actually point bold-italic shape to italic font file instead of
+	  slant.
+
+2005-01-24  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/lthkinnari.fd, fonts/Makefile.am,
+	  +fonts/kinnari_{i,bi}.{afm,pfb}:
+	  Add italic shape for Kinnari medium and bold face series. Fonts
+	  taken from thaifonts-scalable CVS snapshot.
+
+2005-01-15  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/norasi*.{afm,pfa}:
+	  Update fixes in Copyright field from thaifonts-scalable CVS.
+	  (Bug reported by K.Boonlert in thai-latex-user-group mailint list).
+
+2004-12-05  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	  Version 0.3.4.
+
+2004-11-15  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/*.{afm,pfb}:
+	  Updated fonts from thaifonts-scalable CVS snapshot, with glyph
+	  variants for marks back again.
+	  (Bug reported by Poonlap Veerathanabutr.)
+	
+	* fonts/pmono*.{afm,pfb} -> fonts/ttype*.{afm,pfb}, fonts/Makefile.am,
+	  babel/lthpmono.fd -> babel/lthttype.fd, babel/Makefile.am,
+	  babel/thai.ldf:
+	  Replace 'pmono' (PseudoMono) with 'ttype' (TlwgTypewriter),
+	  according to recent renaming in thaifonts-scalable.
+
+2004-09-27  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.in, NEWS:
+	  Version 0.3.3.
+
+2004-09-20  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/*.{afm,pfb}:
+	  Updated fonts from thaifonts-scalable 0.4.2.
+
+	* babel/*.fd:
+	  Remove the scaling factor from font descriptions, as glyphs are
+	  already scaled up in thaifonts-scalable.
+
+2004-06-14  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/lthenc.def:
+	  Guard against recursive assignments of \ltxTeX and \ltxLaTeX
+	  (Reported by donzakh)
+
+2004-04-08  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/thai.ldf:
+	  Borrow code from previous encoding fix to inhibit
+	  capitalizing chapters & sections in book headers.
+	  (proposed by P'Joy)
+
+2004-04-02  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* TODO:
+	  Add more TODO proposed by Poonlap.
+
+2004-03-25  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* +TODO:
+	  Add TODO, as proposed by Chanop.
+
+	* NEWS, configure.in:
+	  Version 0.3.2
+
+2004-03-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/thai.ldf:
+	  Move \frontmatter and \mainmatter redefinition back under
+	  thainumber option (wrongly moved along with previous appendix fix)
+	  (bug reported by P'Joy)
+
+2004-03-10  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* NEWS, configure.in:
+	  Version 0.3.1
+
+2004-03-06  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/thai.ldf:
+	  Use `garuda' instead of `dbtt' as default sffamily for Thai.
+
+2004-03-04  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/thai.ldf, babel/thswitch.sty:
+	  Use `pmono' as default ttfamily for Thai.
+
+2004-03-03  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/{kinnari,garuda,dbtt}.{pfb,afm}:
+	  Update fonts from thaifonts-scalable cvs.
+
+	* fonts/dbtt*.{pfb,afm}:
+	  Yet another update from thaifonts-scalable cvs (regarding hints).
+
+2004-02-28  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/thai.ldf:
+	  Always use Thai alphabets in appendix
+	  (As suggested by K. chakkree01)
+
+2004-02-18  Poonlap Veerathanabutr  <poonlap@linux.thai.net>
+
+	* fonts/purisa.{pfb,afm}:
+	Replaced with fixed version. 
+
+2004-02-14  Poonlap Veerathanabutr  <poonlap@linux.thai.net>
+
+	* doc/teststd.tex:
+	Fixed Deer book to Dear book.
+
+	* fonts/purisa.{pfb,afm}:
+	Replaced with new version.
+
+2004-02-06  Poonlap Veerathanabutr  <poonlap@linux.thai.net>
+	
+	* doc/teststd.tex:
+	  Rewrite teststd.tex including new fonts.
+
+	* fonts/purisa.{pfb,afm}, fonts/pmono*.{pfb,afm},
+	  fonts/kinnari*.{pfb,afm}, fonts/Makefile.am:
+	  Add new fonts and modify Makefile.am.
+
+	* babel/lthpurisa.fd, babel/lthpmono.fd, babel/lthkinnari.fd:
+	  Add new font definition files.
+
+2004-02-03  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* README:
+	  Add link to project page. (Thanks to Vee Satayamas)
+
+	* AUTHORS:
+	  Fix my e-mail address. Add Chanop and Poonlap.
+
+2004-02-02  Poonlap Veerathanabutr  <poonlap@linux.thai.net>
+
+	* babel.thai.ldf:
+	  Fixed \lccode and \uccode.
+
+2003-12-21  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* scripts/sync-thailatex.in, scripts/sync-babel.in,
+	  thailatex.spec.in:
+	  Use argumentless style of sync scripts for RPM.
+
+2003-12-05  Chanop Silpa-Anan  <chanop@debian.org>
+
+	* fonts/lthuni.enc, fonts/norasi.{afm,pfb}, fonts/Makefile.am:
+	  Update norasi to the latest CVS from thaifonts-scalable; also
+	  add the italic variant.
+
+2003-11-22  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/{garuda,dbtt}*.{afm,pfb}:
+	  Use updated fonts from thaifonts-scalable cvs snapshot.
+
+2003-10-25  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Add missing *.afm to EXTRA_DIST, as reported by Vee Satayamas.
+
+2003-09-21  Chanop Silpa-Anan  <chanop@debian.org>
+
+	* fonts/lthuni.enc:
+	  Fix aposthophe problem.
+	  Use unicode variant name.
+	  Add f-ligatures and some puctuations at T1  locations.
+
+	* fonts/*.{afm,pfb}:
+	  Use updated fonts with new unicode variant name.
+
+2003-08-27  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Insert texhash calling before updmap, so thai.map is known by
+	  updmap in brand new installation.
+
+	* Makefile.am:
+	  Remove texhash calling after install/uninstall, as it's already
+	  called by updmap.
+
+2003-08-11  Chanop Silpa-Anan  <chanop@debian.org>
+
+	* babel/lthdbtt.fd:
+	  Fix typo.
+
+	* babel/{lthdbtt,lthgaruda,lthnorasi}.fd:
+	  Use silent substitutions; there is no need to warn the users
+	  for the default Thai fonts.
+
+2003-08-10  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/thai.ldf:
+	  Fix translation of \prefacename.
+	  Redefine \frontmatter and \mainmatter for book class
+	  so thainumber option applies to the page numbering styles.
+	  [Experimental] Add initialization of Thai character codes
+	  to fix the \MakeUppercase and \MakeLowercase problem.
+	  Also comment out the old workarounds.
+
+2003-06-08  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Fix lthuni.enc symlink creation. Its existence should be checked
+	  aginst itself, rather than the pfb file.
+	  Add creation of *.afm symlinks to the build tree.
+
+	* configure.in:
+	  Move default docdir to DATADIR/doc instead of PREFIX/doc.
+
+2003-06-04  Chanop Silpa-Anan  <chanop@debian.org>
+	* fonts/norasi*.{pfb,afm}:
+	  Update using new Type1  font from thaifonts-scalable project.
+
+	* fonts/lthuni.enc:
+	  Fix sara aam ligatures, however, these ligatures are not probably
+	  going to be used in regular text.
+
+	* babel/lthenc.def:
+	  Add \text{fongman,yamakkan,angkhankhu,khomut}.
+
+2003-06-02  Chanop Silpa-Anan  <chanop@debian.org>
+	* fonts/*.{pfb,afm}:
+	  Update using new Type1  font from thaifonts-scalable project.
+
+	* babel/lth{norasi,garuda,dbtt}.fd:
+	  Fix .fd to reflect chages to use oblique naming.
+
+	* babel/thai.ldf:
+	  Use garuda as a default sans, dbtt is still slightly buggy.
+
+2003-04-21  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/lthenc.def:
+	  Add special shape declarations e.g. \textquoteleft.
+
+	* fonts/lthuni.enc:
+	  Add default ligkern set normally built-in in afm2tfm.
+	
+2003-04-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.in:
+	  Version 0.3.0
+
+2003-04-18  Chanop Silpa-Anan  <chanop@debian.org>
+	* debian/changelog:
+	  Version 0.2.99.3
+
+2003-04-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* emacs/Makefile.am:
+	  Check $(DESTDIR) before patching emacs site-start.el.
+
+	* configure.in:
+	  Version 0.2.99.3
+
+2003-04-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.in, fonts/Makefile.am, scripts/sync-thailatex.in:
+	  Add updmap usage back again, with checking for updmap version
+	  before applying appropriate method.
+
+2003-04-15  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/Makefile.am, scripts/sync-thailatex.in, configure.in:
+	  Undo updmap usage, to support tetex-1.
+	  Get back to patching dvips/config/config.ps and
+	  pdftex/config/pdftex.cfg instead.
+
+2003-04-02  Chanop Silpa-Anan  <chanop@debian.org>
+
+	* debian/*:
+	  Prepare for 0.3  release. Would only work with current sid.
+	
+	* fonts/Makefile.am:
+	  Remove deletion of lthuni.enc in distclean target.
+
+2003-03-11  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.in:
+	  Version 0.2.99.2
+
+2003-03-06  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* scripts/sync-thailatex.in:
+	  Rewrite to accept install/uninstall arg.
+
+	* +scripts/sync-babel.in, scripts/Makefile.am, configure.in,
+	  scripts/sync-thailatex.in:
+	  Split babel patching into separate script (for use in rpm only).
+
+	* thailatex.spec.in:
+	  Use the separate sync-* scripts instead.
+	  Add %preun script for unregistering thailatex at last uninstallation.
+	  
+2003-03-05  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.in:
+	  Fix AC_PATH_PROG finding for updmap (bug reported by Vee Sattayamas)
+
+2003-03-04  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* thailatex.spec.in:
+	  Add tetex-dvips to Requires: (as suggested by Vee Sattayamas)
+
+2003-03-03  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* fonts/Makefile.am:
+	  Add DISTCLEANFILES to clear up generated files
+	  Remove old instructions in comments
+
+2003-03-02  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.in:
+	  Version 0.2.99.1
+
+2003-02-26  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* scripts/sync-thailatex -> scripts/sync-thailatex.in,
+	  scripts/Makefile.am, configure.in:
+	  Use configured values for path names in the script
+
+	* scripts/sync-thailatex.in:
+	  Use updmap instead of patching individual config files
+
+	* configure.in, Makefile.am, scripts/sync-thailatex.in:
+	  Detect installed texhash and use it
+
+	* babel/thai.ldf:
+	  Add missing subsubsection renumbering for thainum option,
+	  as well as paragraph, subparagraph and part
+	  (reported by Poonlap Veerathanabutr)
+
+2003-02-25  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.in:
+	  Fix AC_PATH_PROG so $PATH is also tried when looking for updmap
+	  (as suggested by Vee Sattayamas)
+
+	* fonts/Makefile.am:
+	  Use updmap options instead of directly patching updmap.cfg
+
+2003-02-12  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* babel/lthgaruda.fd:
+	  Fix garuda bx series name, which still appeared as norasi
+
+	* fonts/lthuni.enc:
+	  Fix wrong encoding (Poonlap Veerathanabutr)
+
+2003-01-28  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+	* thailatex.spec.in:
+	  Apply Poonlap Veerathanabutr's patch which fixes problematic
+	  comment
+	* configure.in, fonts/Makefile.am:
+	  Check & use updmap script from appropriate location
+	* configure.in:
+	  Version 0.2.99.0
+
+2003-10-27  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+	* emacs/Makefile.am:
+	  Use install-data-hook and uninstall-hook instead of
+	  install-data-local and uninstall-local, respectively, so that the
+	  $(emacslispdir) is created before doing anything with site-start.el
+	  (bug reported by Vee Sattayamas)
+
+2003-01-11  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+	* babel/lthnorasi.fd:
+	  Fix typo in norasi-normal name.
+	* fonts/Makefile.am:
+	  Use updmap to generate font maps instead of modifying
+	  individual maps.
+	* +doc/teststd.tex, doc/Makefile.am:
+	  Add Garuda example doc (Poonlap Veerathanabutr).
+	* fonts/Makefile.am:
+	  Fix *.pfb and lthuni.enc symlinks creation bug in case of
+	  building directly in the source tree.
+
+2003-01-10  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+	* -fonts/type1/*, -fonts/afm/*:
+	  Remove subdirs.
+	* +fonts/dbtt*.pfb, +fonts/garuda*.pfb, +fonts/norasi*.pfb:
+	  Add new fonts whose glyphs are renamed using uni<CODE> format by
+	  Poonlap Veerathanabutr. (place for .pfb moved from fonts/type1
+	  subdir to here)
+	* -dvips/*:
+	  Remove subdir.
+	* +fonts/lthuni.enc:
+	  Add uni<CODE>-based encoding. (place for .enc moved from dvips
+	  subdir to here)
+	* fonts/Makefile.am:
+	  Rewrite Makefile.am using abstract rules.
+	  Incorporate rules from dvips/Makefile.am.
+	* configure.in:
+	  Remove fonts/type1/Makefile, fonts/afm/Makefile and dvips/Makefile
+	  generation.
+	  Add check for ps2afm program.
+	* Makefile.am:
+	  Remove dvips in SUBDIRS.
+	* babel/lthdbttx.fd -> babel/lthdbtt.fd, thai.ldf:
+	  Rename the font name (Poonlap Veerathanabutr)
+	* babel/lthdbtt.fd, babel/lthnorasi.fd, +babel/lthgaruda.fd:
+	  Merge Poonlap's changes to the font descriptions.
+	  Add font description for Garuda.
+	* babel/Makefile.am:
+	  Update babel file list.
+
+2003-01-09  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+	* Makefile.am:
+	  Use install-data-hook instead of install-data-local
+	  and uninstall-hook instead of uninstall-local for proper
+	  operation sequence.
+	* configure.in:
+	  Version 0.2.6.
+
+2002-08-05  Theppitak Karoonboonyanan  <thep@links.nectec.or.th>
+	* thailatex.spec.in:
+	  Add BuildRequires. Add %clean script. Clear RPM build dir
+	  before installing.
+
+2002-07-23  Theppitak Karoonboonyanan  <thep@links.nectec.or.th>
+	* fonts/afm/dbttb.afm, fonts/afm/dbtti.afm, fonts/dbttbi.afm:
+	  Fix glyph name for Yo Ying, which was taken as softhyphen
+	  and thus had no width.
+
+2002-01-16  Theppitak Karoonboonyanan  <thep@links.nectec.or.th>
+	* babel/thai.ldf:
+	  Fix extra spaces appearing in \seleclanguage{thai}, as
+	  suggested by C. Visavakul.
+	  Add extra space to \wbr in case of over-condensed text,
+	  as suggested by C. Visavakul.
+	* configure.in:
+	  Version 0.2.5.
+
+2002-01-08  Theppitak Karoonboonyanan  <thep@links.nectec.or.th>
+	* Makefile.am, babel/Makefile.am doc/Makefile.am, dvips/Makefile.am,
+	  emacs/Makefile.am, fonts/Makefile.am:
+	  Use automake DATA targets.
+	* -dvips/addpsfont.sh, -dvips/rmpsfont.sh, dvips/Makefile.am:
+	  Use thai.map and patch dvips local config file instead of
+	  directly patching base psfonts.map.
+	* dvips/Makefile.am:
+	  Add patch for pdftex.
+	* -emacs/addmacro.sh, -emacs/rmmacro.sh, emacs/Makefile.am:
+	  Move the macro patching scripts into Makefile.
+	* thailatex.spec.in:
+	  Update %post and %postun according to new installing method.
+	* thailatex.spec.in:
+	  Fix upgrading bug using %triggerpostun to repeat %post after
+	  %postun of older package undid it. (%post is still needed
+	  in case of installation from scratch, not upgrading.)
+	  Change %postun to %preun, to guarantee it's run before
+	  newer package's %triggerpostun in upgrading.
+	* thailatex.spec.in:
+	  Incorporate babel.sty patching.
+	* +scripts/sync-thailatex, scripts/Makefile.am, thailatex.spec.in:
+	  Split scriptlets into sync-thailatex separate script, to resolve
+	  old chaotic upgrading scheme.
+	  Add %triggerin to get synchronized with tetex.
+	* configure.in:
+	  Version 0.2.4.
+
+2001-12-06  Theppitak Karoonboonyanan  <thep@links.nectec.or.th>
+	* babel/thai.ldf: add missing consonants in \thaialpha according
+	  to Thai law convention.
+
+2001-12-06  Chanop Silpa-Anan  <chanop@debian.org>
+	* babel/thai.ldf: fix table of contents rubbish header for
+	  class book.
+	* babel/thai.ldf: add thai alphabet counter. default appendix
+	  counter to thaialphabet when thainumer option is given.
+
+2001-12-05  Theppitak Karoonboonyanan  <thep@links.nectec.or.th>
+	* thailatex.spec.in: use manifest
+	* thailatex.spec.in: add post and postun scripts for patching
+	  dvips and emacs files.
+	* dvips/addpsfont.sh, dvips/rmpsfont.sh: reduce sed script.
+	* Makefile.am, thailatex.spec.in: add texhash after installation
+	* configure.in: Version 0.2.3
+
+2001-12-04  Theppitak Karoonboonyanan  <thep@links.nectec.or.th>
+	* babel/thai.ldf: fix thai numbering for cases of styles other
+	  than book, where \thechapter is not defined.
+	* babel/thai.ldf: remove thaitoday option.
+	* doc/orchid.tex: use thainumber option to demo thai numbering.
+	* babel/thai.ldf: use \ifcase instead of nested \if in \thaitranslate.
+	* babel/thai.ldf: fix wrong encoding in heading for book
+	  style (as suggested by Chanop).
+
+2001-12-04  Chanop Silpa-Anan  <chanop@debian.org>
+	* add support for using Thai numbering in page, section,
+	  date, and etc.
+	* Thank to K.ขอม
+
+2001-02-23  Chanop Silpa-Anan  <chanop@debian.org>
+	* move patch-babel script from babel to scripts dir
+	* add tlatex scipt for compiling Thai document to scripts dir
+
+2001-02-10  Theppitak Karoonboonyanan  <thep@links.nectec.or.th>
+	* make RPM spec use temporary build root instead of the real
+	  file system; make configure script generate auto-versioned RPM spec
+	* fix some Makefile.am for consistency with the helper shell scripts
+	  and make it be able to configure and build from a separate directory
+
+2001-02-10  Chanop Silpa-Anan  <chanop@debian.org>
+	* add patch-babel script for patching babel.sty such that
+	  thai language document can be passed from 
+	  \documenticlass[thai]{class} to babel
+	  (exported latex from LyX has this behavior)
+
+2000-11-29  Chanop Silpa-Anan  <chanop@debian.org>
+	* rewrite Makefiles using GNU autoconf/automake tools
+	  so that packaging for debian and other is easier :)
+
+2000-08-16  Theppitak Karoonboonyanan  <thep@links.nectec.or.th>
+	* incorporate fixed "norasi" "Bluevalues" parameter to fix
+	  Acrobat Distiller rejection, by Anutara Tantraporn
+
+2000-05-25  Theppitak Karoonboonyanan  <thep@links.nectec.or.th>
+	* rearrange package and create Makefiles
+	* encoding changed from TIS to LTH, according to TeX convention
+	* add "norasi" bold and bold-italic font; correct TeXTIS.enc
+	* make "norasi" be Thai roman font, "dbttx" Thai sans serif
+	* correct some Thai translations
+	* release version 0.2
+
+1999-06-21  Surapant Meknavin  <surapan@nectec.or.th>
+	* create the original Thai LaTeX extension based on babel package
+	* two fonts are available : dbtt (n,bx,i,bi) and nf3x (n,i)
+	* release version 0.1
+

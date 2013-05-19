@@ -1,0 +1,152 @@
+1.0.0 (2013-05-19)
+=====
+- Drop outdated and unmaintained Emacs support.
+- Fix bug when using Thai number in section-less doc classes.
+- Limit scope of emergencystretch within Thai language.
+- Add thaiindentfirst option to force indenting section's first paragraph.
+- Drop obsolete thswitch.sty.
+- Hyphenation patterns are moved to hyph-utf8 project.
+- Babel definition now goes to babel-contrib project.
+
+0.5.1 (2013-02-08)
+=====
+- Updated hyphenation patterns.
+- Cope with ragged right margin problem with space stretching.
+* Switched to XZ tarball compression.
+
+0.5.0 (2012-06-15)
+=====
+- Hyphenation support.
+
+0.4.7 (2012-02-15)
+=====
+- No more stretch for \wbr. It caused uneven spacing between words.
+- CTAN TDS zip is now complete in a single file, with source.
+- Font encoding and ligkern stuff is now moved to font packages,
+  to allow custom ligkern rules per font.
+- Supports more LaTeX escape sequences, namely \textdollar, \i, \j,
+  \textasciicircum, \textasciitilde, \textbackslash, \textbar, \textbraceleft,
+  \textbraceright, \textgreater, \textless, \textquotedbl
+- Revised documentation for the Thai language definition.
+
+0.4.6 (2011-10-26)
+=====
+- Remove fonts and provide them directly from thaifonts-scalable source
+  package.
+- No more build-dependency on TeX font utils and Ghostscript.
+- Build-dependency on swath/cttex is now optional.
+
+0.4.5 (2011-03-21)
+=====
+- Update fonts from thaifonts-scalable 0.4.15, changes include:
+  + Improved Latin glyphs in garuda
+  + Overlap-free Thai glyphs in ttypist
+  + Bug fixes in Purisa (clean wrong ligature and fix glyph name)
+- Correct positioning of THANTHAKHAT and NIKHAHIT over long-ascender Thai
+  glyphs.
+- Support for high MAITAIKHU (e.g. in Kuy) and high NIKHAHIT (e.g. in Pali).
+- Add \textpali{} command for Pali-Sanskrit text with descender-less YO YING
+  and THO THAN.
+- Add "tis620" inputenc option for proper Pali-Sanskrit support.
+- Adjust translation for \refname from "หนังสืออ้างอิง" to "เอกสารอ้างอิง".
+- CTAN package is now in ZIP format by default, as preferred by Windows users.
+- Outdated and unmaintained RPM spec is now removed.
+
+0.4.4 (2009-08-15)
+=====
+- Fix installation problems in Makefiles and related scripts.
+- Drop support for old teTeX versions, for simplicity.
+- Update ttypist font from thaifonts-scalable trunk, with manually adjusted
+  bold glyphs.
+- Support automated tarball preparation for CTAN upload.
+
+0.4.3 (2009-07-28)
+=====
+- Update fonts from thaifonts-scalable 0.4.13, changes include:
+  + thicker bold faces for ttpyist
+  + variation faces for purisa
+- Default monospace font is now ttypist.
+- Drop the obsolete '\thai' command.
+- UTF-8 support.
+
+0.4.2 (2008-01-27)
+=====
+- Correct changelog entry in thai.dtx, removing junks in generated document.
+
+0.4.1 (2008-01-27)
+=====
+- Update fonts from thaifonts-scalable 0.4.9, plus some changes from CVS.
+- Reintroduced font: kinnari, with resolved licensing issue.
+- New fonts: sawasdee, umpush, waree.
+- Handle the case of tone marks over long-ascender base characters with
+  below-base vowel combined, e.g. "PO PLA + SARA UU + MAI EK", using
+  Werner Lemberg's method as published in TUGboat Volume 21 (2000), No. 2.
+
+0.4.0 (2006-11-08)
+=====
+- Relicensed to LPPL, with permission from NECTEC, the copyright holder.
+- Create `thai.dtx' for documenting and generating `thai.ldf'.
+- Clean up some unneeded macros.
+- Update fonts from thaifonts-scalable 0.4.5.
+- Add ttypist (TLWG Typist) font.
+
+0.3.7 (2006-03-27)
+=====
+- Fix many package buidling issues.
+
+0.3.6 (2006-03-27)
+=====
+- Merge fix from Debian NMU, to prefer updmap-sys to updmap if present.
+- Support new TeX Directory Structure (http://tug.org/tds/).
+- Update fonts from thaifonts-scalable 0.4.4, plus some fixes in 2006-03-26 
+  CVS snapshot for error with dvips.
+- Add Loma font.
+
+0.3.5.1 (2005-07-03)
+=======
+- Update fonts from thaifonts-scalable 0.4.3.1, which actually updates
+  version info in Type1 fonts.
+
+0.3.5 (2005-06-10)
+=====
+- Dropped dbtt and kinnari in accordance with the new thaifonts-scalable
+  release, due to the unclear license.
+- Updated scalable fonts from thaifonts-scalable 0.4.3.
+- Fixed bug in malformed Postscript fonts which makes latex files fail to
+  compile.
+
+0.3.4 (2004-12-05)
+=====
+- Fix missing glyphs in fonts. (reported by Poonlap Veerathanabutr)
+- 'pmono' font now renamed as 'ttype'.
+
+0.3.3 (2004-09-27)
+=====
+- Do not capitalize chapters & sections in book headers.
+  (proposed by P'Joy)
+- Guard against recursive assignments of \ltxTeX and \ltxLaTeX
+  (reported by donzakh)
+- Updated scaled fonts from thaifonts-scalable 0.4.2.
+
+0.3.2 (2004-03-25)
+=====
+- Fix page numbering bug in \frontmatter and \mainmatter redefinition
+  due to wrong appendix fix in previous version. [thep]
+  (noticed by P'Joy)
+
+0.3.1 (2004-03-10)
+=====
+- New fonts: kinnari, pmono, purisa. [poonlap]
+- Updated fonts from thaifonts-scalable project. [chanop,thep]
+- Thai sfdefault is now garuda. Thai ttdefault is now pmono.
+- Introduce Thai TeX character codes, so some problems caused by Latin
+  case conversion, e.g. appendix title, are fixed. [thep,poonlap]
+- Proper Thai page number styles in different parts of book class. [thep]
+- Appendixes are now always run with Thai alphabets, with or without
+  `thainumber' option. [suggested by K. Chakkree]
+- Better RPM build script. [thep, by report from Suppachoke Santiwichaya]
+- Other bug fixes and improvements. [everybody]
+ 
+
+*** Please see ChangeLog for versions before 0.3.1 ***
+
