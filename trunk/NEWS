@@ -1,3 +1,13 @@
+1.0.0 (2013-05-19)
+=====
+- Drop outdated and unmaintained Emacs support.
+- Fix bug when using Thai number in section-less doc classes.
+- Limit scope of emergencystretch within Thai language.
+- Add thaiindentfirst option to force indenting section's first paragraph.
+- Drop obsolete thswitch.sty.
+- Hyphenation patterns are moved to hyph-utf8 project.
+- Babel definition now goes to babel-contrib project.
+
 0.5.1 (2013-02-08)
 =====
 - Updated hyphenation patterns.
