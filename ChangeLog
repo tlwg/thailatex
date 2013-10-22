@@ -1,5 +1,22 @@
 2013-10-22  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	Update dict from latest libthai SVN.
+
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-district.txt:
+	* hyphen/tdict-geo.txt:
+	* hyphen/tdict-history.txt:
+	* hyphen/tdict-ict.txt:
+	* hyphen/tdict-lang-ethnic.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-science.txt:
+	* hyphen/tdict-spell.txt:
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt:
+	  - Update dict from libthai SVN.
+
+2013-10-22  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	* configure.ac: Post-release version suffix added.
 
 2013-05-19  Theppitak Karoonboonyanan  <thep@linux.thai.net>
