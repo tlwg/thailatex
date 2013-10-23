@@ -1,3 +1,13 @@
+2013-10-23  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Add hyphenation exceptions.
+
+	* hyphen/thai-exc.pat:
+	  + Add forcing exceptions for:
+	    - กฤษ-ณะ
+	    - กรา~ฟิ-ตี, ซิ-ตี
+	    - เอก-อุ
+
 2013-10-22  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	Update dict from latest libthai SVN.
