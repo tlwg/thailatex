@@ -1,3 +1,12 @@
+2013-10-24  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	Add license info to hyphenation tex files.
+
+	* hyphen/hyph-th-utf8.tex.in, hyphen/hyph-th.tex.in:
+	  - Add license info header.
+	  - Remove \message{...} & remove redundant \endinput at EOF,
+	    in sync with hyph-utf8 counterparts.
+
 2013-10-23  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	Add hyphenation exceptions.
