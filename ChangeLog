@@ -1,5 +1,13 @@
 2014-08-21  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	Drop exception which causes conflict with generated one.
+
+	* hyphen/thai-exc.pat:
+	  + Remove forcing pattern for
+	    - 'ชิ-ชิ', 'มิต~ซู~บิ-ชิ', 'โอ~อิ-ชิ', but not 'ว-ชิร*', 'อัส~ส-ชิ', 'เผ-ชิญ'
+
+2014-08-21  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	Update dict from latest libthai SVN.
 
 	* hyphen/tdict-city.txt:
