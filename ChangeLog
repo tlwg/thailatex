@@ -1,3 +1,25 @@
+2016-12-15  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
+	Update dict from libthai 0.1.26
+
+	* hyphen/tdict-city.txt:
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-geo.txt:
+	* hyphen/tdict-ict.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-science.txt:
+	* hyphen/tdict-spell.txt:
+	* hyphen/tdict-std-compound.txt:
+	* hyphen/tdict-std.txt:
+	  - Update dict from libthai 0.1.26.
+
+	Make hyphenation of "*สเตอร์*" portions consistent.
+
+	* hyphen/tdict-city.txt:
+	  - Correct hyphenation for 'อัมสเตอร์ดัม'.
+	* hyphen/tdict-common.txt:
+	  - Correct hyphenation for 'ฮิปสเตอร์'.
+
 2016-06-30  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
 	Update dict from latest libthai release.
