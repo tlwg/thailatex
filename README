@@ -35,5 +35,5 @@ Note that option [thai] will be passed to babel after it is patched.
 You may have to repatch babel.sty again if you reinstall LaTeX.
 
 For more information, please visit:
-  http://linux.thai.net/projects/thailatex
+  https://linux.thai.net/projects/thailatex
 

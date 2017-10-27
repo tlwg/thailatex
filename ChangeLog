@@ -1,3 +1,17 @@
+2017-10-27  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
+	Update URLs in files
+
+	* README, hyphen/README:
+	* hyphen/hyph-th-utf8.tex.in:
+	* hyphen/hyph-th.tex.in:
+	  - Use HTTPS for LTN project pages
+
+	* hyphen/hyph-th-utf8.tex.in:
+	* hyphen/hyph-th.tex.in:
+	  - Replace obsolete LTN SVN URL with that of GitHub
+
+no changes added to commit (use "git add" and/or "git commit -a")
 2016-12-15  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
 	Update dict from libthai 0.1.26
