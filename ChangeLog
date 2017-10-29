@@ -1,5 +1,24 @@
 2017-10-29  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
+	Update dict from libthai 0.1.27
+
+	* hyphen/tdict-city.txt:
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-district.txt:
+	* hyphen/tdict-geo.txt:
+	* hyphen/tdict-history.txt:
+	* hyphen/tdict-ict.txt:
+	* hyphen/tdict-lang-ethnic.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-science.txt:
+	* hyphen/tdict-spell.txt:
+	  - Update dict from libthai 0.1.27.
+
+	* hyphen/thai-exc.pat:
+	  - Drop 'ฮ7โ' exception, which duplicated the generated 'ฮ1โ'.
+
+2017-10-29  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
 	Install *.txt pattern files
 
 	* hyphen/Makefile.am:
@@ -28,7 +47,6 @@
 	* hyphen/hyph-th.tex.in:
 	  - Replace obsolete LTN SVN URL with that of GitHub
 
-no changes added to commit (use "git add" and/or "git commit -a")
 2016-12-15  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
 	Update dict from libthai 0.1.26
