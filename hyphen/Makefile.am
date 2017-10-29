@@ -1,5 +1,11 @@
 hyphendir = $(texmfdir)/tex/generic/$(PACKAGE)
-hyphen_DATA = loadhyph-th.tex hyph-th.tex hyph-th-utf8.tex
+hyphen_DATA =			\
+	loadhyph-th.tex		\
+	hyph-th.tex		\
+	hyph-th-utf8.tex	\
+	hyph-th.pat.txt		\
+	hyph-th.hyp.txt		\
+	$(NULL)
 
 TDICT_SRC = 				\
 	$(srcdir)/tdict-common.txt	\
@@ -54,6 +60,12 @@ thai.out: thai.dic thai.tra
 
 thai-comb.pat: thai.out thai-exc.pat
 	cat thai.out $(srcdir)/thai-exc.pat > $@
+
+hyph-th.pat.txt: thai.out
+	$(SED) -e '/^%/d' $< > $@
+
+hyph-th.hyp.txt: thai-exc.pat
+	$(SED) -e '/^%/d' $< > $@
 
 hyph-th-utf8.tex: thai-comb.pat hyph-th-utf8.tex.in
 	$(AWK) "BEGIN {show=1} /@PATTERNS@/ {show=0} {if(show) print}" \

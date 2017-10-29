@@ -1,3 +1,20 @@
+2017-10-29  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
+	Install *.txt pattern files
+
+	* hyphen/Makefile.am:
+	  - Add rules to generate and install
+	    hyph-th.pat.txt (generated patterns) &
+	    hyph-th.hyp.txt (exception patterns)
+	* README.hyphen:
+	  - Update documentation for Debian/Ubuntu, changing config file
+	    from /etc/texmf/hyphen.d/90thailatex.cnf
+	    to   /etc/texmf/web2c/local-hyphen.cnf
+	    according to the latest 'update-language' tool.
+	  - Add 'file_patterns' & 'file_exceptions' fields
+	    to assign the corresponding text files.
+	    They appear to be used by luatex.
+
 2017-10-27  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
 	Update URLs in files
