@@ -23,7 +23,7 @@ official apt repositories.  But just in case you want to install it from
 source:
 
 # cat > /etc/texmf/web2c/local-hyphen.cnf << EOF
-name=thai lefthyphenmin=2 righthyphenmin=3 file=loadhyph-th.tex file_patterns=hyph-th.pat.txt file_exceptions=hyph-th.hyp.txt
+name=thai lefthyphenmin=2 righthyphenmin=3 file=loadhyph-th.tex file_patterns=hyph-th.pat.txt file_exceptions=
 EOF
 # update-language
 # update-fmtutil

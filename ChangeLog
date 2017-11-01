@@ -1,3 +1,18 @@
+2017-11-01  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
+	Undo hyph-th.hyp.txt installation.
+
+	The file is intended for hard-coded hyphenations in source form,
+	to be wrapped by \hyphenation{} command in TeX file,
+	not in pattern form.
+
+	* README.hyphen:
+	  - Empty the 'file_exception' field in document.
+	* hyphen/Makefile.am:
+	  - Drop rule for generating and installing hyph-th.hyp.txt.
+	  - Generate hyph-th.pat.txt with hard-coded exception patterns
+	    appended.
+
 2017-10-29  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
 	Add hyphenation exceptions.
