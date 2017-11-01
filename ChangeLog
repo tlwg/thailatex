@@ -1,5 +1,14 @@
 2017-11-01  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
+	Update documentation for Debian/Ubuntu.
+
+	* README.hyphen:
+	  - Replace 'thailatex' package with 'texlive-lang-other'.
+	    'thailatex' has been removed since Jessy, with its contents
+	    moved into 'texlive-lang-other' via CTAN.
+
+2017-11-01  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
 	Undo hyph-th.hyp.txt installation.
 
 	The file is intended for hard-coded hyphenations in source form,
