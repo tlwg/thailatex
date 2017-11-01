@@ -79,5 +79,5 @@ hyph-th.tex: thai-comb.pat conv-utf8-hex.sed hyph-th.tex.in
 
 CLEANFILES = \
 	thai.dic thai.pat pattmp.* thai.out thai-comb.pat \
-	hyph-th.tex hyph-th-utf8.tex
+	hyph-th.tex hyph-th-utf8.tex hyph-th.pat.txt
 

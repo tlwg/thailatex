@@ -1,5 +1,12 @@
 2017-11-01  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
+	Add hyph-th.pat.txt cleaning on clean target.
+
+	* hyphen/Makefile.am:
+	  - Add hyph-th.pat.txt to CLEANFILES.
+
+2017-11-01  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
 	Update documentation for Debian/Ubuntu.
 
 	* README.hyphen:
