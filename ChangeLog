@@ -1,5 +1,29 @@
 2018-08-02  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
+	Update dict from libthai 0.1.28
+
+	* hyphen/tdict-city.txt:
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-country.txt:
+	* hyphen/tdict-district.txt:
+	* hyphen/tdict-geo.txt:
+	* hyphen/tdict-history.txt:
+	* hyphen/tdict-ict.txt:
+	* hyphen/tdict-lang-ethnic.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-science.txt:
+	* hyphen/tdict-slang.txt:
+	* hyphen/tdict-spell.txt:
+	* hyphen/tdict-std.txt:
+	  - Update dict from libthai 0.1.28.
+
+	* hyphen/thai-exc.pat:
+	  - Drop 'า7มี' exception, duplicating generated 'า3มี'.
+	  - Drop 'โค7ลี' exception, duplicating 'โค5ลี'.
+	  - Drop '<SARA-II>7รี' exception, duplicating '<SARA-II>3รี'.
+
+2018-08-02  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
 	Move slang dict entries to a new file.
 
 	* hyphen/Makefile.am, +hyphen/tdict-slang.txt,
