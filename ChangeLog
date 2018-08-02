@@ -1,3 +1,13 @@
+2018-08-02  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
+	Move slang dict entries to a new file.
+
+	* hyphen/Makefile.am, +hyphen/tdict-slang.txt,
+	  hyphen/tdict-common.txt:
+	  - Manually move hyphenated slang entries from tdict-common.txt
+	    to tdict-slang.txt, according to change in libthai dict
+	    categories.
+
 2017-11-01  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
 	Add hyph-th.pat.txt cleaning on clean target.
