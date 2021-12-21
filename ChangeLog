@@ -1,3 +1,28 @@
+2021-12-21  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
+	Update dict from libthai 0.1.29
+
+	* hyphen/Makefile.am, +hyphen/tdict-currency.txt:
+	  - Add new list.
+
+	* hyphen/tdict-city.txt:
+	* hyphen/tdict-collection.txt:
+	* hyphen/tdict-common.txt:
+	* hyphen/tdict-district.txt:
+	* hyphen/tdict-geo.txt:
+	* hyphen/tdict-history.txt:
+	* hyphen/tdict-ict.txt:
+	* hyphen/tdict-lang-ethnic.txt:
+	* hyphen/tdict-proper.txt:
+	* hyphen/tdict-science.txt:
+	* hyphen/tdict-slang.txt:
+	* hyphen/tdict-spell.txt:
+	* hyphen/tdict-std.txt:
+	  - Updated from libthai 0.1.29.
+
+	* hyphen/thai-exc.pat:
+	  - Drop '<SARA-I>7ตี' exception, duplicating generated '<SARA-I>3ตี'.
+
 2018-08-03  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
 	Add hyphenation exceptions.
