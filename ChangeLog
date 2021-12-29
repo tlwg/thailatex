@@ -1,5 +1,15 @@
 2021-12-29  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
+	Update my e-mail address.
+
+	* configure.ac:
+	  - Update contact e-mail address.
+
+	* AUTHORS:
+	  - Update my e-mail address.
+
+2021-12-29  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
 	Apply 'autoupdate' for autoconf 2.71.
 
 	* configure.ac:
