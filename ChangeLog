@@ -1,5 +1,14 @@
 2021-12-29  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
+	Apply 'autoupdate' for autoconf 2.71.
+
+	* configure.ac:
+	  - Quote m4 strings in AC_INIT() parameters.
+	  - Replace obsolete AC_HELP_STRING() with AS_HELP_STRING().
+	  - Update AC_PREREQ() from 2.50 to 2.71.
+
+2021-12-29  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
 	Adjust hyphenation for 'ลิมปนะ'.
 
 	* hyphen/tdict-std.txt:

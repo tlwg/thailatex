@@ -1,6 +1,6 @@
-AC_PREREQ(2.50)
+AC_PREREQ([2.71])
 
-AC_INIT(thailatex, 1.0.0svn, thep@linux.thai.net)
+AC_INIT([thailatex],[1.0.0svn],[thep@linux.thai.net])
 AC_CONFIG_SRCDIR([babel/thai.dtx])
 
 AM_INIT_AUTOMAKE(dist-xz no-dist-gzip)
@@ -10,13 +10,13 @@ AC_PROG_LN_S
 AC_PROG_SED
 
 AC_ARG_ENABLE(hooks,
-              [AC_HELP_STRING([--disable-hooks],
+              [AS_HELP_STRING([--disable-hooks],
                               [disable installation hook scripts])],
               , enable_hooks="yes")
 AM_CONDITIONAL(ENABLE_HOOKS,test $enable_hooks = "yes")
 
 AC_ARG_ENABLE(hyphenation,
-              [AC_HELP_STRING([--enable-hyphenation],
+              [AS_HELP_STRING([--enable-hyphenation],
                               [include hyphenation patterns and source (for VCS build only)])],
               , enable_hyphenation="no")
 if test "x$enable_hyphenation" = "xyes" && ! test -f $srcdir/hyphen/Makefile.am
@@ -43,7 +43,7 @@ AC_CHECK_PROGS(SWATH,swath,no)
 AC_CHECK_PROGS(CTTEX,cttex,no)
 
 AC_ARG_WITH(texmfdir,
-  [AC_HELP_STRING([--with-texmfdir=DIR],
+  [AS_HELP_STRING([--with-texmfdir=DIR],
                   [texmf directory in DIR [PREFIX/share/texmf]])],
   [texmfdir="$withval"], [texmfdir=${datarootdir}/texmf])
 AC_MSG_CHECKING(--with-texmfdir)
